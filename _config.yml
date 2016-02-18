@@ -1,0 +1,6 @@
+title: Sky Toolkit
+email: toolkit@sky.uk
+url: "http://sky-uk.github.io"
+baseurl: "/toolkit"
+source: ./pages
+markdown: kramdown

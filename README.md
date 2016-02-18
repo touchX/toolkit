@@ -24,6 +24,8 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 Documentation will exist in the Wiki for this repo.
 
+See the wiki for how to get started working on [GitHub pages](https://github.com/sky-uk/toolkit/wiki/GitHub-Pages).
+
 ## Maintainers
 
 - Aaron Thomas (Slack: @aaron.thomas) (aaron.thomas@sky.uk)
