@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 5.5.0
+  ruby:
+    version: 2.3.0
+deployment:
+  release:
+    branch: master
+    commands:
+      - npm run build 
+      - npm run update-pages
+      - jekyll build
+      - rake deploy

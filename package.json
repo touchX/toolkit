@@ -4,9 +4,9 @@
   "description": "Sky Toolkit",
   "main": "toolkit.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cat toolkit.scss | node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css",
-    "build-pages": "cat toolkit.scss | node-sass --include-path node_modules/ --output-style compressed > pages/css/toolkit.css",
+    "test": "npm run build",
+    "build": "mkdir -p dist && cat toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css",
+    "build-pages": "cat toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > pages/css/toolkit.css",
     "update-pages": "rm -r -f node_modules/sky-toolkit-core && npm install && npm run build-pages"
   },
   "author": "Sky UK",
