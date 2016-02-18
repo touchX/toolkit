@@ -9,5 +9,5 @@ deployment:
     commands:
       - npm run build 
       - npm run update-pages
-      - jekyll build
-      - rake deploy
+      - bundle exec jekyll build
+      - bundle exec rake deploy
