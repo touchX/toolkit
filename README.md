@@ -30,13 +30,13 @@ See the wiki for how to get started working on [GitHub pages](https://github.com
 
 ## Maintainers
 
-- Aaron Thomas (Slack: @aaron.thomas) (aaron.thomas@sky.uk)
-- Joe Bell (Slack: @joseph.bell) (joseph.bell@sky.uk)
+- [Aaron Thomas](https://github.com/aaronthomas) - aaron.thomas@sky.uk
+- [Joe Bell](https://github.com/joebell93) - joseph.bell@sky.uk
 
 ## Contributors
 
-- Rich McIntyre (Slack: @rich) (richard.mcintyre@sky.uk)
-- Harry Roberts (Slack: @harry.roberts) (Twitter: @csswizardry)
+- [Rich McIntyre](https://github.com/mackstar) - richard.mcintyre@sky.uk
+- [Harry Roberts](https://github.com/csswizardry) - [@csswizardry](https://twitter.com/csswizardry)
 
 Feel free to open a pull request to include yourself in this list. 
 
