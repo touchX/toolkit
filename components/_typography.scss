@@ -1,0 +1,45 @@
+/* ==========================================================================
+   COMPONENTS / TYPOGRAPHY
+   ========================================================================== */
+
+/**
+ * In order to divorce our semantic decisions from our stylistic ones, we only
+ * define opinionated typographical styles against classes, NOT against
+ * typographic HTML elements.
+ *
+ * Further reading: http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ */
+
+/* Heading-level typography
+  =========================================== */
+
+.c-heading-alpha {
+  @include font-size($text-alpha);
+}
+
+.c-heading-beta {
+  @include font-size($text-beta);
+}
+
+.c-heading-gamma {
+  @include font-size($text-gamma);
+}
+
+.c-heading-delta {
+  @include font-size($text-delta);
+}
+
+/* Text-level typography
+  =========================================== */
+
+.c-text-body-small {
+  @include font-size($text-body);
+}
+
+.c-text-body-small {
+  @include font-size($text-body-small);
+}
+
+.c-text-caption {
+  @include font-size($text-caption);
+}
