@@ -17,3 +17,6 @@ deployment:
       - git config --global user.name "Toolkit CI"
       - bundle exec jekyll build
       - bundle exec rake deploy
+test:
+  post:
+    - rm -r ~/toolkit/node_modules
