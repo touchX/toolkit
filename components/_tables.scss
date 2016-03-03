@@ -1,0 +1,13 @@
+/* ==========================================================================
+   COMPONENTS / TABLES
+   ========================================================================== */
+
+.c-table-simple__row {
+  border-bottom: 1px solid color(keyline);
+}
+
+.c-table-simple__cell {
+  padding: $base-spacing-unit / 2;
+  text-align: left;
+  vertical-align: top;
+}
