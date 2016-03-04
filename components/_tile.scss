@@ -1,0 +1,26 @@
+/* ==========================================================================
+   COMPONENTS / TILE
+   ========================================================================== */
+
+$tile-border-width: 8px;
+
+.c-tile {
+  display: block;
+  position: relative;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  padding: $tile-border-width;
+
+  // Adds gradient background and scales slightly to give glass border
+  &::before {
+    @include background-gradient("small", "radial");
+
+    content: "";
+    display: block;
+    z-index: -5;
+    position: absolute;
+    top: $tile-border-width;
+    left: $tile-border-width;
+    right: $tile-border-width;
+    bottom: $tile-border-width;
+  }
+}
