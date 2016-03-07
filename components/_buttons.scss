@@ -1,0 +1,121 @@
+/* ==========================================================================
+   COMPONENTS / BUTTONS
+   ========================================================================== */
+
+// Button settings until we provide a UI settings file
+$btn-font-size: 18px !default;
+$btn-border-width: 1px !default;
+$btn-border-radius: 0.25em !default;
+
+.c-btn {
+  display: inline-block;
+  margin: 0;
+  padding: $spacing-unit-tiny - $btn-border-width  $spacing-unit-small - $btn-border-width;
+  overflow: visible;
+  vertical-align: middle;
+  font: inherit;
+  font-size: $btn-font-size;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: $btn-border-width solid transparent;
+  border-radius: $btn-border-radius;
+  transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
+  cursor: pointer;
+  outline: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+
+}
+
+//
+// Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+//
+.c-btn::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* Button aesthetic modifiers
+   =========================================== */
+
+.c-btn--primary {
+  color: color(white);
+  background-color: color(brand);
+  border-color: color(brand);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: color(highlight);
+    border-color: color(highlight);
+  }
+}
+
+.c-btn--secondary {
+  color: color(brand);
+  background-color: transparent;
+  border-color: color(brand);
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: color(white);
+    background-color: color(highlight);
+    border-color: color(highlight);
+  }
+}
+
+.c-btn--secondary-invert {
+  color: color(white);
+  background-color: transparent;
+  border-color: color(white);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: color(highlight);
+    border-color: color(highlight);
+  }
+}
+
+/* Button state modifiers
+   =========================================== */
+
+/**
+ * 1. For buttons whose state is toggled.
+ * 2. For buttons that are always disabled.
+ */
+.c-btn.is-disabled, /* [1] */
+.c-btn--disabled { /* [2] */
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: color(keyline);
+    border-color: color(keyline);
+    cursor: not-allowed;
+  }
+}
+
+.c-btn--error {
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    color: color(white);
+    background-color: color(error);
+    border-color: color(error);
+    cursor: not-allowed;
+  }
+}
+
+.c-btn--select {
+  color: color(brand);
+  background-color: transparent;
+  border-color: color(brand);
+}
