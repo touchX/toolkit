@@ -3,24 +3,29 @@
    ========================================================================== */
 
 $tile-border-width: 6px !default;
+$tile-padding: $spacing-unit-small !default;
 
 .c-tile {
   position: relative;
   background: transparent;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
   padding: $tile-border-width;
+  margin-bottom: $spacing-unit;
 }
 
 .c-tile__content {
   @include background-gradient("small", "radial");
 
-  .c-tile--square & {
-    position: absolute;
-    top: $tile-border-width;
-    right: $tile-border-width;
-    bottom: $tile-border-width;
-    left: $tile-border-width;
-    overflow: hidden; // Defensively clip overflowing text that can't be handled because of absolute positioning
+  @include mq($from: medium) {
+    .c-tile--square & {
+      position: absolute;
+      top: $tile-border-width;
+      right: $tile-border-width;
+      bottom: $tile-border-width;
+      left: $tile-border-width;
+      overflow: hidden; // Defensively clip overflowing text that can't be handled because of absolute positioning
+    }
+
   }
 
   > :last-child {
@@ -29,10 +34,41 @@ $tile-border-width: 6px !default;
 
 }
 
+/* Media
+  =========================================== */
+
+.c-tile__media {
+  display: none;
+
+  @include mq($from: medium) {
+    display: block;
+    height: 56.25%;
+  }
+}
+
+.c-tile__caption {
+  padding: $tile-padding;
+
+  @include mq($from: medium) {
+    @include background-gradient("small", "radial");
+    height: 43.75%;
+  }
+}
+
+
+/* Body
+  =========================================== */
+
+.c-tile__body {
+  padding: $tile-padding;
+}
+
 /* Square modifier
   =========================================== */
 
 .c-tile--square {
-  height: 0;
-  padding-top: 100%;
+  @include mq($from: medium) {
+    height: 0;
+    padding-top: 100%;
+  }
 }
