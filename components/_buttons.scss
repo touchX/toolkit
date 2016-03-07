@@ -115,6 +115,8 @@ $btn-border-radius: 0.25em !default;
 }
 
 .c-btn--select {
+  padding-left: $spacing-unit*2;
+  padding-right: $spacing-unit*2;
   color: color(brand);
   background-color: transparent;
   border-color: color(brand);

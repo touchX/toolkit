@@ -4,16 +4,40 @@
 
 .c-select {
   display: inline-block;
+  position: relative;
+}
+
+.c-select__btn {
+  transition: padding 0.5s ease;
+
+  &::after {
+    position: absolute;
+    width: $spacing-unit*2;
+    overflow: hidden;
+    height: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: url("data:image/svg+xml; base64, PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHg9JzBweCcgeT0nMHB4Jw0KCSB2aWV3Qm94PScwIDAgMzQgMzQnIHN0eWxlPSdlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM0IDM0OycgeG1sOnNwYWNlPSdwcmVzZXJ2ZSc+DQoJPHBhdGggc3R5bGU9J2ZpbGw6I2ZmZjsnIGQ9J001LjI5MSwxOC4yNzdjMC4wMDgsMC4xOTUsMC4wODYsMC4zNjMsMC4yNDYsMC41MjZsMC4xOSwwLjE5NGw2LjY0OSw2LjY0OQ0KCQljMC4xODksMC4xODksMC40NCwwLjI5MywwLjcwNywwLjI5M3MwLjUxOC0wLjEwNCwwLjcwNy0wLjI5M0wyNy44NiwxMS41NzdsMC4xMjctMC4xM2MwLjE2MS0wLjE2MywwLjIzOS0wLjMzMiwwLjI0Ny0wLjUzDQoJCWMwLjAwNi0wLjE3My0wLjE1NS0wLjQzOC0wLjQ0Mi0wLjcyNWMtMC4xODctMC4xODctMC4zODYtMC4zNjgtMC41OS0wLjUzN2MtMC4wNS0wLjA0MS0wLjA5Ni0wLjA3OC0wLjEzOC0wLjExMWwtMC40OTYsMC40OTYNCgkJTDEzLjQzNywyMy4xNzFsLTAuMzU0LDAuMzU0bC0wLjM1NC0wLjM1NGwtNS43ODQtNS43ODRsLTAuNDg0LTAuNDg0Yy0wLjA0MiwwLjAzMy0wLjA4OSwwLjA3LTAuMTQsMC4xMTINCgkJYy0wLjIwMywwLjE2OC0wLjQwMSwwLjM0OC0wLjU4OCwwLjUzNUM1LjQ0NiwxNy44MzgsNS4yODUsMTguMTAyLDUuMjkxLDE4LjI3N3onLz4NCjwvc3ZnPg0K");
+    background: color(brand);
+    border-radius: 0 $btn-border-radius $btn-border-radius 0;
+    opacity: 0;
+    padding: 2px 12px;
+    transform: translate($spacing-unit*2, 0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
 }
 
 .c-select__input {
   display: none;
 
   &:checked + .c-select__btn {
-    // Checked styles here
+    padding-left: $spacing-unit;
+    padding-right: $spacing-unit*3;
 
     &::after {
-      content: "Tick SVG";
+      opacity: 1;
+      transform: translate(0, 0);
     }
 
   }
