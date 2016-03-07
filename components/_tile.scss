@@ -2,25 +2,37 @@
    COMPONENTS / TILE
    ========================================================================== */
 
-$tile-border-width: 8px;
+$tile-border-width: 6px !default;
 
 .c-tile {
-  display: block;
   position: relative;
+  background: transparent;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
   padding: $tile-border-width;
+}
 
-  // Adds gradient background and scales slightly to give glass border
-  &::before {
-    @include background-gradient("small", "radial");
+.c-tile__content {
+  @include background-gradient("small", "radial");
 
-    content: "";
-    display: block;
-    z-index: -5;
+  .c-tile--square & {
     position: absolute;
     top: $tile-border-width;
-    left: $tile-border-width;
     right: $tile-border-width;
     bottom: $tile-border-width;
+    left: $tile-border-width;
+    overflow: hidden; // Defensively clip overflowing text that can't be handled because of absolute positioning
   }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+/* Square modifier
+  =========================================== */
+
+.c-tile--square {
+  height: 0;
+  padding-top: 100%;
 }
