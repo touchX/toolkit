@@ -1,0 +1,21 @@
+/* ==========================================================================
+   COMPONENTS / SELECT
+   ========================================================================== */
+
+.c-select {
+  display: inline-block;
+}
+
+.c-select__input {
+  display: none;
+
+  &:checked + .c-select__btn {
+    // Checked styles here
+
+    &::after {
+      content: "Tick SVG";
+    }
+
+  }
+
+}
