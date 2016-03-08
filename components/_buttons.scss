@@ -120,4 +120,5 @@ $btn-border-radius: 0.25em !default;
   color: color(brand);
   background-color: transparent;
   border-color: color(brand);
+  transition: padding 0.25s ease;
 }
