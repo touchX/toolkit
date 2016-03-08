@@ -5,26 +5,30 @@
 .c-select {
   display: inline-block;
   position: relative;
+  overflow: hidden;
+  border-radius: $btn-border-radius;
+  perspective: 1px;
 }
 
 .c-select__btn {
-  transition: padding 0.5s ease;
-
   &::after {
+    content: "";
     position: absolute;
     width: $spacing-unit*2;
     overflow: hidden;
-    height: auto;
     top: 0;
     right: 0;
     bottom: 0;
-    content: url("data:image/svg+xml; base64, PHN2ZyB2ZXJzaW9uPScxLjEnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZycgeG1sbnM6eGxpbms9J2h0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsnIHg9JzBweCcgeT0nMHB4Jw0KCSB2aWV3Qm94PScwIDAgMzQgMzQnIHN0eWxlPSdlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDM0IDM0OycgeG1sOnNwYWNlPSdwcmVzZXJ2ZSc+DQoJPHBhdGggc3R5bGU9J2ZpbGw6I2ZmZjsnIGQ9J001LjI5MSwxOC4yNzdjMC4wMDgsMC4xOTUsMC4wODYsMC4zNjMsMC4yNDYsMC41MjZsMC4xOSwwLjE5NGw2LjY0OSw2LjY0OQ0KCQljMC4xODksMC4xODksMC40NCwwLjI5MywwLjcwNywwLjI5M3MwLjUxOC0wLjEwNCwwLjcwNy0wLjI5M0wyNy44NiwxMS41NzdsMC4xMjctMC4xM2MwLjE2MS0wLjE2MywwLjIzOS0wLjMzMiwwLjI0Ny0wLjUzDQoJCWMwLjAwNi0wLjE3My0wLjE1NS0wLjQzOC0wLjQ0Mi0wLjcyNWMtMC4xODctMC4xODctMC4zODYtMC4zNjgtMC41OS0wLjUzN2MtMC4wNS0wLjA0MS0wLjA5Ni0wLjA3OC0wLjEzOC0wLjExMWwtMC40OTYsMC40OTYNCgkJTDEzLjQzNywyMy4xNzFsLTAuMzU0LDAuMzU0bC0wLjM1NC0wLjM1NGwtNS43ODQtNS43ODRsLTAuNDg0LTAuNDg0Yy0wLjA0MiwwLjAzMy0wLjA4OSwwLjA3LTAuMTQsMC4xMTINCgkJYy0wLjIwMywwLjE2OC0wLjQwMSwwLjM0OC0wLjU4OCwwLjUzNUM1LjQ0NiwxNy44MzgsNS4yODUsMTguMTAyLDUuMjkxLDE4LjI3N3onLz4NCjwvc3ZnPg0K");
-    background: color(brand);
-    border-radius: 0 $btn-border-radius $btn-border-radius 0;
-    opacity: 0;
-    padding: 2px 12px;
+    background-color: color(brand);
+    // The select button currently uses a Base64 png tick icon.
+    // This will eventually be replaced by SVG.
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAM1BMVEX////w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7////C7fNeAAAAAXRSTlMAQObYZgAAAVBJREFUeNrt2MtOA0EMRNFAeDPTU///tUhZxJGQuKxcJtTdd+vI8sqnlFJKKaWU0l20pDXMAyKDR9qHeaQ1zCMdEzy7bpvm0TSPpnk0zaNpHk3zaJpH8fzoOeKJ5448K5544vk3nj2eeOKJJ55LWzzxxBNPPH/bsySDBx5P80jTPNKY/bk2wqPbpniqZg+D1OxhkJo9DFKzh0Fq9jBIBg+IHJ7qAFGXp1og6vCwyOCBvwweElnvCRuIOubDIoMHRA5P9Qmijv1hkcNTfYCow8Miw/6AyHvPfAdRh4dFDk/1RiL2GETgMYjAYxFtPZ5LryCC+TSJHJ7qBUTgaRI59qd61vfAYxCBxyCC/TGIYD4GkQye6sngAZHBgyL2GER+T3U2eEAEHoMIPH5ReVw9kscvKo9fVB6vCDxeUXn8ovL4ezB5+LZwSimllFJKKaVf9gXIMq5peLHXMwAAAABJRU5ErkJggg==");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    border: solid $spacing-unit-tiny transparent;
+    transition: transform 0.25s ease;
     transform: translate($spacing-unit*2, 0);
-    transition: opacity 0.5s ease, transform 0.5s ease;
   }
 }
 
@@ -36,10 +40,7 @@
     padding-right: $spacing-unit*3;
 
     &::after {
-      opacity: 1;
       transform: translate(0, 0);
     }
-
   }
-
 }
