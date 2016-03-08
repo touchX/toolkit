@@ -7,34 +7,52 @@ $btn-font-size: 18px !default;
 $btn-border-width: 1px !default;
 $btn-border-radius: 0.25em !default;
 
+/**
+ * 1.  Allows styling of box model properties.
+ * 2.  Reset browser styles.
+ * 3.  Subtract border-width from the padding so buttons don't grow if the
+ *     border-width is modified.
+ * 4.  Tidy aligment for when the button size needs to be modified.
+ * 5.  Make buttons inherit font styles (necessary when styling `input`s as
+ *     buttons).
+ * 6.  Set default button font-size.
+ * 7.  Set default button font-weight.
+ * 8.  Set default button text-alignment.
+ * 9.  Remove anchor text-decoration (necessary when styling `a`s as buttons).
+ * 10. Base transparent border for modifers to alter.
+ * 11. Set default button border-radius.
+ * 12. Set default button transition (color, background-color and border-color)
+ * 13. Force all button-styled elements to appear clickable.
+ * 14. Remove browser outline styles.
+ */
+
 .c-btn {
-  display: inline-block;
-  margin: 0;
-  padding: $spacing-unit-tiny - $btn-border-width  $spacing-unit-small - $btn-border-width;
-  overflow: visible;
-  vertical-align: middle;
-  font: inherit;
-  font-size: $btn-font-size;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  border: $btn-border-width solid transparent;
-  border-radius: $btn-border-radius;
-  transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease;
-  cursor: pointer;
-  outline: none;
+  display: inline-block; /* [1] */
+  margin: 0; /* [2] */
+  padding: $spacing-unit-tiny - $btn-border-width  $spacing-unit-small - $btn-border-width; /* [3] */
+  vertical-align: middle; /* [4] */
+  font: inherit; /* [5] */
+  font-size: $btn-font-size; /* [6] */
+  font-weight: bold; /* [7] */
+  text-align: center; /* [8] */
+  text-decoration: none; /* [9] */
+  border: $btn-border-width solid transparent; /* [10] */
+  border-radius: $btn-border-radius; /* [11] */
+  transition: color 0.5s ease, background-color 0.5s ease, border-color 0.5s ease; /* [12] */
+  cursor: pointer; /* [13] */
+  outline: none; /* [14] */
 
   &:hover,
   &:active,
   &:focus {
-    text-decoration: none;
+    text-decoration: none; /* [9] */
   }
 
 }
 
-//
-// Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
-//
+/**
+ * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+ */
 .c-btn::-moz-focus-inner {
   border: 0;
   padding: 0;
@@ -42,6 +60,10 @@ $btn-border-radius: 0.25em !default;
 
 /* Button aesthetic modifiers
    =========================================== */
+
+/**
+* For buttons that identify as the primary action.
+*/
 
 .c-btn--primary {
   color: color(white);
@@ -56,6 +78,10 @@ $btn-border-radius: 0.25em !default;
   }
 }
 
+/**
+* For regular buttons or buttons that identify as a secondary actions.
+*/
+
 .c-btn--secondary {
   color: color(brand);
   background-color: transparent;
@@ -69,6 +95,11 @@ $btn-border-radius: 0.25em !default;
     border-color: color(highlight);
   }
 }
+
+/**
+* For regular buttons or buttons that identify as a secondary actions.
+* e.g. buttons on a dark panel
+*/
 
 .c-btn--secondary-invert {
   color: color(white);
@@ -102,6 +133,9 @@ $btn-border-radius: 0.25em !default;
   }
 }
 
+/**
+* For buttons that identify as the primary action in a form/field with error(s).
+*/
 .c-btn--error {
   &,
   &:hover,
@@ -114,6 +148,14 @@ $btn-border-radius: 0.25em !default;
   }
 }
 
+/**
+* For inputs used as a select action (.c-select).
+* This should be applied as a BEM Mix [1] alongside .c-select__btn.
+* e.g. <span class="c-btn  c-btn--select  c-select__btn">Select</span>
+*
+* 1. https://en.bem.info/forum/4/
+*/
+
 .c-btn--select {
   padding-left: $spacing-unit*2;
   padding-right: $spacing-unit*2;
@@ -121,4 +163,25 @@ $btn-border-radius: 0.25em !default;
   background-color: transparent;
   border-color: color(brand);
   transition: padding 0.25s ease;
+}
+
+/* Button sizing modifiers
+   =========================================== */
+
+/**
+* For buttons that need to display full-width.
+*/
+.c-btn--full {
+  display: block;
+  width: 100%;
+}
+
+/**
+* For buttons that need to display full-width on small devices only.
+*/
+.c-btn--full\@small {
+  @include mq($until: medium) {
+    display: block;
+    width: 100%;
+  }
 }
