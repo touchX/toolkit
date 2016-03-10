@@ -14,12 +14,6 @@ $tile-padding: $spacing-unit-small !default;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
   padding: $tile-border-width;
   margin-bottom: $spacing-unit;
-
-  // Not sure if this is going to be used outside of Sky Mobile; may need to
-  // put this in Sky Mobile project rather than toolkit...
-  &.is-current {
-    background: linear-gradient(135deg, rgba(#ffd300, 0.4) 0%, rgba(#ff7100, 0.4) 25%, rgba(#f00, 0.4) 50%, rgba(#f600a8, 0.4) 75%, rgba(#5400ff, 0.4) 100%);
-  }
 }
 
 /**
@@ -38,7 +32,6 @@ $tile-padding: $spacing-unit-small !default;
       left: $tile-border-width;
       overflow: hidden; // Defensively clip overflowing text that can't be handled because of absolute positioning
     }
-
   }
 
   > :last-child {
@@ -64,10 +57,11 @@ $tile-padding: $spacing-unit-small !default;
   =========================================== */
 
 /**
- * Tiles can have links, just wrap the `.c-tile__content` with a `a.tile__link`
+ * Tiles can have links, just wrap the `.c-tile__content` with a `a.c-tile__link`
  * node.
  */
 .c-tile__link {
+  display: block;
   color: inherit;
 
   &,
@@ -82,7 +76,10 @@ $tile-padding: $spacing-unit-small !default;
 
 /**
  * Container for tile media which takes the top 55% of the tile when used.
- * This usually (but not always) contains a .c-tile-poster
+ * This usually (but not always) contains a .c-tile-poster.
+ *
+ * Media and caption pairs should only be used in conjunction with the
+ * `c-tile--square` modifier
  */
 .c-tile__media {
   display: none;
@@ -100,7 +97,7 @@ $tile-padding: $spacing-unit-small !default;
 .c-tile__poster {
   transition: transform 1s ease;
 
-  .tile__link:hover & {
+  .c-tile__link:hover & {
     transform: scale(1.05, 1.05);
   }
 }
@@ -132,7 +129,7 @@ $tile-padding: $spacing-unit-small !default;
     left: 0;
     transition: opacity 0.6s ease;
 
-    .tile__link:hover & {
+    .c-tile__link:hover & {
       opacity: 1;
     }
   }
@@ -144,6 +141,11 @@ $tile-padding: $spacing-unit-small !default;
 
 /**
  * Large scalable title for large tiles (typically those used in >=50% widths)
+ *
+ * Normal heading classes e.g. `c-heading-alpha` are more useful in flexible
+ * tiles, but square tiles need more specific and scalable headings in order to
+ * prevent overflow – hence the explicit font-size and line-height values rather
+ * than the `@font-size mixin`.
  */
 .c-tile__title {
   position: relative;
