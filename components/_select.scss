@@ -3,11 +3,11 @@
    ========================================================================== */
 
 // Select settings are *temporary* until we provide a UI settings file
-$select-border-width: $btn-border-width !default;
-$select-border-radius: $btn-border-radius !default;
+$select-border-width: $global-border-width !default;
+$select-border-radius: $global-border-radius !default;
 $select-icon-padding: $global-spacing-unit-tiny !default;
-$select-icon-width: $global-spacing-unit*2 !default;
-$select-animation-speed: 0.25s !default;
+$select-icon-width: $global-spacing-unit-large !default;
+$select-animation-speed: $global-animation-speed-fast !default;
 
 /**
  * 1. Allows styling of box model properties.
