@@ -1,0 +1,42 @@
+/* ==========================================================================
+   COMPONENTS / KEYLINE
+   ========================================================================== */
+
+$keyline-width: 1px !default;
+$keyline-width-thick: $keyline-width * 2 !default;
+
+/**
+ * Simple keyline component to provide horizontal rules between other elements.
+ *
+ * 1. Reduce the `margin-bottom` by the same width as the keyline in order to
+ *    keep on our baseline grid.
+ */
+
+/*hr*/.c-keyline {
+  border: none;
+  margin-bottom: $spacing-unit - $keyline-width;
+  border-bottom: $keyline-width solid color(keyline);
+}
+
+/**
+ * Heavier keylines.
+ */
+.c-keyline--thick {
+  margin-bottom: $spacing-unit - $keyline-width-thick;
+  border-bottom-width: $keyline-width-thick;
+}
+
+/**
+ * Smaller gaps underneath keylines.
+ */
+.c-keyline--small {
+  margin-bottom: $spacing-unit-small - $keyline-width;
+
+  /**
+   *
+   */
+  &.c-keyline--thick {
+    margin-bottom: $spacing-unit-small - $keyline-width-thick;
+  }
+
+}
