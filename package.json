@@ -15,7 +15,7 @@
     "node-sass": "^3.4.2"
   },
   "dependencies": {
-    "sky-toolkit-core": "git+ssh://git@github.com:sky-uk/toolkit-core.git",
-    "sky-toolkit-ui": "git+ssh://git@github.com:sky-uk/toolkit-ui.git",
+    "sky-toolkit-core": "file:///Users/jbe42/www/toolkit-core",
+    "sky-toolkit-ui": "file:///Users/jbe42/www/toolkit-ui"
   }
 }
