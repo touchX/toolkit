@@ -16,6 +16,7 @@ $tile-padding: $spacing-unit-small !default;
   border: 1px solid $tile-outer-border-colour;
   padding: $tile-border-width;
   margin-bottom: $spacing-unit;
+  will-change: transform;
 }
 
 /**
@@ -98,6 +99,7 @@ $tile-padding: $spacing-unit-small !default;
  */
 .c-tile__poster {
   transition: transform 1s ease;
+  will-change: transform;
 
   .c-tile__link:hover & {
     transform: scale(1.05, 1.05);
@@ -121,6 +123,7 @@ $tile-padding: $spacing-unit-small !default;
   // Pseudo element used for hover state background
   &::before {
     @include background-gradient("large", "radial");
+    will-change: transform;
 
     content: "";
     opacity: 0;
