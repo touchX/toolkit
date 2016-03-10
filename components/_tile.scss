@@ -4,7 +4,7 @@
 
 $tile-border-width: 6px !default;
 $tile-outer-border-colour: rgba(255, 255, 255, 0.2);
-$tile-padding: $spacing-unit-small !default;
+$tile-padding: $global-spacing-unit-small !default;
 
 /**
  * The base of the tile; provides the glass "border" and shadow. Nothing else.
@@ -15,7 +15,7 @@ $tile-padding: $spacing-unit-small !default;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
   border: 1px solid $tile-outer-border-colour;
   padding: $tile-border-width;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $global-spacing-unit;
 }
 
 /**
