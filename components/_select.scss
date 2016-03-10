@@ -1,0 +1,106 @@
+/* ==========================================================================
+   COMPONENTS / SELECT
+   ========================================================================== */
+
+// Select settings are *temporary* until we provide a UI settings file
+$select-border-width: $btn-border-width !default;
+$select-border-radius: $btn-border-radius !default;
+$select-icon-padding: $spacing-unit-tiny !default;
+$select-icon-width: $spacing-unit*2 !default;
+$select-animation-speed: 0.25s !default;
+
+/**
+ * 1. Allows styling of box model properties.
+ * 2. Allows absolute positioning of child pseudo-elements.
+ * 3. Prevent overlap of border-radius by border-width.
+ * 4. Hide overflow to prevent any transitions from leaking.
+ * 5. Provide a slighly larger border-radius than buttons to neaten the
+ *    overflow corners.
+ * 6. Fixes Chrome bug that prevents border-radius affecting the overflow.
+*/
+.c-select {
+  display: inline-block; /* [1] */
+  position: relative; /* [2] */
+  padding-left: $select-border-width; /* [3] */
+  overflow: hidden; /* [4] */
+  border-radius: $select-border-radius; /* [5] */
+  perspective: 1px; /* [6] */
+}
+
+/**
+ * For inputs used as a select action (`.c-select`).
+ * This should be applied as a BEM Mix [A] alongside `.c-btn  .c-btn--select`.
+ * e.g. `<span class="c-btn  c-btn--select  c-select__btn">Select</span>`
+ *
+ * 1. As the icon is being set as a background image, content can be left empty.
+ * 2. Allows greater control of animation and movement.
+ * 3. Set a fixed width for the icon container to fill.
+ * 4. Fixes and fills to the right-hand side of `.c-select`.
+ * 5. Sets the background colour behind the icon.
+ * 6. Sets the background image to the icon, contained and centered.
+ * 7. As the icon is being set as a background image, a transparent border
+ *    provides a similar effect to padding.
+ * 8. Add a border-radius to the right-hand side of the icon container.
+ * 9. Transition the icon conatiner's movement along the x-axis. Set the start
+ *    postition out of view.
+*/
+.c-select__btn {
+  &::after {
+    content: ""; /* [1] */
+    position: absolute; /* [2] */
+    width: $select-icon-width; /* [3] */
+    top: 0; /* [4] */
+    right: 0; /* [4] */
+    bottom: 0; /* [4] */
+    background-color: color(brand); /* [5] */
+    // The select button currently uses an inline Base64 png tick icon.
+    // This will eventually be replaced by SVG.
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAMAAADQmBKKAAAAM1BMVEX////w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7////C7fNeAAAAAXRSTlMAQObYZgAAAVBJREFUeNrt2MtOA0EMRNFAeDPTU///tUhZxJGQuKxcJtTdd+vI8sqnlFJKKaWU0l20pDXMAyKDR9qHeaQ1zCMdEzy7bpvm0TSPpnk0zaNpHk3zaJpH8fzoOeKJ5448K5544vk3nj2eeOKJJ55LWzzxxBNPPH/bsySDBx5P80jTPNKY/bk2wqPbpniqZg+D1OxhkJo9DFKzh0Fq9jBIBg+IHJ7qAFGXp1og6vCwyOCBvwweElnvCRuIOubDIoMHRA5P9Qmijv1hkcNTfYCow8Miw/6AyHvPfAdRh4dFDk/1RiL2GETgMYjAYxFtPZ5LryCC+TSJHJ7qBUTgaRI59qd61vfAYxCBxyCC/TGIYD4GkQye6sngAZHBgyL2GER+T3U2eEAEHoMIPH5ReVw9kscvKo9fVB6vCDxeUXn8ovL4ezB5+LZwSimllFJKKaVf9gXIMq5peLHXMwAAAABJRU5ErkJggg=="); /* [6] */
+    background-repeat: no-repeat; /* [6] */
+    background-position: center; /* [6] */
+    background-size: contain; /* [6] */
+    border: solid $select-icon-padding transparent; /* [7] */
+    border-radius: 0 $select-border-radius $select-border-radius 0; /* [8] */
+    transition: transform $select-animation-speed ease; /* [9] */
+    transform: translate($select-icon-width, 0); /* [9] */
+  }
+}
+
+/**
+ * 1. Hides the checkbox input.
+ * 2. Alters padding to fit the icon container when "checked".
+ * 3. Moves the icon container to its active position.
+*/
+.c-select__input {
+  display: none;  /* [1] */
+
+  &:checked + .c-select__btn {
+    padding-left: $spacing-unit;  /* [2] */
+    padding-right: $spacing-unit+$select-icon-width;  /* [2] */
+
+    &::after {
+      transform: translate(0, 0);  /* [3] */
+    }
+  }
+}
+
+/* Select sizing modifiers
+   =========================================== */
+
+/**
+* For selects that need to display full-width.
+*/
+.c-select--full {
+  display: block;
+  width: 100%;
+}
+
+/**
+* For selects that need to display full-width on small devices only.
+*/
+.c-select--full\@small-only {
+  @include mq($until: medium) {
+    display: block;
+    width: 100%;
+  }
+}
