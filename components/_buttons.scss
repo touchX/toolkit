@@ -118,11 +118,9 @@ $btn-animation-speed-fast: $btn-animation-speed/2 !default;
    =========================================== */
 
 /**
- * 1. For buttons whose state is toggled.
- * 2. For buttons that are always disabled.
+ * For buttons whose state is toggled.
  */
-.c-btn.is-disabled, /* [1] */
-.c-btn--disabled { /* [2] */
+.c-btn.is-disabled {
   &,
   &:hover,
   &:active,
@@ -180,7 +178,7 @@ $btn-animation-speed-fast: $btn-animation-speed/2 !default;
 /**
 * For buttons that need to display full-width on small devices only.
 */
-.c-btn--full\@small-only {
+.c-btn--full\@small {
   @include mq($until: medium) {
     display: block;
     width: 100%;
