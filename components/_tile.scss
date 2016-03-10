@@ -3,6 +3,7 @@
    ========================================================================== */
 
 $tile-border-width: 6px !default;
+$tile-outer-border-colour: rgba(255, 255, 255, 0.2);
 $tile-padding: $spacing-unit-small !default;
 
 /**
@@ -12,6 +13,7 @@ $tile-padding: $spacing-unit-small !default;
   position: relative;
   background: transparent;
   box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid $tile-outer-border-colour;
   padding: $tile-border-width;
   margin-bottom: $spacing-unit;
 }
