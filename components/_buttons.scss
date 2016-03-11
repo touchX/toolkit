@@ -4,12 +4,12 @@
 
 // Button settings are *temporary* until we provide a UI settings file
 $btn-font-size: 18px !default;
-$btn-padding-x: $spacing-unit-small !default;
-$btn-padding-y: $spacing-unit-tiny !default;
-$btn-border-width: 1px !default;
-$btn-border-radius: 0.25em !default;
-$btn-animation-speed: 0.5s !default;
-$btn-animation-speed-fast: $btn-animation-speed/2 !default;
+$btn-padding-x: $global-spacing-unit-small !default;
+$btn-padding-y: $global-spacing-unit-tiny !default;
+$btn-border-width: $global-border-width !default;
+$btn-border-radius: $global-border-radius !default;
+$btn-animation-speed: $global-animation-speed !default;
+$btn-animation-speed-fast: $global-animation-speed-fast !default;
 
 /**
  * 1.  Allows styling of box model properties.
@@ -156,8 +156,8 @@ $btn-animation-speed-fast: $btn-animation-speed/2 !default;
 * A. https://en.bem.info/forum/4/
 */
 .c-btn--select {
-  padding-left: $spacing-unit*2;
-  padding-right: $spacing-unit*2;
+  padding-left: $global-spacing-unit-large;
+  padding-right: $global-spacing-unit-large;
   color: color(brand);
   background-color: transparent;
   border-color: color(brand);
