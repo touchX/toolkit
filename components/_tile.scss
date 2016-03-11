@@ -2,9 +2,13 @@
    COMPONENTS / TILE
    ========================================================================== */
 
+$tile-padding: $global-spacing-unit-small !default;
 $tile-border-width: 6px !default;
-$tile-outer-border-colour: rgba(255, 255, 255, 0.2);
-$tile-padding: $spacing-unit-small !default;
+$tile-outer-border-colour: rgba(255, 255, 255, 0.2) !default;
+$tile-outer-border-width: $global-border-width !default;
+$tile-animation-speed: $global-animation-speed;
+$tile-animation-speed-slow: $global-animation-speed-slow;
+$tile-shadow: $global-shadow !default;
 
 /**
  * The base of the tile; provides the glass "border" and shadow. Nothing else.
@@ -12,10 +16,10 @@ $tile-padding: $spacing-unit-small !default;
 .c-tile {
   position: relative;
   background: transparent;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.2);
-  border: 1px solid $tile-outer-border-colour;
+  box-shadow: $tile-shadow;
+  border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
-  margin-bottom: $spacing-unit;
+  margin-bottom: $global-spacing-unit;
 }
 
 /**
@@ -97,7 +101,7 @@ $tile-padding: $spacing-unit-small !default;
  * A poster is a full bleed image which scales when the lniked tile is hovered.
  */
 .c-tile__poster {
-  transition: transform 1s ease;
+  transition: transform $tile-animation-speed-slow ease;
 
   .c-tile__link:hover & {
     transform: scale(1.05, 1.05);
@@ -112,7 +116,7 @@ $tile-padding: $spacing-unit-small !default;
   @include background-gradient("small", "radial");
 
   position: relative;
-  transition: background 0.6s ease;
+  transition: background $tile-animation-speed ease;
 
   @include mq($from: medium) {
     height: 45%;
@@ -129,7 +133,7 @@ $tile-padding: $spacing-unit-small !default;
     right: 0;
     bottom: 0;
     left: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity $tile-animation-speed ease;
 
     .c-tile__link:hover & {
       opacity: 1;
