@@ -9,12 +9,13 @@ machine:
     version: 2.3.0
 dependencies:
   pre:
-    - npm uninstall toolkit-core
+    - npm uninstall sky-toolkit-core
+    - npm uninstall sky-toolkit-ui
 deployment:
   release:
     branch: master
     commands:
-      - npm run build 
+      - npm run build
       - npm run update-pages
       - git config --global user.email "toolkit@sky.uk"
       - git config --global user.name "Toolkit CI"
