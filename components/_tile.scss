@@ -43,6 +43,10 @@ $tile-arrow-size: $global-spacing-unit-small !default;
       border-bottom: $tile-arrow-size solid $tile-arrow-color;
     }
   }
+
+  &.c-tile--dark.is-selected::before {
+    border-bottom-color: color(dark-ui);
+  }
 }
 
 /**
