@@ -29,3 +29,29 @@ $panel-background-color-dark: color(dark-ui) !default;
   background-color: $panel-background-color-dark;
   color: color(white);
 }
+
+/* Toggle links
+  =========================================== */
+
+.c-panel__toggle {
+  position: absolute;
+  top: $global-spacing-unit-small;
+  right: $global-spacing-unit-small;
+  font-size: $text-body-small;
+  color: color(text);
+  line-height: 1;
+
+  &::after {
+    display: inline-block;
+    position: relative;
+    top: 0.15em;
+    content: "\2715";
+    font-size: 1.5em;
+    margin-left: $global-spacing-unit-tiny;
+    text-decoration: none !important;
+  }
+
+  .c-panel--dark &{
+    color: color(white);
+  }
+}
