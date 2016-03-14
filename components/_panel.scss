@@ -15,11 +15,22 @@ $panel-background-color-dark: color(dark-ui) !default;
   left: 50%; /* [1] */
   width: 100vw; /* [1] */
   margin-left: -50vw; /* [1] */
+  max-height: 0;
   background: $panel-background-color;
   box-shadow: $panel-shadow;
+  transition: $global-animation-speed linear;
+  transition-property: max-height, margin-bottom;
+  overflow: hidden;
+
+  &.is-open {
+    max-height: 100vh;
+    margin-bottom: $global-spacing-unit;
+  }
+}
+
+.c-panel__content {
   padding-top: $global-spacing-unit;
   padding-bottom: $global-spacing-unit;
-  margin-bottom: $global-spacing-unit;
 }
 
 /* Darker panels
@@ -51,7 +62,7 @@ $panel-background-color-dark: color(dark-ui) !default;
     text-decoration: none !important;
   }
 
-  .c-panel--dark &{
+  .c-panel--dark & {
     color: color(white);
   }
 }
