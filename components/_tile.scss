@@ -10,8 +10,14 @@ $tile-animation-speed: $global-animation-speed;
 $tile-animation-speed-slow: $global-animation-speed-slow;
 $tile-shadow: $global-shadow !default;
 
+$tile-arrow-color: #bebec1 !default;
+$tile-arrow-size: $global-spacing-unit-small !default;
+
 /**
  * The base of the tile; provides the glass "border" and shadow. Nothing else.
+ *
+ * 1. Need to take off an extra pixel here to allow for browser rendering/
+ * rounding quirks.
  */
 .c-tile {
   position: relative;
@@ -20,6 +26,23 @@ $tile-shadow: $global-shadow !default;
   border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
   margin-bottom: $global-spacing-unit;
+
+  &.is-selected {
+    // Arrow markers to signify panel relationship
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      bottom: -$global-spacing-unit - 1px; /* [1] */
+      left: 50%;
+      width: 0;
+      height: 0;
+      margin-left: -$tile-arrow-size/2;
+      border-left: $tile-arrow-size solid transparent;
+      border-right: $tile-arrow-size solid transparent;
+      border-bottom: $tile-arrow-size solid $tile-arrow-color;
+    }
+  }
 }
 
 /**

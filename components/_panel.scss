@@ -2,10 +2,8 @@
    COMPONENTS / PANEL
    ========================================================================== */
 
-$panel-shadow: $global-shadow inset !default;
-$panel-arrow-color: #e4e4e4 !default;
-$panel-arrow-size: $global-spacing-unit-small !default;
-$panel-background-color: #fff !default;
+$panel-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.3) inset, 0 -5px 30px -5px rgba(0, 0, 0, 0.3) inset !default;
+$panel-background-color: color(light-ui) !default;
 
 /**
  * 1. Break the panel outside of the current container (typically
@@ -21,20 +19,4 @@ $panel-background-color: #fff !default;
   padding-top: $global-spacing-unit;
   padding-bottom: $global-spacing-unit;
   margin-bottom: $global-spacing-unit;
-
-  // Arrow to signify Tile relationship
-  &::before {
-    display: block;
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    margin-left: -$panel-arrow-size/2;
-    border-left: $panel-arrow-size solid transparent;
-    border-right: $panel-arrow-size solid transparent;
-    border-bottom: $panel-arrow-size solid $panel-arrow-color;
-  }
-
 }
