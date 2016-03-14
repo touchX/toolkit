@@ -1,0 +1,40 @@
+/* ==========================================================================
+   COMPONENTS / PANEL
+   ========================================================================== */
+
+$panel-shadow: $global-shadow inset !default;
+$panel-arrow-color: #e4e4e4 !default;
+$panel-arrow-size: $global-spacing-unit-small !default;
+$panel-background-color: #fff !default;
+
+/**
+ * 1. Break the panel outside of the current container (typically
+ * `o-container`).
+ */
+.c-panel {
+  position: relative; /* [1] */
+  left: 50%; /* [1] */
+  width: 100vw; /* [1] */
+  margin-left: -50vw; /* [1] */
+  background: $panel-background-color;
+  box-shadow: $panel-shadow;
+  padding-top: $global-spacing-unit;
+  padding-bottom: $global-spacing-unit;
+  margin-bottom: $global-spacing-unit;
+
+  // Arrow to signify Tile relationship
+  &::before {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    margin-left: -$panel-arrow-size/2;
+    border-left: $panel-arrow-size solid transparent;
+    border-right: $panel-arrow-size solid transparent;
+    border-bottom: $panel-arrow-size solid $panel-arrow-color;
+  }
+
+}
