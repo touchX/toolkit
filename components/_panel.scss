@@ -15,12 +15,12 @@ $panel-background-color-dark: color(dark-ui) !default;
   left: 50%; /* [1] */
   width: 100vw; /* [1] */
   margin-left: -50vw; /* [1] */
-  max-height: 0;
   background: $panel-background-color;
   box-shadow: $panel-shadow;
   transition: $global-animation-speed linear;
   transition-property: max-height, margin-bottom;
   overflow: hidden;
+  max-height: 0;
 
   &.is-open {
     max-height: 100vh;
@@ -44,19 +44,23 @@ $panel-background-color-dark: color(dark-ui) !default;
 /* Toggle links
   =========================================== */
 
+/**
+  * Close button for panels
+  */
+
 .c-panel__toggle {
+  @include font-size($text-body-small, 1);
+
   position: absolute;
   top: $global-spacing-unit-small;
   right: $global-spacing-unit-small;
-  font-size: $text-body-small;
   color: color(text);
-  line-height: 1;
 
   &::after {
     display: inline-block;
     position: relative;
     top: 0.15em;
-    content: "\2715";
+    content: "\2715"; // ×
     font-size: 1.5em;
     margin-left: $global-spacing-unit-tiny;
     text-decoration: none !important;
