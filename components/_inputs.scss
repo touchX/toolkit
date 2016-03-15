@@ -1,0 +1,33 @@
+/* ==========================================================================
+   COMPONENTS / SELECT
+   ========================================================================== */
+
+$input-shadow: 0px 0px 0px 0 rgba(0,0,0,0.2);
+$input-shadow-focus: 0px 0px 8px 0 rgba(0,0,0,0.2);
+$input-shadow-error: 0px 0px 8px 0 rgba(255,39,68,0.73);
+
+.c-input-text {
+  @include font-size($text-body-small);
+  background-color: color(white);
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  border: 1px solid color(keyline);
+  border-radius: $global-border-radius;
+  box-shadow: $input-shadow;
+  outline: 0;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+
+  &:focus {
+    box-shadow: $input-shadow-focus;
+    border-color: color(white);
+  }
+}
+
+.c-input-text.is-error {
+  border-color: color(error);
+
+  &:focus {
+    border-color: color(white);
+    box-shadow: $input-shadow-error;
+  }
+}
