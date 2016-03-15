@@ -10,8 +10,19 @@ $tile-animation-speed: $global-animation-speed;
 $tile-animation-speed-slow: $global-animation-speed-slow;
 $tile-shadow: $global-shadow !default;
 
+$tile-arrow-color: #bebec1 !default;
+$tile-arrow-size: $global-spacing-unit-small !default;
+
 /**
- * The base of the tile; provides the glass "border" and shadow. Nothing else.
+ * The base of the tile; provides the glass "border" and shadow.
+ *
+ * Also provides selected state, which gives a triangle arrowhead marker between
+ * The tile and it's panel.
+ *
+ * 1. Need to take off an extra pixel here to allow for browser rendering/
+ * rounding quirks.
+ * 2. Position tile marker below the centre of the tile
+ * 3. Use borders and empty element to display a triangle
  */
 .c-tile {
   position: relative;
@@ -20,6 +31,27 @@ $tile-shadow: $global-shadow !default;
   border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
   margin-bottom: $global-spacing-unit;
+
+  &.is-selected {
+    // Arrow markers to signify panel relationship
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;  /* [2] */
+      bottom: -$global-spacing-unit - 1px; /* [1, 2] */
+      left: 50%;  /* [2] */
+      width: 0; /* [3] */
+      height: 0; /* [3] */
+      margin-left: -$tile-arrow-size/2; /* [2] */
+      border-left: $tile-arrow-size solid transparent; /* [3] */
+      border-right: $tile-arrow-size solid transparent; /* [3] */
+      border-bottom: $tile-arrow-size solid $tile-arrow-color; /* [3] */
+    }
+  }
+
+  &.c-tile--dark.is-selected::before {
+    border-bottom-color: color(dark-ui);
+  }
 }
 
 /**
