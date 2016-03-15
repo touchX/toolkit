@@ -3,8 +3,8 @@
    ========================================================================== */
 
 $panel-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.3) inset, 0 -5px 30px -5px rgba(0, 0, 0, 0.3) inset !default;
-$panel-background-color: color(light-ui) !default;
-$panel-background-color-dark: color(dark-ui) !default;
+$panel-background-color: color(ui-light) !default;
+$panel-background-color-dark: color(ui-dark) !default;
 
 /**
  * 1. Break the panel outside of the current container (typically
