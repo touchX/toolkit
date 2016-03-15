@@ -22,7 +22,7 @@
 }
 
 .c-heading-gamma {
-  @include font-size($text-gamma);
+  @include font-size($text-gamma, 1.3);
 }
 
 .c-heading-delta {
