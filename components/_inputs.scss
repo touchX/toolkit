@@ -2,9 +2,9 @@
    COMPONENTS / SELECT
    ========================================================================== */
 
-$input-shadow: 0px 0px 0px 0 rgba(0,0,0,0.2);
-$input-shadow-focus: 0px 0px 8px 0 rgba(0,0,0,0.2);
-$input-shadow-error: 0px 0px 8px 0 rgba(255,39,68,0.73);
+$input-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+$input-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+$input-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
 
 .c-input-text {
   @include font-size($text-body-small);
