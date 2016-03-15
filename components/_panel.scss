@@ -46,20 +46,22 @@ $panel-background-color-dark: color(dark-ui) !default;
 
 /**
   * Close button for panels
+  * 1. Position the button in top right of panel
+  * 2. Offset cross icon to align with text
   */
 
 .c-panel__toggle {
   @include font-size($text-body-small, 1);
 
-  position: absolute;
-  top: $global-spacing-unit-small;
-  right: $global-spacing-unit-small;
+  position: absolute; /* [1] */
+  top: $global-spacing-unit-small; /* [1] */
+  right: $global-spacing-unit-small; /* [1] */
   color: color(text);
 
   &::after {
     display: inline-block;
-    position: relative;
-    top: 0.15em;
+    position: relative;  /* [2] */
+    top: 0.15em;  /* [2] */
     content: "\2715"; // ×
     font-size: 1.5em;
     margin-left: $global-spacing-unit-tiny;
