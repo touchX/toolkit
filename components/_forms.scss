@@ -1,0 +1,88 @@
+/* ==========================================================================
+   COMPONENTS / FORMS
+   ========================================================================== */
+
+$form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+$form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+$form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
+
+/* Form list
+  =========================================== */
+
+.c-form-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c-form-list__item {
+  margin-bottom: $global-spacing-unit;
+}
+
+/* Form inputs and labels
+  =========================================== */
+
+.c-form-label {
+  @include font-size($text-body-small);
+  display: block;
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+.c-form-label--inline {
+  display: inline-block;
+  margin-right: $global-spacing-unit-tiny;
+}
+
+.c-form-input {
+  @include font-size($text-body-small);
+  background-color: color(white);
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  border: 1px solid color(keyline);
+  border-radius: $global-border-radius;
+  box-shadow: $form-shadow;
+  outline: 0;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+  width: 16em;
+  -webkit-appearance: none;
+
+  &:focus {
+    box-shadow: $form-shadow-focus;
+    border-color: color(white);
+  }
+}
+
+.c-form-input.is-error,
+.c-form-input:invalid {
+  border-color: color(error);
+
+  &:focus {
+    border-color: color(white);
+    box-shadow: $form-shadow-error;
+  }
+}
+
+/**
+* For inputs that need to display full-width.
+*/
+.c-form-input--full {
+  width: 100%;
+}
+
+/**
+* For inputs that need to display full-width on small devices only.
+*/
+.c-form-input--full\@small {
+  @include mq($until: medium) {
+    display: block;
+    width: 100%;
+  }
+}
+
+.c-form-required {
+  color: color(error);
+  // Doubling up specificity to override normalize
+  &#{&} {
+    border-bottom: none;
+  }
+}
