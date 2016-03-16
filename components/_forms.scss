@@ -5,6 +5,7 @@
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
+$form-width: 16em;
 
 /* Form list
   =========================================== */
@@ -19,7 +20,22 @@ $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
   margin-bottom: $global-spacing-unit;
 }
 
-/* Form inputs and labels
+/* Form pair
+  =========================================== */
+
+.c-form-pair {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.c-form-pair__text,
+.c-form-pair__input {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* Form labels
   =========================================== */
 
 .c-form-label {
@@ -33,6 +49,9 @@ $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
   margin-right: $global-spacing-unit-tiny;
 }
 
+/* Form text inputs
+  =========================================== */
+
 .c-form-input {
   @include font-size($text-body-small);
   background-color: color(white);
@@ -43,7 +62,7 @@ $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
   outline: 0;
   transition: box-shadow 0.25s ease, border-color 0.25s ease;
   will-change: transform;
-  width: 16em;
+  width: $form-width;
   -webkit-appearance: none;
 
   &:focus {
@@ -61,6 +80,54 @@ $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
     box-shadow: $form-shadow-error;
   }
 }
+
+/* Form select inputs
+  =========================================== */
+
+.c-form-select {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: $global-spacing-unit-small;
+    margin-top: -$global-spacing-unit-tiny + 1px;
+    width: $global-spacing-unit-small;
+    height: $global-spacing-unit-small;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAYAAAA5DDySAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPVJREFUeNrk2s0NgzAMhmFno47EKGzQETpSR2CEjkCjyEg0aiAhP7Y/IuUSuLyPhDg4RLycc5PfH78fBLy48/3TyYcrb1iEv53RISxCqpM4dkVGSMSHTakHKAhH8RvAExXhLD58AvziCw0hJz7+E8AgFMcjIVyOR0CojreM0CzeIkLzeEsI3eItIHSP14wwLF4jwvB4TQhi8RoQxOMlEdTESyCoix+JoDZ+BIL6+J4IZuJ7IJiLb4lgNr4Fgvn4GgSY+CsIcPGFCDP0bCIDAXowU4OANZ8sRMCcUGciYN9ROEGAv6BxhHCP+B3CvLubsEjFfwUYAKjtGJxFvDJsAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+
+.c-form-select__dropdown {
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-size: 18px;
+  line-height: 30px;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 12px;
+  border-color: #c0c0c0;
+  background-color: #fff;
+  width: $form-width;
+  box-shadow: $form-shadow;
+  outline: 0;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.c-form-select__dropdown:focus {
+  box-shadow: $form-shadow-focus;
+  border-color: color(white);
+}
+
+/* Form modifiers
+  =========================================== */
 
 /**
 * For inputs that need to display full-width.
