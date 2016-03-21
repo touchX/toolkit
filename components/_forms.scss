@@ -6,6 +6,7 @@ $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
 $form-width: 16em;
+$form-font-size: $text-body-small;
 
 /* Form list
   =========================================== */
@@ -35,11 +36,23 @@ $form-width: 16em;
   vertical-align: middle;
 }
 
+.c-form-pair__text {
+  width: 10em;
+}
+
+.c-form-pair--top {
+  .c-form-pair__text,
+  .c-form-pair__input {
+    display: table-cell;
+    vertical-align: top;
+  }
+}
+
 /* Form labels
   =========================================== */
 
 .c-form-label {
-  @include font-size($text-body-small);
+  @include font-size($form-font-size);
   display: block;
   margin-bottom: $global-spacing-unit-tiny;
 }
@@ -53,7 +66,7 @@ $form-width: 16em;
   =========================================== */
 
 .c-form-input {
-  @include font-size($text-body-small);
+  @include font-size($form-font-size);
   background-color: color(white);
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
   border: 1px solid color(keyline);
@@ -81,10 +94,48 @@ $form-width: 16em;
   }
 }
 
+.c-form-input--long {
+  height: 6em;
+}
+
+/* Form date inputs
+  =========================================== */
+
+.c-form-date {
+  @include font-size($form-font-size);
+  background-color: color(white);
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  border: 1px solid color(keyline);
+  border-radius: $global-border-radius;
+  box-shadow: $form-shadow;
+  outline: 0;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+  width: $form-width;
+
+  &::-webkit-datetime-edit-month-field {
+    padding: 2px;
+  }
+
+  &::-webkit-datetime-edit-day-field {
+    padding-right: 2px;
+  }
+
+  &::-webkit-datetime-edit-year-field {
+    padding-left: 2px;
+  }
+
+  &:focus {
+    box-shadow: $form-shadow-focus;
+    border-color: color(white);
+  }
+}
+
 /* Form select inputs
   =========================================== */
 
 .c-form-select {
+  @include font-size($form-font-size);
   position: relative;
   display: inline-block;
   cursor: pointer;
@@ -92,9 +143,8 @@ $form-width: 16em;
   &::after {
     content: "";
     position: absolute;
-    top: 50%;
+    bottom: $global-spacing-unit-small - 1px;
     right: $global-spacing-unit-small;
-    margin-top: -$global-spacing-unit-tiny + 1px;
     width: $global-spacing-unit-small;
     height: $global-spacing-unit-small;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAYAAAA5DDySAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPVJREFUeNrk2s0NgzAMhmFno47EKGzQETpSR2CEjkCjyEg0aiAhP7Y/IuUSuLyPhDg4RLycc5PfH78fBLy48/3TyYcrb1iEv53RISxCqpM4dkVGSMSHTakHKAhH8RvAExXhLD58AvziCw0hJz7+E8AgFMcjIVyOR0CojreM0CzeIkLzeEsI3eItIHSP14wwLF4jwvB4TQhi8RoQxOMlEdTESyCoix+JoDZ+BIL6+J4IZuJ7IJiLb4lgNr4Fgvn4GgSY+CsIcPGFCDP0bCIDAXowU4OANZ8sRMCcUGciYN9ROEGAv6BxhHCP+B3CvLubsEjFfwUYAKjtGJxFvDJsAAAAAElFTkSuQmCC");
@@ -105,9 +155,9 @@ $form-width: 16em;
 }
 
 .c-form-select__dropdown {
+  @include font-size($form-font-size);
   cursor: pointer;
   -webkit-appearance: none;
-  font-size: 18px;
   line-height: 30px;
   padding-top: 5px;
   padding-right: 15px;
@@ -124,6 +174,59 @@ $form-width: 16em;
 .c-form-select__dropdown:focus {
   box-shadow: $form-shadow-focus;
   border-color: color(white);
+}
+
+/* Form checkbox inputs
+  =========================================== */
+
+.c-form-checkbox {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.c-form-checkbox--full {
+  display: block;
+}
+
+.c-form-checkbox__input {
+  display: none;
+}
+
+.c-form-checkbox__faux {
+  display: inline-block;
+  margin-right: $global-spacing-unit-tiny;
+  width: 18px;
+  height: 18px;
+  border: 1px solid color(keyline);
+  background-color: color(white);
+  position: relative;
+  top: 3px;
+}
+
+.c-form-checkbox--radio .c-form-checkbox__faux {
+  border-radius: 100%;
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__faux {
+  border-color: color(brand);
+  background-color: color(brand);
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
+  content: "";
+  position: absolute;
+  width: $global-spacing-unit-small;
+  height: $global-spacing-unit-small;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAuCAYAAACYlx/0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQNJREFUeNrsmO0NgyAURRnBETpCR+kIbNQRHMERHKEjOEJHoGA0MaQJ+AWP++5L+GUCnmOExzVGWTnnej8GPzqjFH6tjyoJEfxao2b4uVTDwwtIwYfnhCc84QlPeMITnvCEJzzhCU941fAhHvLjpRX+sWRkoaxG+G80sVXzz2++vJMioeiGl1jIQsMvC05SJFQ56vykzz97QHEJVc/52hJENDm1JIjq8EpLENnelpIgure/W0ITF5u7JDR1q7taQpNX2qskNH2fPysBIsw4KgEqydkrATLGypUAneFlSsAOME9IwElvD0jAi653SIDO7VMScOEzJODDRxLGDfxb+jv/BBgAG1C+DbIBN9MAAAAASUVORK5CYII=");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border: solid 1px transparent;
+}
+
+.c-form-checkbox--radio .c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
+  content: normal;
 }
 
 /* Form modifiers
