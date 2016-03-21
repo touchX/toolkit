@@ -179,11 +179,14 @@ $form-width: 16em;
  *     <abbr title="Required field" class="c-form-required">*</abbr>
  *   </label>
  *
+ * 1. Double up the selector’s specificity in order to override some hangover
+ *    from Normalize.css.
+ *
  */
 .c-form-required {
   color: color(error);
-  // Doubling up specificity to override normalize
-  &#{&} {
+
+  &#{&} { /* [1] */
     border-bottom: none;
   }
 }
