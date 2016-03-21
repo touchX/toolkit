@@ -11,6 +11,13 @@ $form-font-size: $text-body-small;
 /* Form list
   =========================================== */
 
+/**
+ * All form fields should be presented in a list so that
+ *
+ *   a) they are easier to navigate using a screenreader;
+ *   b) if CSS fails to load for any reason, the user is still presented with a
+ *      well-formatted list of fields.
+ */
 .c-form-list {
   margin: 0;
   padding: 0;
@@ -24,6 +31,9 @@ $form-font-size: $text-body-small;
 /* Form pair
   =========================================== */
 
+/**
+ * Pairs of form labels and inputs should be wrapped in a form-pair component.
+ */
 .c-form-pair {
   display: table;
   table-layout: fixed;
@@ -51,6 +61,16 @@ $form-font-size: $text-body-small;
 /* Form labels
   =========================================== */
 
+/**
+ * All LABEL elements must also carry a class of `.c-form-label`. By applying
+ * these styles to a class and not to the LABEL element directly, we are free
+ * to reuse the same look-and-feel on spoofed LABEL elements. E.g. when we have
+ * a ‘meta label’ covering a number of sub labels:
+ *
+ *   Gender
+ *   • Male  • Female  • Rather not say
+ *
+ */
 .c-form-label {
   @include font-size($form-font-size);
   display: block;
@@ -65,6 +85,10 @@ $form-font-size: $text-body-small;
 /* Form text inputs
   =========================================== */
 
+/**
+ * All text-like form inputs require a class of `.c-form-input`: we do not use
+ * selectors like `input[type="text"] {}`.
+ */
 .c-form-input {
   @include font-size($form-font-size);
   background-color: color(white);
@@ -249,10 +273,23 @@ $form-font-size: $text-body-small;
   }
 }
 
+/**
+ * All required fields must have a styled piece of text present in their LABEL
+ * element indicating that they are mandatory, e.g.:
+ *
+ *   <label for="f-name">
+ *     Full name
+ *     <abbr title="Required field" class="c-form-required">*</abbr>
+ *   </label>
+ *
+ * 1. Double up the selector’s specificity in order to override some hangover
+ *    from Normalize.css.
+ *
+ */
 .c-form-required {
   color: color(error);
-  // Doubling up specificity to override normalize
-  &#{&} {
+
+  &#{&} { /* [1] */
     border-bottom: none;
   }
 }
