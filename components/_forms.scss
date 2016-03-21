@@ -4,7 +4,7 @@
 
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
-$form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.73);
+$form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.75);
 $form-width: 16em;
 $form-font-size: $text-body-small;
 
@@ -34,27 +34,33 @@ $form-font-size: $text-body-small;
 /**
  * Pairs of form labels and inputs should be wrapped in a form-pair component.
  */
-.c-form-pair {
+.c-form-pair,
+.c-form-pair__label,
+.c-form-pair__input {
+  display: block;
+}
+
+.c-form-pair__label {
+  width: 10em;
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+/**
+ * Pairs can also be displayed inline.
+ */
+.c-form-pair--inline {
   display: table;
   table-layout: fixed;
   width: 100%;
-}
 
-.c-form-pair__text,
-.c-form-pair__input {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.c-form-pair__text {
-  width: 10em;
-}
-
-.c-form-pair--top {
-  .c-form-pair__text,
+  .c-form-pair__label,
   .c-form-pair__input {
     display: table-cell;
     vertical-align: top;
+  }
+
+  .c-form-pair__label {
+    margin-right: $global-spacing-unit-tiny;
   }
 }
 
@@ -74,12 +80,6 @@ $form-font-size: $text-body-small;
 .c-form-label {
   @include font-size($form-font-size);
   display: block;
-  margin-bottom: $global-spacing-unit-tiny;
-}
-
-.c-form-label--inline {
-  display: inline-block;
-  margin-right: $global-spacing-unit-tiny;
 }
 
 /* Form text inputs
@@ -118,6 +118,9 @@ $form-font-size: $text-body-small;
   }
 }
 
+/**
+ * For use on large text inputs such as textareas
+ */
 .c-form-input--long {
   height: 6em;
 }
@@ -125,6 +128,12 @@ $form-font-size: $text-body-small;
 /* Form date inputs
   =========================================== */
 
+/**
+ * All date-like form inputs require a class of `.c-form-date`: we do not use
+ * selectors like `input[type="date"] {}`.
+ * Please note the date input is only supported on Edge, Chrome, Opera,
+ * iOS Safari and Android. Other browsers will fallback to a text field.
+ */
 .c-form-date {
   @include font-size($form-font-size);
   background-color: color(white);
@@ -137,16 +146,19 @@ $form-font-size: $text-body-small;
   will-change: transform;
   width: $form-width;
 
+  /**
+   * 1. Padding between forward slashes in the date format
+   */
   &::-webkit-datetime-edit-month-field {
-    padding: 2px;
+    padding: 2px; /* 1 */
   }
 
   &::-webkit-datetime-edit-day-field {
-    padding-right: 2px;
+    padding-right: 2px; /* 1 */
   }
 
   &::-webkit-datetime-edit-year-field {
-    padding-left: 2px;
+    padding-left: 2px; /* 1 */
   }
 
   &:focus {
@@ -204,7 +216,7 @@ $form-font-size: $text-body-small;
   =========================================== */
 
 .c-form-checkbox {
-  font-size: 18px;
+  font-size: $form-font-size;
   cursor: pointer;
 }
 
@@ -219,8 +231,8 @@ $form-font-size: $text-body-small;
 .c-form-checkbox__faux {
   display: inline-block;
   margin-right: $global-spacing-unit-tiny;
-  width: 18px;
-  height: 18px;
+  width: $form-font-size;
+  height: $form-font-size;
   border: 1px solid color(keyline);
   background-color: color(white);
   position: relative;
