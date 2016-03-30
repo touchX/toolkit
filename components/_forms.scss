@@ -55,7 +55,6 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-pair--inline {
   @include mq($from: medium) {
     display: table;
-    table-layout: fixed;
 
     .c-form-pair__label,
     .c-form-pair__input {
