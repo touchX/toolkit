@@ -34,9 +34,7 @@ $form-animation-speed: $global-animation-speed-fast;
 /**
  * Pairs of form labels and inputs should be wrapped in a form-pair component.
  */
-.c-form-pair,
-.c-form-pair__label,
-.c-form-pair__input {
+.c-form-pair {
   display: block;
   width: 100%;
 
