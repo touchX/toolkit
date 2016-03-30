@@ -5,8 +5,8 @@
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(255, 39, 68, 0.75);
-$form-width: 16em;
 $form-font-size: $text-body-small;
+$form-animation-speed: $global-animation-speed-fast;
 
 /* Form list
   =========================================== */
@@ -38,10 +38,14 @@ $form-font-size: $text-body-small;
 .c-form-pair__label,
 .c-form-pair__input {
   display: block;
+  width: 100%;
+
+  @include mq($from: medium) {
+    width: 16em;
+  }
 }
 
 .c-form-pair__label {
-  width: 10em;
   margin-bottom: $global-spacing-unit-tiny;
 }
 
@@ -49,18 +53,19 @@ $form-font-size: $text-body-small;
  * Pairs can also be displayed inline.
  */
 .c-form-pair--inline {
-  display: table;
-  table-layout: fixed;
-  width: 100%;
+  @include mq($from: medium) {
+    display: table;
+    table-layout: fixed;
 
-  .c-form-pair__label,
-  .c-form-pair__input {
-    display: table-cell;
-    vertical-align: top;
-  }
+    .c-form-pair__label,
+    .c-form-pair__input {
+      display: table-cell;
+      vertical-align: top;
+    }
 
-  .c-form-pair__label {
-    margin-right: $global-spacing-unit-tiny;
+    .c-form-pair__label {
+      margin-right: $global-spacing-unit-tiny;
+    }
   }
 }
 
@@ -79,7 +84,7 @@ $form-font-size: $text-body-small;
  */
 .c-form-label {
   @include font-size($form-font-size);
-  display: block;
+  display: inline-block;
 }
 
 /* Form text inputs
@@ -91,20 +96,21 @@ $form-font-size: $text-body-small;
  */
 .c-form-input {
   @include font-size($form-font-size);
-  background-color: color(white);
+  display: inline-block;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  width: 100%;
+  background-color: color(white);
   border: 1px solid color(keyline);
   border-radius: $global-border-radius;
   box-shadow: $form-shadow;
+  transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
   will-change: transform;
-  width: $form-width;
   -webkit-appearance: none;
 
   &:focus {
-    box-shadow: $form-shadow-focus;
     border-color: color(white);
+    box-shadow: $form-shadow-focus;
   }
 }
 
@@ -136,15 +142,16 @@ $form-font-size: $text-body-small;
  */
 .c-form-date {
   @include font-size($form-font-size);
-  background-color: color(white);
+  display: inline-block;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  width: 100%;
+  background-color: color(white);
   border: 1px solid color(keyline);
   border-radius: $global-border-radius;
   box-shadow: $form-shadow;
+  transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
   will-change: transform;
-  width: $form-width;
 
   /**
    * 1. Padding between forward slashes in the date format
@@ -162,8 +169,8 @@ $form-font-size: $text-body-small;
   }
 
   &:focus {
-    box-shadow: $form-shadow-focus;
     border-color: color(white);
+    box-shadow: $form-shadow-focus;
   }
 }
 
@@ -172,14 +179,15 @@ $form-font-size: $text-body-small;
 
 .c-form-select {
   @include font-size($form-font-size);
-  position: relative;
   display: inline-block;
+  position: relative;
+  width: 100%;
   cursor: pointer;
 
   &::after {
     content: "";
     position: absolute;
-    bottom: $global-spacing-unit-small - 1px;
+    bottom: $global-spacing-unit-small - 2;
     right: $global-spacing-unit-small;
     width: $global-spacing-unit-small;
     height: $global-spacing-unit-small;
@@ -192,24 +200,20 @@ $form-font-size: $text-body-small;
 
 .c-form-select__dropdown {
   @include font-size($form-font-size);
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  width: 100%;
+  border-color: color(keyline);
+  background-color: color(white);
+  box-shadow: $form-shadow;
+  transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
+  outline: 0;
   cursor: pointer;
   -webkit-appearance: none;
-  line-height: 30px;
-  padding-top: 5px;
-  padding-right: 15px;
-  padding-bottom: 5px;
-  padding-left: 12px;
-  border-color: #c0c0c0;
-  background-color: #fff;
-  width: $form-width;
-  box-shadow: $form-shadow;
-  outline: 0;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .c-form-select__dropdown:focus {
-  box-shadow: $form-shadow-focus;
   border-color: color(white);
+  box-shadow: $form-shadow-focus;
 }
 
 /* Form checkbox inputs
@@ -231,12 +235,12 @@ $form-font-size: $text-body-small;
 .c-form-checkbox__faux {
   display: inline-block;
   margin-right: $global-spacing-unit-tiny;
-  width: $form-font-size;
-  height: $form-font-size;
-  border: 1px solid color(keyline);
-  background-color: color(white);
   position: relative;
+  width: $form-font-size;
   top: 3px;
+  height: $form-font-size;
+  background-color: color(white);
+  border: 1px solid color(keyline);
 }
 
 .c-form-checkbox--radio .c-form-checkbox__faux {
@@ -244,9 +248,9 @@ $form-font-size: $text-body-small;
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__faux {
-  border-color: color(brand);
   background-color: color(brand);
-  transition: border-color 0.25s ease, background-color 0.25s ease;
+  border-color: color(brand);
+  transition: border-color $form-animation-speed ease, background-color $form-animation-speed ease;
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
@@ -267,23 +271,6 @@ $form-font-size: $text-body-small;
 
 /* Form modifiers
   =========================================== */
-
-/**
-* For inputs that need to display full-width.
-*/
-.c-form-input--full {
-  width: 100%;
-}
-
-/**
-* For inputs that need to display full-width on small devices only.
-*/
-.c-form-input--full\@small {
-  @include mq($until: medium) {
-    display: block;
-    width: 100%;
-  }
-}
 
 /**
  * All required fields must have a styled piece of text present in their LABEL
