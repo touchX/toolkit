@@ -24,9 +24,12 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 ## Getting Started & Documentation
 
-Documentation will exist in the Wiki for this repo.
+**Note**: The Toolkit is still in active development and not yet 100% stable. This means breaking updates may occur, minor issues and quirks may be present, and full browser support is not guaranteed.
 
-See the wiki for how to get started working on [GitHub pages](https://github.com/sky-uk/toolkit/wiki/GitHub-Pages).
+
+See the wiki for:
+- how to [implement the Toolkit in your project](https://github.com/sky-uk/toolkit/wiki/Getting-started).
+- how to [get started working on GitHub pages](https://github.com/sky-uk/toolkit/wiki/GitHub-Pages).
 
 ## Maintainers
 
