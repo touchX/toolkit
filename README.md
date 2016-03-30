@@ -26,6 +26,7 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 **Note**: The Toolkit is still in active development and not yet 100% stable. This means breaking updates may occur, minor issues and quirks may be present, and full browser support is not guaranteed.
 
+Currently available Toolkit components are available at: http://sky-uk.github.io/toolkit/
 
 See the wiki for:
 - how to [implement the Toolkit in your project](https://github.com/sky-uk/toolkit/wiki/Getting-started).
@@ -38,8 +39,9 @@ See the wiki for:
 
 ## Contributors
 
-- [Rich McIntyre](https://github.com/mackstar) - richard.mcintyre@sky.uk
 - [Harry Roberts](https://github.com/csswizardry) - [@csswizardry](https://twitter.com/csswizardry)
+- [Callum Barratt](https://github.com/cbarratt) - callum.barratt@sky.uk
+- [Luke Barratt](https://github.com/lbarratt) - luke.barratt@sky.uk
 
 Feel free to open a pull request to include yourself in this list. 
 
