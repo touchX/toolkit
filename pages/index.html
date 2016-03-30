@@ -308,23 +308,23 @@ layout: default
       <legend>Example form</legend>
         <ul class="c-form-list">
           <li class="c-form-list__item  c-form-pair">
-            <label class="c-form-label" for="f-username">
+            <label class="c-form-label  c-form-pair__label" for="f-username">
               Username <abbr title="This field is required" class="c-form-required">*</abbr>
             </label>
-            <input id="f-username" class="c-form-input" type="text" placeholder="e.g. hulk42"/>
+            <input id="f-username" class="c-form-input  c-form-pair__input" type="text" placeholder="e.g. hulk42"/>
           </li>
           <li class="c-form-list__item  c-form-pair">
-            <label class="c-form-label" for="f-email">
+            <label class="c-form-label  c-form-pair__label" for="f-email">
               Email <abbr title="This field is required" class="c-form-required">*</abbr>
             </label>
-            <input id="f-email" class="c-form-input" type="email" placeholder="e.g. ironman@avengers.com"/>
+            <input id="f-email" class="c-form-input  c-form-pair__input" type="email" placeholder="e.g. ironman@avengers.com"/>
           </li>
           <li class="c-form-list__item  c-form-pair">
             <label class="c-form-select">
-              <span class="c-form-label">
+              <span class="c-form-label  c-form-pair__label">
                 Select a hero <abbr title="This field is required" class="c-form-required">*</abbr>
               </span>
-              <select class="c-form-select__dropdown">
+              <select class="c-form-select__dropdown  c-form-pair__input">
                 <option value="" disabled selected>Heroes</option>
                 <option value="captainAmerica">Captain America</option>
                 <option value="ironMan">Iron Man</option>
@@ -363,9 +363,9 @@ layout: default
             </label>
             <textarea id="f-message" class="c-form-input  c-form-input--long  c-form-pair__input" placeholder="Enter a message"></textarea>
           </li>
-          <li class="c-form-list__item  c-form-pair">
+          <li class="c-form-list__item">
             <label class="c-form-checkbox">
-              <input type="checkbox" class="c-form-checkbox__input  c-form-pair__input" name="f-terms" />
+              <input type="checkbox" class="c-form-checkbox__input" name="f-terms" />
               <span class="c-form-checkbox__faux"></span>
               I agree to the terms & conditions
             </label>
