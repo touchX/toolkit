@@ -287,5 +287,6 @@ $form-animation-speed: $global-animation-speed-fast;
 
   &#{&} { /* [1] */
     border-bottom: none;
+    text-decoration: none;
   }
 }
