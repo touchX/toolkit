@@ -10,8 +10,9 @@ $tile-animation-speed: $global-animation-speed;
 $tile-animation-speed-slow: $global-animation-speed-slow;
 $tile-shadow: $global-shadow !default;
 
-$tile-arrow-color: #bebec1 !default;
-$tile-arrow-size: $global-spacing-unit-small !default;
+$tile-arrow-size: 22px !default;
+$tile-arrow-color: #e6e6ea;
+$tile-shadow-color: rgba(160, 160, 160, 0.5);
 
 /**
  * The base of the tile; provides the glass "border" and shadow.
@@ -19,10 +20,7 @@ $tile-arrow-size: $global-spacing-unit-small !default;
  * Also provides selected state, which gives a triangle arrowhead marker between
  * The tile and it's panel.
  *
- * 1. Need to take off an extra pixel here to allow for browser rendering/
- * rounding quirks.
- * 2. Position tile marker below the centre of the tile
- * 3. Use borders and empty element to display a triangle
+ * 1. Forces tile markers to sit above corresponding panels
  */
 .c-tile {
   position: relative;
@@ -31,26 +29,38 @@ $tile-arrow-size: $global-spacing-unit-small !default;
   border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
   margin-bottom: $global-spacing-unit;
+  will-change: transform;
+  z-index: 10; /* [1] */
 
   &.is-selected {
-    // Arrow markers to signify panel relationship
+    /**
+     * Arrow markers to signify panel relationship.
+     *
+     * 1. Positions the marker between tile and panel
+     * 2. Need to take off an extra pixel here to allow for browser rendering/
+     *    rounding quirks.
+     * 3. Rotate 45deg to allow it to mask the panel gradient and look like a
+     *    notch in the panel
+     * 4. Gradients along the top and left to simulate shadow
+     */
     &::before {
       display: block;
       content: "";
-      position: absolute;  /* [2] */
-      bottom: -$global-spacing-unit - 1px; /* [1, 2] */
-      left: 50%;  /* [2] */
-      width: 0; /* [3] */
-      height: 0; /* [3] */
-      margin-left: -$tile-arrow-size/2; /* [2] */
-      border-left: $tile-arrow-size solid transparent; /* [3] */
-      border-right: $tile-arrow-size solid transparent; /* [3] */
-      border-bottom: $tile-arrow-size solid $tile-arrow-color; /* [3] */
+      position: absolute;  /* [1] */
+      bottom: -$global-spacing-unit - ($tile-arrow-size/2) - 1px; /* [1, 2] */
+      left: 50%;  /* [1] */
+      width: $tile-arrow-size;
+      height: $tile-arrow-size;
+      margin-left: -$tile-arrow-size/2; /* [1] */
+      transform: rotate(45deg);
+      background-color: $tile-arrow-color;
+      background-image: linear-gradient(to bottom, $tile-shadow-color 0%, rgba(0, 0, 0, 0) 15px), linear-gradient(to right, $tile-shadow-color 0%, rgba(0, 0, 0, 0) 15px) /* [4] */
     }
   }
 
   &.c-tile--dark.is-selected::before {
-    border-bottom-color: color(ui-dark);
+    background-color: color(ui-dark);
+    background-image: none;
   }
 }
 
@@ -134,6 +144,7 @@ $tile-arrow-size: $global-spacing-unit-small !default;
  */
 .c-tile__poster {
   transition: transform $tile-animation-speed-slow ease;
+  will-change: transform;
 
   .c-tile__link:hover & {
     transform: scale(1.05, 1.05);
@@ -148,7 +159,6 @@ $tile-arrow-size: $global-spacing-unit-small !default;
   @include background-gradient("small", "radial");
 
   position: relative;
-  transition: background $tile-animation-speed ease;
 
   @include mq($from: medium) {
     height: 45%;
@@ -157,6 +167,7 @@ $tile-arrow-size: $global-spacing-unit-small !default;
   // Pseudo element used for hover state background
   &::before {
     @include background-gradient("large", "radial");
+    will-change: transform;
 
     content: "";
     opacity: 0;
