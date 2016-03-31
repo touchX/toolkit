@@ -182,7 +182,8 @@ $form-animation-speed: $global-animation-speed-fast;
   &::after {
     content: "";
     position: absolute;
-    bottom: $global-spacing-unit-small - 2;
+    top: 50%;
+    transform: translateY(-50%);
     right: $global-spacing-unit-small;
     width: $global-spacing-unit-small;
     height: $global-spacing-unit-small;
@@ -190,6 +191,7 @@ $form-animation-speed: $global-animation-speed-fast;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
+    pointer-events: none;
   }
 }
 
