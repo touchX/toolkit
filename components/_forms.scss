@@ -1,0 +1,290 @@
+/* ==========================================================================
+   COMPONENTS / FORMS
+   ========================================================================== */
+
+$form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+$form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+$form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
+$form-background: color(white);
+$form-border: 1px solid color(keyline);
+$form-font-size: $text-body-small;
+$form-animation-speed: $global-animation-speed-fast;
+
+/* Form list
+  =========================================== */
+
+/**
+ * All form fields should be presented in a list so that
+ *
+ *   a) they are easier to navigate using a screenreader;
+ *   b) if CSS fails to load for any reason, the user is still presented with a
+ *      well-formatted list of fields.
+ */
+.c-form-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c-form-list__item {
+  display: block;
+  margin-bottom: $global-spacing-unit;
+  width: 100%;
+
+  @include mq($from: medium) {
+    width: 16em;
+  }
+}
+
+/* For any inputs that need to be displayed full-width */
+.c-form-list__item--full {
+  @include mq($from: medium) {
+    width: 100%;
+  }
+}
+
+/* Form pair
+  =========================================== */
+
+/**
+ * Inline pairs of form labels and inputs should be wrapped in a form-pair.
+ */
+.c-form-pair {
+  @include mq($from: medium) {
+    display: table;
+
+    .c-form-pair__label,
+    .c-form-pair__input {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .c-form-pair__label {
+      margin-right: $global-spacing-unit-tiny;
+    }
+  }
+}
+
+/* Form labels
+  =========================================== */
+
+/**
+ * All LABEL elements must also carry a class of `.c-form-label`. By applying
+ * these styles to a class and not to the LABEL element directly, we are free
+ * to reuse the same look-and-feel on spoofed LABEL elements. E.g. when we have
+ * a ‘meta label’ covering a number of sub labels:
+ *
+ *   Gender
+ *   • Male  • Female  • Rather not say
+ *
+ */
+.c-form-label {
+  @include font-size($form-font-size);
+  display: inline-block;
+  margin-bottom: $global-spacing-unit-tiny;
+}
+
+/* Form text inputs
+  =========================================== */
+
+/**
+ * All text-like form inputs require a class of `.c-form-input`: we do not use
+ * selectors like `input[type="text"] {}`.
+ */
+.c-form-input {
+  @include font-size($form-font-size);
+  display: inline-block;
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  width: 100%;
+  background-color: $form-background;
+  border: $form-border;
+  border-radius: $global-border-radius;
+  box-shadow: $form-shadow;
+  transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
+  outline: 0;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: $form-background;
+    box-shadow: $form-shadow-focus;
+  }
+}
+
+.c-form-input.is-error,
+.c-form-input:invalid {
+  border-color: color(error);
+
+  &:focus {
+    border-color: $form-background;
+    box-shadow: $form-shadow-error;
+  }
+}
+
+/**
+ * For use on large text inputs such as textareas
+ */
+.c-form-input--long {
+  height: 6em;
+}
+
+/* Form date inputs
+  =========================================== */
+
+/**
+ * All date-like form inputs require a class of `.c-form-date`: we do not use
+ * selectors like `input[type="date"] {}`.
+ * Please note the date input is only supported on Edge, Chrome, Opera,
+ * iOS Safari and Android. Other browsers will fallback to a text field.
+ */
+.c-form-date {
+  @include font-size($form-font-size);
+  display: inline-block;
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  width: 100%;
+  background-color: $form-background;
+  border: $form-border;
+  border-radius: $global-border-radius;
+  box-shadow: $form-shadow;
+  transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
+  outline: 0;
+
+  /**
+   * 1. Padding between forward slashes in the date format
+   */
+  &::-webkit-datetime-edit-month-field {
+    padding: 2px; /* 1 */
+  }
+
+  &::-webkit-datetime-edit-day-field {
+    padding-right: 2px; /* 1 */
+  }
+
+  &::-webkit-datetime-edit-year-field {
+    padding-left: 2px; /* 1 */
+  }
+
+  &:focus {
+    border-color: $form-background;
+    box-shadow: $form-shadow-focus;
+  }
+}
+
+/* Form select inputs
+  =========================================== */
+
+.c-form-select {
+  @include font-size($form-font-size);
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: $global-spacing-unit-small;
+    width: $global-spacing-unit-small;
+    height: $global-spacing-unit-small;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAYAAAA5DDySAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPVJREFUeNrk2s0NgzAMhmFno47EKGzQETpSR2CEjkCjyEg0aiAhP7Y/IuUSuLyPhDg4RLycc5PfH78fBLy48/3TyYcrb1iEv53RISxCqpM4dkVGSMSHTakHKAhH8RvAExXhLD58AvziCw0hJz7+E8AgFMcjIVyOR0CojreM0CzeIkLzeEsI3eItIHSP14wwLF4jwvB4TQhi8RoQxOMlEdTESyCoix+JoDZ+BIL6+J4IZuJ7IJiLb4lgNr4Fgvn4GgSY+CsIcPGFCDP0bCIDAXowU4OANZ8sRMCcUGciYN9ROEGAv6BxhHCP+B3CvLubsEjFfwUYAKjtGJxFvDJsAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    pointer-events: none;
+  }
+}
+
+.c-form-select__dropdown {
+  @include font-size($form-font-size);
+  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  width: 100%;
+  border: $form-border;
+  background-color: $form-background;
+  box-shadow: $form-shadow;
+  transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
+  outline: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.c-form-select__dropdown:focus {
+  border-color: $form-background;
+  box-shadow: $form-shadow-focus;
+}
+
+/* Form checkbox inputs
+  =========================================== */
+
+.c-form-checkbox {
+  display: inline-block;
+  width: 100%;
+  font-size: $form-font-size;
+  cursor: pointer;
+}
+
+.c-form-checkbox__input {
+  display: none;
+}
+
+.c-form-checkbox__faux {
+  display: inline-block;
+  margin-right: $global-spacing-unit-tiny;
+  position: relative;
+  width: $form-font-size;
+  top: 3px;
+  height: $form-font-size;
+  background-color: $form-background;
+  border: $form-border;
+}
+
+.c-form-checkbox--radio .c-form-checkbox__faux {
+  border-radius: 100%;
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__faux {
+  background-color: color(brand);
+  border-color: color(brand);
+  transition: border-color $form-animation-speed ease, background-color $form-animation-speed ease;
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
+  content: "";
+  position: absolute;
+  width: $global-spacing-unit-small;
+  height: $global-spacing-unit-small;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAuCAYAAACYlx/0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQNJREFUeNrsmO0NgyAURRnBETpCR+kIbNQRHMERHKEjOEJHoGA0MaQJ+AWP++5L+GUCnmOExzVGWTnnej8GPzqjFH6tjyoJEfxao2b4uVTDwwtIwYfnhCc84QlPeMITnvCEJzzhCU941fAhHvLjpRX+sWRkoaxG+G80sVXzz2++vJMioeiGl1jIQsMvC05SJFQ56vykzz97QHEJVc/52hJENDm1JIjq8EpLENnelpIgure/W0ITF5u7JDR1q7taQpNX2qskNH2fPysBIsw4KgEqydkrATLGypUAneFlSsAOME9IwElvD0jAi653SIDO7VMScOEzJODDRxLGDfxb+jv/BBgAG1C+DbIBN9MAAAAASUVORK5CYII=");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border: solid 1px transparent;
+}
+
+.c-form-checkbox--radio .c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
+  content: normal;
+}
+
+/* Form modifiers
+  =========================================== */
+
+/**
+ * All required fields must have a styled piece of text present in their LABEL
+ * element indicating that they are mandatory, e.g.:
+ *
+ *   <label for="f-name">
+ *     Full name
+ *     <abbr title="Required field" class="c-form-required">*</abbr>
+ *   </label>
+ *
+ * 1. Double up the selector’s specificity in order to override some hangover
+ *    from Normalize.css.
+ *
+ */
+.c-form-required {
+  color: color(error);
+
+  &#{&} { /* [1] */
+    border-bottom: none;
+    text-decoration: none;
+  }
+}
