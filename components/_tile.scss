@@ -235,3 +235,25 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
     padding-top: 100%;
   }
 }
+
+/* Tile shine
+  =========================================== */
+
+/**
+ * Tile shine to be applied to a .c-shine component to give the correct positioning
+ * when used on a Tile.
+ */
+.c-tile__shine {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.c-tile__shine--top {
+  top: -($global-spacing-unit-small + $tile-border-width);
+}
+
+.c-tile__shine--bottom {
+  bottom: -($global-spacing-unit-small + $tile-border-width);
+}
