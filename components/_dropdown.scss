@@ -157,8 +157,9 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
  * 5. As we use scaleY on the Dropdown list to toggle the menu, each item is
  *    scaled slightly larger at the start to counteract the Dropdown list scaleY
  *    and prevent a "squashed" appearance on toggle.
- * 6. Animates the transform property on transition.
- * 7. Sets background color to appear darker on hover and focus.
+ * 6. Allows us to transition the link opacity slightly faster than the list.
+ * 7. Animates the transform and opacity property on transition.
+ * 8. Sets background color to appear darker on hover and focus.
  */
 .c-dropdown__link {
   @include font-size($dropdown-font-size); /* [1] */
@@ -167,11 +168,12 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
   color: color(text); /* [4] */
   transform: scaleY(2.5); /* [5] */
-  transition: transform $dropdown-animation-speed ease; /* [6] */
+  opacity: 0; /* [6] */
+  transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease ; /* [7] */
 
   &:hover,
   &:focus {
-    background-color: $dropdown-background-focus; /* [7] */
+    background-color: $dropdown-background-focus; /* [8] */
   }
 }
 
@@ -191,6 +193,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
    * 2. Scales vertical axis to its full height to achieve 'slide' animation.
    * 3. Sets the content to visible.
    * 4. Sets text to its correct height.
+   * 5. Sets text to display.
   */
   &:checked ~ .c-dropdown__list {
     opacity: 1; /* [1] */
@@ -199,6 +202,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
 
     .c-dropdown__link {
       transform: scaleY(1); /* [4] */
+      opacity: 1; /* [5] */
     }
   }
 
