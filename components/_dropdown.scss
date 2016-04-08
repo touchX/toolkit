@@ -160,6 +160,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
  * 6. Allows us to transition the link opacity slightly faster than the list.
  * 7. Animates the transform and opacity property on transition.
  * 8. Sets background color to appear darker on hover and focus.
+ * 9. As we can't hide the overflow, a border-radius is set on the last-child.
  */
 .c-dropdown__link {
   @include font-size($dropdown-font-size); /* [1] */
@@ -174,6 +175,10 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   &:hover,
   &:focus {
     background-color: $dropdown-background-focus; /* [8] */
+  }
+
+  &:last-child {
+    border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [9] */
   }
 }
 
