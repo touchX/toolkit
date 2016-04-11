@@ -5,6 +5,27 @@
   font-weight: bold;
 }
 
+/* Icons
+   ========================================================================== */
+
+.sg-icon {
+  width: 1em;
+  transform: translateY(2px);
+}
+
+.sg-icon--github {
+  color: #4a4a4a;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: #0072c9;
+    transform: scale(1.5);
+  }
+}
+
+/* Swatches
+  =========================================================================== */
+
 .sg-swatch {
   padding: $global-spacing-unit-small;
   border-radius: $global-border-radius;
