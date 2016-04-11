@@ -2,12 +2,8 @@
 layout: default
 ---
 
-<h1 class="c-heading-alpha">Toolkit</h1>
-
-<hr class="c-keyline">
-
 <section>
-  <h2 class="c-heading-beta">Colours</h2>
+  <h2 id="core-colours" class="c-heading-beta">Colours</h2>
   <div class="o-layout o-layout--spaced">
     <div class="o-layout__item u-width-1/3@medium">
       <div class="sg-swatch sg-swatch--brand">
@@ -52,7 +48,12 @@ layout: default
       </div>
     </div>
   </div>
-  <h2 class="c-heading-beta">Gradients</h2>
+</section>
+
+<hr class="c-keyline">
+
+<section>
+  <h2 id="core-gradients" class="c-heading-beta">Gradients</h2>
   <div class="o-layout o-layout--spaced">
     <div class="o-layout__item u-width-1/1 u-width-1/2@medium">
       <div class="sg-swatch sg-swatch--large-linear">
@@ -84,62 +85,151 @@ layout: default
 <hr class="c-keyline">
 
 <section>
-  <h2 class="c-heading-beta">Typography</h2>
-  <article>
-    <h3 class="c-heading-gamma">Headings</h3>
-    <h1 class="c-heading-alpha">Heading Level 1</h1>
-    <h2 class="c-heading-beta">Heading Level 2</h2>
-    <h3 class="c-heading-gamma">Heading Level 3</h3>
-    <h4 class="c-heading-delta">Heading Level 4 / Section Title</h4>
-  </article>
-  <article>
-    <h3 class="c-heading-gamma">Copy</h3>
-    <p>Body text - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut arcu a lacus rhoncus porta. Vivamus ut turpis fermentum, porttitor mauris ac, ullamcorper elit. Mauris sodales porttitor feugiat. Sed varius tincidunt maximus. Morbi suscipit tellus et enim blandit, vitae malesuada turpis sagittis. Sed tellus est, auctor at pharetra in, aliquam at nisi.</p>
-    <p class="c-text-body-small">Body small - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut arcu a lacus rhoncus porta. Vivamus ut turpis fermentum, porttitor mauris ac, ullamcorper elit. Mauris sodales porttitor feugiat. Sed varius tincidunt maximus. Morbi suscipit tellus et enim blandit, vitae malesuada turpis sagittis. Sed tellus est, auctor at pharetra in, aliquam at nisi.</p>
-    <p class="c-text-caption">Caption</p>
-  </article>
-  <article>
-    <h3 class="c-heading-gamma">Elements</h3>
-    <p><strong>Bold text</strong></p>
-    <p><a href="#">Here's a link</a></p>
-    <p><a href="#" class="c-link-external">Here's an external link</a></p>
-  </article>
-  <article>
-    <h3 class="c-heading-gamma">Lists</h3>
-    <section>
-      <h3 class="c-heading-delta">Inline list</h3>
-      <ul class="o-list-inline">
-        <li class="o-list-inline__item">Item 1</li>
-        <li class="o-list-inline__item">Item 2</li>
-        <li class="o-list-inline__item">Item 3</li>
-        <li class="o-list-inline__item">Item 4</li>
-      </ul>
-    </section>
-    <section>
-      <h3 class="c-heading-delta">Bare list</h3>
-      <ul class="o-list-bare">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-      </ul>
-    </section>
-    <section>
-      <h3 class="c-heading-delta">Block list</h3>
-      <ul class="o-list-block">
-        <li class="o-list-block__item">Item 1</li>
-        <li class="o-list-block__item">Item 2</li>
-        <li class="o-list-block__item">Item 3</li>
-        <li class="o-list-block__item">Item 4</li>
-      </ul>
-    </section>
-  </article>
+  <h2 id="core-elements" class="c-heading-beta">Elements</h2>
+  <p><strong>Bold text</strong></p>
+  <p><a href="#">Here's a link</a></p>
+  <p><a href="#" class="c-link-external">Here's an external link</a></p>
 </section>
 
 <hr class="c-keyline">
 
 <section>
-  <h2 class="c-heading-beta">Tables</h2>
+  <h2 id="core-lists" class="c-heading-beta">Lists</h2>
+  <section>
+    <h3 class="c-heading-delta">Inline list</h3>
+    <ul class="o-list-inline">
+      <li class="o-list-inline__item">Item 1</li>
+      <li class="o-list-inline__item">Item 2</li>
+      <li class="o-list-inline__item">Item 3</li>
+      <li class="o-list-inline__item">Item 4</li>
+    </ul>
+  </section>
+  <section>
+    <h3 class="c-heading-delta">Bare list</h3>
+    <ul class="o-list-bare">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+    </ul>
+  </section>
+  <section>
+    <h3 class="c-heading-delta">Block list</h3>
+    <ul class="o-list-block">
+      <li class="o-list-block__item">Item 1</li>
+      <li class="o-list-block__item">Item 2</li>
+      <li class="o-list-block__item">Item 3</li>
+      <li class="o-list-block__item">Item 4</li>
+    </ul>
+  </section>
+</section>
+
+<hr class="c-keyline">
+
+<section>
+  <h2 id="core-layout" class="c-heading-beta">Layout</h2>
+  <h4 class="c-heading-delta">Example: Basic Layout</h4>
+  <div class="o-layout o-layout--spaced">
+    <div class="o-layout__item u-width-1/5">
+      <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/5">
+      <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/5">
+      <p>3. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/5">
+      <p>4. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/5">
+      <p>5. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+  </div>
+  <div class="o-layout o-layout--spaced">
+    <div class="o-layout__item u-width-1/4">
+      <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/4">
+      <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/4">
+      <p>3. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/4">
+      <p>4. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+  </div>
+  <div class="o-layout o-layout--spaced">
+    <div class="o-layout__item u-width-1/3">
+      <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/3">
+      <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/3">
+      <p>3. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+  </div>
+  <div class="o-layout o-layout--spaced">
+    <div class="o-layout__item u-width-1/2">
+      <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/2">
+      <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+  </div>
+  <div class="o-layout o-layout--spaced">
+    <div class="o-layout__item">
+      <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+  </div>
+
+  <h4 class="c-heading-delta">Example: Reverse Layout</h4>
+  <div class="o-layout o-layout--reverse">
+    <div class="o-layout__item u-width-1/4">
+      <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/4">
+      <p>2 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/4">
+      <p>3 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+    <div class="o-layout__item u-width-1/4">
+      <p>4 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+    </div>
+  </div>
+  <article>
+    <h3 class="c-heading-gamma">Media Object</h3>
+    <div class="o-media">
+      <div class="o-media__img">
+        <img src="http://i.dailymail.co.uk/i/pix/2012/05/28/article-2151032-1355CE93000005DC-628_306x316.jpg" width="100px" />
+      </div>
+      <div class="o-media__body">
+        Body
+      </div>
+    </div>
+  </article>
+</section>
+
+<hr class="c-keyline  u-margin-top-large">
+
+<section>
+  <h2 id="ui-typography" class="c-heading-beta">Typography</h2>
+  <h1 class="c-heading-alpha">Heading Level 1</h1>
+  <h2 class="c-heading-beta">Heading Level 2</h2>
+  <h3 class="c-heading-gamma">Heading Level 3</h3>
+  <h4 class="c-heading-delta">Heading Level 4 / Section Title</h4>
+  <p class="u-text-constrain">Body text - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut arcu a lacus rhoncus porta. Vivamus ut turpis fermentum, porttitor mauris ac, ullamcorper elit. Mauris sodales porttitor feugiat. Sed varius tincidunt maximus. Morbi suscipit tellus et enim blandit, vitae malesuada turpis sagittis. Sed tellus est, auctor at pharetra in, aliquam at nisi.</p>
+  <p class="c-text-body-small  u-text-constrain">Body small - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut arcu a lacus rhoncus porta. Vivamus ut turpis fermentum, porttitor mauris ac, ullamcorper elit. Mauris sodales porttitor feugiat. Sed varius tincidunt maximus. Morbi suscipit tellus et enim blandit, vitae malesuada turpis sagittis. Sed tellus est, auctor at pharetra in, aliquam at nisi.</p>
+  <p class="c-text-caption">Caption</p>
+</section>
+
+<hr class="c-keyline">
+
+<section>
+  <h2 id="ui-tables" class="c-heading-beta">Tables</h2>
   <article>
     <h3 class="c-heading-gamma">Simple Table</h3>
     <table class="c-table-simple">
@@ -187,102 +277,7 @@ layout: default
 <hr class="c-keyline">
 
 <section>
-  <h2 class="c-heading-beta">Objects</h2>
-  <article>
-    <h3 class="c-heading-gamma">Layout (& Widths)</h3>
-    <section>
-      <h4 class="c-heading-delta">Example: Basic Layout</h4>
-      <div class="o-layout o-layout--spaced">
-        <div class="o-layout__item u-width-1/5">
-          <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/5">
-          <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/5">
-          <p>3. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/5">
-          <p>4. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/5">
-          <p>5. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-      </div>
-      <div class="o-layout o-layout--spaced">
-        <div class="o-layout__item u-width-1/4">
-          <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/4">
-          <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/4">
-          <p>3. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/4">
-          <p>4. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-      </div>
-      <div class="o-layout o-layout--spaced">
-        <div class="o-layout__item u-width-1/3">
-          <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/3">
-          <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/3">
-          <p>3. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-      </div>
-      <div class="o-layout o-layout--spaced">
-        <div class="o-layout__item u-width-1/2">
-          <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/2">
-          <p>2. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-      </div>
-      <div class="o-layout o-layout--spaced">
-        <div class="o-layout__item">
-          <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h4 class="c-heading-delta">Example: Reverse Layout</h4>
-      <div class="o-layout o-layout--reverse">
-        <div class="o-layout__item u-width-1/4">
-          <p>1. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/4">
-          <p>2 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/4">
-          <p>3 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-        <div class="o-layout__item u-width-1/4">
-          <p>4 Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-        </div>
-      </div>
-    </section>
-  </article>
-  <article>
-    <h3 class="c-heading-gamma">Media Object</h3>
-    <div class="o-media">
-      <div class="o-media__img">
-        <img src="http://i.dailymail.co.uk/i/pix/2012/05/28/article-2151032-1355CE93000005DC-628_306x316.jpg" width="100px" />
-      </div>
-      <div class="o-media__body">
-        Body
-      </div>
-    </div>
-  </article>
-</section>
-
-<hr class="c-keyline u-margin-top-large">
-
-<section>
-  <h2 class="c-heading-beta">Buttons</h2>
+  <h2 id="ui-buttons" class="c-heading-beta">Buttons</h2>
   <p>
     <button class="c-btn">Button</button>
     <button class="c-btn c-btn--primary">Primary</button>
@@ -303,7 +298,7 @@ layout: default
 <hr class="c-keyline">
 
 <section>
-  <h2 class="c-heading-beta">Inputs</h2>
+  <h2 id="ui-forms" class="c-heading-beta">Forms</h2>
   <form>
     <fieldset>
       <legend>Example form</legend>
@@ -379,45 +374,8 @@ layout: default
 
 <hr class="c-keyline">
 
-<section class="u-margin-bottom">
-  <h2 class="c-heading-beta">Accordion</h2>
-  <div class="c-accordion">
-    <section class="c-accordion__section">
-      <input type="checkbox" class="c-accordion__input" id="c-accordion1_section1">
-      <label for="c-accordion1_section1" class="c-accordion__label">Accordion title 1</label>
-      <div class="c-accordion__content">
-        <p class="c-accordion__title">Sub title 1</p>
-        <p class="c-accordion__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum sodales fermentum. Integer scelerisque felis in neque laoreet dignissim eget ac lorem. Donec eu nisi erat. Integer gravida metus porta sem porttitor elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        <p class="c-accordion__title">Sub title 2</p>
-        <p class="c-accordion__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum sodales fermentum. Integer scelerisque felis in neque laoreet dignissim eget ac lorem. Donec eu nisi erat. Integer gravida metus porta sem porttitor elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-      </div>
-    </section>
-    <section class="c-accordion__section">
-      <input type="checkbox" class="c-accordion__input" id="c-accordion1_section2">
-      <label for="c-accordion1_section2" class="c-accordion__label">Accordion title 2</label>
-      <div class="c-accordion__content">
-        <p class="c-accordion__title">Sub title 1</p>
-        <p class="c-accordion__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum sodales fermentum. Integer scelerisque felis in neque laoreet dignissim eget ac lorem. Donec eu nisi erat. Integer gravida metus porta sem porttitor elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-      </div>
-    </section>
-    <section class="c-accordion__section">
-      <input type="checkbox" class="c-accordion__input" id="c-accordion1_section3">
-      <label for="c-accordion1_section3" class="c-accordion__label">Accordion title 3</label>
-      <div class="c-accordion__content">
-        <p class="c-accordion__title">Sub title 1</p>
-        <p class="c-accordion__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum sodales fermentum. Integer scelerisque felis in neque laoreet dignissim eget ac lorem. Donec eu nisi erat. Integer gravida metus porta sem porttitor elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-        <p class="c-accordion__title">Sub title 2</p>
-        <p class="c-accordion__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum sodales fermentum. Integer scelerisque felis in neque laoreet dignissim eget ac lorem. Donec eu nisi erat. Integer gravida metus porta sem porttitor elementum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-      </div>
-    </section>
-  </div>
-</section>
-
-
-<hr class="c-keyline">
-
 <section>
-  <h2 class="c-heading-beta">Tiles</h2>
+  <h2 id="ui-tiles" class="c-heading-beta">Tiles & Panels</h2>
   <article class="c-tile">
     <div class="c-tile__content">
       <div class="c-tile__body">
