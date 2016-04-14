@@ -169,6 +169,48 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
+/* Combination inputs
+  =========================================== */
+
+/**
+ * Text and button combo pairs
+ */
+
+.c-form-combo {
+  display: table;
+  width: 100%;
+}
+
+.c-form-combo__cell {
+  display: table-cell;
+  width: 100%;
+}
+
+/**
+ * Flatten out the borders between button and input field
+ */
+.c-form-combo__input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+.c-form-combo__btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/**
+ * Normalise height-affecting properties across both button and input
+ * to insure consistent height
+ */
+.c-form-combo__btn,
+.c-form-combo__input {
+  @include font-size($form-font-size);
+  padding-top: $global-spacing-unit-tiny/2;
+  padding-bottom: $global-spacing-unit-tiny/2;
+}
+
 /* Form select inputs
   =========================================== */
 
