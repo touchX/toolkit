@@ -28,7 +28,7 @@ $form-animation-speed: $global-animation-speed-fast;
 
 .c-form-list__item {
   display: block;
-  margin-bottom: $global-spacing-unit;
+  margin-bottom: $global-spacing-unit-small;
   width: 100%;
 
   @include mq($from: medium) {
@@ -50,6 +50,8 @@ $form-animation-speed: $global-animation-speed-fast;
  * Inline pairs of form labels and inputs should be wrapped in a form-pair.
  */
 .c-form-pair {
+  margin-bottom: $global-spacing-unit-tiny;
+
   @include mq($from: medium) {
     display: table;
 
@@ -95,6 +97,7 @@ $form-animation-speed: $global-animation-speed-fast;
   @include font-size($form-font-size);
   display: inline-block;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  margin-bottom: $global-spacing-unit-tiny;
   width: 100%;
   background-color: $form-background;
   border: $form-border;
@@ -108,16 +111,7 @@ $form-animation-speed: $global-animation-speed-fast;
     border-color: $form-background;
     box-shadow: $form-shadow-focus;
   }
-}
 
-.c-form-input.is-error,
-.c-form-input:invalid {
-  border-color: color(error);
-
-  &:focus {
-    border-color: $form-background;
-    box-shadow: $form-shadow-error;
-  }
 }
 
 /**
@@ -140,6 +134,7 @@ $form-animation-speed: $global-animation-speed-fast;
   @include font-size($form-font-size);
   display: inline-block;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  margin-bottom: $global-spacing-unit-tiny;
   width: 100%;
   background-color: $form-background;
   border: $form-border;
@@ -169,6 +164,49 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
+/* Combination inputs
+  =========================================== */
+
+/**
+ * Text and button combo pairs
+ */
+
+.c-form-combo {
+  display: table;
+  width: 100%;
+}
+
+.c-form-combo__cell {
+  display: table-cell;
+  width: 100%;
+}
+
+/**
+ * Flatten out the borders between button and input field
+ */
+.c-form-combo__input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
+}
+
+.c-form-combo__btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  white-space: nowrap;
+}
+
+/**
+ * Normalise height-affecting properties across both button and input
+ * to insure consistent height
+ */
+.c-form-combo__btn,
+.c-form-combo__input {
+  @include font-size($form-font-size);
+  padding-top: $global-spacing-unit-tiny/2;
+  padding-bottom: $global-spacing-unit-tiny/2;
+}
+
 /* Form select inputs
   =========================================== */
 
@@ -183,6 +221,7 @@ $form-animation-speed: $global-animation-speed-fast;
     content: "";
     position: absolute;
     top: 50%;
+    margin-bottom: $global-spacing-unit-tiny;
     transform: translateY(-50%);
     right: $global-spacing-unit-small;
     width: $global-spacing-unit-small;
@@ -219,6 +258,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-checkbox {
   display: inline-block;
   width: 100%;
+  margin-bottom: $global-spacing-unit-tiny;
   font-size: $form-font-size;
   cursor: pointer;
 }
@@ -287,4 +327,33 @@ $form-animation-speed: $global-animation-speed-fast;
     border-bottom: none;
     text-decoration: none;
   }
+}
+
+/* Form errors
+  =========================================== */
+
+/**
+  * Errors are handled by adding the .is-error class to the field's parent –
+  * usually the .c-form-list__item.
+  */
+
+.is-error {
+  color: color(error);
+}
+
+.c-form-input,
+.c-form-select__dropdown,
+.c-form-checkbox__faux {
+
+  .is-error &,
+  &.is-error,
+  &:invalid {
+    border-color: color(error);
+
+    &:focus {
+      border-color: $form-background;
+      box-shadow: $form-shadow-error;
+    }
+  }
+
 }

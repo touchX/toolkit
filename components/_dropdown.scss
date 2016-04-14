@@ -57,7 +57,6 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   z-index: 1; /* [11] */
   transition: all $dropdown-animation-speed ease; /* [12] */
 
-
   /**
    * The Dropdown label uses an icon to indicate when the menu has been toggled.
    * N.B. Temporary use of Base64 until a Sky SVG solution is realised.
@@ -170,7 +169,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   color: color(text); /* [4] */
   transform: scaleY(2.5); /* [5] */
   opacity: 0; /* [6] */
-  transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease ; /* [7] */
+  transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease; /* [7] */
 
   &:hover,
   &:focus {
@@ -224,7 +223,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
     box-shadow: $dropdown-shadow-focus;
     border-radius: $dropdown-border-radius $dropdown-border-radius 0 0;
 
-    &:after {
+    &::after {
       transform: translateZ(0) rotate(180deg);
     }
   }
