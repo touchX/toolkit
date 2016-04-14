@@ -308,6 +308,14 @@ layout: default
             Username <abbr title="This field is required" class="c-form-required">*</abbr>
           </label>
           <input type="text" class="c-form-input" placeholder="e.g. hulk42" name="f-username" id="f-username"/>
+          <p class="c-text-caption">This is a caption explaining how this input field works and suggests what the user might enter into it.</p>
+        </li>
+        <li class="c-form-list__item is-error">
+          <label class="c-form-label" for="f-username">
+            Username <abbr title="This field is required" class="c-form-required">*</abbr>
+          </label>
+          <input type="text" class="c-form-input" placeholder="e.g. hulk42" name="f-username" id="f-username"/>
+          <p class="c-text-caption">This is a field which has triggered validation errors, and can be invoked by adding the <code>is-error</code> class to the parent tag.</p>
         </li>
         <li class="c-form-list__item">
           <label class="c-form-label" for="f-email">
@@ -366,6 +374,19 @@ layout: default
             <span class="c-form-checkbox__faux"></span>
             I agree to the terms &amp; conditions
           </label>
+        <li>
+        <li class="c-form-list__item">
+          <label class="c-form-label" for="f-combo">
+            Enter your postcode
+          </label>
+          <div class="c-form-combo">
+              <div class="c-form-combo__cell">
+                  <input type="text" class="c-form-combo__input c-form-input" placeholder="e.g. LS10 1QG" name="f-combo" id="f-combo">
+              </div>
+              <div class="c-form-combo__cell">
+                  <button class="c-form-combo__btn c-btn c-btn--primary">Find address</button>
+              </div>
+          </div>
         <li>
       </ul>
     </fieldset>
