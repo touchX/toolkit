@@ -135,7 +135,8 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
 * For buttons whose state is toggled when a related form or field contains
 * an error or multiple errors.
 */
-.c-btn.is-error {
+.c-btn.is-error,
+.is-error .c-btn {
   &,
   &:hover,
   &:active,
