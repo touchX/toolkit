@@ -10,5 +10,24 @@
     </main>
 
     {% include footer.html %}
+    <script>
+      document.getElementById('btn-loader').addEventListener('click', function() {
+        // e.preventDefault();
+        [].map.call(document.querySelectorAll('.c-loader.sg-test-loader'), function(el) {
+          // classList is the key here - contains functions to manipulate
+          // classes on an element
+          el.classList.toggle('is-complete');
+        });
+      });
+
+      document.getElementById('btn-loader-overlay').addEventListener('click', function() {
+        // e.preventDefault();
+        [].map.call(document.querySelectorAll('.c-loader-overlay.sg-test-loader-overlay'), function(el) {
+          // classList is the key here - contains functions to manipulate
+          // classes on an element
+          el.classList.toggle('is-complete');
+        });
+      });
+    </script>
   </body>
 </html>
