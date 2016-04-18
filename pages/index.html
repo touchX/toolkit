@@ -408,14 +408,46 @@ layout: default
   </article>
   <article id="ui-loader-overlay" class="u-margin-bottom-large">
     <h3 class="c-heading-gamma">Overlay</h3>
-    <article class="c-tile  u-width-1/2@medium  u-width-1/3@large">
-      <div class="c-tile__content">
-        <div class="c-loader-overlay  c-loader-overlay--tile  sg-test-loader-overlay">
-          <div class="c-loader"></div>
+    <div class="o-layout  u-margin-bottom">
+      <div class="o-layout__item  u-width-1/2@medium  u-width-1/3@large">
+        <article class="c-tile">
+          <div class="c-tile__content">
+            <div class="c-loader-overlay  c-loader-overlay--light  sg-test-loader-overlay">
+              <div class="c-loader"></div>
+            </div>
+            <img src="http://a3.files.blazepress.com/image/upload/c_fit,cs_srgb,dpr_1.0,q_80,w_620/MTI4OTg5MjI4ODkyNzM1NDk4.jpg" alt="Maru the cat"/>
+          </div>
+        </article>
+        <div>
+          <code>.c-loader-overlay</code>
         </div>
-        <img src="http://a3.files.blazepress.com/image/upload/c_fit,cs_srgb,dpr_1.0,q_80,w_620/MTI4OTg5MjI4ODkyNzM1NDk4.jpg" alt="Maru the cat"/>
+        <div class="u-margin-bottom-small">
+          <code>.c-loader-overlay--light</code>
+        </div>
+        <div>
+          with <code>.c-loader</code> as a child.
+        </div>
       </div>
-    </article>
+      <div class="o-layout__item  u-width-1/2@medium  u-width-1/3@large">
+        <article class="c-tile">
+          <div class="c-tile__content">
+            <div class="c-loader-overlay  c-loader-overlay--dark  sg-test-loader-overlay">
+              <div class="c-loader  c-loader--invert"></div>
+            </div>
+            <img src="http://cdn.makeagif.com/media/4-18-2016/kainKo.gif" alt="Maru the cat"/>
+          </div>
+        </article>
+        <div>
+          <code>.c-loader-overlay</code>
+        </div>
+        <div class="u-margin-bottom-small">
+          <code>.c-loader-overlay--dark</code>
+        </div>
+        <div>
+          with <code>.c-loader  .c-loader--invert</code> as a child.
+        </div>
+      </div>
+    </div>
     <button id="btn-loader-overlay" class="c-btn  c-btn--primary">Toggle Loader Overlay</button>
   </article>
 </section>
