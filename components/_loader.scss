@@ -5,7 +5,6 @@
 $loader-size-small: $global-spacing-unit*2;
 $loader-size: $global-spacing-unit*2.5;
 $loader-size-large: $global-spacing-unit*3;
-$loader-color: color(brand);
 $loader-animation-speed: $global-animation-speed-slow;
 $loader-transition-delay: $global-animation-speed;
 
@@ -93,14 +92,34 @@ $loader-transition-delay: $global-animation-speed;
   transform: scale(0);
 }
 
+/* Colour Modifiers
+   =========================================== */
+
+/**
+ * The inverted loading indicator can be used for darker-coloured UI where the
+ * default brand color may not be suitable.
+ */
+.c-loader--invert {
+
+  &::after {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAACbVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8SSFXEAAAAznRSTlMAAQIEBQYHCAkKCwwNDg8QExQVFhcYHB0eHyAhIiMmJygpKissLi8wMTY3OTo7PD0+QUJDREVGR0hJSktNTk9RU1RVVldYWVxdXl9gYWJjZGdpamtsbXFyc3R1dnd4eXp7fH+BhIWGh4mKi4yNjo+QkZKTlJWWl5iZmpyfoKGio6SlpqeoqaqrrK2vsLGytLW2uLq7vL2+v8DBwsTFxsfIycrLzM3O0NHT1NfZ2tvc3d7f4OHi4+Tl5ujp6uvs7e7v8PHz9PX29/n6+/z9/kG3vpEAAAURSURBVHgBxdv5W1RRHQbwd3BGUKBUKGbUYjGUBCRJlDCXNLPAonIpMyhLUkHUzKU0Fy0Il8pkUQswcAEUKjE0NaFUEGa679/Uoz7n3HtnYZmZe87nH7jnuee97/f7y0VU5uWX1zQ0d/YNvhofHx7s62xuqCkvmA8lUsoOtA8zrJGO2rWpcJK79GBXgJMKdNd+yQNHuApPvOK0DJ9a4UK8fXbfPzgDj2syEU+fv2JwhoyryxEvq1oZlbYSxENJF6N2dw1ildHEmFz2Ihae6lHGaPRHHkSt+BEjMJ62/XL3tzaXfSEvr6hs8zd3n2p7ajCC/lWIzqz9BsP59+WdeXMRYk7ejqaXDMc4MAtRyGhnKOPPOz/nQkSuJTtvGwzV4cWMfXmYIfqqfZiSt6qXIUbWY2ZcBxkscCEP07TsvJ/B6lyYAfclBnl3YhFmYOHxdwzyWw+mLfkG7fyH0zFD6YcmaNecjGla0E27m0sQhexW2t1Nw7T4+mnz7GuI0lef0mZgIaZhQT9tzqUgaslnaTOQhikld9NqdBti8o23tLqXgim4b9CqNxsxyuqhVYsHk3L9hlYNSYhZ4iVaNSZgMrW0OpaAOHAdoVUtJrGOVj9GnFTRah0i8g7TFKhE3GwL0DTiRQSz2mlRiTiqoEWnG+Htd+D9Cz+kRR3C+qJB088RZ4dpMooRhucRTQ0JiDPXJZoeehCqmqbeJMRdYg9N1QjhHaU0mg0HZL6lNOpDsCaaKuCIr9N0DUFW03QODvk1TaWw66b0LAUOSR6i1AGbVTRtgWM201QMq1ZKbXBQS4TnLKfkz4GDsicoFcB0lVI9HFVH6TqkTIPCu3Q4Km2MgrEYwj5Kx+GwX1D6iazpxxT8i+Awn5/C3134qJDSBTjuHKUifHSS0jI4biml0/jAPUyhFwr0UHg9G++VUqqCAnsorcR7BykYXiiQYVCowXtdFG5DiVsU/goAqQEKO6DEdgqBTwIoo7QESuRQ2mCLwEsX1HhB4SiADgq/gyKNtpk8Yo2A6hA8B+YrrcGQMpyHfArGHCiSZFAoQjmFISjzhMK3UUOhFcq0UKhHA4WTUOYEhfNopvB9KPM9Cn9AJ4VtUKacQgf6KGyCMhspPMQghVIos4bCCwxTWAFlCiiMY1xdEZpyKek5wGJKeq4g8RkFPSHEegpqP0PTV57zg37cUVpEppSiyl2VJZ+Cniq2sg4jLWootECLCgr/hBYFFIwkqKdnKbUbobAdWnRQaIQWtRReQIu1lHKgQ2pAdwi6KdzUHQIjAzqUUdoDHTwjFHqgxSlKS6FDEaWz0ME1SMHvgw4/o3QMOmQZFMbSoMPvKdVCh3xKE1nQ4RY1r4aradoEHe5RGpoLDUppOgMdrtC0FRr4xii9yYQGe2l6kAj1Zg/QdNEF9UoMmuo17WZ6lyN3Jy3KoZ7vPzT5y6HeBuq+hXpa1bugWkIjrS4mQjVPK60eZEK1lPu0erMVqqX/jTZn5kKxRUEnGNoExdLv0645C2qlttFuonYBlJrdxCBjx3xQKeEQg/nP5kKl9SMM8eAHn4Y6vjsM9b+272ZDFXc9w3re8J3cRChR/JARGE+aj++q2LimMDc7J/szCZiMgp/dCuAc3zVOrQpOWv0XTuUCnLWylZNrg9Py/2hwEl1wnnfvACO6DiUKf/VfhncEirhX/LTdzxBGERRKXVf3pyHaHIVyn8ivPHD6yu2+f40FXrdvQSz+D0NrFrlQn4THAAAAAElFTkSuQmCC');
+  }
+}
+
 /* Loader Size Modifiers
    =========================================== */
 
+/**
+ * For use in smaller pieces of UI where the default size is too large.
+ */
 .c-loader--small {
   width: $loader-size-small;
   height: $loader-size-small;
 }
 
+/**
+ * For use in larger pieces of UI where the default size is too small.
+ */
 .c-loader--large {
   width: $loader-size-large;
   height: $loader-size-large;
@@ -109,17 +128,31 @@ $loader-transition-delay: $global-animation-speed;
 /* Loader Overlay
    ========================================================================== */
 
+/**
+ * The loading overlay is used to cover any loadable content until complete.
+ * Sample background modifiers are provided, but you should create your own
+ * modifier to match appropriately.
+ *
+ * 1. Allows styling of box model properties and absolute positioning of
+ *    pseudo-elements.
+ * 2. Sets the indicator as visible to transition.
+ * 3. Sets a very high z-index to ensure any content is covered.
+ * 4. Transitions visibility on completion.
+ */
 .c-loader-overlay {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 1;
-  visibility: visible;
-  z-index: 1000;
-  transition: opacity $loader-animation-speed ease, visibility $loader-animation-speed ease;
+  position: absolute; /* [1] */
+  top: 0; /* [1] */
+  right: 0; /* [1] */
+  bottom: 0; /* [1] */
+  left: 0; /* [1] */
+  opacity: 1; /* [2] */
+  visibility: visible; /* [2] */
+  z-index: 1000; /* [3] */
+  transition: opacity $loader-animation-speed ease, visibility $loader-animation-speed ease; /* [4] */
 
+/**
+ * Vertically and horizontally centers the indicator to the overlay
+ */
   .c-loader {
     position: absolute;
     margin: 0 auto;
@@ -131,6 +164,14 @@ $loader-transition-delay: $global-animation-speed;
   }
 }
 
+/**
+ * The loading overlay uses a stateful `.is-complete` class to provide a
+ * default "completed" transition and state.
+ * e.g. `<div class="c-loader-overlay  is-complete"></div>`
+ *
+ * Using the transitions defined in .c-loader-overlay and .c-loader, this fades
+ * the overlay slightly after the indicator has shrunk.
+ */
 .c-loader-overlay.is-complete {
   opacity: 0;
   visibility: hidden;
@@ -146,10 +187,24 @@ $loader-transition-delay: $global-animation-speed;
 /* Loader Overlay Background Modifiers
    =========================================== */
 
-.c-loader-overlay--white {
-  background-color: color(white);
+/**
+ * The background of the overlay is intentionally simple to extend and modify.
+ * If you need to provide a background that matches your web application, just
+ * create your own additional class to set it.
+ *
+ * e.g. `c-loader-overlay  someprefix-loader-overlay--somemodifier`
+ */
+
+/**
+ * For overlaying light-coloured UI.
+ */
+.c-loader-overlay--light {
+  background-color: color(ui-light);
 }
 
-.c-loader-overlay--tile {
-  @include background-gradient("small", "radial");
+/**
+ * For overlaying dark-coloured UI.
+ */
+.c-loader-overlay--dark {
+  background-color: color(ui-dark);
 }
