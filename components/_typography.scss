@@ -41,5 +41,5 @@
 }
 
 .c-text-caption {
-  @include font-size($text-caption);
+  @include font-size($text-caption, 1.3);
 }
