@@ -32,6 +32,12 @@ See the wiki for:
 - how to [implement the Toolkit in your project](https://github.com/sky-uk/toolkit/wiki/Getting-started).
 - how to [get started working on GitHub pages](https://github.com/sky-uk/toolkit/wiki/GitHub-Pages).
 
+## Requirements
+
+Because of how the Toolkit loads third party dependencies such as `sass-mq`, NPM >3.0.0 is required (included in Node >v5.0.0).
+
+Also note that if you're using Webpack and sass-loader you also require sass-loader >3.1.0.
+
 ## Maintainers
 
 - [Aaron Thomas](https://github.com/aaronthomas) - aaron.thomas@sky.uk
