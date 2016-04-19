@@ -1,0 +1,15 @@
+/* ==========================================================================
+   COMPONENTS / DEFENCE
+   ========================================================================== */
+/**
+ * Repair alterations to the current masthead.
+ */
+#skycom-masthead-wrapper {
+  background: #fff;
+  font-size: 16px;
+  box-sizing: content-box;
+
+  @media(min-width:768px){
+    padding-bottom: 10px;
+  }
+}
