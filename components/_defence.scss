@@ -1,15 +1,33 @@
 /* ==========================================================================
    COMPONENTS / DEFENCE
    ========================================================================== */
+
 /**
- * Repair alterations to the current masthead.
+ * Repair alterations to the current masthead made by the Toolkit.
  */
 #skycom-masthead-wrapper {
   background: #fff;
   font-size: 16px;
   box-sizing: content-box;
 
-  @media(min-width:768px){
+  /**
+   * Fixed media-query value set by the current masthead.
+   */
+  @media(min-width: 768px){
     padding-bottom: 10px;
+  }
+}
+
+/**
+ * Repair alterations to the current footer made by the Toolkit.
+ */
+.skycom-footer {
+  font-size: 16px;
+  box-sizing: content-box;
+}
+
+.skycom-footer__nav {
+  ul {
+    margin-left: 0px;
   }
 }
