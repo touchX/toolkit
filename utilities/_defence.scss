@@ -3,7 +3,12 @@
    ========================================================================== */
 
 /**
- * Repair alterations to the current masthead made by the Toolkit.
+ * Sets classic-masthead sass-mq breakpoint.
+ */
+@include mq-add-breakpoint(classic-masthead, 768px);
+
+/**
+ * Repair alterations to the current masthead caused by the Toolkit.
  */
 #skycom-masthead-wrapper {
   background: #fff;
@@ -13,13 +18,13 @@
   /**
    * Fixed media-query value set by the current masthead.
    */
-  @media(min-width: 768px){
+  @include mq(classic-masthead) {
     padding-bottom: 10px;
   }
 }
 
 /**
- * Repair alterations to the current footer made by the Toolkit.
+ * Repair alterations to the current footer caused by the Toolkit.
  */
 .skycom-footer {
   font-size: 16px;
@@ -30,4 +35,12 @@
   ul {
     margin-left: 0px;
   }
+}
+
+/**
+ * Repair alterations to the current message banners caused by the Toolkit.
+ */
+.skycom-message-container {
+  font-size: 14px;
+  box-sizing: content-box;
 }
