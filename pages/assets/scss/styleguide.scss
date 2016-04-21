@@ -66,18 +66,65 @@
 /* Gradient modifiers
    =========================================== */
 
-.sg-swatch--large-linear {
+.sg-swatch--large {
   @include background-gradient("large");
 }
 
-.sg-swatch--large-radial {
-  @include background-gradient("large", "radial");
-}
-
-.sg-swatch--small-linear {
+.sg-swatch--small {
   @include background-gradient("small");
 }
 
-.sg-swatch--small-radial {
-  @include background-gradient("small", "radial");
+.sg-swatch--sky-1 {
+  @include background-gradient("sky-1");
+  color: color(white);
+}
+
+.sg-swatch--sky-account {
+  @include background-gradient("sky-account");
+  color: color(white);
+}
+
+.sg-swatch--sky-atlantic {
+  @include background-gradient("sky-atlantic");
+  color: color(white);
+}
+
+.sg-swatch--sky-arts {
+  @include background-gradient("sky-arts");
+  color: color(white);
+}
+
+.sg-swatch--sky-box-sets {
+  @include background-gradient("sky-box-sets");
+  color: color(white);
+}
+
+.sg-swatch--sky-kids {
+  @include background-gradient("sky-kids");
+  color: color(white);
+}
+
+.sg-swatch--sky-living {
+  @include background-gradient("sky-living");
+  color: color(white);
+}
+
+.sg-swatch--sky-movies {
+  @include background-gradient("sky-movies");
+  color: color(white);
+}
+
+.sg-swatch--sky-news {
+  @include background-gradient("sky-news");
+  color: color(white);
+}
+
+.sg-swatch--sky-sports {
+  @include background-gradient("sky-sports");
+  color: color(white);
+}
+
+.sg-swatch--sky-store {
+  @include background-gradient("sky-store");
+  color: color(white);
 }
