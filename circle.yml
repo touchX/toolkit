@@ -9,8 +9,12 @@ machine:
     version: 2.3.0
 dependencies:
   pre:
+    - npm install -g npm
     - npm uninstall sky-toolkit-core
     - npm uninstall sky-toolkit-ui
+test:
+  pre:
+    - source ~/nvm/nvm.sh
 deployment:
   release:
     branch: master
