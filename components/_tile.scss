@@ -69,7 +69,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  * positioning for square tiles
  */
 .c-tile__content {
-  @include background-gradient("small", "radial");
+  @include background-gradient("small");
 
   @include mq($from: medium) {
     .c-tile--square & {
@@ -156,7 +156,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  * take up the lower 50% of the tile.
  */
 .c-tile__caption {
-  @include background-gradient("small", "radial");
+  @include background-gradient("small");
 
   position: relative;
 
@@ -166,7 +166,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
   // Pseudo element used for hover state background
   &::before {
-    @include background-gradient("large", "radial");
+    @include background-gradient("large");
     will-change: transform;
 
     content: "";
