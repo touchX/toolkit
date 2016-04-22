@@ -48,7 +48,7 @@
 /**
  * Repair links affected by 768px media query.
  */
-@include mq(classic-masthead) {
+@include mq($from: classic-masthead) {
   a {
     color: color(brand);
     text-decoration: none;
