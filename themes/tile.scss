@@ -1,0 +1,26 @@
+/* ==========================================================================
+   THEME / TILE
+   ========================================================================== */
+
+/**
+ * Array of brands to generate specific themes for tile hover effects.
+ * By default no themes are generated, to include themes overwrite the `$included-tile-themes` array (see example)
+ *
+ * Example usage:
+ * $included-tile-themes: "sky-1", "sky-arts", "sky-sports";
+ *
+ * $included-tile-themes: false !default;
+ */
+
+@if $included-tile-themes {
+  @each $brand in $included-tile-themes {
+    // For each brand generate a tile theme class i.e. .t-tile-sky-1
+    .t-tile-#{$brand} {
+
+      // Set up style overides
+      .c-tile__caption::before {
+        @include background-gradient($brand);
+      }
+    }
+  }
+}

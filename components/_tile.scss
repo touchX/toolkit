@@ -14,6 +14,9 @@ $tile-arrow-size: 22px !default;
 $tile-arrow-color: #e6e6ea;
 $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
+$tile-default-gradient: "small";
+$tile-default-hover-gradient: "large";
+
 /**
  * The base of the tile; provides the glass "border" and shadow.
  *
@@ -69,7 +72,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  * positioning for square tiles
  */
 .c-tile__content {
-  @include background-gradient("small");
+  @include background-gradient($tile-default-gradient);
 
   @include mq($from: medium) {
     .c-tile--square & {
@@ -156,7 +159,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  * take up the lower 50% of the tile.
  */
 .c-tile__caption {
-  @include background-gradient("small");
+  @include background-gradient($tile-default-gradient);
 
   position: relative;
 
@@ -166,7 +169,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
   // Pseudo element used for hover state background
   &::before {
-    @include background-gradient("large");
+    @include background-gradient($tile-default-hover-gradient);
     will-change: transform;
 
     content: "";
