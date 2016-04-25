@@ -222,6 +222,7 @@ $form-animation-speed: $global-animation-speed-fast;
     position: absolute;
     top: 50%;
     margin-bottom: $global-spacing-unit-tiny;
+    -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     right: $global-spacing-unit-small;
     width: $global-spacing-unit-small;
