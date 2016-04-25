@@ -35,6 +35,7 @@ $shine-size: 46px; // The size of the shine graphic
  * it's context, and move it to it's natural position on hover.
  */
 .c-shine__rail {
+  -ms-transform: translateX(-100%);
   transform: translateX(-100%);
   transition: $global-animation-speed ease-out;
   will-change: transform;
@@ -46,6 +47,7 @@ $shine-size: 46px; // The size of the shine graphic
    * Reverse modifier for shines to move LTR rather than RTL
    */
   .c-shine--rev & {
+    -ms-transform: translateX(100%);
     transform: translateX(100%);
   }
 
@@ -74,6 +76,7 @@ $shine-size: 46px; // The size of the shine graphic
   }
 
   .c-shine-context:hover & {
+    -ms-transform: none;
     transform: none;
   }
 
