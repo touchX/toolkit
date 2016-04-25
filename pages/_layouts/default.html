@@ -13,13 +13,13 @@
     {% include footer.html %}
     <script>
       document.getElementById('btn-loader').addEventListener('click', function() {
-        [].map.call(document.querySelectorAll('.c-loader.sg-test-loader'), function(el) {
+        [].map.call(document.querySelectorAll('.c-spinner.sg-test-loader'), function(el) {
           el.classList.toggle('is-complete');
         });
       });
 
       document.getElementById('btn-loader-overlay').addEventListener('click', function() {
-        [].map.call(document.querySelectorAll('.c-loader-overlay.sg-test-loader-overlay'), function(el) {
+        [].map.call(document.querySelectorAll('.c-spinner-overlay.sg-test-loader-overlay'), function(el) {
           el.classList.toggle('is-complete');
         });
       });
