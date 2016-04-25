@@ -12,14 +12,14 @@
 
     {% include footer.html %}
     <script>
-      document.getElementById('btn-loader').addEventListener('click', function() {
-        [].map.call(document.querySelectorAll('.c-spinner.sg-test-loader'), function(el) {
+      document.getElementById('btn-spinner').addEventListener('click', function() {
+        [].map.call(document.querySelectorAll('.c-spinner.sg-test-spinner'), function(el) {
           el.classList.toggle('is-complete');
         });
       });
 
-      document.getElementById('btn-loader-overlay').addEventListener('click', function() {
-        [].map.call(document.querySelectorAll('.c-spinner-overlay.sg-test-loader-overlay'), function(el) {
+      document.getElementById('btn-spinner-overlay').addEventListener('click', function() {
+        [].map.call(document.querySelectorAll('.c-spinner-overlay.sg-test-spinner-overlay'), function(el) {
           el.classList.toggle('is-complete');
         });
       });
