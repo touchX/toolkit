@@ -9,8 +9,9 @@
  * Example usage:
  * $included-tile-themes: "sky-1", "sky-arts", "sky-sports";
  *
- * $included-tile-themes: false !default;
  */
+
+$included-tile-themes: false !default;
 
 @if $included-tile-themes {
   @each $brand in $included-tile-themes {
