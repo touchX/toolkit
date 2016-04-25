@@ -54,3 +54,11 @@
     text-decoration: none;
   }
 }
+
+.skycom_container {
+  max-width: 1140px;
+
+  @include mq($from: classic-masthead) {
+    max-width: 1140px;
+  }
+}
