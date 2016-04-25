@@ -70,6 +70,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
       width: $tile-arrow-size;
       height: $tile-arrow-size;
       margin-left: -$tile-arrow-size/2; /* [1] */
+      -ms-transform: rotate(45deg);
       transform: rotate(45deg);
       background-color: $tile-arrow-color;
       background-image: linear-gradient(to bottom, $tile-shadow-color 0%, rgba(0, 0, 0, 0) 15px), linear-gradient(to right, $tile-shadow-color 0%, rgba(0, 0, 0, 0) 15px) /* [4] */
@@ -166,6 +167,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   will-change: transform;
 
   .c-tile__link:hover & {
+    -ms-transform: scale(1.05, 1.05);
     transform: scale(1.05, 1.05);
   }
 }

@@ -83,6 +83,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
     background-size: contain; /* [5] */
     background-position: center center; /* [5] */
     pointer-events: none; /* [6] */
+    -ms-transform: translateZ(0) rotate(0deg); /* [7] */
     transform: translateZ(0) rotate(0deg); /* [7] */
     transition: transform $dropdown-animation-speed ease; /* [8] */
   }
@@ -118,7 +119,9 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [7] */
   box-shadow: $dropdown-shadow-focus; /* [8] */
   opacity: 0; /* [9] */
+  -ms-transform: scaleY(0); /* [10] */
   transform: scaleY(0); /* [10] */
+  -ms-transform-origin: top; /* [11] */
   transform-origin: top; /* [11] */
   visibility: hidden; /* [12] */
   transition: all $dropdown-animation-speed ease; /* [13] */
@@ -167,6 +170,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   width: 100%; /* [2] */
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
   color: color(text); /* [4] */
+  -ms-transform: scaleY(2.5); /* [5] */
   transform: scaleY(2.5); /* [5] */
   opacity: 0; /* [6] */
   transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease; /* [7] */
@@ -201,10 +205,12 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   */
   &:checked ~ .c-dropdown__list {
     opacity: 1; /* [1] */
+    -ms-transform: scaleY(1); /* [2] */
     transform: scaleY(1); /* [2] */
     visibility: visible; /* [3] */
 
     .c-dropdown__link {
+      -ms-transform: scaleY(1); /* [4] */
       transform: scaleY(1); /* [4] */
       opacity: 1; /* [5] */
     }
@@ -224,6 +230,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
     border-radius: $dropdown-border-radius $dropdown-border-radius 0 0;
 
     &::after {
+      -ms-transform: translateZ(0) rotate(180deg);
       transform: translateZ(0) rotate(180deg);
     }
   }

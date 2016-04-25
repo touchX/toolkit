@@ -61,6 +61,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
     border: solid $select-icon-padding transparent; /* [7] */
     border-radius: 0 $select-border-radius $select-border-radius 0; /* [8] */
     transition: transform $select-animation-speed ease; /* [9] */
+    -ms-transform: translate($select-icon-width, 0); /* [9] */
     transform: translate($select-icon-width, 0); /* [9] */
   }
 }
@@ -78,6 +79,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
     padding-right: $global-spacing-unit+$select-icon-width;  /* [2] */
 
     &::after {
+      -ms-transform: translate(0, 0);  /* [3] */
       transform: translate(0, 0);  /* [3] */
     }
   }
