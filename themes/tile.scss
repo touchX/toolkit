@@ -4,10 +4,14 @@
 
 /**
  * Array of brands to generate specific themes for tile hover effects.
- * By default no themes are generated, to include themes overwrite the `$included-tile-themes` array (see example)
+ * By default no themes are generated, to include themes overwrite the
+ * `$included-tile-themes` array (see example)
  *
  * Example usage:
  * $included-tile-themes: "sky-1", "sky-arts", "sky-sports";
+ *
+ * Apply relevant class (ie `.t-tile-sky-1) to the `.c-tile` element or to a
+ * parent element to apply to all nested tiles.
  *
  */
 
