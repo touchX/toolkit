@@ -83,8 +83,8 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
     background-size: contain; /* [5] */
     background-position: center center; /* [5] */
     pointer-events: none; /* [6] */
-    -ms-transform: translateZ(0) rotate(0deg); /* [7] */
-    transform: translateZ(0) rotate(0deg); /* [7] */
+    -ms-transform: translateZ(0) rotate(0); /* [7] */
+    transform: translateZ(0) rotate(0); /* [7] */
     transition: transform $dropdown-animation-speed ease; /* [8] */
   }
 }
