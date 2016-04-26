@@ -17,6 +17,6 @@
   },
   "dependencies": {
     "sky-toolkit-core": "git+ssh://git@github.com:sky-uk/toolkit-core.git#v0.2.3",
-    "sky-toolkit-ui": "git+ssh://git@github.com:sky-uk/toolkit-ui.git#v0.1.5"
+    "sky-toolkit-ui": "git+ssh://git@github.com:sky-uk/toolkit-ui.git#v0.1.6"
   }
 }
