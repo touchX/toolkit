@@ -21,7 +21,7 @@ deployment:
     commands:
       - npm run build
       - npm run update-pages
-      - git config --global user.email "toolkit@sky.uk"
+      - git config --global user.email "DL-ToolkitCore@bskyb.com"
       - git config --global user.name "Toolkit CI"
       - bundle exec jekyll build
       - bundle exec rake deploy
