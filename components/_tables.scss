@@ -2,6 +2,10 @@
    COMPONENTS / TABLES
    ========================================================================== */
 
+.c-table-simple {
+  border-collapse: collapse;
+}
+
 .c-table-simple__row {
   border-bottom: 1px solid color(keyline);
 }
