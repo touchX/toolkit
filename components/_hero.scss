@@ -3,9 +3,10 @@
    ========================================================================== */
 
 .c-hero {
-  color: color(white);
+  color: color(white); /* TODO: Will color ever change? */
   position: relative;
 
+  /* TODO: Are rails part of hero or shine? */
   &::before,
   &::after {
     content: "";
@@ -43,15 +44,18 @@
   padding-top: $global-spacing-unit;
   padding-bottom: $global-spacing-unit;
   position: absolute;
-  text-shadow: 1px 1px rgba(color(black), 0.2);
+  text-shadow: 1px 1px rgba(color(black), 0.2); /* TODO: Dont think this should be forced? */
   width: 100%;
 
   /* If hero has overlap modifier, shift overlay content upwards to compensate */
   .c-hero--overlap & {
-    bottom: 10vw;
+    bottom: 10vw; /* Taken from Sky Pages (TODO: needs clarifying) */
   }
 }
 
+/* TODO: Should the overlay content be defined or free to add whatever?
+ * This includes .c-hero__link, .c-hero__title and .c-hero__caption
+ */
 .c-hero__link {
   color: inherit;
 }
