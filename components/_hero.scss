@@ -12,7 +12,7 @@
     display: block;
     background: rgba(color(white), 0.3);
     height: 10px;
-    height: .455em;
+    height: 0.455em; /* 10px */
     position: absolute;
     left: 0;
     width: 100%;
@@ -27,15 +27,29 @@
   }
 }
 
-.c-hero__media {
+/**
+ * Offset modifier which pulls content up to sit over hero.
+ * Requires content effected to be positioned relative to avoid z-index issues.
+ */
+.c-hero--overlap {
+  margin-bottom: -10vw;
 }
 
+/**
+ * Overlay containing
+ */
 .c-hero__overlay {
   bottom: 0;
   padding-top: $global-spacing-unit;
   padding-bottom: $global-spacing-unit;
   position: absolute;
+  text-shadow: 1px 1px rgba(color(black), 0.2);
   width: 100%;
+
+  /* If hero has overlap modifier, shift overlay content upwards to compensate */
+  .c-hero--overlap & {
+    bottom: 10vw;
+  }
 }
 
 .c-hero__link {
