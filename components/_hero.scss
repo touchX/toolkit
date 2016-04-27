@@ -1,0 +1,52 @@
+/* ==========================================================================
+   COMPONENTS / HERO
+   ========================================================================== */
+
+.c-hero {
+  color: color(white);
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    background: rgba(color(white), 0.3);
+    height: 10px;
+    height: .455em;
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+.c-hero__media {
+}
+
+.c-hero__overlay {
+  bottom: 0;
+  padding-top: $global-spacing-unit;
+  padding-bottom: $global-spacing-unit;
+  position: absolute;
+  width: 100%;
+}
+
+.c-hero__link {
+  color: inherit;
+}
+
+.c-hero__title {
+  @include font-size($text-alpha);
+  margin-bottom: 0;
+}
+
+.c-hero__caption {
+  @include font-size($text-gamma);
+}
