@@ -10,6 +10,11 @@
     "build-styleguide": "cat pages/assets/scss/styleguide.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > pages/assets/css/styleguide.css",
     "update-pages": "rm -r -f node_modules/sky-toolkit-core && rm -r -f node_modules/sky-toolkit-ui && npm install && npm run build"
   },
+  "orion": {
+    "default": {
+      "stylesheet": "pages/assets/css/toolkit.css"
+    }
+  },
   "author": "Sky UK",
   "license": "ISC",
   "devDependencies": {
