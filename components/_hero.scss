@@ -2,11 +2,17 @@
    COMPONENTS / HERO
    ========================================================================== */
 
+$hero-height-offset: 5.727em;
+$hero-border-width: 0.27em;
+$hero-border-color: rgba(color(white), 0.3);
+$hero-text-shadow: 0 0 25px rgba(color(black), 0.25), 1px 1px 1px rgba(color(black), 0.5);
+$hero-overlap: 10vh;
+
 .c-hero {
   background-position: center;
   background-size: cover;
-  color: color(white); /* TODO: Will color ever change? */
-  height: calc(100vh - 5.727em); /* TODO: Define correct heights or scaled/fixed versions */
+  color: color(white);
+  height: 60vh;
   min-height: 20em; /* TODO: Min height for content or scaled/fixed versions */
   position: relative;
 
@@ -19,9 +25,8 @@
   &::after {
     content: "";
     display: block;
-    background: rgba(color(white), 0.3);
-    height: 10px;
-    height: 0.455em; /* 10px */
+    background: $hero-border-color;
+    height: $hero-border-width;
     position: absolute;
     left: 0;
     width: 100%;
@@ -40,11 +45,16 @@
  * Offset modifier which pulls content up to sit over hero.
  * Requires content effected to be positioned relative to avoid z-index issues.
  */
-.c-hero--overlap {
-  margin-bottom: -10vw;
+
+.c-hero--cover {
+  height: calc(100vh - #{$hero-height-offset}); /* TODO: Define correct heights or scaled/fixed versions */
 }
 
-.c-hero--media {
+.c-hero--overlap {
+  margin-bottom: -$hero-overlap;
+}
+
+.c-hero--fit-content {
   height: auto;
   min-height: 0;
 }
@@ -52,21 +62,21 @@
 /**
  * Overlay to be used for titles and links etc.
  */
-.c-hero__overlay {
+.c-hero__caption {
   bottom: 0;
   padding-top: $global-spacing-unit;
   padding-bottom: $global-spacing-unit;
   position: absolute;
-  text-shadow: 1px 1px rgba(color(black), 0.2); /* TODO: Dont think this should be forced? */
+  text-shadow: $hero-text-shadow;
   width: 100%;
 
   /* If hero has overlap modifier, shift overlay content upwards to compensate */
   .c-hero--overlap & {
-    bottom: 10vw; /* Taken from Sky Pages (TODO: size needs clarifying) */
+    bottom: $hero-overlap; /* Taken from Sky Pages (TODO: size needs clarifying) */
   }
 }
 
-.c-hero__media {
+.c-hero__video {
   display: block;
 }
 
@@ -77,9 +87,4 @@
  */
 .c-hero__link {
   color: inherit;
-}
-
-.c-hero__title {
-  @include font-size($text-alpha);
-  margin-bottom: 0;
 }
