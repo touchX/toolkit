@@ -3,10 +3,18 @@
    ========================================================================== */
 
 .c-hero {
+  background-position: center;
+  background-size: cover;
   color: color(white); /* TODO: Will color ever change? */
+  height: calc(100vh - 5.727em); /* TODO: Define correct heights or scaled/fixed versions */
+  min-height: 20em; /* TODO: Min height for content or scaled/fixed versions */
   position: relative;
 
-  /* TODO: Are rails part of hero or shine? */
+  /**
+   * Top and bottom rails/borders
+   *
+   * TODO: Are rails part of hero or shine?
+   */
   &::before,
   &::after {
     content: "";
@@ -36,8 +44,13 @@
   margin-bottom: -10vw;
 }
 
+.c-hero--media {
+  height: auto;
+  min-height: 0;
+}
+
 /**
- * Overlay containing
+ * Overlay to be used for titles and links etc.
  */
 .c-hero__overlay {
   bottom: 0;
@@ -49,11 +62,17 @@
 
   /* If hero has overlap modifier, shift overlay content upwards to compensate */
   .c-hero--overlap & {
-    bottom: 10vw; /* Taken from Sky Pages (TODO: needs clarifying) */
+    bottom: 10vw; /* Taken from Sky Pages (TODO: size needs clarifying) */
   }
 }
 
-/* TODO: Should the overlay content be defined or free to add whatever?
+.c-hero__media {
+  display: block;
+}
+
+/**
+ * TODO: Should the overlay content be defined with classes or free to add as
+ * much in as wanted?
  * This includes .c-hero__link, .c-hero__title and .c-hero__caption
  */
 .c-hero__link {
@@ -63,8 +82,4 @@
 .c-hero__title {
   @include font-size($text-alpha);
   margin-bottom: 0;
-}
-
-.c-hero__caption {
-  @include font-size($text-gamma);
 }
