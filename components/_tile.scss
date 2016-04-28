@@ -166,6 +166,11 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
     height: 45%;
   }
 
+  .c-tile__link:focus &,
+  .c-tile__link:hover & {
+    text-decoration: underline;
+  }
+
   // Pseudo element used for hover state background
   &::before {
     @include background-gradient("large");
