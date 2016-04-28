@@ -185,6 +185,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     height: 45%;
   }
 
+  .c-tile__link:focus &,
+  .c-tile__link:hover & {
+    text-decoration: underline;
+  }
+
   // Pseudo element used for hover state background
   &::before {
     @include background-gradient($tile-gradient-default-hover);
