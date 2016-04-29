@@ -14,6 +14,24 @@ $tile-arrow-size: 22px !default;
 $tile-arrow-color: #e6e6ea;
 $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
+$tile-gradient-default: "small";
+$tile-gradient-default-hover: "large";
+
+/**
+ * Array of brands to generate specific themes for tile hover effects.
+ * By default no themes are generated, to include themes overwrite the
+ * `$included-tile-themes` array (see example)
+ *
+ * Example usage:
+ * $included-tile-themes: "sky-1", "sky-arts", "sky-sports";
+ *
+ * Apply relevant class (ie `.c-tile--sky-1) to the `.c-tile` element or to a
+ * parent element to apply to all nested tiles.
+ *
+ */
+
+$included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-kids", "sky-living", "sky-movies", "sky-news", "sky-sports", "sky-store" !default;
+
 /**
  * The base of the tile; provides the glass "border" and shadow.
  *
@@ -70,7 +88,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  * positioning for square tiles
  */
 .c-tile__content {
-  @include background-gradient("small");
+  @include background-gradient($tile-gradient-default);
 
   @include mq($from: medium) {
     .c-tile--square & {
@@ -112,6 +130,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 .c-tile__link {
   display: block;
   color: inherit;
+  transition: color $tile-animation-speed ease;
 
   &,
   &:hover,
@@ -158,7 +177,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  * take up the lower 50% of the tile.
  */
 .c-tile__caption {
-  @include background-gradient("small");
+  @include background-gradient($tile-gradient-default);
 
   position: relative;
 
@@ -173,7 +192,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
   // Pseudo element used for hover state background
   &::before {
-    @include background-gradient("large");
+    @include background-gradient($tile-gradient-default-hover);
     will-change: transform;
 
     content: "";
@@ -263,4 +282,25 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
 .c-tile__shine--bottom {
   bottom: -($global-spacing-unit-small + $tile-border-width);
+}
+
+/* Tile themes
+  =========================================== */
+
+@if $included-tile-themes {
+  @each $brand in $included-tile-themes {
+    // For each brand generate a tile theme class i.e. .t-tile-sky-1
+    .c-tile--#{$brand} {
+
+      .c-tile__link:focus,
+      .c-tile__link:hover {
+        color: color(white);
+      }
+
+      // Set up style overides
+      .c-tile__caption::before {
+        @include background-gradient($brand);
+      }
+    }
+  }
 }
