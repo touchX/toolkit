@@ -42,7 +42,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  */
 .c-tile {
   position: relative;
-  background: $tile-inner-border-colour;
+  background-color: $tile-inner-border-colour;
   box-shadow: $tile-shadow;
   border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
