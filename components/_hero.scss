@@ -1,0 +1,109 @@
+/* ==========================================================================
+   COMPONENTS / HERO
+   ========================================================================== */
+
+$hero-border-width: 6px;
+$hero-border-color: rgba(color(white), 0.3);
+$hero-text-shadow: 0 0 25px rgba(color(black), 0.25), 1px 1px 1px rgba(color(black), 0.5);
+$hero-overlap: 10vh;
+
+/**
+ * The Hero component provides a dominant piece of media to a page
+ *
+ * 1. Allows for absolute positioning of borders and content.
+ * 2. Default height for stretched content, min-height for scaled/fixed content.
+ * 3. Default text color, this should be customised with a modifier class.
+ * 4. Hero images set via background-image should cover and center.
+ */
+.c-hero {
+  position: relative; /* [1] */
+  height: 60vh; /* [2] */
+  min-height: 20em; /* [2] */
+  color: color(white); /* [3] */
+  background-position: center; /* [4] */
+  background-size: cover; /* [4] */
+
+  /**
+   * Translucent top and bottom borders for the Hero
+   *
+   * As we cannot set a border property over video, borders are implemented
+   * using pseudo-elements.
+   *
+   * `c-shine` could be implemented alongside JavaScript to provide a scrolling
+   * "shine" effect.
+   */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    height: $hero-border-width;
+    width: 100%;
+    background: $hero-border-color;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+}
+
+/**
+ * Make the Hero cover all available screenspace
+ */
+.c-hero--cover {
+  height: 100vh;
+}
+
+/**
+ * Make the Hero automatically fit to its content height.
+ * N.B. This should be used for videos.
+ */
+.c-hero--fit-content {
+  height: auto;
+  min-height: 0;
+}
+
+/**
+ * Make any other content below the Hero overlap upwards.
+ */
+.c-hero--overlap {
+  margin-bottom: -$hero-overlap;
+}
+
+/**
+ * The caption overlays at the bottom of a Hero, providing space for additional
+ * content such as titles or logos.
+ */
+.c-hero__caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: $global-spacing-unit 0;
+  text-shadow: $hero-text-shadow;
+
+  /**
+   * If hero has overlap modifier, shift caption upwards to compensate.
+   */
+  .c-hero--overlap & {
+    bottom: $hero-overlap;
+  }
+}
+
+/**
+ * Hero video needs to be set to `display: block` to avoid spacing issues.
+ */
+.c-hero__video {
+  display: block;
+}
+
+/**
+ * Hero link inherits the Hero `color` to override anchor element styles.
+ */
+.c-hero__link {
+  color: inherit;
+}

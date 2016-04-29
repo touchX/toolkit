@@ -4,12 +4,12 @@
 
 $tile-padding: $global-spacing-unit-small !default;
 $tile-border-width: 5px !default;
-$tile-outer-border-colour: rgba(255, 255, 255, 0.2) !default;
+$tile-inner-border-colour: rgba(color(white), 0.3) !default;
+$tile-outer-border-colour: rgba(color(white), 0.2) !default;
 $tile-outer-border-width: $global-border-width !default;
 $tile-animation-speed: $global-animation-speed;
 $tile-animation-speed-slow: $global-animation-speed-slow;
 $tile-shadow: $global-shadow !default;
-
 $tile-arrow-size: 22px !default;
 $tile-arrow-color: #e6e6ea;
 $tile-shadow-color: rgba(160, 160, 160, 0.5);
@@ -24,7 +24,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  */
 .c-tile {
   position: relative;
-  background: transparent;
+  background-color: $tile-inner-border-colour;
   box-shadow: $tile-shadow;
   border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
@@ -164,6 +164,11 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
   @include mq($from: medium) {
     height: 45%;
+  }
+
+  .c-tile__link:focus &,
+  .c-tile__link:hover & {
+    text-decoration: underline;
   }
 
   // Pseudo element used for hover state background
