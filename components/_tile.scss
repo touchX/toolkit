@@ -24,7 +24,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
  */
 .c-tile {
   position: relative;
-  background: $tile-inner-border-colour;
+  background-color: $tile-inner-border-colour;
   box-shadow: $tile-shadow;
   border: $tile-outer-border-width solid $tile-outer-border-colour;
   padding: $tile-border-width;
