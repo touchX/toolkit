@@ -5,6 +5,11 @@
   font-weight: bold;
 }
 
+// Temporary until core "no margin" utilities are fixed
+.u-margin-none {
+  margin-bottom: 0;
+}
+
 /* Icons
    ========================================================================== */
 
@@ -21,6 +26,13 @@
     color: #0072c9;
     transform: scale(1.5);
   }
+}
+
+/* Code
+   =========================================== */
+
+.sg-code-block {
+  display: block;
 }
 
 /* Swatches
