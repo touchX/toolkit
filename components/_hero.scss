@@ -2,7 +2,6 @@
    COMPONENTS / HERO
    ========================================================================== */
 
-$hero-height-offset: 5.727em;
 $hero-border-width: 0.27em;
 $hero-border-color: rgba(color(white), 0.3);
 $hero-text-shadow: 0 0 25px rgba(color(black), 0.25), 1px 1px 1px rgba(color(black), 0.5);
@@ -55,10 +54,9 @@ $hero-overlap: 10vh;
 
 /**
  * Make the Hero cover all available screenspace
- * (offsetting by the height of the masthead)
  */
 .c-hero--cover {
-  height: calc(100vh - #{$hero-height-offset}); /* TODO: Define correct heights or scaled/fixed versions */
+  height: 100vh;
 }
 
 /**
