@@ -18,6 +18,21 @@ $tile-gradient-default: "small";
 $tile-gradient-default-hover: "large";
 
 /**
+ * Array of brands to generate specific themes for tile hover effects.
+ * By default no themes are generated, to include themes overwrite the
+ * `$included-tile-themes` array (see example)
+ *
+ * Example usage:
+ * $included-tile-themes: "sky-1", "sky-arts", "sky-sports";
+ *
+ * Apply relevant class (ie `.c-tile--sky-1) to the `.c-tile` element or to a
+ * parent element to apply to all nested tiles.
+ *
+ */
+
+$included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-kids", "sky-living", "sky-movies", "sky-news", "sky-sports", "sky-store" !default;
+
+/**
  * The base of the tile; provides the glass "border" and shadow.
  *
  * Also provides selected state, which gives a triangle arrowhead marker between
@@ -114,6 +129,7 @@ $tile-gradient-default-hover: "large";
 .c-tile__link {
   display: block;
   color: inherit;
+  transition: color $tile-animation-speed ease;
 
   &,
   &:hover,
@@ -259,4 +275,25 @@ $tile-gradient-default-hover: "large";
 
 .c-tile__shine--bottom {
   bottom: -($global-spacing-unit-small + $tile-border-width);
+}
+
+/* Tile themes
+  =========================================== */
+
+@if $included-tile-themes {
+  @each $brand in $included-tile-themes {
+    // For each brand generate a tile theme class i.e. .t-tile-sky-1
+    .c-tile--#{$brand} {
+
+      .c-tile__link:focus,
+      .c-tile__link:hover {
+        color: color(white);
+      }
+
+      // Set up style overides
+      .c-tile__caption::before {
+        @include background-gradient($brand);
+      }
+    }
+  }
 }
