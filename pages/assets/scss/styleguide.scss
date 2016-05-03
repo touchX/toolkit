@@ -1,13 +1,84 @@
 @import 'sky-toolkit-core/all';
 @import 'sky-toolkit-ui/all';
 
+/* ! Temporary until added to Toolkit !
+   ========================================================================== */
+
 .c-text-bold {
   font-weight: bold;
 }
 
-// Temporary until core "no margin" utilities are fixed
 .u-margin-none {
   margin-bottom: 0;
+}
+
+/* Mixins
+   ========================================================================== */
+
+@mixin page-background(){
+  background-color: #c9c7d1;
+  background-image: -webkit-linear-gradient(left, #c9c7d1 0%, #e5e5ea 6%, #fefefe 20%, #fefefe 80%, #e5e5ea 94%, #c9c7d1 100%);
+  background-image: -moz-linear-gradient(left, #c9c7d1 0%, #e5e5ea 6%, #fefefe 20%, #fefefe 80%, #e5e5ea 94%, #c9c7d1 100%);
+  background-image: -o-linear-gradient(left, #c9c7d1 0%, #e5e5ea 6%, #fefefe 20%, #fefefe 80%, #e5e5ea 94%, #c9c7d1 100%);
+  background-image: linear-gradient(to right, #c9c7d1 0%, #e5e5ea 6%, #fefefe 20%, #fefefe 80%, #e5e5ea 94%, #c9c7d1 100%);
+}
+
+/* Header, Main and Footer
+   ========================================================================== */
+
+$sg-header-width: 12em;
+$sg-header-inner-border-width: 5px;
+$sg-header-outer-border-width: 1px;
+
+.sg-header {
+  position: fixed;
+  display: block;
+  width: $sg-header-width;
+  padding: $global-spacing-unit-small;
+  top: 0;
+  bottom: 0;
+  left: calc(-#{$sg-header-width} - #{$sg-header-inner-border-width} - #{$sg-header-outer-border-width});
+  z-index: 5;
+  background: color(white);
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: $sg-header-inner-border-width;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    background: rgba(255,255,255,0.3);
+    border-right: $sg-header-outer-border-width solid rgba(255,255,255,0.2);
+  }
+
+  @include mq($from: large) {
+    left: 0;
+  }
+}
+
+.sg-main {
+  @include page-background();
+  display: block;
+  margin-left: 0;
+  padding-top: $global-spacing-unit-small;
+  overflow: hidden;
+
+  @include mq($from: large) {
+    margin-left: $sg-header-width;
+  }
+}
+
+.sg-footer {
+  @include page-background();
+  display: block;
+  margin-left: 0;
+  overflow: hidden;
+
+  @include mq($from: large) {
+    margin-left: $sg-header-width;
+  }
 }
 
 /* Icons
