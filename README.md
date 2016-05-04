@@ -24,7 +24,16 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 ## Getting Started & Documentation
 
-**Note**: The Toolkit is still in active development and not yet 100% stable. This means breaking updates may occur, minor issues and quirks may be present, and full browser support is not guaranteed.
+**Note**: The Toolkit is still in active development and not yet 100% stable. This means breaking updates may occur, minor issues and quirks may be present.
+
+**To support IE9+, you must include the following at the top of your `index.html`/ default view.**
+```
+<!DOCTYPE html>
+<!--[if IE 9 ]>               <html lang="en-GB" class="ie9 no-js"> <![endif]-->
+<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB" class="no-js"> <!--<![endif]-->
+<head>
+  ...
+```
 
 Currently available Toolkit components are available at: http://sky-uk.github.io/toolkit/
 
