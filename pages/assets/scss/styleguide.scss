@@ -1,17 +1,6 @@
 @import 'sky-toolkit-core/all';
 @import 'sky-toolkit-ui/all';
 
-/* ! Temporary until added to Toolkit !
-   ========================================================================== */
-
-.c-text-bold {
-  font-weight: bold;
-}
-
-.u-margin-none {
-  margin-bottom: 0;
-}
-
 /* Mixins
    ========================================================================== */
 
@@ -143,6 +132,29 @@ $sg-header-outer-border-width: 1px;
 
 .sg-swatch--success {
   background-color: color(success);
+  color: color(white);
+}
+
+.sg-swatch--ui-light {
+  background-color: color(ui-light);
+}
+
+.sg-swatch--ui-mid {
+  background-color: color(ui-mid);
+  color: color(white);
+}
+
+.sg-swatch--ui-dark {
+  background-color: color(ui-dark);
+  color: color(white);
+}
+
+.sg-swatch--white {
+  background-color: color(white);
+}
+
+.sg-swatch--black {
+  background-color: color(black);
   color: color(white);
 }
 
