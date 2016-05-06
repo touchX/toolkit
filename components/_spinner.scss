@@ -2,6 +2,10 @@
    COMPONENTS / SPINNER
    ========================================================================== */
 
+// sky-toolkit-ui version
+@import "../settings/version";
+
+// Spinner settings
 $spinner-size: round($global-spacing-unit * 2.5);
 $spinner-size-small: round($global-spacing-unit * 2);
 $spinner-size-large: round($global-spacing-unit * 3);

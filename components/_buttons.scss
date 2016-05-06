@@ -2,6 +2,10 @@
    COMPONENTS / BUTTONS
    ========================================================================== */
 
+// sky-toolkit-ui version
+@import "../settings/version";
+
+// Button settings
 $btn-font-size: 18px !default;
 $btn-padding-x: $global-spacing-unit-small !default;
 $btn-padding-y: $global-spacing-unit-tiny !default;

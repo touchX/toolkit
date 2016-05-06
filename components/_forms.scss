@@ -2,6 +2,10 @@
    COMPONENTS / FORMS
    ========================================================================== */
 
+// sky-toolkit-ui version
+@import "../settings/version";
+
+// Form settings
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
@@ -256,24 +260,26 @@ $form-animation-speed: $global-animation-speed-fast;
 /* Form inline field groups
   =========================================== */
 
-.c-form-inline {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
+@include deprecate("0.3", "Implement .o-layout and .u-width instead, this provides better browser support and greater flexibility on widths") {
+  .c-form-inline {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
 
-.c-form-inline__field {
-  margin-right: $global-spacing-unit-small;
-  text-align: center;
+  .c-form-inline__field {
+    margin-right: $global-spacing-unit-small;
+    text-align: center;
 
-  &:last-child {
-    margin-right: 0;
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
 
