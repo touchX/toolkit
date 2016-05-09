@@ -260,7 +260,7 @@ $form-animation-speed: $global-animation-speed-fast;
 /* Form inline field groups
   =========================================== */
 
-@include deprecate("0.3", "Implement .o-layout and .u-width instead, this provides better browser support and greater flexibility on widths") {
+@include deprecate("0.3.0", "Implement .o-layout and .u-width instead, this provides better browser support and greater flexibility on widths") {
   .c-form-inline {
     display: -webkit-box;
     display: -webkit-flex;
