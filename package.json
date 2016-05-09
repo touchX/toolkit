@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
+    "sass-deprecate": "^1.1.0",
     "sass-mq": "^3.2.6"
   },
   "devDependencies": {
