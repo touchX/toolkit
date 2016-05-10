@@ -96,17 +96,22 @@ $form-animation-speed: $global-animation-speed-fast;
 /**
  * All text-like form inputs require a class of `.c-form-input`: we do not use
  * selectors like `input[type="text"] {}`.
+ *
+ * 1. Fix for IE 10/11 removing input vertical padding from inputs.
+ * 2. Spacing is readded using line-height/height as an alternative (39px).
  */
 .c-form-input {
   @include font-size($form-font-size);
   display: inline-block;
-  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  padding: 0 $global-spacing-unit-tiny; /* [1] */
   margin-bottom: $global-spacing-unit-tiny;
+  height: 2.167em; /* [2] */
   width: 100%;
   background-color: $form-background;
   border: $form-border;
   border-radius: $global-border-radius;
   box-shadow: $form-shadow;
+  line-height: 2.167em; /* [2] */
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
   -webkit-appearance: none;
