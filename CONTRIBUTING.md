@@ -9,7 +9,7 @@ Submit issues on the [issue tracker](https://github.com/sky-uk/toolkit/issues) f
 ## Pull requests
 
 1. Submit pull requests for changes and amends to the correct repository (UI or Core).
-2. Get a code review by one or two devs. One of these should be a core contributor to Toolkit. (You need two :shipit: :shipit: left as comments on the pull request for when it's an addition, and one :shipit: for a patch, modification or small change.)
+2. Get a code review by one or two devs. One of these should be a core contributor to Toolkit. (You need two :shipit: :shipit: left as comments on the pull request for when it's an addition, and one :shipit: for a patch, modification or small change).
 
 ## Discussion
 
