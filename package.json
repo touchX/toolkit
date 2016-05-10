@@ -6,7 +6,8 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
     "lint": "stylelint ./**/*.scss --syntax scss",
-    "build": "cat _all.scss | node-sass --include-path node_modules/ --output-style compressed --precision 9 > dist/ui.css"
+    "build": "cat _all.scss | node-sass --include-path node_modules/ --output-style compressed --precision 9 > dist/ui.css",
+    "version": "bash scripts/update-version.sh"
   },
   "pre-commit": [
     "lint",
