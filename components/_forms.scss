@@ -242,6 +242,10 @@ $form-animation-speed: $global-animation-speed-fast;
     background-position: center center;
     pointer-events: none;
   }
+
+  &::-ms-expand {
+    display: none;
+  }
 }
 
 .c-form-select__dropdown {
