@@ -222,6 +222,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-select {
   @include font-size($form-font-size);
   display: inline-block;
+  margin-bottom: $global-spacing-unit-tiny;
   position: relative;
   width: 100%;
   cursor: pointer;
