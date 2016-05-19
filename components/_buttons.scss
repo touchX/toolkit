@@ -128,7 +128,7 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   &:hover,
   &:active,
   &:focus {
-    color: color(text);
+    color: color(white);
     background-color: color(keyline);
     border-color: color(keyline);
     cursor: not-allowed;
@@ -165,7 +165,12 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   color: color(brand);
   background-color: transparent;
   border-color: color(brand);
-  transition: padding $btn-animation-speed-fast ease;
+  transition: all $btn-animation-speed-fast ease;
+
+  &:hover,
+  &:focus {
+    border-color: color(highlight);
+  }
 }
 
 /* Button sizing modifiers
