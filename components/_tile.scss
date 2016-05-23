@@ -212,7 +212,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
   // Pseudo element used for hover state background
   &::before {
-    @include background-gradient($tile-gradient-default-hover);
+    @include background-gradient("large");
     will-change: transform;
 
     content: "";
