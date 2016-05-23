@@ -17,7 +17,6 @@ $tile-shadow: $global-shadow !default;
 $tile-arrow-size: 22px !default;
 $tile-arrow-color: #e6e6ea;
 $tile-shadow-color: rgba(160, 160, 160, 0.5);
-
 $tile-gradient-default: "small";
 $tile-gradient-default-hover: "large";
 
@@ -92,7 +91,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * positioning for square tiles
  */
 .c-tile__content {
-  @include background-gradient($tile-gradient-default);
+  @include background-gradient($tile-gradient-default, "radial");
 
   @include mq($from: medium) {
     .c-tile--square & {
