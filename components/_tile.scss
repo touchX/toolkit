@@ -18,9 +18,6 @@ $tile-arrow-size: 22px !default;
 $tile-arrow-color: #e6e6ea;
 $tile-shadow-color: rgba(160, 160, 160, 0.5);
 
-$tile-gradient-default: "small";
-$tile-gradient-default-hover: "large";
-
 /**
  * Array of brands to generate specific themes for tile hover effects.
  * By default no themes are generated, to include themes overwrite the
@@ -92,7 +89,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * positioning for square tiles
  */
 .c-tile__content {
-  @include background-gradient($tile-gradient-default);
+  @include background-gradient("small", "radial");
 
   @include mq($from: medium) {
     .c-tile--square & {
@@ -181,7 +178,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * take up the lower 50% of the tile.
  */
 .c-tile__caption {
-  @include background-gradient($tile-gradient-default);
+  @include background-gradient("small");
 
   position: relative;
 
@@ -196,7 +193,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
   // Pseudo element used for hover state background
   &::before {
-    @include background-gradient($tile-gradient-default-hover);
+    @include background-gradient("large");
     will-change: transform;
 
     content: "";
