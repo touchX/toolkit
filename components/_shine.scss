@@ -13,6 +13,7 @@ $shine-size: 46px; // The size of the shine graphic
  */
 .c-shine {
   overflow: hidden;
+  pointer-events: none;
   display: block;
   height: $shine-size;
   width: 100%;
