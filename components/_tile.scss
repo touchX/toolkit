@@ -224,6 +224,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     left: 0;
     transition: opacity $tile-animation-speed ease;
 
+    .c-tile__link:focus &,
     .c-tile__link:hover & {
       opacity: 1;
     }
