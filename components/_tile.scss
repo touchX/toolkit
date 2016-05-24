@@ -103,6 +103,31 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   }
 
   /**
+   * Pseudo element used for hover state background when nested within c-tile__link
+   */
+  .c-tile__link &::before {
+    @include background-gradient($tile-gradient-default-hover, "radial");
+    will-change: transform;
+
+    content: "";
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity $tile-animation-speed ease;
+  }
+
+  /**
+   * Trigger hover state
+   */
+  .c-tile__link:focus &::before,
+  .c-tile__link:hover &::before {
+    opacity: 1;
+  }
+
+  /**
    * Set position to static below medium on collapsable tiles
    */
   .c-tile--collapsable & {
@@ -123,6 +148,10 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  */
 .c-tile__body {
   padding: $tile-padding;
+
+  .c-tile__link & {
+    position: relative;
+  }
 
   > :last-child {
     margin-bottom: 0;
@@ -210,8 +239,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     text-decoration: underline;
   }
 
-  // Pseudo element used for hover state background
-  &::before {
+  /**
+   * Pseudo element used for hover state background when a caption is
+   * nested within c-tile__link.
+   */
+  .c-tile__link &::before {
     @include background-gradient($tile-gradient-default-hover);
     will-change: transform;
 
@@ -224,8 +256,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     left: 0;
     transition: opacity $tile-animation-speed ease;
 
-    .c-tile__link:focus &,
-    .c-tile__link:hover & {
+    /**
+     * Trigger hover state
+     */
+    .c-tile__link:focus &::before,
+    .c-tile__link:hover &::before {
       opacity: 1;
     }
   }
