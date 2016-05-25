@@ -32,9 +32,9 @@ Currently available Toolkit components are visible at: http://sky-uk.github.io/t
 
 ## Requirements
 
-Because of how the Toolkit loads third party dependencies such as `sass-mq`, NPM >3.0.0 is required (included in Node >v5.0.0).
+Because of how the Toolkit loads third party dependencies such as `sass-mq`, `npm` `>3.0.0` is required (included in `node` `>v5.0.0`).
 
-Also note that if you're using Webpack and sass-loader you also require sass-loader >3.1.0.
+If you're using `webpack` and `sass-loader`, you will need `sass-loader` >3.1.0.
 
 ## Maintainers
 
@@ -52,5 +52,5 @@ Feel free to open a pull request to include yourself in this list.
 
 ## Contributing
 
-We appreciate any contribution to the Toolkit. Check out [CONTRIBUTING.md](CONTRIBUTING.md).
+We appreciate any contribution to the Toolkit, please check out [CONTRIBUTING.md](CONTRIBUTING.md).
 We keep a list of features and bugs [in the issue tracker](https://github.com/sky-uk/toolkit/issues).
