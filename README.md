@@ -17,8 +17,8 @@ Sky's CSS Toolkit.
 The project consists of 3 repositories: 
 
 - _this repo_: consumes the UI and Core layers and serves static pages
-- [Toolkit Core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects
-- [Toolkit UI](https://github.com/sky-uk/toolkit-ui): Aesthetic components following Polaris brand guidelines
+- [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects
+- [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components following Polaris brand guidelines
 
 ## Versioning
 
@@ -26,11 +26,9 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 ## Getting Started & Documentation
 
-Currently available Toolkit components are available at: http://sky-uk.github.io/toolkit/
+Currently available Toolkit components are visible at: http://sky-uk.github.io/toolkit/
 
-See the wiki for:
-- how to [implement the Toolkit in your project](https://github.com/sky-uk/toolkit/wiki/Getting-started).
-- how to [get started working on GitHub pages](https://github.com/sky-uk/toolkit/wiki/GitHub-Pages).
+[See the Wiki](https://github.com/sky-uk/toolkit/wiki/) for full documenation and information on how to [implement the Toolkit](https://github.com/sky-uk/toolkit/wiki/Getting-started) in your project.
 
 ## Requirements
 
