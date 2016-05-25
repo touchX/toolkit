@@ -42,6 +42,7 @@ Also note that if you're using Webpack and sass-loader you also require sass-loa
 
 - [Aaron Thomas](https://github.com/aaronthomas) - aaron.thomas@sky.uk
 - [Joe Bell](https://github.com/joebell93) - joseph.bell@sky.uk
+- [Joe Dinsdale](https://github.com/MrDinsdale) - joseph.dinsdale@sky.uk
 
 ## Contributors
 
