@@ -277,7 +277,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * z-indexing and avoid issues with nested content.
  * The before element is always used as we always need the bg present.
  * The after element is only used when c-tile__link is used as this is purely
- * for hover states.
+ * used for hover states to get around z-index issues.
+ *
+ * Tiles all have a class="c-tile__body" or class="c-tile__body c-tile__caption"
+ * elements wrapping the main content area.
+ * Therefore the caption can be used as an override for the default radial gradient.
  */
 .c-tile__body,
 .c-tile__caption {
@@ -286,6 +290,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     text-decoration: underline;
   }
 
+  // Set up shared pseudo element styling
   &::before,
   .c-tile__link &::after {
     bottom: 0;
@@ -302,17 +307,18 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   }
 
   .c-tile__link &::after {
-    opacity: 0;
+    opacity: 0; // Set initial opacity
     transition: opacity $tile-animation-speed ease;
     z-index: -1; // Set between before and content.
   }
 
   .c-tile__content:hover &::after,
   .c-tile__content:focus &::after {
-    opacity: 1;
+    opacity: 1; // Set hover opacity
   }
 }
 
+// Styling for default tiles without images
 .c-tile__body {
   &::before {
     @include background-gradient($tile-gradient-default, "radial");
@@ -322,6 +328,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   }
 }
 
+// Styling for default tiles with images
 .c-tile__caption {
   &::before {
     @include background-gradient($tile-gradient-default);
