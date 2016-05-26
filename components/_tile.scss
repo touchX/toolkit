@@ -361,7 +361,6 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     // For each brand generate a tile theme class i.e. .t-tile-sky-1
     .c-tile--#{$brand} {
 
-      .c-tile__link:focus,
       .c-tile__link:hover {
         color: color(white);
       }
