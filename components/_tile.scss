@@ -264,7 +264,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   &.c-tile--collapsable {
     @include mq($until: medium) {
       height: auto;
-      padding-top: 0;
+      padding-top: 5px;
     }
   }
 }
