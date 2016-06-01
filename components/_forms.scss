@@ -269,32 +269,6 @@ $form-animation-speed: $global-animation-speed-fast;
   box-shadow: $form-shadow-focus;
 }
 
-/* Form inline field groups
-  =========================================== */
-
-@include deprecate("0.3.0", "Implement .o-layout and .u-width instead, this provides better browser support and greater flexibility on widths") {
-  .c-form-inline {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-
-  .c-form-inline__field {
-    margin-right: $global-spacing-unit-small;
-    text-align: center;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
 /* Form checkbox inputs
   =========================================== */
 
