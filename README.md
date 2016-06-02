@@ -4,6 +4,8 @@
 
 Sky's CSS Toolkit.
 
+See also [github.com/sky-uk/toolkit/wiki](https://github.com/sky-uk/toolkit/wiki)
+
 **Note**: The Toolkit is still in active development and not yet 100% stable. This means breaking updates may occur, minor issues and quirks may be present.
 
 ## Goals
