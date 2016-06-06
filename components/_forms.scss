@@ -256,6 +256,7 @@ $form-animation-speed: $global-animation-speed-fast;
   outline: 0;
   cursor: pointer;
   -webkit-appearance: none;
+  -moz-appearance: none;
 
   &::-ms-expand {
     display: none;
