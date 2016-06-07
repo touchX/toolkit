@@ -102,6 +102,8 @@ $hero-overlap: 10vh;
  * Hero video needs to be set to `display: block` to avoid spacing issues.
  */
 .c-hero__video {
+  width: 100%;
+  height: 100%;
   display: block;
 }
 
