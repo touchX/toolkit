@@ -48,6 +48,8 @@ $select-animation-speed: $global-animation-speed-fast !default;
  *    postition out of view.
 */
 .c-select__btn {
+  position: relative;
+
   &::after {
     content: ""; /* [1] */
     position: absolute; /* [2] */
