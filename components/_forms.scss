@@ -119,6 +119,7 @@ $form-animation-speed: $global-animation-speed-fast;
   &:focus {
     border-color: $form-background;
     box-shadow: $form-shadow-focus;
+    outline: none;
   }
 
 }
@@ -256,6 +257,7 @@ $form-animation-speed: $global-animation-speed-fast;
   outline: 0;
   cursor: pointer;
   -webkit-appearance: none;
+  -moz-appearance: none;
 
   &::-ms-expand {
     display: none;
@@ -339,10 +341,6 @@ $form-animation-speed: $global-animation-speed-fast;
   background-size: contain;
   background-position: center center;
   border: solid 1px transparent;
-}
-
-.c-form-checkbox--radio .c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
-  content: normal;
 }
 
 /* Form modifiers
