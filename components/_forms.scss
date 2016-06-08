@@ -2,9 +2,6 @@
    COMPONENTS / FORMS
    ========================================================================== */
 
-// sky-toolkit-ui version
-@import "../settings/version";
-
 // Form settings
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
@@ -267,32 +264,6 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-select__dropdown:focus {
   border-color: $form-background;
   box-shadow: $form-shadow-focus;
-}
-
-/* Form inline field groups
-  =========================================== */
-
-@include deprecate("0.3.0", "Implement .o-layout and .u-width instead, this provides better browser support and greater flexibility on widths") {
-  .c-form-inline {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-  }
-
-  .c-form-inline__field {
-    margin-right: $global-spacing-unit-small;
-    text-align: center;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
 }
 
 /* Form checkbox inputs

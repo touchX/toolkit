@@ -2,9 +2,6 @@
    COMPONENTS / TILE
    ========================================================================== */
 
-// sky-toolkit-ui version
-@import "../settings/version";
-
 // Tile settings
 $tile-padding: $global-spacing-unit-small !default;
 $tile-border-width: 5px !default;
@@ -91,16 +88,23 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * positioning for square tiles
  */
 .c-tile__content {
-  @include background-gradient($tile-gradient-default, "radial");
+  position: relative;
+  overflow: hidden; // Defensively clip overflowing text that can't be handled because of absolute positioning
 
-  @include mq($from: medium) {
-    .c-tile--square & {
-      position: absolute;
-      top: $tile-border-width;
-      right: $tile-border-width;
-      bottom: $tile-border-width;
-      left: $tile-border-width;
-      overflow: hidden; // Defensively clip overflowing text that can't be handled because of absolute positioning
+  .c-tile--square & {
+    position: absolute;
+    top: $tile-border-width;
+    right: $tile-border-width;
+    bottom: $tile-border-width;
+    left: $tile-border-width;
+  }
+
+  /**
+   * Set position to static below medium on collapsable tiles
+   */
+  .c-tile--collapsable & {
+    @include mq($until: medium) {
+      position: static;
     }
   }
 
@@ -115,7 +119,10 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * which doesn't sit flush to the edge of the tile.
  */
 .c-tile__body {
+  height: 100%;
   padding: $tile-padding;
+  position: relative;
+  width: 100%;
 
   > :last-child {
     margin-bottom: 0;
@@ -153,12 +160,17 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * `c-tile--square` modifier
  */
 .c-tile__media {
-  display: none;
+  overflow: none;
+  display: block;
+  height: 55%;
 
-  @include mq($from: medium) {
-    overflow: none;
-    display: block;
-    height: 55%;
+  /**
+   * Hide media below medium on collapsable tiles
+   */
+  .c-tile--collapsable & {
+    @include mq($until: medium) {
+      display: none;
+    }
   }
 }
 
@@ -180,35 +192,16 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * take up the lower 50% of the tile.
  */
 .c-tile__caption {
-  @include background-gradient($tile-gradient-default);
-
   position: relative;
+  height: 45%;
+  z-index: 20;
 
-  @include mq($from: medium) {
-    height: 45%;
-  }
-
-  .c-tile__link:focus &,
-  .c-tile__link:hover & {
-    text-decoration: underline;
-  }
-
-  // Pseudo element used for hover state background
-  &::before {
-    @include background-gradient($tile-gradient-default-hover);
-    will-change: transform;
-
-    content: "";
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: opacity $tile-animation-speed ease;
-
-    .c-tile__link:hover & {
-      opacity: 1;
+  /**
+   * Sets height to auto below medium on collapsable tiles
+   */
+  .c-tile--collapsable & {
+    @include mq($until: medium) {
+      height: auto;
     }
   }
 
@@ -259,9 +252,86 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * Forces the tile to keep a square ratio
  */
 .c-tile--square {
-  @include mq($from: medium) {
-    height: 0;
-    padding-top: 100%;
+  height: 0;
+  padding-top: 100%;
+
+  /**
+   * Collapses square ratio at medium and sets to auto height
+   */
+  &.c-tile--collapsable {
+    @include mq($until: medium) {
+      height: auto;
+      padding-top: 5px;
+    }
+  }
+}
+
+/* Tile bg hover state
+  =========================================== */
+
+/**
+ * We used before and after pseudo elements for the tile bg to allow easy
+ * z-indexing and avoid issues with nested content.
+ * The before element is always used as we always need the bg present.
+ * The after element is only used when c-tile__link is used as this is purely
+ * used for hover states to get around z-index issues.
+ *
+ * Tiles all have a class="c-tile__body" or class="c-tile__body c-tile__caption"
+ * elements wrapping the main content area.
+ * Therefore the caption can be used as an override for the default radial gradient.
+ */
+.c-tile__body,
+.c-tile__caption {
+  .c-tile__link .c-tile__content:focus &,
+  .c-tile__link .c-tile__content:hover & {
+    text-decoration: underline;
+  }
+
+  // Set up shared pseudo element styling
+  &::before,
+  .c-tile__link &::after {
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    will-change: transform;
+  }
+
+  &::before {
+    z-index: -2; // Set below caption to avoid hiding content
+  }
+
+  .c-tile__link &::after {
+    opacity: 0; // Set initial opacity
+    transition: opacity $tile-animation-speed ease;
+    z-index: -1; // Set between before and content.
+  }
+
+  .c-tile__content:hover &::after,
+  .c-tile__content:focus &::after {
+    opacity: 1; // Set hover opacity
+  }
+}
+
+// Styling for default tiles without images
+.c-tile__body {
+  &::before {
+    @include background-gradient($tile-gradient-default, "radial");
+  }
+  .c-tile__link &::after {
+    @include background-gradient($tile-gradient-default-hover, "radial");
+  }
+}
+
+// Styling for default tiles with images
+.c-tile__caption {
+  &::before {
+    @include background-gradient($tile-gradient-default);
+  }
+  .c-tile__link &::after {
+    @include background-gradient($tile-gradient-default-hover);
   }
 }
 
@@ -295,13 +365,12 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     // For each brand generate a tile theme class i.e. .t-tile-sky-1
     .c-tile--#{$brand} {
 
-      .c-tile__link:focus,
       .c-tile__link:hover {
         color: color(white);
       }
 
       // Set up style overides
-      .c-tile__caption::before {
+      .c-tile__link .c-tile__caption::after {
         @include background-gradient($brand);
       }
     }

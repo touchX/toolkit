@@ -1,13 +1,12 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "0.2.10",
+  "version": "0.3.0",
   "description": "The UI layer of Sky's web toolkit",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
     "lint": "stylelint ./**/*.scss --syntax scss",
-    "build": "cat _all.scss | node-sass --include-path node_modules/ --output-style compressed --precision 9 > dist/ui.css",
-    "version": "bash scripts/update-version.sh"
+    "build": "cat _all.scss | node-sass --include-path node_modules/ --output-style compressed --precision 9 > dist/ui.css"
   },
   "pre-commit": [
     "lint",
@@ -24,7 +23,6 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sass-deprecate": "^1.1.0",
     "sass-mq": "^3.2.6"
   },
   "devDependencies": {
