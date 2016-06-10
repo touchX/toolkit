@@ -1,4 +1,13 @@
-# Changelog for Toolkit v0.3.0
+# Toolkit v0.3.1
+
+## Toolkit UI
+
+### 1. Enhancements
+- [select] Added `.is-selected` state to `.c-select__input` to change icon to cross
+
+===
+
+# Toolkit v0.3.0
 
 ## Toolkit Core
 
