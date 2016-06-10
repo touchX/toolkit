@@ -163,11 +163,6 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   background-color: transparent;
   border-color: color(brand);
   transition: all $btn-animation-speed-fast ease;
-
-  &:hover,
-  &:focus {
-    border-color: color(highlight);
-  }
 }
 
 /* Button sizing modifiers
