@@ -1,3 +1,10 @@
+# Toolkit UI v0.3.2
+
+## 1. Bug Fixes
+- [tile] Changed tile brand modifiers class to `.c-tile__body` rather than `.c-tile__caption` so that it applies to all tiles rather than just the split media tiles
+
+===
+
 # Toolkit UI v0.3.1
 
 ## 1. Enhancements
