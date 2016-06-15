@@ -370,7 +370,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
       }
 
       // Set up style overides
-      .c-tile__link .c-tile__caption::after {
+      .c-tile__link .c-tile__body::after {
         @include background-gradient($brand);
       }
     }
