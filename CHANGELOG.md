@@ -1,3 +1,13 @@
+# Toolkit v0.3.2
+
+## Toolkit UI
+
+## 1. Bug Fixes
+- [tile] Changed tile brand modifiers class to `.c-tile__body` rather than `.c-tile__caption` so that it applies to all tiles rather than just the split media tiles
+- [select] Fixes gap in bg and border on hover state caused by duplicate `border-radius` properties.
+
+===
+
 # Toolkit v0.3.1
 
 ## Toolkit UI
