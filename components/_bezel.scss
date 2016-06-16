@@ -1,0 +1,29 @@
+/* ==========================================================================
+   COMPONENTS / BEZEL
+   ========================================================================== */
+
+$bezel-inner-border-width: 5px !default;
+$bezel-inner-border-colour: rgba(color(white), 0.3) !default;
+$bezel-outer-border-colour: rgba(color(white), 0.2) !default;
+$bezel-outer-border-width: $global-border-width !default;
+
+/*
+ * Provides a glass "bezel" inner border to the container of a media element.
+ */
+
+.c-bezel {
+  display: inline-block;
+  position: relative;
+  border: $bezel-outer-border-width solid $bezel-outer-border-colour;
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: $bezel-inner-border-width solid $bezel-inner-border-colour;
+  }
+}
