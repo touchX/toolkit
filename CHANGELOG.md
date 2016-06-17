@@ -1,3 +1,10 @@
+# Toolkit UI v0.3.3
+
+## 1. Bezel
+- [bezel] Added the `.c-bezel` component, which provides a glass "bezel" inner border to the container of a media element.
+
+===
+
 # Toolkit UI v0.3.2
 
 ## 1. Bug Fixes
