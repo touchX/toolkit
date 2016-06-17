@@ -1,3 +1,13 @@
+# Toolkit v0.4.0
+
+## Toolkit Core
+
+### 1. Enhancements
+- [settings] Set settings maps to `!default` to enable easier overwriting of values if needed
+
+### 2. Deprecations
+- [sass-deprecate] We removed the sass-deprecate library in favour of changelogs and improved release notes
+
 # Toolkit v0.3.3
 
 ## Toolkit UI
