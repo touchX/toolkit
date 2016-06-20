@@ -1,3 +1,11 @@
+# Toolkit UI v0.3.4
+
+## 1. Enhancements
+- [tile] Removed outer border and refactor of variables.
+- [hero] Match glass border thickness to `c-tile`.
+
+===
+
 # Toolkit UI v0.3.3
 
 ## 1. Bezel
