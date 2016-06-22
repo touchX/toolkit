@@ -43,6 +43,9 @@ $select-animation-speed: $global-animation-speed-fast !default;
  * 8. Add a border-radius to the right-hand side of the icon container.
  * 9. Transition the icon conatiner's movement along the x-axis. Set the start
  *    postition out of view.
+*  10. Focus style. Note that some browsers retain the focus style when toggled on and off
+ * 11. Alters padding to fit the icon container when interacted with.
+ * 12. Moves the icon container to its active position.
 */
 .c-select__btn {
   position: relative;
@@ -66,6 +69,22 @@ $select-animation-speed: $global-animation-speed-fast !default;
     -ms-transform: translate($select-icon-width, 0); /* [9] */
     transform: translate($select-icon-width, 0); /* [9] */
   }
+
+  &:focus {
+    border-color: color(highlight); /* [10] */
+  }
+
+  &:hover,
+  &:active {
+    padding-left: $global-spacing-unit;  /* [11] */
+    padding-right: $global-spacing-unit+$select-icon-width;  /* [11] */
+
+    &::after {
+      -ms-transform: translate(0, 0);  /* [12] */
+      transform: translate(0, 0);  /* [12] */
+    }
+  }
+
 }
 
 /**
@@ -77,9 +96,6 @@ $select-animation-speed: $global-animation-speed-fast !default;
 .c-select__input {
   display: none;  /* [1] */
 
-  &:hover + .c-select__btn,
-  &:active + .c-select__btn,
-  &:focus + .c-select__btn,
   &:checked + .c-select__btn {
     padding-left: $global-spacing-unit;  /* [2] */
     padding-right: $global-spacing-unit+$select-icon-width;  /* [2] */
