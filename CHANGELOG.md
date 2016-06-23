@@ -1,3 +1,17 @@
+# Toolkit v0.3.5
+
+## Toolkit UI
+
+### 1. Enhancements
+- [tile] Removed outer border and refactor of variables.
+- [hero] Match glass border thickness to `c-tile`.
+
+### 2. Bug Fixes
+- [select] Hover states moved to `.c-select__btn` rather than the hidden input (`.c-select__input`) to ensure better browser support.
+- [select] Focus style uses shaded border rather than matching the hover state to avoid confusion over the actual state.
+
+===
+
 # Toolkit v0.3.4
 
 ## Toolkit Core
@@ -7,6 +21,8 @@
 
 ### 2. Deprecations
 - [sass-deprecate] We removed the sass-deprecate library in favour of changelogs and improved release notes
+
+===
 
 # Toolkit v0.3.3
 
@@ -65,7 +81,7 @@
 - [tile] Added radial gradient for content tiles and linear for media tiles by default
 - [shine] Added `pointer-events: none;` to `.c-shine` to prevent it influencing hover states
 - [select] Added hover state
-- [defence] Moved defence to `toolkit-ui` from `toolkit-core
+- [defence] Moved defence to `toolkit-ui` from `toolkit-core`
 
 ### 2. Bug Fixes
 - [tile] Branded Tile hover text and background tweaks to be more consistent between focus / active
