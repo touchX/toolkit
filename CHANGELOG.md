@@ -1,3 +1,11 @@
+# Toolkit UI v0.3.5
+
+## 1. Bug Fixes
+- [select] Hover states moved to `.c-select__btn` rather than the hidden input (`.c-select__input`) to ensure better browser support.
+- [select] Focus style uses shaded border rather than matching the hover state to avoid confusion over the actual state.
+
+===
+
 # Toolkit UI v0.3.4
 
 ## 1. Enhancements
