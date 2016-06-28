@@ -2,6 +2,15 @@
 
 ## Toolkit UI
 
+### 1. Bug Fixes
+- [tile] Corrected `c-tile__media` overflow from `none` to `hidden`.
+
+===
+
+# Toolkit v0.3.5
+
+## Toolkit UI
+
 ### 1. Enhancements
 - [tile] Removed outer border and refactor of variables.
 - [hero] Match glass border thickness to `c-tile`.
