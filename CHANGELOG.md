@@ -1,3 +1,10 @@
+# Toolkit UI v0.3.6
+
+## 1. Bug Fixes
+- [tile] Corrected `c-tile__media` overflow from `none` to `hidden`.
+
+===
+
 # Toolkit UI v0.3.5
 
 ## 1. Bug Fixes

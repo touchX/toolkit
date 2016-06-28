@@ -157,7 +157,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * `c-tile--square` modifier
  */
 .c-tile__media {
-  overflow: none;
+  overflow: hidden;
   display: block;
   height: 55%;
 
