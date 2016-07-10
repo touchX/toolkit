@@ -40,9 +40,8 @@ If you're using `webpack` and `sass-loader`, you will need `sass-loader` >3.1.0.
 
 ## Maintainers
 
-- [Aaron Thomas](https://github.com/aaronthomas) - aaron.thomas@sky.uk
-- [Joe Bell](https://github.com/joebell93) - joseph.bell@sky.uk
-- [Joe Dinsdale](https://github.com/MrDinsdale) - joseph.dinsdale@sky.uk
+| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br />Joe Bell](https://github.com/joebell93)<br />[📧](mailto:joseph.bell@sky.uk) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br />Joe Dinsdale](https://github.com/mrdinsdale)<br />[📧](mailto:joseph.dinsdale@sky.uk) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br />Aaron Thomas](https://github.com/aaronthomas)<br />[📧](mailto:aaron.thomas@sky.uk) | [![Stefan McCready](https://avatars.githubusercontent.com/StefanMcCready?s=100)<br />Stefan McCready](https://github.com/StefanMcCready)<br />[📧](mailto:stefan.mccready@sky.uk) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br />Sam Kitson](https://github.com/skitson)<br />[📧](mailto:sam.kitson@sky.uk) |      
+| :---: | :---: | :---: | :---: | :---: |
 
 ## Contributors
 
