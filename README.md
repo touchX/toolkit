@@ -40,18 +40,19 @@ If you're using `webpack` and `sass-loader`, you will need `sass-loader` >3.1.0.
 
 ## Maintainers
 
-| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br />Joe Bell](https://github.com/joebell93)<br />[📧](mailto:joseph.bell@sky.uk) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br />Joe Dinsdale](https://github.com/mrdinsdale)<br />[📧](mailto:joseph.dinsdale@sky.uk) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br />Aaron Thomas](https://github.com/aaronthomas)<br />[📧](mailto:aaron.thomas@sky.uk) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br />Steve Duffin](https://github.com/skitson)<br />[📧](mailto:steve.duffin@sky.uk) |
-| :---: | :---: | :---: | :---: | 
+| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93)<br />[📧](mailto:joseph.bell@sky.uk) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale)<br />[📧](mailto:joseph.dinsdale@sky.uk) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas)<br />[📧](mailto:aaron.thomas@sky.uk) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/skitson)<br />[📧](mailto:steve.duffin@sky.uk) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt)<br />[📧](mailto:luke.barratt@sky.uk) | [![Stefan McCready](https://avatars.githubusercontent.com/StefanMcCready?s=100)<br /><sub>Stefan McCready</sub>](https://github.com/StefanMcCready)<br />[📧](mailto:stefan.mccready@sky.uk) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
 
-| [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br />Luke Barratt](https://github.com/lbarratt)<br />[📧](mailto:luke.barratt@sky.uk) | [![Chris Vernon](https://avatars.githubusercontent.com/welikeideas?s=100)<br />Chris Vernon](https://github.com/welikeideas)<br />[📧](mailto:christopher.vernon@sky.uk) | [![Stefan McCready](https://avatars.githubusercontent.com/StefanMcCready?s=100)<br />Stefan McCready](https://github.com/StefanMcCready)<br />[📧](mailto:stefan.mccready@sky.uk) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br />Sam Kitson](https://github.com/steveduffin)<br />[📧](mailto:sam.kitson@sky.uk) | 
+| [![Chris Vernon](https://avatars.githubusercontent.com/welikeideas?s=100)<br /><sub>Chris Vernon</sub>](https://github.com/welikeideas)<br />[📧](mailto:christopher.vernon@sky.uk) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/steveduffin)<br />[📧](mailto:sam.kitson@sky.uk) | 
 | :---: | :---: | :---: | :---: | 
 
 ## Contributors
 
 - [Harry Roberts](https://github.com/csswizardry) - [@csswizardry](https://twitter.com/csswizardry)
 - [Callum Barratt](https://github.com/cbarratt) - callum.barratt@sky.uk
-- [Steven Bapaga](https://github.com/romidane) - steven.bapaga@sky.uk
 - [Ross Warren](https://github.com/rosswarren) - ross.warren@sky.uk
+- [Steven Bapaga](https://github.com/romidane) - steven.bapaga@sky.uk
+
 
 Feel free to open a pull request to include yourself in this list. 
 
