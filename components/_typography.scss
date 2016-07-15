@@ -13,33 +13,77 @@
 /* Heading-level typography
   =========================================== */
 
-.c-heading-alpha {
-  @include font-size($text-alpha);
+.c-heading-page {
+  @include font-size(text(alpha, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(alpha, large));
+  }
 }
 
-.c-heading-beta {
-  @include font-size($text-beta);
+.c-heading-main {
+  @include font-size(text(bravo, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(bravo, large));
+  }
 }
 
-.c-heading-gamma {
-  @include font-size($text-gamma, 1.3);
+.c-heading-sub {
+  @include font-size(text(charlie, small), 1.3);
+
+  @include mq($from: medium) {
+    @include font-size(text(charlie, large));
+  }
 }
 
-.c-heading-delta {
-  @include font-size($text-delta);
+.c-heading-section {
+  @include font-size(text(delta, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(delta, large));
+  }
 }
 
 /* Text-level typography
   =========================================== */
 
+.c-text-lead {
+  @include font-size(text(echo, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(echo, large));
+  }
+}
+
 .c-text-body {
-  @include font-size($text-body);
+  @include font-size(text(foxtrot, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(foxtrot, large));
+  }
+}
+
+.c-text-lead-small {
+  @include font-size(text(golf, small), 1.3);
+
+  @include mq($from: medium) {
+    @include font-size(text(golf, large));
+  }
 }
 
 .c-text-body-small {
-  @include font-size($text-body-small);
+  @include font-size(text(hotel, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(hotel, large));
+  }
 }
 
-.c-text-caption {
-  @include font-size($text-caption, 1.3);
+.c-text-smallprint {
+  @include font-size(text(india, small));
+
+  @include mq($from: medium) {
+    @include font-size(text(india, large));
+  }
 }
