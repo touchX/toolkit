@@ -1,3 +1,9 @@
+# Toolkit v0.3.7
+
+- [package.json] Switched dependencies to NPM packages instead of GitHub links.
+
+===
+
 # Toolkit v0.3.6
 
 ## Toolkit UI
