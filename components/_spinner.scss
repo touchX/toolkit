@@ -31,7 +31,7 @@ $spinner-transition-delay: $global-animation-speed;
   animation: spin $spinner-animation-speed infinite linear;
   opacity: 1;
   visibility: visible;
-  transition: all $spinner-animation-speed ease;
+  transition: opacity $spinner-animation-speed ease, visibility $spinner-animation-speed ease;
 }
 
 /**
