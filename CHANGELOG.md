@@ -1,3 +1,10 @@
+# Toolkit UI v0.3.7
+
+## 1. Bug Fixes
+- [spinner] Changed the `.c-spinner` transition from targeting all properties to target opacity and visibility as these are the properties that need to be transitioned when the `.is-complete` class is added.
+
+===
+
 # Toolkit UI v0.3.6
 
 ## 1. Bug Fixes
