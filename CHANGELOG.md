@@ -1,3 +1,12 @@
+# Toolkit v0.3.8
+
+## Toolkit UI v0.3.8
+
+### 1. Feature
+- [Accordion] Integrate `c-accordion`, a simple accordion container which can be animated and controlled by a range of different frameworks.
+
+===
+
 # Toolkit v0.3.7
 
 - [package.json] Switched dependencies to NPM packages instead of GitHub links.
