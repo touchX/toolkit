@@ -1,3 +1,10 @@
+# Toolkit UI v0.3.8
+
+## 1. Feature
+- [Accordion] Integrate `c-accordion`, a simple accordion container which can be animated and controlled by a range of different frameworks.
+
+===
+
 # Toolkit UI v0.3.7
 
 ## 1. Bug Fixes
