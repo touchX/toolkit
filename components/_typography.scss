@@ -14,34 +14,34 @@
   =========================================== */
 
 .c-heading-page {
-  @include font-size(text(alpha, small));
+  @include font-size(text(alpha, small), 1.2);
 
   @include mq($from: medium) {
-    @include font-size(text(alpha, large));
+    @include font-size(text(alpha, large), 1.2);
   }
 }
 
 .c-heading-main {
-  @include font-size(text(bravo, small));
+  @include font-size(text(bravo, small), 1.3);
 
   @include mq($from: medium) {
-    @include font-size(text(bravo, large));
+    @include font-size(text(bravo, large), 1.3);
   }
 }
 
 .c-heading-sub {
-  @include font-size(text(charlie, small), 1.3);
+  @include font-size(text(charlie, small), 1.4);
 
   @include mq($from: medium) {
-    @include font-size(text(charlie, large));
+    @include font-size(text(charlie, large), 1.4);
   }
 }
 
 .c-heading-section {
-  @include font-size(text(delta, small));
+  @include font-size(text(delta, small), 1.4);
 
   @include mq($from: medium) {
-    @include font-size(text(delta, large));
+    @include font-size(text(delta, large), 1.4);
   }
 }
 
@@ -49,41 +49,41 @@
   =========================================== */
 
 .c-text-lead {
-  @include font-size(text(echo, small));
+  @include font-size(text(echo, small), 1.4);
 
   @include mq($from: medium) {
-    @include font-size(text(echo, large));
+    @include font-size(text(echo, large), 1.4);
   }
 }
 
 .c-text-body {
-  @include font-size(text(foxtrot, small));
+  @include font-size(text(foxtrot, small), 1.4);
 
   @include mq($from: medium) {
-    @include font-size(text(foxtrot, large));
+    @include font-size(text(foxtrot, large), 1.4);
   }
 }
 
 .c-text-lead-small {
-  @include font-size(text(golf, small), 1.3);
+  @include font-size(text(golf, small), 1.5);
 
   @include mq($from: medium) {
-    @include font-size(text(golf, large));
+    @include font-size(text(golf, large), 1.5);
   }
 }
 
 .c-text-body-small {
-  @include font-size(text(hotel, small));
+  @include font-size(text(hotel, small), 1.5);
 
   @include mq($from: medium) {
-    @include font-size(text(hotel, large));
+    @include font-size(text(hotel, large), 1.5);
   }
 }
 
 .c-text-smallprint {
-  @include font-size(text(india, small));
+  @include font-size(text(india, small), 1.5);
 
   @include mq($from: medium) {
-    @include font-size(text(india, large));
+    @include font-size(text(india, large), 1.5);
   }
 }
