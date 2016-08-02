@@ -1,3 +1,11 @@
+# Toolkit UI v0.3.9
+
+## 1. Feature
+- [Tooltip] Adds the `c-tooltip` component. Easily apply tooltip bubbles to any trigger.
+
+===
+
+
 # Toolkit UI v0.3.8
 
 ## 1. Feature
