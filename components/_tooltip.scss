@@ -16,9 +16,11 @@ $tooltip-z-base: 50;
  * 3. Because marker is rotated, we need to double the size to give true size
  * 4. Marker needs it's own shadow with negative spread to only show on one side
  * 5. Subtle border to make marker more defined on white backgrounds
- & 6. Whitewash sits above the document but below the tooltip content & trigger
+ * 6. Whitewash sits above the document but below the tooltip content & trigger
+ *    and only on click based tooltips
  */
-.c-tooltip.is-active {
+.c-tooltip.is-active,
+.c-tooltip--hover:hover {
   display: inline-block;
   position: relative;
 
@@ -38,7 +40,9 @@ $tooltip-z-base: 50;
     border: 1px solid #eee; /* [5] */
     border-width: 1px 0 0 1px; /* [5] */
   }
+}
 
+.c-tooltip.is-active {
   &::after {
     content: "";
     position: fixed;
@@ -49,7 +53,6 @@ $tooltip-z-base: 50;
     width: 100%;
     background-color: rgba(color(white), 0.85);
   }
-
 }
 
 /* Trigger link
@@ -61,7 +64,8 @@ $tooltip-z-base: 50;
  * 1. Trigger is layered above whitewash but below marker
  */
 .c-tooltip__trigger {
-  .is-active & {
+  .is-active &,
+  .c-tooltip--hover:hover & {
     position: relative;
     z-index: $tooltip-z-base+2; /* [1] */
   }
@@ -83,7 +87,8 @@ $tooltip-z-base: 50;
 .c-tooltip__content {
   display: none;
 
-  .is-active & {
+  .is-active &,
+  .c-tooltip--hover:hover & {
     @include font-size($text-body-small);
     display: block;
     position: absolute;
@@ -119,4 +124,16 @@ $tooltip-z-base: 50;
     left: auto;
     right: 0;
   }
+}
+
+/* Hover variant
+  =========================================== */
+
+/**
+ *  Allows the tooltip to be activated on hover
+ *
+ *  1. Needs to be `inline-block` to prevent rogue hover outside trigger
+ */
+.c-tooltip--hover {
+  display: inline-block;
 }
