@@ -1,3 +1,10 @@
+# Toolkit UI v0.3.10
+
+## 1. Enhancement
+- [Tooltip] Added `c-tooltip--hover` modifier to allow tooltips to be triggered on hover.
+
+===
+
 # Toolkit UI v0.3.9
 
 ## 1. Feature
