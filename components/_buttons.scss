@@ -157,8 +157,8 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
 * A. https://en.bem.info/forum/4/
 */
 .c-btn--select {
-  padding-left: $global-spacing-unit-large;
-  padding-right: $global-spacing-unit-large;
+  padding-left: $global-spacing-unit + 10px;
+  padding-right: $global-spacing-unit + 10px;
   color: color(brand);
   background-color: transparent;
   border-color: color(brand);

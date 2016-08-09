@@ -6,7 +6,7 @@
 $select-border-width: $global-border-width !default;
 $select-border-radius: $global-border-radius !default;
 $select-icon-padding: $global-spacing-unit-tiny !default;
-$select-icon-width: $global-spacing-unit-large !default;
+$select-icon-width: $global-spacing-unit + 10px !default;
 $select-animation-speed: $global-animation-speed-fast !default;
 
 /**
@@ -76,8 +76,8 @@ $select-animation-speed: $global-animation-speed-fast !default;
 
   &:hover,
   &:active {
-    padding-left: $global-spacing-unit;  /* [11] */
-    padding-right: $global-spacing-unit+$select-icon-width;  /* [11] */
+    padding-left: $select-icon-width / 2;  /* [11] */
+    padding-right: $select-icon-width / 2 + $select-icon-width;  /* [11] */
 
     &::after {
       -ms-transform: translate(0, 0);  /* [12] */
