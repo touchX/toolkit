@@ -237,8 +237,8 @@ $form-animation-speed: $global-animation-speed-fast;
     border-top-right-radius: $global-border-radius;
     border-bottom-right-radius: $global-border-radius;
     background: $form-background;
-    background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
     background: -ms-linear-gradient(right, rgba($form-background, 1) 60%, rgba($form-background, 0));
+    background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
     pointer-events: none;
   }
 
