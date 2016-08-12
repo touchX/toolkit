@@ -25,6 +25,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   overflow: hidden; /* [4] */
   border-radius: $select-border-radius; /* [5] */
   perspective: 1px; /* [6] */
+  border: 1px solid color(brand);
 }
 
 /**

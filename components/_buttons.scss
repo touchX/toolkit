@@ -161,7 +161,7 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   padding-right: $global-spacing-unit-large;
   color: color(brand);
   background-color: transparent;
-  border-color: color(brand);
+  border: none;
   transition: all $btn-animation-speed-fast ease;
 }
 
