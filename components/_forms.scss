@@ -225,6 +225,21 @@ $form-animation-speed: $global-animation-speed-fast;
   width: 100%;
   cursor: pointer;
 
+  &::before {
+    content: "";
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    width: $global-spacing-unit-small * 4;
+    height: calc(100% - 4px);
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    border-top-right-radius: $global-border-radius;
+    border-bottom-right-radius: $global-border-radius;
+    background: linear-gradient(to left, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
+
   &::after {
     content: "";
     position: absolute;
