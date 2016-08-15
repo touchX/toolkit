@@ -13,35 +13,43 @@
 /* Heading-level typography
   =========================================== */
 
-.c-heading-page {
-  @include font-size(text(alpha, small), 1.2);
+.c-heading-alpha {
+  @include font-size(heading-alpha, small);
+  line-height: 1.3;
 
   @include mq($from: medium) {
-    @include font-size(text(alpha, large), 1.2);
+    @include font-size(heading-alpha, large);
+    line-height: 1.2;
   }
 }
 
-.c-heading-main {
-  @include font-size(text(bravo, small), 1.3);
+.c-heading-bravo {
+  @include font-size(heading-bravo, small);
+  line-height: 1.3;
 
   @include mq($from: medium) {
-    @include font-size(text(bravo, large), 1.3);
+    @include font-size(heading-bravo, large);
+    line-height: 1.25;
   }
 }
 
-.c-heading-sub {
-  @include font-size(text(charlie, small), 1.4);
+.c-heading-charlie {
+  @include font-size(heading-charlie, small);
+  line-height: 1.3;
 
   @include mq($from: medium) {
-    @include font-size(text(charlie, large), 1.4);
+    @include font-size(heading-charlie, large);
+    line-height: 1.25;
   }
 }
 
-.c-heading-section {
-  @include font-size(text(delta, small), 1.4);
+.c-heading-delta {
+  @include font-size(heading-delta, small);
+  line-height: 1.4;
 
   @include mq($from: medium) {
-    @include font-size(text(delta, large), 1.4);
+    @include font-size(heading-delta, large);
+    line-height: 1.3;
   }
 }
 
@@ -49,41 +57,51 @@
   =========================================== */
 
 .c-text-lead {
-  @include font-size(text(echo, small), 1.4);
+  @include font-size(text-lead, small);
+    line-height: 1.4;
 
   @include mq($from: medium) {
-    @include font-size(text(echo, large), 1.4);
+    @include font-size(text-lead, large);
+    line-height: 1.4;
   }
 }
 
 .c-text-body {
-  @include font-size(text(foxtrot, small), 1.4);
+  @include font-size(text-body, small);
+    line-height: 1.4;
 
   @include mq($from: medium) {
-    @include font-size(text(foxtrot, large), 1.4);
+    @include font-size(text-body, large);
+    line-height: 1.4;
   }
 }
 
 .c-text-lead-small {
-  @include font-size(text(golf, small), 1.5);
+  @include font-size(text-lead-small, small);
+    line-height: 1.5;
 
   @include mq($from: medium) {
-    @include font-size(text(golf, large), 1.5);
+    @include font-size(text-lead-small, large);
+    line-height: 1.4;
   }
 }
 
 .c-text-body-small {
-  @include font-size(text(hotel, small), 1.5);
+  @include font-size(text-body-small, small);
+    line-height: 1.5;
 
   @include mq($from: medium) {
-    @include font-size(text(hotel, large), 1.5);
+    @include font-size(text-body-small, large);
+    line-height: 1.5;
   }
 }
 
 .c-text-smallprint {
-  @include font-size(text(india, small), 1.5);
+  @include font-size(text-smallprint, small);
+    line-height: 1.5;
 
   @include mq($from: medium) {
-    @include font-size(text(india, large), 1.5);
+    @include font-size(text-smallprint, large);
+    line-height: 1.5;
   }
 }
