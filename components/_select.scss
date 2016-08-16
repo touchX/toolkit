@@ -3,10 +3,13 @@
    ========================================================================== */
 
 // Select settings
+/*
+* 1. Should be kept consitant with padding used on .c-btn--select
+*/
 $select-border-width: $global-border-width !default;
 $select-border-radius: $global-border-radius !default;
 $select-icon-padding: $global-spacing-unit-tiny !default;
-$select-icon-width: $global-spacing-unit + 10px !default;
+$select-icon-width: 40px !default; /* [1] */
 $select-animation-speed: $global-animation-speed-fast !default;
 
 /**
@@ -97,8 +100,8 @@ $select-animation-speed: $global-animation-speed-fast !default;
   display: none;  /* [1] */
 
   &:checked + .c-select__btn {
-    padding-left: $global-spacing-unit;  /* [2] */
-    padding-right: $global-spacing-unit+$select-icon-width;  /* [2] */
+    padding-left: $select-icon-width / 2;  /* [2] */
+    padding-right: $select-icon-width / 2 + $select-icon-width;  /* [2] */
 
     &::after {
       -ms-transform: translate(0, 0);  /* [3] */
