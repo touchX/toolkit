@@ -61,8 +61,8 @@ $panel-background-color-dark: color(ui-dark) !default;
   */
 
 .c-panel__toggle {
-  @include font-size(text(hotel), 1);
-
+  @include font-size(text-lead-small);
+  line-height: 1;
   position: absolute; /* [1] */
   top: $global-spacing-unit-small; /* [1] */
   right: $global-spacing-unit-small; /* [1] */

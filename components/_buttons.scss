@@ -3,7 +3,7 @@
    ========================================================================== */
 
 // Button settings
-$btn-font-size: 18px !default;
+$btn-font-size: text(text-lead-small) !default;
 $btn-padding-x: $global-spacing-unit-small !default;
 $btn-padding-y: $global-spacing-unit-tiny !default;
 $btn-border-width: $global-border-width !default;
@@ -109,8 +109,9 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   &:hover,
   &:active,
   &:focus {
-    background-color: color(highlight);
-    border-color: color(highlight);
+    color: color(text);
+    background-color: color(white);
+    border-color: color(white);
   }
 }
 
