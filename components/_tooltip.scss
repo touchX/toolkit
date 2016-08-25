@@ -89,7 +89,7 @@ $tooltip-z-base: 50;
 
   .is-active &,
   .c-tooltip--hover:hover & {
-    @include font-size($text-body-small);
+    @include font-size(text-body-small);
     display: block;
     position: absolute;
     z-index: $tooltip-z-base+2; /* [1] */

@@ -1,7 +1,14 @@
-# Toolkit UI v0.3.10
+# Toolkit UI v0.4.0
 
-## 1. Enhancement
-- [Tooltip] Added `c-tooltip--hover` modifier to allow tooltips to be triggered on hover.
+## 1. Enhancements
+- [buttons] Secondary (invert) hover color changed to align with branding.
+- [panels] Panels now utilise a white background by default.
+- [tiles] Sky Cinema gradient implemented to `c-tile`, replacing Sky Movies.
+- [typography] New responsive Typographic scale (and added to components where used).
+
+## 2. Deprecations
+- [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config.
+- [panels] Following branding, grey panels are no longer used.
 
 ===
 
