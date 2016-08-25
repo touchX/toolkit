@@ -94,8 +94,8 @@ $form-animation-speed: $global-animation-speed-fast;
  * All text-like form inputs require a class of `.c-form-input`: we do not use
  * selectors like `input[type="text"] {}`.
  *
- * 1. Fix for IE 10/11 removing input vertical padding from inputs.
- * 2. Spacing is readded using line-height/height as an alternative (39px).
+ * 1. Fix for IE 10/11 removing vertical padding from inputs which was being ignored.
+ * 2. Padding added via line-height/height to re-center text for all browsers (38px to account for border).
  */
 .c-form-input {
   @include font-size($form-font-size, large);
@@ -198,10 +198,14 @@ $form-animation-speed: $global-animation-speed-fast;
   border-right: 0;
 }
 
+/*
+ * 1. Brings combo button height in line with input height (38px to account for 2px border).
+ */
+
 .c-form-combo__btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  height: 2.111em;
+  height: 2.111em; /* [1] */
   white-space: nowrap;
 }
 
