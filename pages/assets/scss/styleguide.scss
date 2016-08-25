@@ -194,6 +194,11 @@ $sg-header-outer-border-width: 1px;
   color: color(white);
 }
 
+.sg-swatch--sky-cinema {
+  @include background-gradient("sky-cinema");
+  color: color(white);
+}
+
 .sg-swatch--sky-kids {
   @include background-gradient("sky-kids");
   color: color(white);
@@ -201,11 +206,6 @@ $sg-header-outer-border-width: 1px;
 
 .sg-swatch--sky-living {
   @include background-gradient("sky-living");
-  color: color(white);
-}
-
-.sg-swatch--sky-movies {
-  @include background-gradient("sky-movies");
   color: color(white);
 }
 

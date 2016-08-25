@@ -1,3 +1,29 @@
+# Toolkit v0.4.0
+
+## Toolkit Core v0.5.0
+
+### 1. Enhancements
+- [gradients] Sky Cinema gradient implemented to `$gradients`, replacing Sky Movies.
+- [typography] Typographic scale implemented in a responsive sass-map under `$text`.
+- [sass-deprecate] Left-over code from sass-deprecate removed.
+
+### 2. Deprecations
+- [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config. To continue using the previous classes set `$legacy-typography: true;` at the very top of your sass import, before toolkit-core.
+
+## Toolkit UI v0.4.0
+
+### 1. Enhancements
+- [buttons] Secondary (invert) hover color changed to align with branding.
+- [panels] Panels now utilise a white background by default.
+- [tiles] Sky Cinema gradient implemented to `c-tile`, replacing Sky Movies.
+- [typography] New responsive Typographic scale (and added to components where used).
+
+### 2. Deprecations
+- [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config.
+- [panels] Following branding, grey panels are no longer used.
+
+===
+
 # Toolkit v0.3.10
 
 ## Toolkit UI v0.3.10
