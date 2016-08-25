@@ -102,13 +102,13 @@ $form-animation-speed: $global-animation-speed-fast;
   display: inline-block;
   padding: 0 $global-spacing-unit-tiny; /* [1] */
   margin-bottom: $global-spacing-unit-tiny;
-  height: 2.167em; /* [2] */
+  height: 2.111em; /* [2] */
   width: 100%;
   background-color: $form-background;
   border: $form-border;
   border-radius: $global-border-radius;
   box-shadow: $form-shadow;
-  line-height: 2.167em; /* [2] */
+  line-height: 2.111em; /* [2] */
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
   -webkit-appearance: none;
@@ -186,6 +186,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-combo__cell {
   display: table-cell;
   width: 100%;
+  vertical-align: top;
 }
 
 /**
@@ -200,6 +201,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-combo__btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  height: 2.111em;
   white-space: nowrap;
 }
 
