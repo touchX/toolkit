@@ -1,3 +1,11 @@
+# Toolkit UI v0.4.2
+
+## 1. Bug Fixes
+- [tiles] Only title now underlines on hover.
+- [tiles] Specificity reduced with hover style allowing easier customisation
+
+===
+
 # Toolkit UI v0.4.1
 
 ## 1. Enhancements
