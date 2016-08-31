@@ -2,11 +2,16 @@
    COMPONENTS / SELECT
    ========================================================================== */
 
-// Select settings
+/* Select settings
+   =========================================== */
+
+/**
+* 1. Should be kept consitant with padding used on .c-btn--select
+*/
 $select-border-width: $global-border-width !default;
 $select-border-radius: $global-border-radius !default;
 $select-icon-padding: $global-spacing-unit-tiny !default;
-$select-icon-width: $global-spacing-unit-large !default;
+$select-icon-width: 40px !default; /* [1] */
 $select-animation-speed: $global-animation-speed-fast !default;
 
 /**
@@ -25,6 +30,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   overflow: hidden; /* [4] */
   border-radius: $select-border-radius; /* [5] */
   perspective: 1px; /* [6] */
+  border: 1px solid color(brand);
 }
 
 /**
@@ -67,6 +73,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
     border: solid $select-icon-padding transparent; /* [7] */
     transition: transform $select-animation-speed ease, background-color $select-animation-speed ease; /* [9] */
     -ms-transform: translate($select-icon-width, 0); /* [9] */
+    -webkit-transform: translate($select-icon-width, 0); /* [9] */
     transform: translate($select-icon-width, 0); /* [9] */
   }
 
@@ -76,11 +83,12 @@ $select-animation-speed: $global-animation-speed-fast !default;
 
   &:hover,
   &:active {
-    padding-left: $global-spacing-unit;  /* [11] */
-    padding-right: $global-spacing-unit+$select-icon-width;  /* [11] */
+    padding-left: $select-icon-width / 2;  /* [11] */
+    padding-right: $select-icon-width / 2 + $select-icon-width;  /* [11] */
 
     &::after {
       -ms-transform: translate(0, 0);  /* [12] */
+      -webkit-transform: translate(0, 0);  /* [12] */
       transform: translate(0, 0);  /* [12] */
     }
   }
@@ -97,11 +105,12 @@ $select-animation-speed: $global-animation-speed-fast !default;
   display: none;  /* [1] */
 
   &:checked + .c-select__btn {
-    padding-left: $global-spacing-unit;  /* [2] */
-    padding-right: $global-spacing-unit+$select-icon-width;  /* [2] */
+    padding-left: $select-icon-width / 2;  /* [2] */
+    padding-right: $select-icon-width / 2 + $select-icon-width;  /* [2] */
 
     &::after {
       -ms-transform: translate(0, 0);  /* [3] */
+      -webkit-transform: translate(0, 0);  /* [3] */
       transform: translate(0, 0);  /* [3] */
     }
   }

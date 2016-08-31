@@ -1,7 +1,25 @@
-# Toolkit UI v0.3.10
+# Toolkit UI v0.4.1
 
-## 1. Enhancement
-- [Tooltip] Added `c-tooltip--hover` modifier to allow tooltips to be triggered on hover.
+## 1. Enhancements
+- [select] Reduced horizontal padding from 60px to 40px.
+
+## 1. Bug Fixes
+- [select] Border styles are now applied to the label element, this resolves a rendering issue were multiple select buttons  lost their borders.
+- [select] Webkit vendor prefixes applied so buttons look and function correctly in older versions of Safari (including iOS8).
+
+===
+
+# Toolkit UI v0.4.0
+
+## 1. Enhancements
+- [buttons] Secondary (invert) hover color changed to align with branding.
+- [panels] Panels now utilise a white background by default.
+- [tiles] Sky Cinema gradient implemented to `c-tile`, replacing Sky Movies.
+- [typography] New responsive Typographic scale (and added to components where used).
+
+## 2. Deprecations
+- [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config.
+- [panels] Following branding, grey panels are no longer used.
 
 ===
 
