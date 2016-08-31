@@ -2,8 +2,10 @@
    COMPONENTS / SELECT
    ========================================================================== */
 
-// Select settings
-/*
+/* Select settings
+   =========================================== */
+
+/**
 * 1. Should be kept consitant with padding used on .c-btn--select
 */
 $select-border-width: $global-border-width !default;
@@ -70,9 +72,9 @@ $select-animation-speed: $global-animation-speed-fast !default;
     background-size: contain; /* [6] */
     border: solid $select-icon-padding transparent; /* [7] */
     transition: transform $select-animation-speed ease, background-color $select-animation-speed ease; /* [9] */
-        -ms-transform: translate($select-icon-width, 0); /* [9] */
+    -ms-transform: translate($select-icon-width, 0); /* [9] */
     -webkit-transform: translate($select-icon-width, 0); /* [9] */
-            transform: translate($select-icon-width, 0); /* [9] */
+    transform: translate($select-icon-width, 0); /* [9] */
   }
 
   &:focus {
@@ -85,9 +87,9 @@ $select-animation-speed: $global-animation-speed-fast !default;
     padding-right: $select-icon-width / 2 + $select-icon-width;  /* [11] */
 
     &::after {
-          -ms-transform: translate(0, 0);  /* [12] */
+      -ms-transform: translate(0, 0);  /* [12] */
       -webkit-transform: translate(0, 0);  /* [12] */
-              transform: translate(0, 0);  /* [12] */
+      transform: translate(0, 0);  /* [12] */
     }
   }
 
@@ -107,9 +109,9 @@ $select-animation-speed: $global-animation-speed-fast !default;
     padding-right: $select-icon-width / 2 + $select-icon-width;  /* [2] */
 
     &::after {
-          -ms-transform: translate(0, 0);  /* [3] */
+      -ms-transform: translate(0, 0);  /* [3] */
       -webkit-transform: translate(0, 0);  /* [3] */
-              transform: translate(0, 0);  /* [3] */
+      transform: translate(0, 0);  /* [3] */
     }
   }
 
