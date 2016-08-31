@@ -156,13 +156,15 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
 * e.g. `<span class="c-btn  c-btn--select  c-select__btn">Select</span>`
 *
 * A. https://en.bem.info/forum/4/
+*
+* 1. This should be the same value as the icon width used in _select.scss
 */
 .c-btn--select {
-  padding-left: $global-spacing-unit-large;
-  padding-right: $global-spacing-unit-large;
+  padding-left: 40px;/* [1] */
+  padding-right: 40px;/* [1] */
   color: color(brand);
   background-color: transparent;
-  border-color: color(brand);
+  border: none;
   transition: all $btn-animation-speed-fast ease;
 }
 
