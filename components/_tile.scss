@@ -156,10 +156,17 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   color: inherit;
   transition: color $tile-animation-speed ease;
 
-  &,
-  &:hover,
-  &:focus {
-    text-decoration: none;
+  .c-tile--square & {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &:focus .c-tile__title,
+  &:hover .c-tile__title {
+    text-decoration: underline;
   }
 }
 
@@ -323,8 +330,8 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     z-index: -1; // Set between before and content.
   }
 
-  .c-tile__content:hover &::after,
-  .c-tile__content:focus &::after {
+  .c-tile__link:hover &::after,
+  .c-tile__link:focus &::after {
     opacity: 1; // Set hover opacity
   }
 }
