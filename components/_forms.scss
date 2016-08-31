@@ -8,7 +8,7 @@ $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
 $form-background: color(white);
 $form-border: 1px solid color(keyline);
-$form-font-size: $text-body-small;
+$form-font-size: text-lead-small;
 $form-animation-speed: $global-animation-speed-fast;
 
 /* Form list
@@ -82,7 +82,7 @@ $form-animation-speed: $global-animation-speed-fast;
  *
  */
 .c-form-label {
-  @include font-size($form-font-size);
+  @include font-size($form-font-size, large);
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
 }
@@ -94,21 +94,21 @@ $form-animation-speed: $global-animation-speed-fast;
  * All text-like form inputs require a class of `.c-form-input`: we do not use
  * selectors like `input[type="text"] {}`.
  *
- * 1. Fix for IE 10/11 removing input vertical padding from inputs.
- * 2. Spacing is readded using line-height/height as an alternative (39px).
+ * 1. Fix for IE 10/11 removing vertical padding from inputs which was being ignored.
+ * 2. Padding added via line-height/height to re-center text for all browsers (38px to account for border).
  */
 .c-form-input {
-  @include font-size($form-font-size);
+  @include font-size($form-font-size, large);
   display: inline-block;
   padding: 0 $global-spacing-unit-tiny; /* [1] */
   margin-bottom: $global-spacing-unit-tiny;
-  height: 2.167em; /* [2] */
+  height: 2.111em; /* [2] */
   width: 100%;
   background-color: $form-background;
   border: $form-border;
   border-radius: $global-border-radius;
   box-shadow: $form-shadow;
-  line-height: 2.167em; /* [2] */
+  line-height: 2.111em; /* [2] */
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
   -webkit-appearance: none;
@@ -138,7 +138,7 @@ $form-animation-speed: $global-animation-speed-fast;
  * iOS Safari and Android. Other browsers will fallback to a text field.
  */
 .c-form-date {
-  @include font-size($form-font-size);
+  @include font-size($form-font-size, large);
   display: inline-block;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
   margin-bottom: $global-spacing-unit-tiny;
@@ -186,6 +186,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-combo__cell {
   display: table-cell;
   width: 100%;
+  vertical-align: top;
 }
 
 /**
@@ -197,9 +198,14 @@ $form-animation-speed: $global-animation-speed-fast;
   border-right: 0;
 }
 
+/*
+ * 1. Brings combo button height in line with input height (38px to account for 2px border).
+ */
+
 .c-form-combo__btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  height: 2.111em; /* [1] */
   white-space: nowrap;
 }
 
@@ -209,7 +215,7 @@ $form-animation-speed: $global-animation-speed-fast;
  */
 .c-form-combo__btn,
 .c-form-combo__input {
-  @include font-size($form-font-size);
+  @include font-size($form-font-size, large);
   padding-top: $global-spacing-unit-tiny/2;
   padding-bottom: $global-spacing-unit-tiny/2;
 }
@@ -218,7 +224,7 @@ $form-animation-speed: $global-animation-speed-fast;
   =========================================== */
 
 .c-form-select {
-  @include font-size($form-font-size);
+  @include font-size($form-font-size, large);
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
   position: relative;
@@ -244,7 +250,7 @@ $form-animation-speed: $global-animation-speed-fast;
 }
 
 .c-form-select__dropdown {
-  @include font-size($form-font-size);
+  @include font-size($form-font-size, large);
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
   width: 100%;
   border: $form-border;
@@ -273,7 +279,7 @@ $form-animation-speed: $global-animation-speed-fast;
   display: inline-block;
   width: 100%;
   margin-bottom: $global-spacing-unit-tiny;
-  font-size: $form-font-size;
+  font-size: text($form-font-size);
   cursor: pointer;
 }
 
@@ -285,9 +291,9 @@ $form-animation-speed: $global-animation-speed-fast;
   display: inline-block;
   margin-right: $global-spacing-unit-tiny;
   position: relative;
-  width: $form-font-size;
+  width: text($form-font-size);
   top: 3px;
-  height: $form-font-size;
+  height: text($form-font-size);
   background-color: $form-background;
   border: $form-border;
 }
