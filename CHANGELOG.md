@@ -1,3 +1,10 @@
+# Toolkit UI v0.4.3
+
+## 1. Bug Fixes
+- [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
+
+===
+
 # Toolkit UI v0.4.2
 
 ## 1. Bug Fixes
