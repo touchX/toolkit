@@ -303,7 +303,7 @@ $form-animation-speed: $global-animation-speed-fast;
   height: $form-checkbox-size;
   background-color: $form-background;
   border: $form-border;
-  transition: border-color $global-animation-speed-fast ease;
+  transition: border-color $form-animation-speed ease;
 }
 
 .c-form-checkbox--radio .c-form-checkbox__caption::before {
