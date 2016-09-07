@@ -1,8 +1,9 @@
-# Toolkit UI v0.4.3
+# Toolkit UI v0.5.0
 
 ## 1. Bug Fixes
 - [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
 - [forms] Removed tick on selected radio button.
+- [forms] Refactored checkbox structure to allow for keyboard focus. Instead of `c-form-checkbox__faux`, we now utilise `c-form-checkbox__caption`.
 
 ===
 
