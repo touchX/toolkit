@@ -2,6 +2,7 @@
 
 ## 1. Bug Fixes
 - [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
+- [forms] Removed tick on selected radio button.
 
 ===
 

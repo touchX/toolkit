@@ -318,6 +318,10 @@ $form-animation-speed: $global-animation-speed-fast;
   background-size: contain;
   background-position: center center;
   border: solid 1px transparent;
+
+  .c-form-checkbox--radio & {
+    background-image: none;
+  }
 }
 
 /* Form modifiers
