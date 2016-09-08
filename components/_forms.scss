@@ -9,6 +9,7 @@ $form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
 $form-background: color(white);
 $form-border: 1px solid color(keyline);
 $form-font-size: text-lead-small;
+$form-checkbox-size: 1em;
 $form-animation-speed: $global-animation-speed-fast;
 
 /* Form list
@@ -284,40 +285,57 @@ $form-animation-speed: $global-animation-speed-fast;
 }
 
 .c-form-checkbox__input {
-  display: none;
+  @include hide-visually();
 }
 
-.c-form-checkbox__faux {
-  display: inline-block;
-  margin-right: $global-spacing-unit-tiny;
+.c-form-checkbox__caption {
+  display: block;
   position: relative;
-  width: text($form-font-size);
+}
+
+.c-form-checkbox__caption::before {
+  content: "";
+  display: inline-block;
+  margin-right: $global-spacing-unit-small;
+  position: relative;
+  width: $form-checkbox-size;
   top: 3px;
-  height: text($form-font-size);
+  height: $form-checkbox-size;
   background-color: $form-background;
   border: $form-border;
+  transition: border-color $form-animation-speed ease;
 }
 
-.c-form-checkbox--radio .c-form-checkbox__faux {
+.c-form-checkbox--radio .c-form-checkbox__caption::before {
   border-radius: 100%;
 }
 
-.c-form-checkbox__input:checked + .c-form-checkbox__faux {
+.c-form-checkbox__input:focus + .c-form-checkbox__caption::before {
+  border-width: 2px;
+  border-color: color(brand);
+}
+
+.c-form-checkbox__input:checked + .c-form-checkbox__caption::before {
   background-color: color(brand);
   border-color: color(brand);
   transition: border-color $form-animation-speed ease, background-color $form-animation-speed ease;
 }
 
-.c-form-checkbox__input:checked + .c-form-checkbox__faux::after {
+.c-form-checkbox__input:checked + .c-form-checkbox__caption::after {
   content: "";
   position: absolute;
-  width: $global-spacing-unit-small;
-  height: $global-spacing-unit-small;
+  left: 0;
+  right: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: $form-checkbox-size;
+  height: $form-checkbox-size;
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAuCAYAAACYlx/0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQNJREFUeNrsmO0NgyAURRnBETpCR+kIbNQRHMERHKEjOEJHoGA0MaQJ+AWP++5L+GUCnmOExzVGWTnnej8GPzqjFH6tjyoJEfxao2b4uVTDwwtIwYfnhCc84QlPeMITnvCEJzzhCU941fAhHvLjpRX+sWRkoaxG+G80sVXzz2++vJMioeiGl1jIQsMvC05SJFQ56vykzz97QHEJVc/52hJENDm1JIjq8EpLENnelpIgure/W0ITF5u7JDR1q7taQpNX2qskNH2fPysBIsw4KgEqydkrATLGypUAneFlSsAOME9IwElvD0jAi653SIDO7VMScOEzJODDRxLGDfxb+jv/BBgAG1C+DbIBN9MAAAAASUVORK5CYII=");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-  border: solid 1px transparent;
+  border: solid 2px transparent;
 
   .c-form-checkbox--radio & {
     background-image: none;
