@@ -3,11 +3,15 @@
 ## 1. Bug Fixes
 - [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
 - [forms] Removed tick on selected radio button.
-- [forms] Refactored checkbox structure to allow for keyboard focus. Instead of `c-form-checkbox__faux`, we now utilise `c-form-checkbox__caption`. 
+- [forms] Refactored checkbox structure to allow for keyboard focus. Instead of `c-form-checkbox__faux`, we now utilise `c-form-checkbox__caption`.
+- [select] Keyboard accessibility support.
 
-## ⚠️ Update Notes 
+## 2. Enhancements
+- [select] Different styles for hover, focus and active states.
 
-To make our checkboxes and radio buttons keyboard accessible, a significant refactor was required. 
+## ⚠️ Update Notes
+
+To make our checkboxes and radio buttons keyboard accessible, a significant refactor was required.
 
 `c-form-checkbox__caption` now **replaces** `c-form-checkbox__faux` for generating the indicator, wrapping the text of the input.
 
