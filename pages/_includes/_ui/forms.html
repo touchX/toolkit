@@ -47,13 +47,11 @@
           <span class="c-form-pair__input">
             <label class="c-form-checkbox  c-form-checkbox--radio  u-margin-bottom-small">
               <input type="radio" class="c-form-checkbox__input" name="f-side" id="f-side_1" value="good"/>
-              <span class="c-form-checkbox__faux"></span>
-              Good
+              <span class="c-form-checkbox__caption">Good</span>
             </label>
             <label class="c-form-checkbox  c-form-checkbox--radio">
               <input type="radio" class="c-form-checkbox__input" name="f-side" id="f-side_2" value="evil"/>
-              <span class="c-form-checkbox__faux"></span>
-              Evil
+              <span class="c-form-checkbox__caption">Evil</span>
             </label>
           </span>
         <li>
@@ -70,10 +68,9 @@
           <textarea class="c-form-input  c-form-input--long" placeholder="Enter a message" name="f-message" id="f-message"></textarea>
         </li>
         <li class="c-form-list__item">
-          <label class="c-form-checkbox">
-            <input type="checkbox" class="c-form-checkbox__input" name="f-terms" id="f-terms_1" value="1"/>
-            <span class="c-form-checkbox__faux"></span>
-            I agree to the terms &amp; conditions
+          <label for="f-terms_1" class="c-form-checkbox">
+            <input type="checkbox" class="c-form-checkbox__input" name="f-terms" id="f-terms_1" value="1" />
+            <span class="c-form-checkbox__caption">I agree to the terms &amp; conditions</span>
           </label>
         <li>
         <li class="c-form-list__item">
@@ -93,11 +90,19 @@
           <label class="c-form-label" for="f-inline-a">
             Credit card number
           </label>
-          <div class="c-form-inline">
-            <input type="text" class="c-form-input  c-form-inline__field" placeholder="1234" name="f-inline-d" id="f-inline-a"/>
-            <input type="text" class="c-form-input  c-form-inline__field" placeholder="5678" name="f-inline-d" id="f-inline-b"/>
-            <input type="text" class="c-form-input  c-form-inline__field" placeholder="9101" name="f-inline-y" id="f-inline-c"/>
-            <input type="text" class="c-form-input  c-form-inline__field" placeholder="2134" name="f-inline-y" id="f-inline-c"/>
+          <div class="o-layout o-layout--narrow">
+            <div class="o-layout__item  u-width-1/4@medium">
+              <input type="text" class="c-form-input  c-form-inline__field" placeholder="1234" name="f-inline" id="f-inline-a"/>
+            </div>
+            <div class="o-layout__item  u-width-1/4@medium">
+              <input type="text" class="c-form-input  c-form-inline__field" placeholder="5678" name="f-inline" id="f-inline-b"/>
+            </div>
+            <div class="o-layout__item  u-width-1/4@medium">
+              <input type="text" class="c-form-input  c-form-inline__field" placeholder="9101" name="f-inline" id="f-inline-c"/>
+            </div>
+            <div class="o-layout__item  u-width-1/4@medium">
+              <input type="text" class="c-form-input  c-form-inline__field" placeholder="2134" name="f-inline" id="f-inline-d"/>
+            </div>
           </div>
           <p class="c-text-smallprint">You can put any number of inputs in here and they will fill the width of the form.</p>
         </li>
