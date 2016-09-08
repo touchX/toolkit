@@ -164,6 +164,12 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     top: 0;
   }
 
+  .c-tile--collapsable & {
+    @include mq($until: medium) {
+      position: static;
+    }
+  }
+
   &:focus .c-tile__title,
   &:hover .c-tile__title {
     text-decoration: underline;
