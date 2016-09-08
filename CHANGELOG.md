@@ -1,3 +1,62 @@
+# Toolkit v0.5.0
+
+## Toolkit Core v0.5.1
+
+### 1. Bug Fixes
+- [page] Solid bg fallback for IE9 to replace broken gradient.
+
+## Toolkit UI v0.5.0
+
+### 1. Bug Fixes
+- [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
+- [forms] Removed tick on selected radio button.
+- [forms] Refactored checkbox structure to allow for keyboard focus. Instead of `c-form-checkbox__faux`, we now utilise `c-form-checkbox__caption`.
+- [select] Keyboard accessibility support.
+
+### 2. Enhancements
+- [select] Different styles for hover, focus and active states.
+
+### ⚠️ Update Notes
+
+To make our checkboxes and radio buttons keyboard accessible, a significant refactor was required.
+
+`c-form-checkbox__caption` now **replaces** `c-form-checkbox__faux` for generating the indicator, wrapping the text of the input.
+
+**If you are using checkboxes and/or radio buttons in your project, you will need to implement the following example structures:**
+
+Checkbox:
+
+```html
+<label for="f-terms_1" class="c-form-checkbox">
+  <input type="checkbox" class="c-form-checkbox__input" name="f-terms" id="f-terms_1" value="1" />
+  <span class="c-form-checkbox__caption">I agree to the terms &amp; conditions</span>
+</label>
+```
+
+Radio:
+
+```html
+<li class="c-form-list__item  c-form-pair">
+  <span class="c-form-pair__label">
+    <label class="c-form-label  u-margin-right">
+      Which side?
+    </label>
+  </span>
+  <span class="c-form-pair__input">
+   <label for="f-side_1" class="c-form-checkbox  c-form-checkbox--radio  u-margin-bottom-small">
+     <input type="radio" name="f-side" id="f-side_1" value="good" class="c-form-checkbox__input" />
+     <span class="c-form-checkbox__caption">Good</span>
+   </label>
+   <label for="f-side_2" class="c-form-checkbox  c-form-checkbox--radio">
+     <input type="radio" name="f-side" id="f-side_2" value="evil" class="c-form-checkbox__input" />
+     <span class="c-form-checkbox__caption">Evil</span>
+   </label>
+  </span>
+</li>
+```
+
+===
+
 # Toolkit v0.4.2
 
 ## Toolkit UI v0.4.2
