@@ -377,11 +377,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 }
 
 .c-tile__shine--top {
-  top: -($global-spacing-unit-small + $tile-border-width);
+  top: -($global-spacing-unit-small);
 }
 
 .c-tile__shine--bottom {
-  bottom: -($global-spacing-unit-small + $tile-border-width);
+  bottom: -($global-spacing-unit-small + $tile-border-width); // Offset for asymmetric shine graphic.
 }
 
 /* Tile themes
