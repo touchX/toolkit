@@ -1,0 +1,126 @@
+/* ==========================================================================
+   FLUID SPACING
+   ========================================================================== */
+
+$fluid-max-width-enabled: true !default;
+$fluid-max-width: 1200px !default;
+
+/**
+ * Utility classes to put specific fluid spacing values onto elements. The below loop
+ * will generate us a suite of classes like:
+ *
+ *   .u-fluid-margin-top {}
+ *   .u-fluid-padding-left-large {}
+ *   .u-fluid-margin-right-small {}
+ *   .u-fluid-padding-all {}
+ */
+
+$global-spacing-directions: (
+  null,
+  -top,
+  -right,
+  -bottom,
+  -left,
+);
+
+$global-spacing-properties: (
+  padding,
+  margin
+);
+
+$fluid-spacing-size: (strip-unit($global-spacing-unit) / strip-unit($fluid-max-width)) * 100; // VW equivalent of 30px at 1200px screen width
+$fluid-spacing-unit: #{$fluid-spacing-size}vw $global-spacing-unit;
+$fluid-spacing-unit-tiny: #{$fluid-spacing-size / 4}vw $global-spacing-unit-tiny;
+$fluid-spacing-unit-small: #{$fluid-spacing-size / 2}vw $global-spacing-unit-small;
+$fluid-spacing-unit-large: #{$fluid-spacing-size * 2}vw $global-spacing-unit-large;
+
+$fluid-spacing-sizes: (
+  null: $fluid-spacing-unit,
+  -tiny: $fluid-spacing-unit-tiny,
+  -small: $fluid-spacing-unit-small,
+  -large: $fluid-spacing-unit-large,
+) !default;
+
+@each $property in $global-spacing-properties {
+  @each $direction in $global-spacing-directions {
+
+    // This is a bit nasty… If we have a `null` direction, the implication is that
+    // we want to use the respective property on all sides (TRBL). Accordingly,
+    // create a string of `-all` to use in our class name.
+    $all: null;
+
+    @if ($direction == null) {
+      $all: -all;
+    }
+
+    @each $size, $value in $fluid-spacing-sizes {
+
+      .u-fluid-#{$property}#{$direction}#{$all}#{$size} {
+        #{$property}#{$direction}: nth($value, 1) !important;
+
+        @if $fluid-max-width-enabled {
+          @include mq($from: $fluid-max-width) {
+            #{$property}#{$direction}: nth($value, 2) !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ==========================================================================
+   FLUID TILE MODIFIERS
+   ==========================================================================
+ *
+ * The fluid tile sizes are all based on the maximum page breakpoint (1200px).
+ * A font-size for .c-tile--fluid is applied which is the equivilent of 20px
+ * (toolkit base font size) in `vw` units. This is calculated with:
+ *
+ * base font size / maximum content width * 100 = 1.6666666667vw
+ */
+$fluid-base-font-size: (strip-unit($global-font-size) / strip-unit($fluid-max-width)) * 100vw;
+
+// The `vw` units scale the base font-size on the tile in relation to the
+// viewport width proportionally. We can then use `em` units for inner content
+// which will be directly effected by base font-size and scale proportionally
+// with it.
+.c-tile--fluid {
+  font-size: $fluid-base-font-size;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  // Once we go above the 1200px breakpoint and content stops scaling we set a
+  // 22px font-size on the tile so meaning content no longer scales.
+  @if $fluid-max-width-enabled {
+    @include mq($from: $fluid-max-width) {
+      font-size: $global-font-size;
+    }
+  }
+
+  .u-fluid__base-size {
+    font-size: 1em;
+  }
+
+  .c-tile__body {
+    padding: (15 / strip-unit($global-font-size)) * 1em; // 15px (with 20px base font-size)
+  }
+
+  @include mq($until: medium) {
+    // u-width-1/3@medium - increase tiles 3x when they go full width
+    &.c-tile--size-small {
+      font-size: $fluid-base-font-size * 3;
+    }
+
+    // u-width-1/2@medium - increase tiles 2x when they go full width
+    &.c-tile--size-medium {
+      font-size: $fluid-base-font-size * 2;
+    }
+  }
+}
+
+// Set a fluid tile with heading-charlie (36px) equivalent size
+.c-tile__fluid-title {
+  font-size: (strip-unit(text(heading-charlie, large)) / strip-unit($global-font-size)) * 1em;
+  line-height: 1.25;
+}
