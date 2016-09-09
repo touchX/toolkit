@@ -1,3 +1,10 @@
+# Toolkit UI v0.5.1
+
+## 1. Bug Fixes
+- [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
+
+===
+
 # Toolkit UI v0.5.0
 
 ## 1. Bug Fixes
