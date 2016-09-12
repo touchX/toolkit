@@ -2,6 +2,7 @@
 
 ## 1. Bug Fixes
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
+- [shine] Fix for `.c-shine` when using with full width elements.
 
 ===
 
