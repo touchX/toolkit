@@ -28,7 +28,7 @@ $global-spacing-properties: (
   margin
 );
 
-$fluid-spacing-size: (strip-unit($global-spacing-unit) / strip-unit($fluid-max-width)) * 100; // VW equivalent of 30px at 1200px screen width
+$fluid-spacing-size: (strip-unit($global-spacing-unit / $fluid-max-width)) * 100; // VW equivalent of 30px at 1200px screen width
 $fluid-spacing-unit: #{$fluid-spacing-size}vw $global-spacing-unit;
 $fluid-spacing-unit-tiny: #{$fluid-spacing-size / 4}vw $global-spacing-unit-tiny;
 $fluid-spacing-unit-small: #{$fluid-spacing-size / 2}vw $global-spacing-unit-small;
@@ -78,7 +78,7 @@ $fluid-spacing-sizes: (
  *
  * base font size / maximum content width * 100 = 1.6666666667vw
  */
-$fluid-base-font-size: (strip-unit($global-font-size) / strip-unit($fluid-max-width)) * 100vw;
+$fluid-base-font-size: (strip-unit($global-font-size / $fluid-max-width)) * 100vw;
 
 // The `vw` units scale the base font-size on the tile in relation to the
 // viewport width proportionally. We can then use `em` units for inner content
@@ -103,7 +103,7 @@ $fluid-base-font-size: (strip-unit($global-font-size) / strip-unit($fluid-max-wi
   }
 
   .c-tile__body {
-    padding: (15 / strip-unit($global-font-size)) * 1em; // 15px (with 20px base font-size)
+    padding: convert-to-em(15px); // 15px (with 20px base font-size)
   }
 
   @include mq($until: medium) {
@@ -121,6 +121,6 @@ $fluid-base-font-size: (strip-unit($global-font-size) / strip-unit($fluid-max-wi
 
 // Set a fluid tile with heading-charlie (36px) equivalent size
 .c-tile__fluid-title {
-  font-size: (strip-unit(text(heading-charlie, large)) / strip-unit($global-font-size)) * 1em;
+  font-size: convert-to-em(text(heading-charlie, large));
   line-height: 1.25;
 }
