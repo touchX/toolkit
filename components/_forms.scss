@@ -303,7 +303,7 @@ $form-animation-speed: $global-animation-speed-fast;
   position: relative;
   top: $form-checkbox-y-offset;
   margin-left: -($form-checkbox-size + $form-checkbox-margin);
-  margin-right: $form-checkbox-size;
+  margin-right: $form-checkbox-margin;
   width: $form-checkbox-size;
   height: $form-checkbox-size;
   background-color: $form-background;
