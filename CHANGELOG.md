@@ -1,13 +1,7 @@
-# Toolkit UI v0.5.2
-
-## 1. Bug Fixes
-- [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
-
-===
-
 # Toolkit UI v0.5.1
 
 ## 1. Bug Fixes
+- [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
 - [shine] Fix for `.c-shine` when using with full width elements.
 
