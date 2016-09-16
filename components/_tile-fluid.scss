@@ -117,10 +117,10 @@ $fluid-base-font-size: (strip-unit($global-font-size / $fluid-max-width)) * 100v
       font-size: $fluid-base-font-size * 2;
     }
   }
-}
 
-// Set a fluid tile with heading-charlie (36px) equivalent size
-.c-tile__fluid-title {
-  font-size: convert-to-em(text(heading-charlie, large));
-  line-height: 1.25;
+  // Set a fluid tile with heading-charlie (36px) equivalent size
+  .c-tile__title {
+    font-size: convert-to-em(text(heading-charlie, large));
+    line-height: 1.25;
+  }
 }
