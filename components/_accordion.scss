@@ -65,19 +65,17 @@ $accordion-icon-size: 20px !default;
   /**
    * Accordion icons provide an extra form of 'toggle' indication.
    *
-   * 1. Allows for absolute positioning from the top and right of the label.
+   * 1. Allows for absolute positioning from the top (minus half the height of
+   *    the icon) and right of the label.
    * 2. Sets the icon size.
    * 3. Sets background-image to the icon as Base64.
    * 4. Prevents the pseudo-element partially blocking the label's click events.
-   * 5. Sets a starting position for the icon's movement.
-   *    translateY is required to align the absolute icon to 50% of the height.
-   *    translateZ is required to prevent pixel jumps in webkit browsers.
-   * 6. Animates the transform property on transition.
+   * 5. Animates the transform property on transition.
    */
   &::after {
     content: "";
     position: absolute; /* [1] */
-    top: 50%; /* [1] */
+    top: calc(50% - ($accordion-icon-size / 2)); /* [1] */
     right: $accordion-icon-size; /* [1] */
     width: $accordion-icon-size; /* [2] */
     height: $accordion-icon-size; /* [2] */
@@ -86,8 +84,7 @@ $accordion-icon-size: 20px !default;
     background-size: contain; /* [3] */
     background-position: center center; /* [3] */
     pointer-events: none; /* [4] */
-    transform: translateZ(0) translateY(-50%) rotate(0); /* [5] */
-    transition: transform $accordion-animation-speed ease; /* [6] */
+    transition: transform $accordion-animation-speed ease; /* [5] */
   }
 }
 
@@ -132,7 +129,8 @@ $accordion-icon-size: 20px !default;
    */
   .c-accordion__label {
     &::after {
-      transform: translateZ(0) translateY(-50%) rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
     }
   }
 }
