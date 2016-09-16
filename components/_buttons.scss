@@ -4,9 +4,9 @@
 
 // Button settings
 $btn-font-size: text(text-lead-small) !default;
-$btn-padding-x: convert-to-em(15px) !default;
-$btn-padding-y: convert-to-em(5px) !default;
-$btn-border-width: convert-to-em($global-border-width) !default;
+$btn-padding-x: 15px !default;
+$btn-padding-y: 5px !default;
+$btn-border-width: $global-border-width !default;
 $btn-border-radius: $global-border-radius !default;
 $btn-animation-speed: $global-animation-speed !default;
 $btn-animation-speed-fast: $global-animation-speed-fast !default;
