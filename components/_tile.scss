@@ -200,7 +200,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 .c-tile__media {
   overflow: hidden;
   display: block;
-  height: 55%;
+  height: 55.5%; // Fixes issue with rounding down of height leaving a gap.
 
   /**
    * Hide media below medium on collapsable tiles
