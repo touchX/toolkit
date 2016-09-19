@@ -1,84 +1,24 @@
 /* ==========================================================================
-   FLUID SPACING
-   ========================================================================== */
-
-$fluid-max-width-enabled: true !default;
-$fluid-max-width: 1200px !default;
-
-/**
- * Utility classes to put specific fluid spacing values onto elements. The below loop
- * will generate us a suite of classes like:
- *
- *   .u-fluid-margin-top {}
- *   .u-fluid-padding-left-large {}
- *   .u-fluid-margin-right-small {}
- *   .u-fluid-padding-all {}
- */
-
-$global-spacing-directions: (
-  null,
-  -top,
-  -right,
-  -bottom,
-  -left,
-);
-
-$global-spacing-properties: (
-  padding,
-  margin
-);
-
-$fluid-spacing-size: (strip-unit($global-spacing-unit / $fluid-max-width)) * 100; // VW equivalent of 30px at 1200px screen width
-$fluid-spacing-unit: #{$fluid-spacing-size}vw $global-spacing-unit;
-$fluid-spacing-unit-tiny: #{$fluid-spacing-size / 4}vw $global-spacing-unit-tiny;
-$fluid-spacing-unit-small: #{$fluid-spacing-size / 2}vw $global-spacing-unit-small;
-$fluid-spacing-unit-large: #{$fluid-spacing-size * 2}vw $global-spacing-unit-large;
-
-$fluid-spacing-sizes: (
-  null: $fluid-spacing-unit,
-  -tiny: $fluid-spacing-unit-tiny,
-  -small: $fluid-spacing-unit-small,
-  -large: $fluid-spacing-unit-large,
-) !default;
-
-@each $property in $global-spacing-properties {
-  @each $direction in $global-spacing-directions {
-
-    // This is a bit nasty… If we have a `null` direction, the implication is that
-    // we want to use the respective property on all sides (TRBL). Accordingly,
-    // create a string of `-all` to use in our class name.
-    $all: null;
-
-    @if ($direction == null) {
-      $all: -all;
-    }
-
-    @each $size, $value in $fluid-spacing-sizes {
-
-      .u-fluid-#{$property}#{$direction}#{$all}#{$size} {
-        #{$property}#{$direction}: nth($value, 1) !important;
-
-        @if $fluid-max-width-enabled {
-          @include mq($from: $fluid-max-width) {
-            #{$property}#{$direction}: nth($value, 2) !important;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* ==========================================================================
    FLUID TILE MODIFIERS
    ==========================================================================
  *
  * The fluid tile sizes are all based on the maximum page breakpoint (1200px).
  * A font-size for .c-tile--fluid is applied which is the equivilent of 20px
  * (toolkit base font size) in `vw` units. This is calculated with:
- *
- * base font size / maximum content width * 100 = 1.6666666667vw
  */
-$fluid-base-font-size: (strip-unit($global-font-size / $fluid-max-width)) * 100vw;
+
+// Base breakpoint, for none scaled tiles at this resoloution the base font-size will always be 20px.
+$fluid-base-breakpoint: map-get($mq-breakpoints, small);
+
+// Enables the max-width styling assuming use of `.o-container`.
+$fluid-max-width-enabled: true !default;
+$fluid-max-width: 1200px !default;
+
+// Calculate the equivalent 20px font-size in vw units based on the small breakpoint.
+$fluid-base-font-size: (strip-unit($global-font-size / $fluid-base-breakpoint)) * 100vw;
+
+// Used to convert our scaling font-size back to px when we hit out max-width (assuming it's enabled).
+$fluid-fixed-px-multiplier: $fluid-max-width / $fluid-base-breakpoint;
 
 // The `vw` units scale the base font-size on the tile in relation to the
 // viewport width proportionally. We can then use `em` units for inner content
@@ -90,37 +30,48 @@ $fluid-base-font-size: (strip-unit($global-font-size / $fluid-max-width)) * 100v
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 
-  // Once we go above the 1200px breakpoint and content stops scaling we set a
-  // 22px font-size on the tile so meaning content no longer scales.
-  @if $fluid-max-width-enabled {
-    @include mq($from: $fluid-max-width) {
-      font-size: $global-font-size;
-    }
-  }
-
   .u-fluid__base-size {
     font-size: 1em;
   }
 
   .c-tile__body {
+    line-height: 1.1em;
     padding: convert-to-em(15px); // 15px (with 20px base font-size)
-  }
-
-  @include mq($until: medium) {
-    // u-width-1/3@medium - increase tiles 3x when they go full width
-    &.c-tile--size-small {
-      font-size: $fluid-base-font-size * 3;
-    }
-
-    // u-width-1/2@medium - increase tiles 2x when they go full width
-    &.c-tile--size-medium {
-      font-size: $fluid-base-font-size * 2;
-    }
   }
 
   // Set a fluid tile with heading-charlie (36px) equivalent size
   .c-tile__title {
-    font-size: convert-to-em(text(heading-charlie, large));
+    font-size: convert-to-em(text(heading-charlie));
     line-height: 1.25;
+    margin-bottom: convert-to-em($global-spacing-unit-tiny, text(heading-charlie));
+  }
+}
+
+// Create classes that take effect only at specific breakpoints
+// (e.g. `.u-fluid-scale-1/3@medium`).
+@mixin fluid-scales($scale-columns, $scale-breakpoint: null) {
+
+  // Loop through the number of columns for each denominator of our fractions.
+  @each $scale-denominator in $scale-columns {
+
+    // Begin creating a numerator for our fraction up until we hit the
+    // denominator.
+    @for $scale-numerator from 1 through $scale-denominator {
+
+      // Build a class in the format `.u-scale-3/4[@<breakpoint>]`.
+      .u-fluid-scale-#{$scale-numerator}\/#{$scale-denominator}#{$scale-breakpoint} .c-tile--fluid {
+        font-size: $fluid-base-font-size * ($scale-numerator / $scale-denominator);
+
+        @include mq($from: $fluid-max-width) {
+          font-size: ($global-font-size * $fluid-fixed-px-multiplier) * ($scale-numerator / $scale-denominator);
+        }
+      }
+    }
+  }
+}
+
+@each $alias, $bp in $mq-breakpoints {
+  @include mq($from: $bp) {
+    @include fluid-scales(1 2 3 4 5, \@#{$alias});
   }
 }
