@@ -50,12 +50,12 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   box-shadow: $btn-box-shadow; /* [12] */
   transition: color $btn-animation-speed ease, background-color $btn-animation-speed ease, border-color $btn-animation-speed ease, box-shadow $btn-animation-speed ease; /* [13] */
   cursor: pointer; /* [14] */
-  outline: none; /* [15] */
 
   &:hover,
   &:active,
   &:focus {
     text-decoration: none; /* [9] */
+    outline: none; /* [15] */
   }
 
 }
