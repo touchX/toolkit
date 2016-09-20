@@ -3,11 +3,13 @@
    ========================================================================== */
 
 // Panel settings
-$panel-shadow-size: inset 0 0 12px 0;
+//$panel-shadow-size: inset 0 0 12px 0;
+$panel-shadow-size-top: inset 0 12px 12px -12px;
+$panel-shadow-size-bottom: inset 0 -12px 12px -12px;
 $panel-shadow-color: #9f9f9f;
 $panel-shadow-color-dark: color(black);
-$panel-shadow: $panel-shadow-size $panel-shadow-color;
-$panel-shadow-dark: $panel-shadow-size $panel-shadow-color-dark;
+$panel-shadow: $panel-shadow-size-top $panel-shadow-color, $panel-shadow-size-bottom $panel-shadow-color;
+$panel-shadow-dark: $panel-shadow-size-top $panel-shadow-color-dark, $panel-shadow-size-bottom $panel-shadow-color-dark;
 $panel-background-color: color(white) !default;
 $panel-background-color-dark: color(ui-dark) !default;
 

@@ -7,6 +7,7 @@
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
 - [buttons] Added `:focus` styles for accessibility.
 - [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
+- [panel] Inset shadow fix from all sides to top and bottom only.
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
 - [shine] Fix for `.c-shine` when using with full width elements.
 - [select] Added `:focus` styles for accessibility.
