@@ -8,6 +8,7 @@
 - [buttons] Added `:focus` styles for accessibility.
 - [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
+- [tile] Fix for `.c-tile__media` height rounding down incorrectly causing a 1px gap.
 - [shine] Fix for `.c-shine` when using with full width elements.
 - [select] Added `:focus` styles for accessibility.
 
