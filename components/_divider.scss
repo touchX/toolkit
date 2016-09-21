@@ -82,6 +82,10 @@ $divider-modifiers: (
   .c-divider--#{$modifier} {
     border-width: $border-width;
 
+    @if $modifier == "left" or $modifier == "right" {
+      margin-bottom: 0;
+    }
+
     /**
      * Divider gradient border.
      *
