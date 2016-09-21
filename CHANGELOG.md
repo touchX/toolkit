@@ -4,6 +4,7 @@
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 
 ## 2. Bug Fixes
+- [accordion] Fixed arrow icon alignment in IE9.
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
 - [buttons] Added `:focus` styles for accessibility.
 - [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
