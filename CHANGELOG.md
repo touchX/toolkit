@@ -13,6 +13,7 @@
 - [tile] Fix for `.c-tile__media` height rounding down incorrectly causing a 1px gap.
 - [shine] Fix for `.c-shine` when using with full width elements.
 - [select] Added `:focus` styles for accessibility.
+- [select] Fixed spacing of text.
 
 ===
 

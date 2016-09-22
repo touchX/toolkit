@@ -260,6 +260,7 @@ $form-animation-speed: $global-animation-speed-fast;
   border: $form-border;
   background-color: $form-background;
   box-shadow: $form-shadow;
+  line-height: 1.2em;
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
   cursor: pointer;
