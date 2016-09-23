@@ -238,7 +238,7 @@ $form-animation-speed: $global-animation-speed-fast;
   &::before {
     content: "";
     position: absolute;
-    right: 1px;
+    right: $form-border-width;
     top: 50%;
     width: $global-spacing-unit-small * 4;
     height: calc(100% - 4px);
