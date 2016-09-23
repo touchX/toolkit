@@ -1,7 +1,103 @@
-# Toolkit UI v0.3.10
+# Toolkit UI v0.5.1
 
-## 1. Enhancement
-- [Tooltip] Added `c-tooltip--hover` modifier to allow tooltips to be triggered on hover.
+## 1. Features
+- [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
+
+## 2. Bug Fixes
+- [accordion] Fixed arrow icon alignment in IE9.
+- [buttons] Added relative border to buttons so that the border width scales with font-size.
+- [buttons] Added `:focus` styles for accessibility.
+- [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
+- [panel] Inset shadow fix from all sides to top and bottom only.
+- [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
+- [tile] Fix for `.c-tile__media` height rounding down incorrectly causing a 1px gap.
+- [shine] Fix for `.c-shine` when using with full width elements.
+- [select] Added `:focus` styles for accessibility.
+
+===
+
+# Toolkit UI v0.5.0
+
+## 1. Bug Fixes
+- [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
+- [forms] Removed tick on selected radio button.
+- [forms] Refactored checkbox structure to allow for keyboard focus. Instead of `c-form-checkbox__faux`, we now utilise `c-form-checkbox__caption`.
+- [select] Keyboard accessibility support.
+
+## 2. Enhancements
+- [select] Different styles for hover, focus and active states.
+
+## ⚠️ Update Notes
+
+To make our checkboxes and radio buttons keyboard accessible, a significant refactor was required.
+
+`c-form-checkbox__caption` now **replaces** `c-form-checkbox__faux` for generating the indicator, wrapping the text of the input.
+
+**If you are using checkboxes and/or radio buttons in your project, you will need to implement the following example structures:**
+
+Checkbox:
+
+```html
+<label for="f-terms_1" class="c-form-checkbox">
+  <input type="checkbox" class="c-form-checkbox__input" name="f-terms" id="f-terms_1" value="1" />
+  <span class="c-form-checkbox__caption">I agree to the terms &amp; conditions</span>
+</label>
+```
+
+Radio:
+
+```html
+<li class="c-form-list__item  c-form-pair">
+  <span class="c-form-pair__label">
+    <label class="c-form-label  u-margin-right">
+      Which side?
+    </label>
+  </span>
+  <span class="c-form-pair__input">
+   <label for="f-side_1" class="c-form-checkbox  c-form-checkbox--radio  u-margin-bottom-small">
+     <input type="radio" name="f-side" id="f-side_1" value="good" class="c-form-checkbox__input" />
+     <span class="c-form-checkbox__caption">Good</span>
+   </label>
+   <label for="f-side_2" class="c-form-checkbox  c-form-checkbox--radio">
+     <input type="radio" name="f-side" id="f-side_2" value="evil" class="c-form-checkbox__input" />
+     <span class="c-form-checkbox__caption">Evil</span>
+   </label>
+  </span>
+</li>
+```
+
+===
+
+# Toolkit UI v0.4.2
+
+## 1. Bug Fixes
+- [tiles] Only title now underlines on hover.
+- [tiles] Specificity reduced with hover style allowing easier customisation
+
+===
+
+# Toolkit UI v0.4.1
+
+## 1. Enhancements
+- [select] Reduced horizontal padding from 60px to 40px.
+
+## 1. Bug Fixes
+- [select] Border styles are now applied to the label element, this resolves a rendering issue were multiple select buttons  lost their borders.
+- [select] Webkit vendor prefixes applied so buttons look and function correctly in older versions of Safari (including iOS8).
+
+===
+
+# Toolkit UI v0.4.0
+
+## 1. Enhancements
+- [buttons] Secondary (invert) hover color changed to align with branding.
+- [panels] Panels now utilise a white background by default.
+- [tiles] Sky Cinema gradient implemented to `c-tile`, replacing Sky Movies.
+- [typography] New responsive Typographic scale (and added to components where used).
+
+## 2. Deprecations
+- [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config.
+- [panels] Following branding, grey panels are no longer used.
 
 ===
 
