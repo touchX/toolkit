@@ -229,6 +229,7 @@ $form-animation-speed: $global-animation-speed-fast;
 
 .c-form-select {
   @include font-size($form-font-size, large);
+  line-height: 1.2;
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
   position: relative;
@@ -254,13 +255,11 @@ $form-animation-speed: $global-animation-speed-fast;
 }
 
 .c-form-select__dropdown {
-  @include font-size($form-font-size, large);
-  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny $global-spacing-unit-tiny;
   width: 100%;
   border: $form-border;
   background-color: $form-background;
   box-shadow: $form-shadow;
-  line-height: 1.2em;
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
   cursor: pointer;
