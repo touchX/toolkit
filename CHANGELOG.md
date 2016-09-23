@@ -1,6 +1,7 @@
 # Toolkit UI v0.5.1
 
 ## 1. Features
+- [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 
 ## 2. Bug Fixes
