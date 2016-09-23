@@ -235,6 +235,28 @@ $form-animation-speed: $global-animation-speed-fast;
   width: 100%;
   cursor: pointer;
 
+  /**
+   * Gradient to hide the overflow of long labels
+   *
+   * 1. Stretch to full height on the right (taking into account border width)
+   */
+  &::before {
+    content: "";
+    position: absolute;
+    top: $global-border-width; /* [1] */
+    right: $form-border-width; /* [1] */
+    bottom: $form-border-width; /* [1] */
+    width: $global-spacing-unit-large;
+    background: $form-background;
+    background: -ms-linear-gradient(right, rgba($form-background, 1) 60%, rgba($form-background, 0));
+    background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
+    border-radius: 0 $global-border-radius $global-border-radius 0;
+    pointer-events: none;
+  }
+
+  /**
+   * Custom dropdown indicator icon
+   */
   &::after {
     content: "";
     position: absolute;
@@ -258,6 +280,7 @@ $form-animation-speed: $global-animation-speed-fast;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
   width: 100%;
   border: $form-border;
+  border-radius: $global-border-radius;
   background-color: $form-background;
   box-shadow: $form-shadow;
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
