@@ -1,6 +1,7 @@
 # Toolkit UI v0.5.1
 
 ## 1. Features
+- [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 
 ## 2. Bug Fixes
@@ -8,6 +9,7 @@
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
 - [buttons] Added `:focus` styles for accessibility.
 - [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
+- [forms] Fix to add border-radius and prevent text from overflowing beneath the icon on `c-form-select`.
 - [panel] Inset shadow fix from all sides to top and bottom only.
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
 - [tile] Fix for `.c-tile__media` height rounding down incorrectly causing a 1px gap.
