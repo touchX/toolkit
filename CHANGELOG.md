@@ -1,3 +1,9 @@
+# Toolkit v1.0.0
+
+-[todo] Add notes before release.
+
+===
+
 # Toolkit v0.5.0
 
 ## Toolkit Core v0.5.1
