@@ -1,4 +1,4 @@
-# Toolkit UI v0.5.1
+# Toolkit UI v1.0.0
 
 ## 1. Features
 - [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
