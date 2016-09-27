@@ -10,7 +10,8 @@ $dropdown-border: 1px solid color(keyline) !default;
 $dropdown-border-radius: $global-border-radius !default;
 $dropdown-shadow-blur-radius: 8px !default;
 $dropdown-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2) !default;
-$dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !default;
+$dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !default;
+$dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(highlight), 0.75);
 
 /**
  * Dropdown menus are useful tools for navigation, but shouldn't be used for
@@ -49,6 +50,11 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   cursor: pointer;
   z-index: 1; /* [4] */
   transition: all $dropdown-animation-speed ease;
+
+  &:focus {
+    box-shadow: $dropdown-focus;
+    outline: none;
+  }
 
   /**
    * The Dropdown label uses an icon to indicate when the menu has been toggled.
@@ -101,7 +107,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   list-style-type: none; /* [5] */
   background-color: $dropdown-background;
   border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [3] */
-  box-shadow: $dropdown-shadow-focus;
+  box-shadow: $dropdown-shadow-active;
   opacity: 0; /* [4] */
   -ms-transform: scaleY(0); /* [5] */
   transform: scaleY(0); /* [5] */
@@ -151,13 +157,13 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   opacity: 0; /* [3] */
   transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease;
 
+  .c-dropdown__item:last-child & {
+    border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [4] */
+  }
+
   &:hover,
   &:focus {
     background-color: $dropdown-background-focus;
-  }
-
-  &:last-child {
-    border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [4] */
   }
 }
 
@@ -192,7 +198,7 @@ $dropdown-shadow-focus: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !d
   */
   .c-dropdown__toggle {
     border-color: $dropdown-background;
-    box-shadow: $dropdown-shadow-focus;
+    box-shadow: $dropdown-shadow-active;
     border-radius: $dropdown-border-radius $dropdown-border-radius 0 0; /* [1] */
 
     &::after {
