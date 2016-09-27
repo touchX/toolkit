@@ -49,7 +49,7 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   outline: 0;
   cursor: pointer;
   z-index: 1; /* [4] */
-  transition: all $dropdown-animation-speed ease;
+  transition: border $dropdown-animation-speed ease, border-radius $dropdown-animation-speed ease, box-shadow $dropdown-animation-speed ease;
 
   &:focus {
     box-shadow: $dropdown-focus;
