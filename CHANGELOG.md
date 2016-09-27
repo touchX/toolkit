@@ -4,7 +4,10 @@
 - [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 
-## 2. Bug Fixes
+## 2. Refactor
+- [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
+
+## 3. Bug Fixes
 - [accordion] Fixed arrow icon alignment in IE9.
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
 - [buttons] Added `:focus` styles for accessibility.
