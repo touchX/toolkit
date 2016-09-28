@@ -1,6 +1,7 @@
 # Toolkit UI v1.0.0
 
 ## 1. Features
+- [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
 - [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 

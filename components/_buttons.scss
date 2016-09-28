@@ -143,8 +143,8 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   &:active,
   &:focus {
     color: color(white);
-    background-color: color(keyline);
-    border-color: color(keyline);
+    background-color: color(grey-20);
+    border-color: color(grey-20);
     cursor: not-allowed;
   }
 }

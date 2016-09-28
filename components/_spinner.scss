@@ -162,12 +162,12 @@ $spinner-transition-delay: $global-animation-speed;
  * For overlaying light-coloured UI.
  */
 .c-spinner-overlay--light {
-  background-color: color(ui-light);
+  background-color: color(grey-10);
 }
 
 /**
  * For overlaying dark-coloured UI.
  */
 .c-spinner-overlay--dark {
-  background-color: color(ui-dark);
+  background-color: color(grey-50);
 }
