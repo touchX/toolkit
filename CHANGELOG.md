@@ -16,6 +16,7 @@
 - [panel] Inset shadow fix from all sides to top and bottom only.
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
 - [tile] Fix for `.c-tile__media` height rounding down incorrectly causing a 1px gap.
+- [tile] Fix for `.c-tile--square` height 100% + 5px causing tiles such as 555px x 560px.
 - [shine] Fix for `.c-shine` when using with full width elements.
 - [select] Added `:focus` styles for accessibility.
 - [select] Fixed spacing of text.
