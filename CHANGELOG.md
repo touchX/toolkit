@@ -1,14 +1,17 @@
 # Toolkit UI v1.0.0
 
-## 1. Features
+## 1. Project Structure
+- `toolkit-core` added as a project dependency to run tests and share config files.
+
+## 2. Features
 - [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
 - [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 
-## 2. Refactor
+## 3. Refactor
 - [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
 
-## 3. Bug Fixes
+## 4. Bug Fixes
 - [accordion] Fixed arrow icon alignment in IE9.
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
 - [buttons] Added `:focus` styles for accessibility.
