@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sass-mq": "^3.2.6"
+    "sky-toolkit-core": "^1.0.0"
   },
   "devDependencies": {
     "mocha": "^2.4.5",
