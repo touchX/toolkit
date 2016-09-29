@@ -106,56 +106,20 @@ $sg-header-outer-border-width: 1px;
 /* Color modifiers
    =========================================== */
 
-.sg-swatch--brand {
-  background-color: color(brand);
-  color: color(white);
-}
+$color-list: "brand", "highlight", "error", "success", "grey-10", "grey-20", "grey-30", "grey-40", "grey-50", "text", "black", "white";
 
-.sg-swatch--highlight {
-  background-color: color(highlight);
-  color: color(white);
-}
+@each $color in $color-list {
+  .sg-swatch--#{$color} {
+    background-color: color($color);
 
-.sg-swatch--text {
-  background-color: color(text);
-  color: color(white);
-}
+    @if $color == "grey-10" or $color == "grey-20" or $color == "white" {
+      color: color(grey-50);
+    }
 
-.sg-swatch--keyline {
-  background-color: color(keyline);
-}
-
-.sg-swatch--error {
-  background-color: color(error);
-  color: color(white);
-}
-
-.sg-swatch--success {
-  background-color: color(success);
-  color: color(white);
-}
-
-.sg-swatch--ui-light {
-  background-color: color(ui-light);
-}
-
-.sg-swatch--ui-mid {
-  background-color: color(ui-mid);
-  color: color(white);
-}
-
-.sg-swatch--ui-dark {
-  background-color: color(ui-dark);
-  color: color(white);
-}
-
-.sg-swatch--white {
-  background-color: color(white);
-}
-
-.sg-swatch--black {
-  background-color: color(black);
-  color: color(white);
+    @else {
+      color: color(white);
+    }
+  }
 }
 
 /* Gradient modifiers
