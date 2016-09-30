@@ -1,3 +1,42 @@
+# Toolkit v0.5.1
+
+## Toolkit Core v0.5.2
+
+### Features
+
+- [divider] New mixins for creating divider gradient border and shadow.
+
+### Enhancements
+
+- [colors] Added mid gradient to gradients variable map.
+- [forms] ie9 class to hide gradient text overflow for c-form-select.
+- [functions] Added convert-to-em helper to convert em and px values to the equivalent em value ie convert-to-em(40px) = 2em with optional base font-size.
+- [functions] Added strip-unit helper to remove units from a value. ie strip-unit(400px) = 400.
+- [gradients] background-gradient can now utilise an inverted horizontal direction and percentage overrides.
+- [settings] Update small breakpoint to 420px.
+
+## Toolkit UI v0.5.1
+
+### Features
+
+- [divider] c-divider for prominent horizontal (and vertical) rules for use between elements.
+- [tile] c-tile--full for Tiles that utilise a full size image and overlapping title.
+
+### Bug Fixes
+
+- [accordion] Fixed arrow icon alignment in IE9.
+- [buttons] Added relative border to buttons so that the border width scales with font-size.
+- [buttons] Added :focus styles for accessibility.
+- [forms] Fix for .c-form-checkbox margin which broke on multi-line captions.
+- [forms] Fix to add border-radius and prevent text from overflowing beneath the icon on c-form-select.
+- [panel] Inset shadow fix from all sides to top and bottom only.
+- [tile] Fix for .c-tile--collapsable with nested links breaking on mobile.
+- [tile] Fix for .c-tile__media height rounding down incorrectly causing a 1px gap.
+- [shine] Fix for .c-shine when using with full width elements.
+- [select] Added :focus styles for accessibility.
+- [select] Fixed spacing of text.
+
+
 # Toolkit v0.5.0
 
 ## Toolkit Core v0.5.1
