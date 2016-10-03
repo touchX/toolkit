@@ -16,22 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/sky-uk/toolkit-ui.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sky UK",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/sky-uk/toolkit-ui/issues"
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sass-mq": "^3.2.6"
-  },
-  "devDependencies": {
-    "mocha": "^2.4.5",
-    "node-sass": "^3.4.2",
-    "pre-commit": "^1.1.2",
-    "sass-true": "^2.0.3",
-    "stylelint": "^5.2.1",
-    "stylelint-selector-bem-pattern": "^0.2.1",
-    "stylelint-statement-max-nesting-depth": "^2.0.1"
+    "sky-toolkit-core": "1.0.0"
   }
 }
