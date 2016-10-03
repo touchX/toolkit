@@ -13,7 +13,6 @@ $select-border-radius: $global-border-radius !default;
 $select-icon-padding: $global-spacing-unit-tiny !default;
 $select-icon-width: 40px !default; /* [1] */
 $select-animation-speed: $global-animation-speed-fast !default;
-$select-box-shadow-focus: $btn-box-shadow-focus !default;
 
 /**
  * 1. Allows styling of box model properties.
@@ -78,7 +77,7 @@ $select-box-shadow-focus: $btn-box-shadow-focus !default;
   @include hide-visually();
 
   &:focus + .c-select__btn {
-    box-shadow: $select-box-shadow-focus;
+    @include focus-styles();
   }
 
   &:hover + .c-select__btn {

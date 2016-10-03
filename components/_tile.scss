@@ -50,7 +50,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   z-index: 10; /* [1] */
 
   &.has-focus {
-    box-shadow: 1px 1px 14px 4px rgba(color(highlight), 0.5);
+    @include focus-styles();
   }
 
   &.is-selected {
