@@ -13,7 +13,7 @@
 
 ## 4. Refactor
 - [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
-- [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--full` modifier.
+- [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
 
 ## 5. Bug Fixes
 - [accordion] Fixed arrow icon alignment in IE9.
