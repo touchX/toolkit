@@ -51,10 +51,10 @@ $panel-background-color-dark: color(grey-50) !default;
 }
 
 /**
- * Full panels stretch to the full viewport height when open.
+ * Constrain panels restrict content to full viewport height when open.
  */
 
-.c-panel--full {
+.c-panel--constrain {
   &.is-open {
     max-height: 100vh;
   }
