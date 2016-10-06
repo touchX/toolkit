@@ -35,7 +35,7 @@ $shine-offset: 25%;
 }
 
 /**
- * The moving part of the shine. We start with the shine transformed _away_ from
+ * The moving part of the shine. We start with the shine transformed *away* from
  * it's context, and move it to it's natural position on hover.
  */
 .c-shine__rail {
@@ -68,6 +68,8 @@ $shine-offset: 25%;
     bottom: 0;
     left: $shine-offset;
     width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
 
   /**
@@ -76,9 +78,7 @@ $shine-offset: 25%;
   &::before {
     background: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.15) 38%, rgba(white, 0) 50%);
     background: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.15) 38%, rgba(white, 0) 50%);
-    background-position: center center;
-    background-size: 15em 0.8em; // Keeps shine height consistent to match border.
-    background-repeat: no-repeat;
+    background-size: 15em 0.8em;
   }
 
   /**
@@ -87,9 +87,7 @@ $shine-offset: 25%;
   &::after {
     background: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
     background: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
-    background-position: center center;
-    background-size: 3em 1.4em; // Keeps shine height consistent to match border.
-    background-repeat: no-repeat;
+    background-size: 3em 1.4em;
   }
 
   /**
