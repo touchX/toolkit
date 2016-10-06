@@ -14,6 +14,7 @@
 ## 4. Refactor
 - [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
 - [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
+- [shine] Shine is now rendered purely in CSS to improve performance - please note this won't be supported on ie9.
 
 ## 5. Bug Fixes
 - [accordion] Fixed arrow icon alignment in IE9.
