@@ -6,7 +6,7 @@ We greatly appreciate and encourage people contributing back into the Toolkit!
 
 Submit issues to the issue tracker on the [appropriate repository](https://github.com/sky-uk/toolkit#structure) for suggestions, recommendations, and bugs.
 
-When submitting issues, please make sure you follow the template provided.
+When submitting issues, please make sure you utilise the template provided by default.
 
 **Please note**: If it's an issue that's urgent / you feel you can fix yourself, please feel free to make some changes and submit a [pull request](#pull-requests). We'd love to see your contributions.
 
