@@ -452,17 +452,23 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
 @if $included-tile-themes {
   @each $brand in $included-tile-themes {
-    // For each brand generate a tile theme class i.e. .t-tile-sky-1
-    .c-tile--#{$brand} {
+    @if map-has-key($gradients, $brand) {
+      // For each brand generate a tile theme class i.e. .t-tile-sky-1
+      .c-tile--#{$brand} {
 
-      .c-tile__link:hover {
-        color: color(white);
-      }
+        .c-tile__link:hover {
+          color: color(white);
+        }
 
-      // Set up style overides
-      .c-tile__link .c-tile__body::after {
-        @include background-gradient($brand);
+        // Set up style overides
+        .c-tile__link .c-tile__body::after {
+          @include background-gradient($brand);
+        }
       }
+    }
+
+    @else {
+      @warn "Unknown `#{$brand}` in $gradients. Please check this brand is available.";
     }
   }
 }
