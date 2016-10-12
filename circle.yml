@@ -27,12 +27,3 @@ deployment:
     branch: master
     commands:
       - npm run build
-      - npm run update-pages
-      - git config --global user.email "DL-ToolkitCore@bskyb.com"
-      - git config --global user.name "Toolkit CI"
-      - bundle exec jekyll build
-      - bundle exec rake deploy
-
-notify:
-  webhooks:
-    - url: https://secure.sky.com/blackjack/builds/circleci

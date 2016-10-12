@@ -7,11 +7,6 @@
     "test": "echo 'No tests to run'",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
-  "orion": {
-    "default": {
-      "stylesheet": "pages/assets/css/toolkit.css"
-    }
-  },
   "author": "Sky UK",
   "license": "ISC",
   "devDependencies": {
