@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit",
-  "version": "0.5.1",
+  "version": "1.0.0",
   "description": "Sky's CSS Toolkit",
   "main": "toolkit.scss",
   "scripts": {
@@ -13,7 +13,7 @@
     "node-sass": "^3.4.2"
   },
   "dependencies": {
-    "sky-toolkit-core": "0.5.1",
-    "sky-toolkit-ui": "0.5.0"
+    "sky-toolkit-core": "1.0.0",
+    "sky-toolkit-ui": "1.0.0"
   }
 }
