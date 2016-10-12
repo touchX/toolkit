@@ -1,6 +1,0 @@
-title: Sky Toolkit
-email: DL-ToolkitCore@bskyb.com
-url: "http://sky-uk.github.io"
-baseurl: "/toolkit"
-source: ./pages
-markdown: kramdown

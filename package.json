@@ -1,27 +1,19 @@
 {
   "name": "sky-toolkit",
   "version": "1.0.0",
-  "description": "Sky Toolkit",
+  "description": "Sky's CSS Toolkit",
   "main": "toolkit.scss",
   "scripts": {
     "test": "echo 'No tests to run'",
-    "build": "npm run build-toolkit && npm run build-styleguide",
-    "build-toolkit": "cat pages/assets/scss/toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > pages/assets/css/toolkit.css",
-    "build-styleguide": "cat pages/assets/scss/styleguide.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > pages/assets/css/styleguide.css",
-    "update-pages": "rm -r -f node_modules/sky-toolkit-core && rm -r -f node_modules/sky-toolkit-ui && npm install && npm run build"
-  },
-  "orion": {
-    "default": {
-      "stylesheet": "pages/assets/css/toolkit.css"
-    }
+    "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
   "author": "Sky UK",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "devDependencies": {
     "node-sass": "^3.4.2"
   },
   "dependencies": {
-    "sky-toolkit-core": "0.5.1",
-    "sky-toolkit-ui": "0.5.0"
+    "sky-toolkit-core": "1.0.0",
+    "sky-toolkit-ui": "1.0.0"
   }
 }
