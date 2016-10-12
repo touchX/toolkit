@@ -1,14 +1,14 @@
 {
   "name": "sky-toolkit",
-  "version": "1.0.0",
-  "description": "Sky Toolkit",
+  "version": "0.5.1",
+  "description": "Sky's CSS Toolkit",
   "main": "toolkit.scss",
   "scripts": {
     "test": "echo 'No tests to run'",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
   "author": "Sky UK",
-  "license": "ISC",
+  "license": "BSD-3-Clause",
   "devDependencies": {
     "node-sass": "^3.4.2"
   },
