@@ -26,6 +26,8 @@ The project consists of 3 repositories:
 $ npm install sky-toolkit --save
 ```
 
+For rapid prototyping and static sites you can include our latest compiled [toolkit.css](https://www.sky.com/assets/toolkit/v1.0.0/toolkit.css). However we **strongly** advise the use of SCSS in projects to benefit from the Toolkit's modularity.
+
 [See the Wiki](https://github.com/sky-uk/toolkit/wiki/) for full documentation and information on how to [implement the Toolkit](https://github.com/sky-uk/toolkit/wiki/Getting-started) in your project.
 
 ## Requirements
