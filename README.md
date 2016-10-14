@@ -4,7 +4,7 @@
 
 Sky's CSS Toolkit.
 
-- Visit [blackjack.sky.com](http://sky.com/blackjack/toolkit) for full documentation (INTERNAL ONLY)
+- Visit [#toolkit](http://sky.slack.com/messages/toolkit) on Slack for full documentation (INTERNAL ONLY)
 - or visit the [Toolkit Wiki](https://github.com/sky-uk/toolkit/wiki/)
 
 ## Goals
