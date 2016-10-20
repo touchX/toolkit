@@ -76,8 +76,8 @@ $shine-offset: 25%;
    * Shine Diffaction Spike
    */
   &::before {
-    background: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.15) 38%, rgba(white, 0) 50%);
-    background: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.15) 38%, rgba(white, 0) 50%);
+    background-image: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba-image(white, 0.15) 38%, rgba(white, 0) 50%);
+    background-image: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.15) 38%, rgba(white, 0) 50%);
     background-size: 15em 0.8em;
   }
 
@@ -85,8 +85,8 @@ $shine-offset: 25%;
    * Shine Orb
    */
   &::after {
-    background: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
-    background: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
+    background-image: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
+    background-image: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
     background-size: 3em 1.4em;
   }
 
