@@ -23,6 +23,9 @@ The project consists of 3 repositories:
 - [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
 - [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components following Polaris brand guidelines.
 
+### Libraries
+- [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
+
 ## Installation
 ```
 $ npm install sky-toolkit --save
@@ -42,11 +45,11 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 ## Champions
 
-| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93)<br />[📧](mailto:joseph.bell@sky.uk) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale)<br />[📧](mailto:joseph.dinsdale@sky.uk) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas)<br />[📧](mailto:aaron.thomas@sky.uk) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/skitson)<br />[📧](mailto:steve.duffin@sky.uk) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt)<br />[📧](mailto:luke.barratt@sky.uk) | [![Stefan McCready](https://avatars.githubusercontent.com/StefanMcCready?s=100)<br /><sub>Stefan McCready</sub>](https://github.com/StefanMcCready)<br />[📧](mailto:stefan.mccready@sky.uk) |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93)<br />[](mailto:joseph.bell@sky.uk) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale)<br />[](mailto:joseph.dinsdale@sky.uk) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas)<br />[](mailto:aaron.thomas@sky.uk) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin)<br />[](mailto:steve.duffin@sky.uk) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson)<br />[](mailto:sam.kitson@sky.uk) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt)<br />[](mailto:luke.barratt@sky.uk)
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
-| [![Chris Vernon](https://avatars.githubusercontent.com/welikeideas?s=100)<br /><sub>Chris Vernon</sub>](https://github.com/welikeideas)<br />[📧](mailto:christopher.vernon@sky.uk) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson)<br />[📧](mailto:sam.kitson@sky.uk) | [![Djenan Kozic](https://avatars.githubusercontent.com/Djenan?s=100)<br /><sub>Djenan Kozic</sub>](https://github.com/Djenan)<br />[📧](mailto:jjenan.kozic@sky.uk) | 
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| [![Greg Pratt](https://avatars.githubusercontent.com/gregorypratt?s=100)<br /><sub>Greg Pratt</sub>](https://github.com/gregorypratt)<br />[](mailto:gregory.pratt@sky.uk) | [![Rich Gorman](https://avatars.githubusercontent.com/coderas?s=100)<br /><sub>Rich Gorman</sub>](https://github.com/coderas)<br />[](mailto:richard.gorman@sky.uk) | [![Alex Fenton](https://avatars.githubusercontent.com/afenton90?s=100)<br /><sub>Alex Fenton</sub>](https://github.com/afenton90)<br />[](mailto:alexander.fenton@sky.uk) | [![Chris Vernon](https://avatars.githubusercontent.com/welikeideas?s=100)<br /><sub>Chris Vernon</sub>](https://github.com/welikeideas)<br />[](mailto:christopher.vernon@sky.uk) | [![Stefan McCready](https://avatars.githubusercontent.com/StefanMcCready?s=100)<br /><sub>Stefan McCready</sub>](https://github.com/StefanMcCready)<br />[](mailto:stefan.mccready@sky.uk) | [![Djenan Kozic](https://avatars.githubusercontent.com/Djenan?s=100)<br /><sub>Djenan Kozic</sub>](https://github.com/Djenan)<br />[](mailto:djenan.kozic@sky.uk) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Contributing
 
