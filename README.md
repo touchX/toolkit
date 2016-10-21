@@ -23,6 +23,9 @@ The project consists of 3 repositories:
 - [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
 - [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components following Polaris brand guidelines.
 
+### Libraries
+- [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
+
 ## Installation
 ```
 $ npm install sky-toolkit --save
