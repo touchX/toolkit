@@ -6,9 +6,9 @@
 ## 2. Features
 - [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
 - [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
+- [forms] `c-form-checkbox--inline` for inline checkbox/radio inputs.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 - [tile] Extra test for generating themed tiles.
-
 
 ## 3. Deprecations
 - [legacy-typography] Config switch now fully deprecated.
