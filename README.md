@@ -17,7 +17,7 @@ Sky's CSS Toolkit.
 
 The project consists of 3 repositories: 
 
-- **this repo**: consumes the UI and Core layers and serves documentation.
+- **this repo**: provides the UI and Core layers.
 - [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
 - [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components.
 
