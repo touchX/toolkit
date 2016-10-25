@@ -310,6 +310,18 @@ $form-animation-speed: $global-animation-speed-fast;
   cursor: pointer;
 }
 
+/**
+ * For cases where checkboxes or radio buttons need to display inline.
+ */
+.c-form-checkbox--inline {
+  width: auto;
+  margin-right: $global-spacing-unit-large;
+}
+
+/**
+ * Hide the default input visually to utilise keyboard functionality and allow
+ * for custom input styles.
+ */
 .c-form-checkbox__input {
   @include hide-visually();
 }
