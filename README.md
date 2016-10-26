@@ -25,9 +25,6 @@ The project consists of 3 repositories:
 - [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
 - [blackjack-toolbelt](https://github.com/sky-uk/toolkit-react): Spin up a React.js component in the CLI using Toolkit styles.
 
-### Libraries
-- [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
-
 ## Installation
 
 ```
