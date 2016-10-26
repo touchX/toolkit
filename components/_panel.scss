@@ -11,7 +11,7 @@ $panel-shadow-color-dark: color(black);
 $panel-shadow: $panel-shadow-size-top $panel-shadow-color, $panel-shadow-size-bottom $panel-shadow-color;
 $panel-shadow-dark: $panel-shadow-size-top $panel-shadow-color-dark, $panel-shadow-size-bottom $panel-shadow-color-dark;
 $panel-background-color: color(white) !default;
-$panel-background-color-dark: color(ui-dark) !default;
+$panel-background-color-dark: color(grey-50) !default;
 
 /**
  * 1. Break the panel outside of the current container (typically
@@ -30,7 +30,7 @@ $panel-background-color-dark: color(ui-dark) !default;
   max-height: 0;
 
   &.is-open {
-    max-height: 100vh;
+    max-height: none;
     margin-bottom: $global-spacing-unit;
   }
 }
@@ -40,12 +40,9 @@ $panel-background-color-dark: color(ui-dark) !default;
   padding-bottom: $global-spacing-unit;
 }
 
-/* Darker panels
-  =========================================== */
-
 /**
-  * 1. Darker panels have no shadow/gradient
-  */
+ * Dark panels
+ */
 
 .c-panel--dark {
   background-color: $panel-background-color-dark;
@@ -53,14 +50,24 @@ $panel-background-color-dark: color(ui-dark) !default;
   color: color(white);
 }
 
+/**
+ * Constrain panels restrict content to full viewport height when open.
+ */
+
+.c-panel--constrain {
+  &.is-open {
+    max-height: 100vh;
+  }
+}
+
 /* Toggle links
   =========================================== */
 
 /**
-  * Close button for panels
-  * 1. Position the button in top right of panel
-  * 2. Offset cross icon to align with text
-  */
+ * Close button for panels
+ * 1. Position the button in top right of panel
+ * 2. Offset cross icon to align with text
+ */
 
 .c-panel__toggle {
   @include font-size(text-lead-small);

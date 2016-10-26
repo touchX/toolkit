@@ -50,7 +50,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   z-index: 10; /* [1] */
 
   &.has-focus {
-    box-shadow: 1px 1px 14px 4px rgba(color(highlight), 0.5);
+    @include focus-styles();
   }
 
   &.is-selected {
@@ -93,11 +93,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
   &.c-tile--dark.is-selected {
     &::before {
-      box-shadow: 5px 5px 8px color(ui-dark); /* [4] */
+      box-shadow: 5px 5px 8px color(grey-50); /* [4] */
     }
 
     &::after {
-      background-color: color(ui-dark);
+      background-color: color(grey-50);
       box-shadow: inset $tile-arrow-size/2 $tile-arrow-size/2 $tile-arrow-size/2 (-$tile-arrow-size / 2) color(black); /* [5] */
     }
   }
@@ -334,6 +334,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 .c-tile--square {
   height: 0;
   padding-top: 100%;
+  padding-bottom: 0;
 
   /**
    * Collapses square ratio at medium and sets to auto height
@@ -451,17 +452,23 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
 @if $included-tile-themes {
   @each $brand in $included-tile-themes {
-    // For each brand generate a tile theme class i.e. .t-tile-sky-1
-    .c-tile--#{$brand} {
+    @if map-has-key($gradients, $brand) {
+      // For each brand generate a tile theme class i.e. .t-tile-sky-1
+      .c-tile--#{$brand} {
 
-      .c-tile__link:hover {
-        color: color(white);
-      }
+        .c-tile__link:hover {
+          color: color(white);
+        }
 
-      // Set up style overides
-      .c-tile__link .c-tile__body::after {
-        @include background-gradient($brand);
+        // Set up style overides
+        .c-tile__link .c-tile__body::after {
+          @include background-gradient($brand);
+        }
       }
+    }
+
+    @else {
+      @warn "Unknown `#{$brand}` in $gradients. Please check this brand is available.";
     }
   }
 }
