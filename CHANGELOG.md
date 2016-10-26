@@ -1,7 +1,7 @@
 # Toolkit v1.0.0
 
 - [Dependencies] As `toolkit-ui` consumes `toolkit-core`, we no longer need both in `package.json`.
-- [Style Guide] Please go to [#toolkit](sky.slack.com/messages/toolkit) on Slack for internal docs, or see the Wiki for public docs.
+- [Style Guide] Please go to [#toolkit](https://sky.slack.com/messages/toolkit) on Slack for internal docs, or see the Wiki for public docs.
 - [README.md] New Core Maintainers and CDN access to CSS.
 - [CONTRIBUTING.md] Updated process.
 
