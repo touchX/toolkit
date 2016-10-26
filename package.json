@@ -7,13 +7,17 @@
     "test": "echo 'No tests to run'",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sky-uk/toolkit-ui.git"
+  },
   "author": "Sky UK",
   "license": "BSD-3-Clause",
-  "devDependencies": {
-    "node-sass": "^3.4.2"
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
   },
+  "homepage": "https://github.com/sky-uk/toolkit#readme",
   "dependencies": {
-    "sky-toolkit-core": "1.0.0",
     "sky-toolkit-ui": "1.0.0"
   }
 }
