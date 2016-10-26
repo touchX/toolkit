@@ -4,7 +4,7 @@ machine:
 
 general:
   artifacts:
-    - "build/"
+    - "dist/"
     - "package.json"
 
 test:
