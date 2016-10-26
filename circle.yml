@@ -1,38 +1,12 @@
-general:
-  artifacts:
-    - "pages/assets/css/toolkit.css"
-    - "package.json"
-  branches:
-    ignore:
-      - gh-pages
-
 machine:
   node:
-    version: 5.5.0
-  ruby:
-    version: 2.3.0
+    version: 6.1.0
 
-dependencies:
-  pre:
-    - npm install -g npm
-    - npm uninstall sky-toolkit-core
-    - npm uninstall sky-toolkit-ui
+general:
+  artifacts:
+    - "dist/"
+    - "package.json"
 
 test:
-  pre:
-    - source ~/nvm/nvm.sh
-
-deployment:
-  release:
-    branch: master
-    commands:
-      - npm run build
-      - npm run update-pages
-      - git config --global user.email "DL-ToolkitCore@bskyb.com"
-      - git config --global user.name "Toolkit CI"
-      - bundle exec jekyll build
-      - bundle exec rake deploy
-
-notify:
-  webhooks:
-    - url: https://secure.sky.com/blackjack/builds/circleci
+  override:
+    - npm run dist

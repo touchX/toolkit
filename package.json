@@ -1,27 +1,23 @@
 {
   "name": "sky-toolkit",
-  "version": "0.5.1",
-  "description": "Sky Toolkit",
+  "version": "1.0.0",
+  "description": "Sky's CSS Toolkit",
   "main": "toolkit.scss",
   "scripts": {
     "test": "echo 'No tests to run'",
-    "build": "npm run build-toolkit && npm run build-styleguide",
-    "build-toolkit": "cat pages/assets/scss/toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > pages/assets/css/toolkit.css",
-    "build-styleguide": "cat pages/assets/scss/styleguide.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > pages/assets/css/styleguide.css",
-    "update-pages": "rm -r -f node_modules/sky-toolkit-core && rm -r -f node_modules/sky-toolkit-ui && npm install && npm run build"
+    "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
-  "orion": {
-    "default": {
-      "stylesheet": "pages/assets/css/toolkit.css"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sky-uk/toolkit-ui.git"
   },
   "author": "Sky UK",
-  "license": "ISC",
-  "devDependencies": {
-    "node-sass": "^3.4.2"
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
   },
+  "homepage": "https://github.com/sky-uk/toolkit#readme",
   "dependencies": {
-    "sky-toolkit-core": "0.5.2",
-    "sky-toolkit-ui": "0.5.1"
+    "sky-toolkit-ui": "1.0.0"
   }
 }

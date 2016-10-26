@@ -1,43 +1,63 @@
-[![npm version](https://badge.fury.io/js/sky-toolkit.svg)](https://badge.fury.io/js/sky-toolkit)  [![Circle CI](https://circleci.com/gh/sky-uk/toolkit/tree/master.svg?style=svg&circle-token=6b7a4f1adf2fb7fad8c0942b8d4d8386afb681f4)](https://circleci.com/gh/sky-uk/toolkit/tree/master) 
+[![npm version](https://badge.fury.io/js/sky-toolkit.svg)](https://badge.fury.io/js/sky-toolkit)  [![Circle CI](https://circleci.com/gh/sky-uk/toolkit/tree/master.svg?style=svg&circle-token=6b7a4f1adf2fb7fad8c0942b8d4d8386afb681f4)](https://circleci.com/gh/sky-uk/toolkit/tree/master)
 
-# Toolkit 
+# Toolkit
 
 Sky's CSS Toolkit.
 
-- [See the Wiki](https://github.com/sky-uk/toolkit/wiki/) for full documenation.
-- [See the Style Guide](http://sky-uk.github.io/toolkit/) to view currently available Toolkit components.
-
-**Note**: The Toolkit is still in active development and not yet 100% stable. This means breaking updates may occur, minor issues and quirks may be present.
+- Visit [#toolkit](http://sky.slack.com/messages/toolkit) on Slack for full documentation (INTERNAL ONLY)
+- or visit the [Toolkit Wiki](https://github.com/sky-uk/toolkit/wiki/)
 
 ## Goals
 
 - Enable teams across tribes to share common styles.
 - Provide a modular approach to handling CSS/Sass components.
-- Provide example use cases with a generated style guide.
+- Provide a single source of truth for Polaris brand guidelines.
 
 ## Structure
 
-The project consists of 3 repositories: 
+The project consists of 3 repositories:
 
-- **this repo**: consumes the UI and Core layers and serves static pages.
+- **this repo**: provides the UI and Core layers.
 - [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
-- [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components following Polaris brand guidelines.
+- [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components.
+
+### Libraries
+- [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
+- [blackjack-toolbelt](https://github.com/sky-uk/toolkit-react): Spin up a React.js component in the CLI using Toolkit styles.
 
 ### Libraries
 - [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
 
 ## Installation
+
 ```
 $ npm install sky-toolkit --save
 ```
 
-[See the Wiki](https://github.com/sky-uk/toolkit/wiki/) for full documenation and information on how to [implement the Toolkit](https://github.com/sky-uk/toolkit/wiki/Getting-started) in your project.
+[See the Wiki](https://github.com/sky-uk/toolkit/wiki/) for full documentation and information on how to [implement the Toolkit](https://github.com/sky-uk/toolkit/wiki/Getting-started) in your project.
+
+### Compiled
+
+For rapid prototyping and static sites you can include our latest compiled CSS in the `<head>` of your page.
+
+```
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.0.0/toolkit.css">
+```
+
+**We strongly advise not to use this method in live projects**.
+Use `npm` installation to benefit from the Toolkit's modularity and extensibility.
+
 
 ## Requirements
 
-Because of how the Toolkit loads third party dependencies such as `sass-mq`, `npm` `>3.0.0` is required (included in `node` `>v5.0.0`).
+Because of how the Toolkit loads third party dependencies (such as [sass-mq](https://github.com/sass-mq/sass-mq)), your development environment needs:
 
-If you're using `webpack` and `sass-loader`, you will need `sass-loader` >3.1.0.
+* [npm](https://www.npmjs.com/) (3.0 or greater)
+* [NodeJS](https://nodejs.org/en/) (5.0 or greater)
+
+If you're using [**webpack**](https://webpack.github.io/) you'll also need:
+
+* [sass-loader](https://github.com/jtangelder/sass-loader) (3.1 or greater)
 
 ## Versioning
 
@@ -64,6 +84,3 @@ We keep a list of features and bugs [in the issue tracker](https://github.com/sk
 - [Richard McIntyre](https://github.com/mackstar) - richard.mcintyre@sky.uk
 - [Ross Warren](https://github.com/rosswarren) - ross.warren@sky.uk
 - [Steven Bapaga](https://github.com/romidane) - steven.bapaga@sky.uk
-
-
-

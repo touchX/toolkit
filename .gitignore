@@ -1,9 +1,4 @@
-_site
 .DS_Store
-.bundle
 .sass-cache
-.jekyll-metadata
 node_modules/
 dist/
-pages/assets/css/*.css
-public/assets/css/*.css

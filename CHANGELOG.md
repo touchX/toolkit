@@ -1,3 +1,55 @@
+# Toolkit v1.0.0
+
+- [Dependencies] As `toolkit-ui` consumes `toolkit-core`, we no longer need both in `package.json`.
+- [Style Guide] Please go to [#toolkit](https://sky.slack.com/messages/toolkit) on Slack for internal docs, or see the Wiki for public docs.
+- [README.md] New Core Maintainers and CDN access to CSS.
+- [CONTRIBUTING.md] Updated process.
+
+## Toolkit Core v1.0.0
+
+### 1. Structure
+- [project] devDependecies moved to Dependencies to enable sharing with `toolkit-ui`.
+- [imports] settings and tools now utilise `all` to share imports across `sky-toolkit-core/all` and `sky-toolkit-core/tools`.
+
+### 2. Features
+- [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
+- [mixins] `focus-styles` for creating consistent keyboard focus effects.
+
+### 3. Enhancements
+- [settings] Added global container max width as variable rather than hard-coding.
+
+### 4. Bug Fixes
+- [page] Gradient orientation fixed for small devices.
+- [font-face] Prevent Sky Text from outputting if a custom font is defined.
+
+### 5. Deprecations
+- [legacy-typography] Config switch now fully deprecated.
+
+
+## Toolkit UI v1.0.0
+
+### 1. Project Structure
+- `toolkit-core` added as a project dependency to run tests and share config files.
+
+### 2. Features
+- [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
+- [forms] `c-form-checkbox--inline` for inline checkbox/radio inputs.
+- [tile] Extra test for generating themed tiles.
+
+### 3. Deprecations
+- [legacy-typography] Config switch now fully deprecated.
+
+### 4. Refactor
+- [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
+- [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
+- [shine] Shine is now rendered purely in CSS to improve performance - please note this won't be supported on ie9.
+
+### 5. Bug Fixes
+- [forms] Fix for `.c-form-checkbox` error styles.
+- [tile] Fix for `.c-tile--square` height 100% + 5px causing tiles such as 555px x 560px.
+
+===
+
 # Toolkit v0.5.1
 
 ## Toolkit Core v0.5.2
@@ -36,6 +88,7 @@
 - [select] Added :focus styles for accessibility.
 - [select] Fixed spacing of text.
 
+===
 
 # Toolkit v0.5.0
 
