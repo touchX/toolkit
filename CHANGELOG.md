@@ -1,6 +1,87 @@
 # Toolkit v1.0.0
 
--[todo] Add notes before release.
+## Toolkit Core v1.0.0
+
+### 1. Structure
+- [project] devDependecies moved to Dependencies to enable sharing with `toolkit-ui`.
+- [imports] settings and tools now utilise `all` to share imports across `sky-toolkit-core/all` and `sky-toolkit-core/tools`.
+
+### 2. Features
+- [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
+- [mixins] `focus-styles` for creating consistent keyboard focus effects.
+
+### 3. Enhancements
+- [settings] Added global container max width as variable rather than hard-coding.
+
+### 4. Bug Fixes
+- [page] Gradient orientation fixed for small devices.
+- [font-face] Prevent Sky Text from outputting if a custom font is defined.
+
+### 5. Deprecations
+- [legacy-typography] Config switch now fully deprecated.
+
+
+## Toolkit UI v1.0.0
+
+### 1. Project Structure
+- `toolkit-core` added as a project dependency to run tests and share config files.
+
+### 2. Features
+- [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
+- [forms] `c-form-checkbox--inline` for inline checkbox/radio inputs.
+- [tile] Extra test for generating themed tiles.
+
+### 3. Deprecations
+- [legacy-typography] Config switch now fully deprecated.
+
+### 4. Refactor
+- [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
+- [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
+- [shine] Shine is now rendered purely in CSS to improve performance - please note this won't be supported on ie9.
+
+### 5. Bug Fixes
+- [forms] Fix for `.c-form-checkbox` error styles.
+- [tile] Fix for `.c-tile--square` height 100% + 5px causing tiles such as 555px x 560px.
+
+===
+
+# Toolkit v0.5.1
+
+## Toolkit Core v0.5.2
+
+### Features
+
+- [divider] New mixins for creating divider gradient border and shadow.
+
+### Enhancements
+
+- [colors] Added mid gradient to gradients variable map.
+- [forms] ie9 class to hide gradient text overflow for c-form-select.
+- [functions] Added convert-to-em helper to convert em and px values to the equivalent em value ie convert-to-em(40px) = 2em with optional base font-size.
+- [functions] Added strip-unit helper to remove units from a value. ie strip-unit(400px) = 400.
+- [gradients] background-gradient can now utilise an inverted horizontal direction and percentage overrides.
+- [settings] Update small breakpoint to 420px.
+
+## Toolkit UI v0.5.1
+
+### Features
+
+- [divider] c-divider for prominent horizontal (and vertical) rules for use between elements.
+- [tile] c-tile--full for Tiles that utilise a full size image and overlapping title.
+
+### Bug Fixes
+
+- [accordion] Fixed arrow icon alignment in IE9.
+- [buttons] Added relative border to buttons so that the border width scales with font-size.
+- [buttons] Added :focus styles for accessibility.
+- [forms] Fix for .c-form-checkbox margin which broke on multi-line captions.
+- [forms] Fix to add border-radius and prevent text from overflowing beneath the icon on c-form-select.
+- [panel] Inset shadow fix from all sides to top and bottom only.
+- [tile] Fix for .c-tile--collapsable with nested links breaking on mobile.
+- [tile] Fix for .c-tile__media height rounding down incorrectly causing a 1px gap.
+- [shine] Fix for .c-shine when using with full width elements.
+- [select] Added :focus styles for accessibility.
+- [select] Fixed spacing of text.
 
 ===
 

@@ -15,7 +15,7 @@ When submitting issues, please make sure you utilise the template provided by de
 0. Create a new local branch for your work.
 0. As early as possible, create a pull request in the [appropriate repository](https://github.com/sky-uk/toolkit#structure). Make sure you give enough information in the pull request description (utilising the template provided by default), and add the label `in progress` with any other appropriate label.
 0. Once any conflicts have been fixed and you're ready for your code to be reviewed, remove the `in progress` label and add `hunting for squirrels`. 
-0. Get a code review by **two** developers. One of these **must** be a [core maintainer of Toolkit](https://github.com/sky-uk/toolkit#maintainers). 
+0. Get a code review. **Two** of these **must** be [core maintainers of Toolkit](https://github.com/sky-uk/toolkit#maintainers). 
 	- You need two :shipit: :shipit: left as comments on the pull request.
 0. One of the [core maintainers](https://github.com/sky-uk/toolkit#maintainers) will merge the changes and apply appropriate versioning to release (see below).
 
