@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sky-toolkit-core": "file:///Users/jbe42/www/toolkit-core"
+    "sky-toolkit-core": "1.0.0"
   }
 }
