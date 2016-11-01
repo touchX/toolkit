@@ -1,0 +1,194 @@
+/* ==========================================================================
+   COMPONENTS / CALENDAR
+   ========================================================================== */
+
+// Calendar Settings
+$day-size: 37px;
+$calendar-size: 335px;
+
+/* Wrapper
+  =========================================== */
+
+.c-calendar__wrapper {
+  max-width: $calendar-size;
+  margin: 0 auto;
+  position: relative;
+}
+
+.c-calendar {
+  text-align: center;
+  table-layout: fixed;
+}
+
+.c-calendar__footer {
+  max-width: $calendar-size;
+  margin: 0 auto;
+}
+
+/* Controls
+  =========================================== */
+
+.c-calendar__nav-button {
+  background-color: transparent;
+  position: absolute;
+  border: none;
+  padding: 0;
+  height: 2em;
+  cursor: pointer;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  width: 44px;
+
+  &:hover,
+  &:focus {
+    .icon {
+      display: block;
+      opacity: 0.5;
+    }
+  }
+
+  .icon__path {
+    fill: color(brand);
+  }
+}
+
+/**
+  * 1. Postion icon on outter side at small
+  * 2. Postion nav button so the middle of the icon overlaps the table edge
+ */
+.c-calendar__nav-button--next {
+  right: 0;
+  -webkit-transform-origin: right;
+  transform-origin: right;
+
+  @include mq($until: medium) {
+    text-align: right; /* [1] */
+  }
+
+  @include mq($from: medium) {
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%); /* [2] */
+  }
+  &:hover,
+  &:focus {
+    @include mq($from: medium) {
+      -webkit-transform: scale(1.5) translateX(50%);
+      transform: scale(1.5) translateX(50%);
+    }
+  }
+}
+
+.c-calendar__nav-button--prev {
+  left: 0;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+
+  @include mq($until: medium) {
+    text-align: left; /* [2] */
+  }
+
+  @include mq($from: medium) {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); /* [1] */
+  }
+  &:hover,
+  &:focus {
+    @include mq($from: medium) {
+      -webkit-transform: scale(1.5) translateX(-50%);
+      transform: scale(1.5) translateX(-50%);
+    }
+  }
+}
+
+/* Header
+  =========================================== */
+
+.c-calendar__caption {
+  font-weight: normal;
+}
+
+/**
+* Override normalize abbr[title]
+*/
+.c-calendar__weekday[title] {
+  text-decoration: none;
+  font-weight: normal;
+}
+
+/* Days
+  =========================================== */
+
+/**
+ * 1. Half the height to give vertical alignment of text
+ * 2. Shadow helps smooth what can look like a pixelated border
+ */
+.c-calendar__day {
+  background: none;
+  padding: 0;
+  width: $day-size;
+  height: $day-size;
+  border-radius: 50%;
+  margin-bottom: $global-spacing-unit-small;
+  border: 1px solid transparent;
+  line-height: $day-size / 2; /* [1] */
+  color: color(brand);
+  background: none;
+  border: 1px solid color(brand);
+  box-shadow: inset 0 0 0 1px rgba(0, 114, 200, 0.2); /* [2] */
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+
+  &:hover {
+    background: color(brand);
+    color: white;
+    cursor: pointer;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  &.is-selected {
+    background: color(brand);
+    color: white;
+  }
+
+  &.is-disabled {
+    color: color(grey-20);
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      background: none;
+      border: none;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+}
+
+/* Infomation
+  =========================================== */
+.c-calendar__infomation {
+  border: 0 solid;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+/**
+ * Remove input styling
+ * 1. Prevent user from being able to click / tap into input
+ */
+.c-calendar__selected-date {
+  border: none;
+  padding: 0;
+  color: color(text);
+  display: block;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; /* [1] */
+}
