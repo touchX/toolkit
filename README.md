@@ -2,10 +2,9 @@
 
 # Toolkit
 
-Sky's CSS Toolkit.
+**Sky's CSS Toolkit**
 
-- Visit [#toolkit](http://sky.slack.com/messages/toolkit) on Slack for full documentation (INTERNAL ONLY)
-- or visit the [Toolkit Wiki](https://github.com/sky-uk/toolkit/wiki/)
+For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
 ## Goals
 
@@ -23,7 +22,6 @@ The project consists of 3 repositories:
 
 ### Libraries
 - [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
-- [blackjack-toolbelt](https://github.com/sky-uk/toolkit-react): Spin up a React.js component in the CLI using Toolkit styles.
 
 ## Installation
 
@@ -31,7 +29,9 @@ The project consists of 3 repositories:
 $ npm install sky-toolkit --save
 ```
 
-[See the Wiki](https://github.com/sky-uk/toolkit/wiki/) for full documentation and information on how to [implement the Toolkit](https://github.com/sky-uk/toolkit/wiki/Getting-started) in your project.
+**Please note:** your Sass configuration **must** be set with `node_modules` in your `includedPaths`.
+
+See [sky.com/toolkit](http://sky.com/toolkit) for full documentation and information on how to [implement the Toolkit](http://sky.com/toolkit/getting-started) in your project.
 
 ### Compiled
 
