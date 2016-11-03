@@ -1,3 +1,12 @@
+# Toolkit v1.0.2
+
+## Toolkit UI v1.0.2
+
+### 1. Bug Fixes
+- [shine] Repair background-sizing for shine patch in `1.0.1`.
+
+===
+
 # Toolkit v1.0.1
 
 ## Toolkit UI v1.0.1
