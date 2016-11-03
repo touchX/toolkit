@@ -1,3 +1,12 @@
+# Toolkit v1.0.1
+
+## Toolkit UI v1.0.1
+
+### 1. Bug Fixes
+- [shine] Set shine height in px to avoid conflicts with differing font-sizes.
+
+===
+
 # Toolkit v1.0.0
 
 - [Dependencies] As `toolkit-ui` consumes `toolkit-core`, we no longer need both in `package.json`.
