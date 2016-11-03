@@ -1,3 +1,10 @@
+# Toolkit UI v1.0.1
+
+## 1. Bug Fixes
+- [shine] Set shine height in px to avoid conflicts with differing font-sizes.
+
+===
+
 # Toolkit UI v1.0.0
 
 ## 1. Project Structure
