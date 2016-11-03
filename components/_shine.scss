@@ -78,7 +78,7 @@ $shine-offset: 25%;
   &::before {
     background-image: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba-image(white, 0.15) 38%, rgba(white, 0) 50%);
     background-image: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.15) 38%, rgba(white, 0) 50%);
-    background-size: 15em 0.8em;
+    background-size: 300px 16px;
   }
 
   /**
@@ -87,7 +87,7 @@ $shine-offset: 25%;
   &::after {
     background-image: -webkit-radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
     background-image: radial-gradient(rgba(white, 0.8) 15%, rgba(white, 0.25) 35%, rgba(white, 0.15) 40%, rgba(white, 0) 50%);
-    background-size: 3em 1.4em;
+    background-size: 60px 28px;
   }
 
   /**
