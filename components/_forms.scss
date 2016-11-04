@@ -8,7 +8,7 @@ $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
 $form-background: color(white);
 $form-border-width: $global-border-width;
-$form-border: $form-border-width solid color(keyline);
+$form-border: $form-border-width solid color(grey-20);
 $form-font-size: text-lead-small;
 $form-checkbox-size: 1em;
 $form-checkbox-margin: $form-checkbox-size;
@@ -229,12 +229,35 @@ $form-animation-speed: $global-animation-speed-fast;
 
 .c-form-select {
   @include font-size($form-font-size, large);
+  line-height: 1.2;
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
   position: relative;
   width: 100%;
   cursor: pointer;
 
+  /**
+   * Gradient to hide the overflow of long labels
+   *
+   * 1. Stretch to full height on the right (taking into account border width)
+   */
+  &::before {
+    content: "";
+    position: absolute;
+    top: $global-border-width; /* [1] */
+    right: $form-border-width; /* [1] */
+    bottom: $form-border-width; /* [1] */
+    width: $global-spacing-unit-large;
+    background: $form-background;
+    background: -ms-linear-gradient(right, rgba($form-background, 1) 60%, rgba($form-background, 0));
+    background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
+    border-radius: 0 $global-border-radius $global-border-radius 0;
+    pointer-events: none;
+  }
+
+  /**
+   * Custom dropdown indicator icon
+   */
   &::after {
     content: "";
     position: absolute;
@@ -254,10 +277,10 @@ $form-animation-speed: $global-animation-speed-fast;
 }
 
 .c-form-select__dropdown {
-  @include font-size($form-font-size, large);
-  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny $global-spacing-unit-tiny;
   width: 100%;
   border: $form-border;
+  border-radius: $global-border-radius;
   background-color: $form-background;
   box-shadow: $form-shadow;
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
@@ -287,6 +310,18 @@ $form-animation-speed: $global-animation-speed-fast;
   cursor: pointer;
 }
 
+/**
+ * For cases where checkboxes or radio buttons need to display inline.
+ */
+.c-form-checkbox--inline {
+  width: auto;
+  margin-right: $global-spacing-unit-large;
+}
+
+/**
+ * Hide the default input visually to utilise keyboard functionality and allow
+ * for custom input styles.
+ */
 .c-form-checkbox__input {
   @include hide-visually();
 }
@@ -316,8 +351,7 @@ $form-animation-speed: $global-animation-speed-fast;
 }
 
 .c-form-checkbox__input:focus + .c-form-checkbox__caption::before {
-  border-width: 2px;
-  border-color: color(brand);
+  @include focus-styles();
 }
 
 .c-form-checkbox__input:checked + .c-form-checkbox__caption::before {
@@ -374,17 +408,20 @@ $form-animation-speed: $global-animation-speed-fast;
   =========================================== */
 
 /**
-  * Errors are handled by adding the .is-error class to the field's parent –
-  * usually the .c-form-list__item.
-  */
+ * Errors are handled by adding the .is-error class to the field's parent –
+ * usually the .c-form-list__item.
+ */
 
 .is-error {
   color: color(error);
 }
 
+/**
+ * Change form field styles
+ */
+.c-form-date,
 .c-form-input,
-.c-form-select__dropdown,
-.c-form-checkbox__faux {
+.c-form-select__dropdown {
 
   .is-error &,
   &.is-error,
@@ -396,5 +433,19 @@ $form-animation-speed: $global-animation-speed-fast;
       box-shadow: $form-shadow-error;
     }
   }
+}
 
+/**
+ * Change checkbox/radio indicator border color
+ */
+.c-form-checkbox__caption {
+
+  .is-error &,
+  &.is-error,
+  &:invalid {
+
+    &::before {
+      border-color: color(error);
+    }
+  }
 }

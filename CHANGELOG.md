@@ -1,13 +1,59 @@
+# Toolkit UI v1.0.2
+
+## 1. Bug Fixes
+- [shine] Repair background-sizing for shine patch in `1.0.1`.
+
+===
+
+# Toolkit UI v1.0.1
+
+## 1. Bug Fixes
+- [shine] Set shine height in px to avoid conflicts with differing font-sizes.
+
+===
+
+# Toolkit UI v1.0.0
+
+## 1. Project Structure
+- `toolkit-core` added as a project dependency to run tests and share config files.
+
+## 2. Features
+- [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
+- [forms] `c-form-checkbox--inline` for inline checkbox/radio inputs.
+- [tile] Extra test for generating themed tiles.
+
+## 3. Deprecations
+- [legacy-typography] Config switch now fully deprecated.
+
+## 4. Refactor
+- [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
+- [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
+- [shine] Shine is now rendered purely in CSS to improve performance - please note this won't be supported on ie9.
+
+## 5. Bug Fixes
+- [forms] Fix for `.c-form-checkbox` error styles.
+- [tile] Fix for `.c-tile--square` height 100% + 5px causing tiles such as 555px x 560px.
+
+===
+
 # Toolkit UI v0.5.1
 
 ## 1. Features
+- [divider] `c-divider` for prominent horizontal (and vertical) rules for use between elements.
 - [tile] `c-tile--full` for Tiles that utilise a full size image and overlapping title.
 
 ## 2. Bug Fixes
+- [accordion] Fixed arrow icon alignment in IE9.
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
+- [buttons] Added `:focus` styles for accessibility.
 - [forms] Fix for `.c-form-checkbox` margin which broke on multi-line captions.
+- [forms] Fix to add border-radius and prevent text from overflowing beneath the icon on `c-form-select`.
+- [panel] Inset shadow fix from all sides to top and bottom only.
 - [tile] Fix for `.c-tile--collapsable` with nested links breaking on mobile.
+- [tile] Fix for `.c-tile__media` height rounding down incorrectly causing a 1px gap.
 - [shine] Fix for `.c-shine` when using with full width elements.
+- [select] Added `:focus` styles for accessibility.
+- [select] Fixed spacing of text.
 
 ===
 

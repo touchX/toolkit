@@ -4,7 +4,7 @@
 
 $accordion-animation-speed: $global-animation-speed !default;
 $accordion-background: transparent !default;
-$accordion-border: 1px solid color(keyline) !default;
+$accordion-border: 1px solid color(grey-20) !default;
 $accordion-border-radius: $global-border-radius !default;
 $accordion-icon-size: 20px !default;
 
@@ -86,7 +86,8 @@ $accordion-icon-size: 20px !default;
     background-size: contain; /* [3] */
     background-position: center center; /* [3] */
     pointer-events: none; /* [4] */
-    transform: translateZ(0) translateY(-50%) rotate(0); /* [5] */
+    -ms-transform: translateY(-50%) rotate(0); /* [5] */
+    transform: translateY(-50%) rotate(0); /* [5] */
     transition: transform $accordion-animation-speed ease; /* [6] */
   }
 }
@@ -132,7 +133,8 @@ $accordion-icon-size: 20px !default;
    */
   .c-accordion__label {
     &::after {
-      transform: translateZ(0) translateY(-50%) rotate(180deg);
+      -ms-transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%) rotate(180deg);
     }
   }
 }

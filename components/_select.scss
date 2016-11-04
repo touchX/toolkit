@@ -18,18 +18,11 @@ $select-animation-speed: $global-animation-speed-fast !default;
  * 1. Allows styling of box model properties.
  * 2. Allows absolute positioning of child pseudo-elements.
  * 3. Prevent overlap of border-radius by border-width.
- * 4. Hide overflow to prevent any transitions from leaking.
- * 5. Provide a slighly larger border-radius than buttons to neaten the
- *    overflow corners.
- * 6. Fixes Chrome bug that prevents border-radius affecting the overflow.
  */
 .c-select {
   display: inline-block; /* [1] */
   position: relative; /* [2] */
   padding-left: $select-border-width; /* [3] */
-  overflow: hidden; /* [4] */
-  border-radius: $select-border-radius; /* [5] */
-  perspective: 1px; /* [6] */
 }
 
 /**
@@ -53,6 +46,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   display: block;
   position: relative;
   border: $select-border-width solid color(brand);
+  overflow: hidden;
 
   &::after {
     content: ""; /* [1] */
@@ -82,7 +76,10 @@ $select-animation-speed: $global-animation-speed-fast !default;
 .c-select__input {
   @include hide-visually();
 
-  &:focus + .c-select__btn,
+  &:focus + .c-select__btn {
+    @include focus-styles();
+  }
+
   &:hover + .c-select__btn {
     border-color: color(highlight);
   }
