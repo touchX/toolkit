@@ -9,7 +9,7 @@ $calendar-size: 335px;
 /* Wrapper
   =========================================== */
 
-.c-calendar__wrapper {
+.c-calendar-container {
   max-width: $calendar-size;
   margin: 0 auto;
   position: relative;
@@ -20,43 +20,43 @@ $calendar-size: 335px;
   table-layout: fixed;
 }
 
-.c-calendar__footer {
-  max-width: $calendar-size;
-  margin: 0 auto;
-}
-
-/* Controls
+/* Pagination Controls
   =========================================== */
 
-.c-calendar__nav-button {
+.c-calendar-pagination {
   background-color: transparent;
   position: absolute;
   border: none;
   padding: 0;
-  height: 2em;
+  height: 30px;
+  width: 44px;
   cursor: pointer;
   -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
-  width: 44px;
 
-  &:hover,
   &:focus {
-    .icon {
+    @include focus-styles;
+  }
+
+  @include hocus {
+    .c-calendar-pagination__icon {
       display: block;
       opacity: 0.5;
     }
   }
+}
 
-  .icon__path {
-    fill: color(brand);
-  }
+.c-calendar-pagination__icon svg {
+  fill: color(brand);
+  width: 8px;
+  height: 13px;
 }
 
 /**
-  * 1. Postion icon on outter side at small
+  * 1. Postion icon on outer side at small
   * 2. Postion nav button so the middle of the icon overlaps the table edge
  */
-.c-calendar__nav-button--next {
+.c-calendar-pagination--next {
   right: 0;
   -webkit-transform-origin: right;
   transform-origin: right;
@@ -69,8 +69,8 @@ $calendar-size: 335px;
     -webkit-transform: translateX(50%);
     transform: translateX(50%); /* [2] */
   }
-  &:hover,
-  &:focus {
+
+  @include hocus {
     @include mq($from: medium) {
       -webkit-transform: scale(1.5) translateX(50%);
       transform: scale(1.5) translateX(50%);
@@ -78,7 +78,7 @@ $calendar-size: 335px;
   }
 }
 
-.c-calendar__nav-button--prev {
+.c-calendar-pagination--prev {
   left: 0;
   -webkit-transform-origin: left;
   transform-origin: left;
@@ -91,8 +91,8 @@ $calendar-size: 335px;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); /* [1] */
   }
-  &:hover,
-  &:focus {
+
+  @include hocus {
     @include mq($from: medium) {
       -webkit-transform: scale(1.5) translateX(-50%);
       transform: scale(1.5) translateX(-50%);
@@ -120,7 +120,8 @@ $calendar-size: 335px;
 
 /**
  * 1. Half the height to give vertical alignment of text
- * 2. Shadow helps smooth what can look like a pixelated border
+ * 2. Box shadow helps smooth what can look like a pixelated border
+ * 3. Reset shadow as silky smooth on retina / HD Displays
  */
 .c-calendar__day {
   background: none;
@@ -138,6 +139,19 @@ $calendar-size: 335px;
   -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
 
+  @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    box-shadow: none; /* [3] */
+  }
+
+  &:focus {
+    @include focus-styles;
+  }
   &:hover {
     background: color(brand);
     color: white;
@@ -145,6 +159,7 @@ $calendar-size: 335px;
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
+
   &.is-selected {
     background: color(brand);
     color: white;
@@ -154,22 +169,28 @@ $calendar-size: 335px;
     color: color(grey-20);
     border: none;
     box-shadow: none;
+  }
 
-    &:hover {
-      background: none;
-      border: none;
-      -webkit-transform: none;
-      transform: none;
-    }
+  &.is-disabled:hover {
+    background: none;
+    border: none;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+  &.is-disabled:focus {
+    @include focus-styles;
   }
 }
 
 /* Infomation
   =========================================== */
-.c-calendar__infomation {
-  border: 0 solid;
-  border-top-width: 1px;
-  border-bottom-width: 1px;
+.c-calendar__information {
+  border-width: $global-border-width 0;
+  border-style: solid;
+  border-color: color(grey-10);
+  margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
+  padding-top: $global-spacing-unit-small;
 }
 
 /**
@@ -191,4 +212,8 @@ $calendar-size: 335px;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; /* [1] */
+
+  &:focus {
+    @include focus-styles;
+  }
 }
