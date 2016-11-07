@@ -42,7 +42,8 @@ For discussion of issues and general project talk, head over to [#toolkit](http:
 ### Steering
  - Each core maintainer should attend 50% of steering meetings.
 
-### Priority
+### Contributions
+ - Every core maintainer will complete 1 ticket per month.
  - Work is done in priority order according to the [backlog](https://waffle.io/sky-uk/toolkit).
 
 If you feel like you can't meet these responsibilities, please contact one of the core maintainers or [Tom Davidson](@tom-davidson).
