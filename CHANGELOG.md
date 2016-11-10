@@ -1,3 +1,17 @@
+# Toolkit v1.1.0
+
+## Toolkit Core v1.1.0
+
+### 1. Features
+- [mixins-ui] `panel-indicator` extracted from tile to a mixin so can now be used on any elements.
+
+## Toolkit UI v1.1.0
+
+### 1. Features
+- [tile] makes use of `panel-indicator` mixin for `is-selected`.
+
+===
+
 # Toolkit v1.0.2
 
 ## Toolkit UI v1.0.2
