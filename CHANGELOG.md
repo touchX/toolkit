@@ -1,3 +1,10 @@
+# Toolkit UI v1.1.0
+
+## 1. Features
+- [tile] makes use of `panel-indicator` mixin for `is-selected`.
+
+===
+
 # Toolkit UI v1.0.2
 
 ## 1. Bug Fixes
