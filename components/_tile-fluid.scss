@@ -2,8 +2,8 @@
  * COMPONENTS / TILE FLUID
  * ==========================================================================
  *
- * Fluid tiles are designed to scale proportionally, this means the tiles
- * content scales in relation to the tile width.
+ * Fluid tiles are designed to scale proportionally, this means the tile's
+ * content scales in relation to its width.
  *
  * To achieve this we utilise viewport width units (vw) which allow us to scale
  * the tile relative to the browser, the downside being that we loose the
@@ -19,13 +19,13 @@
  *
  */
 
-$fluid-base-breakpoint: map-get($mq-breakpoints, small);
+$tile-fluid-base-breakpoint: map-get($mq-breakpoints, small);
 
 /* Tile Fluid base font size
  * ==============================================
  *
  * This calculates the vw equivalent of the $global-font-size at our specified
- * $fluid-base-breakpoint value. It uses the following logic:
+ * $tile-fluid-base-breakpoint value. It uses the following logic:
  *
  *  static font size / viewport width * 100vw
  *
@@ -37,7 +37,7 @@ $fluid-base-breakpoint: map-get($mq-breakpoints, small);
  *
  */
 
-$fluid-base-font-size: (strip-unit($global-font-size / $fluid-base-breakpoint)) * 100vw;
+$tile-fluid-base-font-size: (strip-unit($global-font-size / $tile-fluid-base-breakpoint)) * 100vw;
 
 /* Tile Fluid max width
  * ==============================================
@@ -47,14 +47,14 @@ $fluid-base-font-size: (strip-unit($global-font-size / $fluid-base-breakpoint)) 
  *
  */
 
-$fluid-max-width: $container-width !default;
+$tile-fluid-max-width: $container-width !default;
 
 /**
  * Now we have the fluid-base-font-size calculated we can apply this to the
  * `c-tile` via a modifier `--fluid`.
  */
 .c-tile--fluid {
-  font-size: $fluid-base-font-size;
+  font-size: $tile-fluid-base-font-size;
 
   /**
    * Now that our fluid tiles are set using the vw based font-size we can
@@ -100,7 +100,7 @@ $fluid-max-width: $container-width !default;
  *
  */
 
-$fluid-constrain-ratio: $fluid-max-width / $fluid-base-breakpoint;
+$tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint;
 
 /**
  * This gives us the ratio between these two sizes. Now if we multiply our
@@ -109,8 +109,8 @@ $fluid-constrain-ratio: $fluid-max-width / $fluid-base-breakpoint;
  */
 
 .c-tile-fluid-container .c-tile--fluid {
-  @include mq($from: $fluid-max-width) {
-    font-size: $global-font-size * $fluid-constrain-ratio;
+  @include mq($from: $tile-fluid-max-width) {
+    font-size: $global-font-size * $tile-fluid-constrain-ratio;
   }
 }
 
@@ -151,16 +151,16 @@ $fluid-constrain-ratio: $fluid-max-width / $fluid-base-breakpoint;
        */
 
       .c-tile-fluid-scale-#{$scale-numerator}\/#{$scale-denominator}#{$scale-breakpoint} .c-tile--fluid {
-        font-size: $fluid-base-font-size * ($scale-numerator / $scale-denominator);
+        font-size: $tile-fluid-base-font-size * ($scale-numerator / $scale-denominator);
 
         /**
-         * For tiles wrapped in the constraint we set a fixed px font-size to
+         * For tiles wrapped in the container we set a fixed px font-size to
          * prevent scaling.
          */
 
         .c-tile-fluid-container & {
-          @include mq($from: $fluid-max-width) {
-            font-size: ($global-font-size * $fluid-constrain-ratio) * ($scale-numerator / $scale-denominator);
+          @include mq($from: $tile-fluid-max-width) {
+            font-size: ($global-font-size * $tile-fluid-constrain-ratio) * ($scale-numerator / $scale-denominator);
           }
         }
       }
