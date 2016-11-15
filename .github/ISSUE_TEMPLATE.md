@@ -10,8 +10,9 @@ If describing a bug, tell us what happens instead of the expected behavior
 
 If suggesting a change/improvement, explain the difference from current behavior
 
-## Possible Solution
+## Attempted Fixes
 What have you tried to resolve this issue?
+What have you done to mitigate this problem within your own application?
 
 ## Steps to Reproduce (for bugs)
 Provide a link to a live example, or an unambiguous set of steps to
