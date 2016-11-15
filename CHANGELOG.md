@@ -1,3 +1,45 @@
+# Toolkit v1.1.0
+
+## Toolkit Core v1.1.0
+
+### 1. Features
+- [mixins-ui] `panel-indicator` extracted from tile into a mixin for use on any element. Use `@include panel-indicator();` for the default light panel or `@include panel-indicator("dark");` for the dark panel theme.
+
+## Toolkit UI v1.1.0
+
+### 1. Features
+- [tile] makes use of `panel-indicator` mixin for `is-selected`.
+- [tile] Added fluid tile styling to scale tiles based on the browser width.
+
+  - `.c-tile--fluid` modifier sets essential core styling for the tile.
+  - `.c-tile-fluid-scale-1/2@medium` classes scale tile content. These are useful when using layouts.
+  - `.c-tile-fluid-container` class sets a max-width on the fluid tiles (default 1200px) preventing scaling beyond that size.
+
+  ### Example Usage
+
+  ```
+  <div class="o-container  c-tile-fluid-container">
+    <div class="o-layout">
+      <div class="o-layout__item  u-width-1/2@medium  c-tile-fluid-scale-1/2@medium">
+        <article class="c-tile c-tile--fluid">
+          //...
+        </article>
+      </div>
+      <div class="o-layout__item  u-width-1/4@medium  c-tile-fluid-scale-1/4@medium">
+        <article class="c-tile c-tile--fluid">
+          //...
+        </article>
+      </div>
+      <div class="o-layout__item  u-width-1/4@medium  c-tile-fluid-scale-1/4@medium">
+        <article class="c-tile c-tile--fluid">
+          //...
+        </article>
+      </div>
+    </div>
+  </div>
+
+===
+
 # Toolkit v1.0.2
 
 ## Toolkit UI v1.0.2
