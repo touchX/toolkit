@@ -207,6 +207,7 @@ $calendar-nav-width: 44px; /* [2] */
     color: color(grey-20);
     border: none;
     box-shadow: none;
+    cursor: default;
 
     &:hover {
       background: none;
