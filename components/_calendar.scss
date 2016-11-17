@@ -1,62 +1,89 @@
 /* ==========================================================================
    COMPONENTS / CALENDAR
-   ========================================================================== */
+  ========================================================================== */
 
-// Calendar Settings
-$day-size: 37px;
-$calendar-size: 335px;
+/**
+ * Calendar Settings
+ * 1. Should be divisible by two to ensure no sup-pixel rendering issues
+ * 2. Size of the navigation buttons, should also be divisible by two
+ */
+$calendar-day-size: 38px; /* [1] */
+$calendar-nav-width: 44px; /* [2] */
 
-/* Wrapper
+/* Wrappers and Positioning
   =========================================== */
 
-.c-calendar-container {
-  max-width: $calendar-size;
-  margin: 0 auto;
+/**
+ * 1. Postioning for pagination
+ * 2. Align columns so they have equel spacing on outer sides
+ * 3. Anything smaller results in dates being obscured
+ * 4. Provide spacing either side of the calender that allows room for transformed navigation buttons
+ */
+.c-calendar {
+  position: relative; /* [1] */
+  text-align: center; /* [2] */
+  min-width: 290px; /* [3] */
+  @include mq($from: medium) {
+    margin: 0 ($calendar-nav-width / 2);  /* [4] */
+  }
+}
+
+/**
+ * Any month transitions remain hidden until within view
+ */
+.c-calendar__inner {
+  overflow: hidden;
   position: relative;
 }
 
-.c-calendar {
-  text-align: center;
+.c-calendar__month {
   table-layout: fixed;
+  overflow: hidden;
 }
 
-/* Pagination Controls
+/* Navigation Controls
   =========================================== */
 
-.c-calendar-pagination {
+.c-calendar__nav {
   background-color: transparent;
   position: absolute;
   border: none;
   padding: 0;
   height: 30px;
-  width: 44px;
+  width: $calendar-nav-width;
   cursor: pointer;
   -webkit-transition-duration: 0.25s;
   transition-duration: 0.25s;
+  z-index: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   &:focus {
     @include focus-styles;
   }
 
   @include hocus {
-    .c-calendar-pagination__icon {
+    .c-calendar__nav-icon {
       display: block;
       opacity: 0.5;
     }
   }
 }
 
-.c-calendar-pagination__icon svg {
-  fill: color(brand);
-  width: 8px;
-  height: 13px;
+.c-calendar__nav-icon {
+  svg {
+    fill: color(brand);
+    width: 8px;
+    height: 13px;
+  }
 }
 
 /**
   * 1. Postion icon on outer side at small
   * 2. Postion nav button so the middle of the icon overlaps the table edge
  */
-.c-calendar-pagination--next {
+.c-calendar__nav--next {
   right: 0;
   -webkit-transform-origin: right;
   transform-origin: right;
@@ -78,7 +105,7 @@ $calendar-size: 335px;
   }
 }
 
-.c-calendar-pagination--prev {
+.c-calendar__nav--prev {
   left: 0;
   -webkit-transform-origin: left;
   transform-origin: left;
@@ -121,23 +148,27 @@ $calendar-size: 335px;
 /**
  * 1. Half the height to give vertical alignment of text
  * 2. Box shadow helps smooth what can look like a pixelated border
- * 3. Reset shadow as silky smooth on retina / HD Displays
+ * 3. Animate the scaling hover effect
+ * 4. Reset shadow as silky smooth on retina / HD Displays
  */
 .c-calendar__day {
   background: none;
   padding: 0;
-  width: $day-size;
-  height: $day-size;
+  width: $calendar-day-size;
+  height: $calendar-day-size;
   border-radius: 50%;
   margin-bottom: $global-spacing-unit-small;
   border: 1px solid transparent;
-  line-height: $day-size / 2; /* [1] */
+  line-height: $calendar-day-size / 2; /* [1] */
   color: color(brand);
   background: none;
   border: 1px solid color(brand);
   box-shadow: inset 0 0 0 1px rgba(0, 114, 200, 0.2); /* [2] */
   -webkit-transition-duration: 0.25s;
-  transition-duration: 0.25s;
+  transition-duration: 0.25s; /* [3] */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
   @media
     only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -146,12 +177,13 @@ $calendar-size: 335px;
     only screen and (min-device-pixel-ratio: 2),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    box-shadow: none; /* [3] */
+    box-shadow: none; /* [4] */
   }
 
   &:focus {
     @include focus-styles;
   }
+
   &:hover {
     background: color(brand);
     color: white;
@@ -160,26 +192,28 @@ $calendar-size: 335px;
     transform: scale(1.2);
   }
 
+  /**
+   * State Class - date has been selected
+   */
   &.is-selected {
     background: color(brand);
     color: white;
   }
 
+  /**
+   * State Class - date is unavailable
+   */
   &.is-disabled {
     color: color(grey-20);
     border: none;
     box-shadow: none;
-  }
 
-  &.is-disabled:hover {
-    background: none;
-    border: none;
-    -webkit-transform: none;
-    transform: none;
-  }
-
-  &.is-disabled:focus {
-    @include focus-styles;
+    &:hover {
+      background: none;
+      border: none;
+      -webkit-transform: none;
+      transform: none;
+    }
   }
 }
 
@@ -194,24 +228,25 @@ $calendar-size: 335px;
 }
 
 /**
- * Remove input styling
- * 1. Prevent user from being able to click / tap into input
+ * Feedback - Input field displaying infomation about the currently seletcted date
+ * 1. Remove any input styling
+ * 2. Prevent user from being able to click / tap into input
  */
-.c-calendar__selected-date {
+.c-calendar__feedback {
   border: none;
   padding: 0;
   color: color(text);
   display: block;
-  background: none;
+  background: none;  /* [1] */
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  cursor: auto;
+  appearance: none; /* [1] */
+  cursor: auto; /* [1] */
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; /* [1] */
+  user-select: none; /* [2] */
 
   &:focus {
     @include focus-styles;
