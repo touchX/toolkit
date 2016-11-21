@@ -4,7 +4,7 @@
 
 /**
  * Calendar Settings
- * 1. Should be divisible by two to ensure no sup-pixel rendering issues
+ * 1. Size of each individual - should be divisible by two to ensure no sup-pixel rendering issues
  * 2. Size of the navigation buttons, should also be divisible by two
  */
 $calendar-day-size: 38px; /* [1] */
@@ -14,18 +14,29 @@ $calendar-nav-width: 44px; /* [2] */
   =========================================== */
 
 /**
+* Main Container
+* 1. Recomended max-size for calendar, accounting for padding
+* 2. Provide spacing either side of the calender that allows room for transformed navigation buttons
+*/
+
+.c-calendar-wrapper {
+  max-width: 380px; /* [1] */
+  margin: 0 auto;
+
+  @include mq($from: medium) {
+    padding: 0 ($calendar-nav-width / 2);  /* [2] */
+  }
+}
+
+/**
  * 1. Postioning for pagination
- * 2. Align columns so they have equel spacing on outer sides
+ * 2. Align tablet columns so they have equal spacing on outer sides
  * 3. Anything smaller results in dates being obscured
- * 4. Provide spacing either side of the calender that allows room for transformed navigation buttons
  */
 .c-calendar {
   position: relative; /* [1] */
   text-align: center; /* [2] */
   min-width: 290px; /* [3] */
-  @include mq($from: medium) {
-    margin: 0 ($calendar-nav-width / 2);  /* [4] */
-  }
 }
 
 /**
@@ -36,9 +47,16 @@ $calendar-nav-width: 44px; /* [2] */
   position: relative;
 }
 
+/**
+ * 1. Allow space for shadow on focused dates
+ */
 .c-calendar__month {
   table-layout: fixed;
   overflow: hidden;
+
+  @include mq($from: small) {
+    padding: 0 3px; /* [1] */
+  }
 }
 
 /* Navigation Controls
@@ -61,7 +79,7 @@ $calendar-nav-width: 44px; /* [2] */
   appearance: none;
 
   &:focus {
-    @include focus-styles;
+    outline: none;
   }
 
   @include hocus {
@@ -81,8 +99,8 @@ $calendar-nav-width: 44px; /* [2] */
 }
 
 /**
-  * 1. Postion icon on outer side at small
-  * 2. Postion nav button so the middle of the icon overlaps the table edge
+  * 1. Position icon on outer side at small
+  * 2. Position nav button so the middle of the icon overlaps the table edge
  */
 .c-calendar__nav--next {
   right: 0;
@@ -99,6 +117,8 @@ $calendar-nav-width: 44px; /* [2] */
   }
 
   @include hocus {
+    transform: scale(1.5);
+
     @include mq($from: medium) {
       -webkit-transform: scale(1.5) translateX(50%);
       transform: scale(1.5) translateX(50%);
@@ -121,6 +141,8 @@ $calendar-nav-width: 44px; /* [2] */
   }
 
   @include hocus {
+    transform: scale(1.5);
+
     @include mq($from: medium) {
       -webkit-transform: scale(1.5) translateX(-50%);
       transform: scale(1.5) translateX(-50%);
@@ -181,16 +203,25 @@ $calendar-nav-width: 44px; /* [2] */
     box-shadow: none; /* [4] */
   }
 
+  /**
+   * 1. Reduced focus style shadow to prevent overlaps or cutoffs
+   */
   &:focus {
-    @include focus-styles;
+    background: color(brand);
+    color: white;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 3px 3px rgba(115, 173, 216, 0.75); /* [1] */
   }
 
   &:hover {
     background: color(brand);
     color: white;
     cursor: pointer;
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+
+    @include mq($from: small) {
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
   }
 
   /**
@@ -224,9 +255,10 @@ $calendar-nav-width: 44px; /* [2] */
 .c-calendar__information {
   border-width: $global-border-width 0;
   border-style: solid;
-  border-color: color(grey-10);
+  border-color: color(grey-20);
   margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
   padding-top: $global-spacing-unit-small;
+  text-align: left;
 }
 
 /**
@@ -251,6 +283,7 @@ $calendar-nav-width: 44px; /* [2] */
   user-select: none; /* [2] */
 
   &:focus {
-    @include focus-styles;
+    outline: none;
+    color: color(brand);
   }
 }
