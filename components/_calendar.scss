@@ -252,38 +252,15 @@ $calendar-nav-width: 44px; /* [2] */
 
 /* Infomation
   =========================================== */
-.c-calendar__information {
+
+/**
+ * Details about the currently selected date
+ */
+.c-calendar__feedback {
   border-width: $global-border-width 0;
   border-style: solid;
   border-color: color(grey-20);
   margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
   padding-top: $global-spacing-unit-small;
   text-align: left;
-}
-
-/**
- * Feedback - Input field displaying infomation about the currently seletcted date
- * 1. Remove any input styling
- * 2. Prevent user from being able to click / tap into input
- */
-.c-calendar__feedback {
-  border: none;
-  padding: 0;
-  color: color(text);
-  display: block;
-  background: none;  /* [1] */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; /* [1] */
-  cursor: auto; /* [1] */
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; /* [2] */
-
-  &:focus {
-    outline: none;
-    color: color(brand);
-  }
 }
