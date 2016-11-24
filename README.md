@@ -29,7 +29,9 @@ The project consists of 3 repositories:
 $ npm install sky-toolkit --save
 ```
 
-**Please note:** your Sass configuration **must** be set with `node_modules` in your `includedPaths`.
+**Please note:** your Sass configuration **must** be set with `node_modules` in your `includedPaths`. Installation will fail without this.
+
+Toolkit uses [eyeglass](https://github.com/sass-eyeglass/eyeglass) to access certain dependencies which will fail without the above step. Eyeglass allows the resolution of node modules from within Sass files. 
 
 See [sky.com/toolkit](http://sky.com/toolkit) for full documentation and information on how to [implement the Toolkit](http://sky.com/toolkit/getting-started) in your project.
 
