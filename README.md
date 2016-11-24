@@ -6,6 +6,16 @@
 
 For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
+## Contents
+
+* [Goals](#goals)
+* [Structure](#structure)
+* [Installation](#installation)
+* [Requirements](#requirements)
+* [Versioning](#versioning)
+* [Champions](#champions)
+* [Contributing](#contributing)
+
 ## Goals
 
 - Enable teams across tribes to share common styles.
@@ -78,8 +88,8 @@ We keep a list of features and bugs [in the issue tracker](https://github.com/sk
 
 **Special thanks to the following contributors:**
 
-- [Harry Roberts](https://github.com/csswizardry) - [@csswizardry](https://twitter.com/csswizardry)
-- [Callum Barratt](https://github.com/cbarratt) - callum.barratt@sky.uk
-- [Richard McIntyre](https://github.com/mackstar) - richard.mcintyre@sky.uk
-- [Ross Warren](https://github.com/rosswarren) - ross.warren@sky.uk
-- [Steven Bapaga](https://github.com/romidane) - steven.bapaga@sky.uk
+- [Harry Roberts](https://github.com/csswizardry)
+- [Callum Barratt](https://github.com/cbarratt)
+- [Richard McIntyre](https://github.com/mackstar)
+- [Ross Warren](https://github.com/rosswarren)
+- [Steven Bapaga](https://github.com/romidane)
