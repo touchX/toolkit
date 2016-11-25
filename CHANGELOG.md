@@ -1,3 +1,12 @@
+===
+
+# Toolkit UI v1.2.0
+
+## 1. Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.2.0`.
+
+===
+
 # Toolkit UI v1.1.0
 
 ## 1. Features
@@ -30,6 +39,7 @@
       </div>
     </div>
   </div>
+```
 
 ===
 
