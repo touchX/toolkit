@@ -6,9 +6,11 @@
  * Calendar Settings
  * 1. Size of each individual - should be divisible by two to ensure no sup-pixel rendering issues
  * 2. Size of the navigation buttons, should also be divisible by two
+ * 3. Speed to animate elements such as hover on the navigiton and days
  */
 $calendar-day-size: 38px; /* [1] */
 $calendar-nav-width: 44px; /* [2] */
+$calendar-animation-speed: 0.25s; /* [3] */
 
 /* Wrappers and Positioning
   =========================================== */
@@ -19,7 +21,7 @@ $calendar-nav-width: 44px; /* [2] */
 * 2. Provide spacing either side of the calender that allows room for transformed navigation buttons
 */
 
-.c-calendar-wrapper {
+.c-calendar-container {
   max-width: 380px; /* [1] */
   margin: 0 auto;
 
@@ -63,20 +65,22 @@ $calendar-nav-width: 44px; /* [2] */
   =========================================== */
 
 .c-calendar__nav {
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  border: none;
-  padding: 0;
   height: 30px;
   width: $calendar-nav-width;
-  cursor: pointer;
-  -webkit-transition-duration: 0.25s;
-  transition-duration: 0.25s;
+  padding: 0;
+  position: absolute;
+  top: 0;
   z-index: 1;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+
   appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background-color: transparent;
+  -webkit-transition: transform $calendar-animation-speed transform-origin $calendar-animation-speed;
+  transition: transform $calendar-animation-speed, transform-origin $calendar-animation-speed;
+
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -91,7 +95,8 @@ $calendar-nav-width: 44px; /* [2] */
 }
 
 .c-calendar__nav-icon {
-  svg {
+  .i-arrow-left,
+  .i-arrow-right {
     fill: color(brand);
     width: 8px;
     height: 13px;
@@ -175,7 +180,7 @@ $calendar-nav-width: 44px; /* [2] */
  * 4. Reset shadow as silky smooth on retina / HD Displays
  */
 .c-calendar__day {
-  background: none;
+
   padding: 0;
   width: $calendar-day-size;
   height: $calendar-day-size;
@@ -183,15 +188,16 @@ $calendar-nav-width: 44px; /* [2] */
   margin-bottom: $global-spacing-unit-small;
   border: 1px solid transparent;
   line-height: $calendar-day-size / 2; /* [1] */
-  color: color(brand);
-  background: none;
-  border: 1px solid color(brand);
-  box-shadow: inset 0 0 0 1px rgba(0, 114, 200, 0.2); /* [2] */
-  -webkit-transition-duration: 0.25s;
-  transition-duration: 0.25s; /* [3] */
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background: none;
+  border: 1px solid color(brand);
+  box-shadow: inset 0 0 0 1px rgba(0, 114, 200, 0.2); /* [2] */
+  color: color(brand);
+  -webkit-transition: background $calendar-animation-speed, color $calendar-animation-speed, transform $calendar-animation-speed;
+  transition: background $calendar-animation-speed, color $calendar-animation-speed, transform $calendar-animation-speed; /* [3] */
 
   @media
     only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -210,7 +216,7 @@ $calendar-nav-width: 44px; /* [2] */
     background: color(brand);
     color: white;
     outline: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 3px 3px rgba(115, 173, 216, 0.75); /* [1] */
+    box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 3px 3px rgba(color(highlight), 0.75); /* [1] */
   }
 
   &:hover {
@@ -257,10 +263,12 @@ $calendar-nav-width: 44px; /* [2] */
  * Details about the currently selected date
  */
 .c-calendar__feedback {
+  margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
+  padding-top: $global-spacing-unit-small;
+
+  text-align: left;
+
   border-width: $global-border-width 0;
   border-style: solid;
   border-color: color(grey-20);
-  margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
-  padding-top: $global-spacing-unit-small;
-  text-align: left;
 }
