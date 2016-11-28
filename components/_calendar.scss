@@ -83,7 +83,6 @@ $calendar-navigation-modifiers: (
   position: absolute;
   top: 0;
   z-index: 1;
-
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -191,7 +190,6 @@ $calendar-navigation-modifiers: (
   margin-bottom: $global-spacing-unit-small;
   border: 1px solid transparent;
   line-height: $calendar-day-size / 2; /* [1] */
-
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -269,9 +267,7 @@ $calendar-navigation-modifiers: (
 .c-calendar__feedback {
   margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
   padding-top: $global-spacing-unit-small;
-
   text-align: left;
-
   border-width: $global-border-width 0;
   border-style: solid;
   border-color: color(grey-20);
