@@ -12,6 +12,18 @@ $calendar-day-size: 38px; /* [1] */
 $calendar-nav-width: 44px; /* [2] */
 $calendar-animation-speed: 0.25s; /* [3] */
 
+// Navigation modifiers and their additional settings
+$calendar-navigation-modifiers: (
+  next: (
+    position: right,
+    translate: 50%
+  ),
+  prev: (
+    position: left,
+    translate: -50%
+  )
+);
+
 /* Wrappers and Positioning
   =========================================== */
 
@@ -31,7 +43,7 @@ $calendar-animation-speed: 0.25s; /* [3] */
 }
 
 /**
- * 1. Postioning for pagination
+ * 1. Postioning for navigation
  * 2. Align tablet columns so they have equal spacing on outer sides
  * 3. Anything smaller results in dates being obscured
  */
@@ -104,53 +116,44 @@ $calendar-animation-speed: 0.25s; /* [3] */
 }
 
 /**
+  * Loop to generate modifiers for each nav direction:
+  *
+  *   .c-calendar__nav--right {}
+  *   .c-calendar__nav--left {}
+  *
   * 1. Position icon on outer side at small
   * 2. Position nav button so the middle of the icon overlaps the table edge
  */
-.c-calendar__nav--next {
-  right: 0;
-  -webkit-transform-origin: right;
-  transform-origin: right;
+@each $modifier, $direction in $calendar-navigation-modifiers {
+  $position: map-get($direction, position);
+  $translate: map-get($direction, translate);
 
-  @include mq($until: medium) {
-    text-align: right; /* [1] */
-  }
-
-  @include mq($from: medium) {
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%); /* [2] */
-  }
-
-  @include hocus {
-    transform: scale(1.5);
-
-    @include mq($from: medium) {
-      -webkit-transform: scale(1.5) translateX(50%);
-      transform: scale(1.5) translateX(50%);
+  .c-calendar__nav--#{$modifier} {
+    @if($modifier == "next") {
+      right: 0;
     }
-  }
-}
 
-.c-calendar__nav--prev {
-  left: 0;
-  -webkit-transform-origin: left;
-  transform-origin: left;
+    @if($modifier == "prev") {
+      left: 0;
+    }
+    -webkit-transform-origin: $position;
+    transform-origin: $position;
 
-  @include mq($until: medium) {
-    text-align: left; /* [2] */
-  }
-
-  @include mq($from: medium) {
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%); /* [1] */
-  }
-
-  @include hocus {
-    transform: scale(1.5);
+    @include mq($until: medium) {
+      text-align: $position; /* [1] */
+    }
 
     @include mq($from: medium) {
-      -webkit-transform: scale(1.5) translateX(-50%);
-      transform: scale(1.5) translateX(-50%);
+      -webkit-transform: translateX($translate);
+      transform: translateX($translate); /* [2] */
+    }
+
+    @include hocus {
+      @include mq($from: medium) {
+        -webkit-transform: scale(1.5) translateX($translate);
+        transform: scale(1.5) translateX($translate);
+      }
+
     }
   }
 }
@@ -247,7 +250,8 @@ $calendar-animation-speed: 0.25s; /* [3] */
     box-shadow: none;
     cursor: default;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: none;
       border: none;
       -webkit-transform: none;
