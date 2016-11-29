@@ -1,5 +1,12 @@
 ===
 
+# Toolkit UI v1.2.1
+
+## 1. Feature
+- [Calendar] Adds the `c-calendar` component for use with date pickers.
+
+===
+
 # Toolkit UI v1.2.0
 
 ## 1. Dependencies
