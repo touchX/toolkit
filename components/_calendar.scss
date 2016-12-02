@@ -183,7 +183,6 @@ $calendar-navigation-modifiers: (
   height: $calendar-day-size;
   border-radius: 50%;
   margin-bottom: $global-spacing-unit-small;
-  border: 1px solid transparent;
   line-height: $calendar-day-size / 2; /* [1] */
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -240,16 +239,12 @@ $calendar-navigation-modifiers: (
    */
   &.is-disabled {
     color: color(grey-20);
+    background: none;
     border: none;
     box-shadow: none;
-    cursor: default;
-
-    @include hocus() {
-      background: none;
-      border: none;
-      -webkit-transform: none;
-      transform: none;
-    }
+    -webkit-transform: none;
+    transform: none;
+    cursor: not-allowed;
   }
 }
 
