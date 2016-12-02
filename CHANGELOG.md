@@ -1,5 +1,12 @@
 ===
 
+# Toolkit UI v1.2.1
+
+## 1. Fixes
+- [tile-fluid] Set `$tile-fluid-base-breakpoint` as `!default` to allow overwriting.
+
+======
+
 # Toolkit UI v1.2.0
 
 ## 1. Dependencies
