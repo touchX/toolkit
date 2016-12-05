@@ -1,9 +1,18 @@
+# Toolkit v1.3.0
+
+## Toolkit UI v1.3.0
+
+## 1. Features
+- [Calendar] Adds the `c-calendar` component for use with date pickers.
+
+===
+
 # Toolkit v1.2.1
 
 ## Toolkit UI v1.2.1
 
-## 1. Feature
-- [Calendar] Adds the `c-calendar` component for use with date pickers.
+## 1. Fixes
+- [tile-fluid] Set `$tile-fluid-base-breakpoint` as `!default` to allow overwriting.
 
 ===
 
