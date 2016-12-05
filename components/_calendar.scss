@@ -30,7 +30,7 @@ $calendar-navigation-modifiers: (
 /**
 * Main Container
 * 1. Recomended max-size for calendar, accounting for padding
-* 2. Provide spacing either side of the calender that allows room for transformed navigation buttons
+* 2. Provide spacing either side of the calendar that allows room for transformed navigation buttons
 */
 
 .c-calendar-container {
@@ -54,19 +54,13 @@ $calendar-navigation-modifiers: (
 }
 
 /**
- * Any month transitions remain hidden until within view
- */
-.c-calendar__inner {
-  overflow: hidden;
-  position: relative;
-}
-
-/**
  * 1. Allow space for shadow on focused dates
  */
 .c-calendar__month {
   table-layout: fixed;
   overflow: hidden;
+  position: relative;
+  margin-bottom: 0;
 
   @include mq($from: small) {
     padding: 0 3px; /* [1] */
@@ -88,29 +82,20 @@ $calendar-navigation-modifiers: (
   -webkit-appearance: none;
   border: none;
   background-color: transparent;
-  -webkit-transition: transform $calendar-animation-speed transform-origin $calendar-animation-speed;
-  transition: transform $calendar-animation-speed, transform-origin $calendar-animation-speed;
+  -webkit-transition: opacity $calendar-animation-speed, transform $calendar-animation-speed transform-origin $calendar-animation-speed;
+  transition: opacity $calendar-animation-speed, transform $calendar-animation-speed, transform-origin $calendar-animation-speed;
   cursor: pointer;
 
-  &:focus {
-    outline: none;
-  }
-
   @include hocus() {
-    .c-calendar__nav-icon {
-      display: block;
-      opacity: 0.5;
-    }
+    outline: none;
+    opacity: 0.5;
   }
 }
 
 .c-calendar__nav-icon {
-  .i-arrow-left,
-  .i-arrow-right {
-    fill: color(brand);
-    width: 8px;
-    height: 13px;
-  }
+  fill: color(brand);
+  width: 8px;
+  height: 13px;
 }
 
 /**
@@ -156,7 +141,7 @@ $calendar-navigation-modifiers: (
 /* Header
   =========================================== */
 
-.c-calendar__caption {
+.c-calendar__title {
   font-weight: normal;
 }
 
@@ -189,7 +174,7 @@ $calendar-navigation-modifiers: (
   appearance: none;
   background: none;
   border: 1px solid color(brand);
-  box-shadow: inset 0 0 0 1px rgba(0, 114, 200, 0.2); /* [2] */
+  box-shadow: inset 0 0 0 1px rgba(color(brand), 0.2); /* [2] */
   color: color(brand);
   -webkit-transition: background $calendar-animation-speed, color $calendar-animation-speed, transform $calendar-animation-speed;
   transition: background $calendar-animation-speed, color $calendar-animation-speed, transform $calendar-animation-speed; /* [3] */
@@ -207,19 +192,18 @@ $calendar-navigation-modifiers: (
   @include hocus() {
     background: color(brand);
     color: color(white);
+    outline: none;
+    cursor: pointer;
   }
 
   /**
    * 1. Reduced focus style shadow to prevent overlaps or cutoffs
    */
   &:focus {
-    outline: none;
     box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 3px 3px rgba(color(highlight), 0.75); /* [1] */
   }
 
   &:hover {
-    cursor: pointer;
-
     @include mq($from: small) {
       -webkit-transform: scale(1.2);
       transform: scale(1.2);
