@@ -184,6 +184,14 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * A poster is a full bleed image which scales when the lniked tile is hovered.
  */
 .c-tile__poster {
+  /**
+   * IE9 adds width and height attributes for asynchronously added img tags
+   * which doesn't have width and height specified which causes them to be
+   * rendered incorrectly (wrong height and/or width) - this will prevent IE
+   * from adding those attributes to full background tile img tag.
+   */
+  height: auto;
+
   transition: transform $tile-animation-speed-slow ease;
   will-change: transform;
 
