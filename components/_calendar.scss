@@ -54,14 +54,6 @@ $calendar-navigation-modifiers: (
 }
 
 /**
- * Any month transitions remain hidden until within view
- */
-.c-calendar__inner {
-  overflow: hidden;
-  position: relative;
-}
-
-/**
  * 1. Allow space for shadow on focused dates
  */
 .c-calendar__month {
