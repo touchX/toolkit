@@ -180,10 +180,12 @@ $calendar-navigation-modifiers: (
 
 /**
  * Calendar Day
+ *
  * 1. Half the height to give vertical alignment of text
  * 2. Box shadow helps smooth what can look like a pixelated border
  * 3. Animate the scaling hover effect
  * 4. Reset shadow as silky smooth on retina / HD Displays
+ * 5. Reduced focus style shadow to prevent overlaps or cutoffs
  */
 .c-calendar__day {
   padding: 0;
@@ -219,11 +221,8 @@ $calendar-navigation-modifiers: (
     cursor: pointer;
   }
 
-  /**
-   * 1. Reduced focus style shadow to prevent overlaps or cutoffs
-   */
   &:focus {
-    box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 3px 3px rgba(color(highlight), 0.75); /* [1] */
+    box-shadow: 0 1px 3px rgba(color(black), 0.4), 0 1px 3px 3px rgba(color(highlight), 0.75); /* [5] */
   }
 
   &:hover {
