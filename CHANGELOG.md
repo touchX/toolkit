@@ -2,7 +2,7 @@
 
 # Toolkit UI v1.3.0
 
-## 1. Feature
+## 1. Features
 - [Calendar] Adds the `c-calendar` component for use with date pickers.
 
 ===
