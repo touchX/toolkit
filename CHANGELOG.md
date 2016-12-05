@@ -1,3 +1,10 @@
+# Toolkit v1.2.1
+
+## 1. Fixes
+- [tile-fluid] Set `$tile-fluid-base-breakpoint` as `!default` to allow overwriting.
+
+===
+
 # Toolkit v1.2.0
 
 ## Toolkit Core v1.2.0
