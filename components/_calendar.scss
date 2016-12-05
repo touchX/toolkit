@@ -1,16 +1,14 @@
 /* ==========================================================================
-   COMPONENTS / CALENDAR
-  ========================================================================== */
+   COMPONENTS / #CALENDAR
+   ========================================================================== */
 
-/**
- * Calendar Settings
- * 1. Size of each individual - should be divisible by two to ensure no sup-pixel rendering issues
- * 2. Size of the navigation buttons, should also be divisible by two
- * 3. Speed to animate elements such as hover on the navigiton and days
- */
-$calendar-day-size: 38px; /* [1] */
-$calendar-nav-width: 44px; /* [2] */
-$calendar-animation-speed: 0.25s; /* [3] */
+// Calendar Settings
+// 1. Size of each individual day - should be divisible by two to ensure no sup-pixel rendering issues
+// 2. Size of the navigation buttons, should also be divisible by two
+// 3. Speed to animate elements such as hover on the navigiton and days
+$calendar-day-size: 38px; // 1
+$calendar-nav-width: 44px; // 2
+$calendar-animation-speed: 0.25s; // 3
 
 // Navigation modifiers and their additional settings
 $calendar-navigation-modifiers: (
@@ -24,14 +22,15 @@ $calendar-navigation-modifiers: (
   )
 );
 
-/* Wrappers and Positioning
+/* Base
   =========================================== */
 
 /**
-* Main Container
-* 1. Recomended max-size for calendar, accounting for padding
-* 2. Provide spacing either side of the calendar that allows room for transformed navigation buttons
-*/
+ * Calendar Container
+ *
+ * 1. Recomended max-size for calendar, accounting for padding
+ * 2. Provide spacing either side of the calendar that allows room for transformed navigation buttons
+ */
 
 .c-calendar-container {
   max-width: 380px; /* [1] */
@@ -43,6 +42,8 @@ $calendar-navigation-modifiers: (
 }
 
 /**
+ * Calendar
+ *
  * 1. Postioning for navigation
  * 2. Align tablet columns so they have equal spacing on outer sides
  * 3. Anything smaller results in dates being obscured
@@ -54,32 +55,20 @@ $calendar-navigation-modifiers: (
 }
 
 /**
- * 1. Allow space for shadow on focused dates
+ * Calendar Navigation
+ *
+ * Button navigation for switching between calendar content.
  */
-.c-calendar__month {
-  table-layout: fixed;
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 0;
-
-  @include mq($from: small) {
-    padding: 0 3px; /* [1] */
-  }
-}
-
-/* Navigation Controls
-  =========================================== */
-
 .c-calendar__nav {
-  height: 30px;
-  width: $calendar-nav-width;
-  padding: 0;
   position: absolute;
   top: 0;
+  width: $calendar-nav-width;
+  height: 30px;
+  padding: 0;
   z-index: 1;
-  appearance: none;
-  -moz-appearance: none;
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: none;
   background-color: transparent;
   -webkit-transition: opacity $calendar-animation-speed, transform $calendar-animation-speed transform-origin $calendar-animation-speed;
@@ -92,20 +81,14 @@ $calendar-navigation-modifiers: (
   }
 }
 
-.c-calendar__nav-icon {
-  fill: color(brand);
-  width: 8px;
-  height: 13px;
-}
-
 /**
-  * Loop to generate modifiers for each nav direction:
-  *
-  *   .c-calendar__nav--right {}
-  *   .c-calendar__nav--left {}
-  *
-  * 1. Position icon on outer side at small
-  * 2. Position nav button so the middle of the icon overlaps the table edge
+ * Loop to generate modifiers for each nav direction:
+ *
+ *   .c-calendar__nav--right {}
+ *   .c-calendar__nav--left {}
+ *
+ * 1. Position icon on outer side at small
+ * 2. Position nav button so the middle of the icon overlaps the table edge
  */
 @each $modifier, $direction in $calendar-navigation-modifiers {
   $position: map-get($direction, position);
@@ -138,25 +121,65 @@ $calendar-navigation-modifiers: (
   }
 }
 
-/* Header
-  =========================================== */
+/**
+ * Calendar Navigation - Icon
+ *
+ * Applied directly to the SVG icon element
+ */
+.c-calendar__nav-icon {
+  width: 8px;
+  height: 13px;
+  fill: color(brand);
+}
 
+/**
+ * Calendar Feedback Footer
+ *
+ * Details about the currently selected date
+ */
+.c-calendar__feedback {
+  margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
+  padding-top: $global-spacing-unit-small;
+  text-align: left;
+  border-width: $global-border-width 0;
+  border-style: solid;
+  border-color: color(grey-20);
+}
+
+/**
+ * Calendar Month
+ *
+ * 1. Postioning for navigation
+ * 2. Align tablet columns so they have equal spacing on outer sides
+ * 3. Anything smaller results in dates being obscured
+ */
+.c-calendar__month {
+  margin-bottom: 0;
+  table-layout: fixed;
+}
+
+/**
+ * Calendar Title
+ *
+ * e.g. the month name
+ */
 .c-calendar__title {
   font-weight: normal;
 }
 
 /**
-* Override normalize abbr[title]
-*/
+ * Calendar Weekday
+ *
+ * Abbreviated table headers for days of the week.
+ * Overrides normalize abbr[title]
+ */
 .c-calendar__weekday[title] {
   text-decoration: none;
   font-weight: normal;
 }
 
-/* Days
-  =========================================== */
-
 /**
+ * Calendar Day
  * 1. Half the height to give vertical alignment of text
  * 2. Box shadow helps smooth what can look like a pixelated border
  * 3. Animate the scaling hover effect
@@ -209,40 +232,22 @@ $calendar-navigation-modifiers: (
       transform: scale(1.2);
     }
   }
-
-  /**
-   * State Class - date has been selected
-   */
-  &.is-selected {
-    background: color(brand);
-    color: color(white);
-  }
-
-  /**
-   * State Class - date is unavailable
-   */
-  &.is-disabled {
-    color: color(grey-20);
-    background: none;
-    border: none;
-    box-shadow: none;
-    -webkit-transform: none;
-    transform: none;
-    cursor: not-allowed;
-  }
 }
 
-/* Infomation
+/* States
   =========================================== */
 
-/**
- * Details about the currently selected date
- */
-.c-calendar__feedback {
-  margin: $global-spacing-unit-tiny 0 $global-spacing-unit-small;
-  padding-top: $global-spacing-unit-small;
-  text-align: left;
-  border-width: $global-border-width 0;
-  border-style: solid;
-  border-color: color(grey-20);
+.c-calendar__day.is-selected {
+  background: color(brand);
+  color: color(white);
+}
+
+.c-calendar__day.is-disabled {
+  color: color(grey-20);
+  background: none;
+  border: none;
+  box-shadow: none;
+  -webkit-transform: none;
+  transform: none;
+  cursor: not-allowed;
 }
