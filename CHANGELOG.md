@@ -1,3 +1,12 @@
+# Toolkit v1.3.0
+
+## Toolkit UI v1.3.0
+
+## 1. Features
+- [Calendar] Adds the `c-calendar` component for use with date pickers.
+
+===
+
 # Toolkit v1.2.1
 
 ## Toolkit UI v1.2.1
@@ -33,28 +42,28 @@
   - `.c-tile-fluid-scale-1/2@medium` classes scale tile content. These are useful when using layouts.
   - `.c-tile-fluid-container` class sets a max-width on the fluid tiles (default 1200px) preventing scaling beyond that size.
 
-  ### Example Usage
+### Example Usage
 
-  ```
-  <div class="o-container  c-tile-fluid-container">
-    <div class="o-layout">
-      <div class="o-layout__item  u-width-1/2@medium  c-tile-fluid-scale-1/2@medium">
-        <article class="c-tile c-tile--fluid">
-          //...
-        </article>
-      </div>
-      <div class="o-layout__item  u-width-1/4@medium  c-tile-fluid-scale-1/4@medium">
-        <article class="c-tile c-tile--fluid">
-          //...
-        </article>
-      </div>
-      <div class="o-layout__item  u-width-1/4@medium  c-tile-fluid-scale-1/4@medium">
-        <article class="c-tile c-tile--fluid">
-          //...
-        </article>
-      </div>
+```
+<div class="o-container  c-tile-fluid-container">
+  <div class="o-layout">
+    <div class="o-layout__item  u-width-1/2@medium  c-tile-fluid-scale-1/2@medium">
+      <article class="c-tile c-tile--fluid">
+        //...
+      </article>
+    </div>
+    <div class="o-layout__item  u-width-1/4@medium  c-tile-fluid-scale-1/4@medium">
+      <article class="c-tile c-tile--fluid">
+        //...
+      </article>
+    </div>
+    <div class="o-layout__item  u-width-1/4@medium  c-tile-fluid-scale-1/4@medium">
+      <article class="c-tile c-tile--fluid">
+        //...
+      </article>
     </div>
   </div>
+</div>
 ```
 
 ===
