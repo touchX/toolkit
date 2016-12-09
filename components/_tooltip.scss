@@ -1,13 +1,15 @@
 /* ==========================================================================
-   COMPONENTS / TOOLTIP
+   COMPONENTS / #TOOLTIP
    ========================================================================== */
 
-// Settings
+// Tooltip Settings
 $tooltip-width: 20em;
 $tooltip-marker-size: 10px;
 $tooltip-z-base: 50;
 
 /**
+ * Tooltip
+ *
  * Tooltip wrapper to contain content and trigger. Uses `before` pseudo for bubble
  * marker, and `after` for page whitewash.
  *
@@ -119,7 +121,7 @@ $tooltip-z-base: 50;
  * Aligns the tooltip to the right. Used when the trigger is aligned to the right
  * of a page or container.
  */
-.c-tooltip--right.is-active {
+.c-tooltip--right {
   &::after, .c-tooltip__content {
     left: auto;
     right: 0;
