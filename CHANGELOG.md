@@ -1,6 +1,13 @@
 # Toolkit UI v1.3.0
 
 ## 1. Features
+- [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
+
+===
+
+# Toolkit UI v1.3.0
+
+## 1. Features
 - [Calendar] Adds the `c-calendar` component for use with date pickers.
 
 ===
