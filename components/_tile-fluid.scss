@@ -157,12 +157,13 @@ $tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint
          * For tiles wrapped in the container we set a fixed px font-size to
          * prevent scaling.
          */
-
+        /* stylelint-disable max-nesting-depth */
         .c-tile-fluid-container & {
           @include mq($from: $tile-fluid-max-width) {
             font-size: ($global-font-size * $tile-fluid-constrain-ratio) * ($scale-numerator / $scale-denominator);
           }
         }
+        /* stylelint-enable */
       }
     }
   }
@@ -181,4 +182,3 @@ $tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint
     @include tile-fluid-scales(1 2 3 4 5, \@#{$alias});
   }
 }
-

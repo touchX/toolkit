@@ -1,3 +1,10 @@
+# Toolkit UI v1.4.0
+
+## 1. Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.3.0`.
+
+===
+
 # Toolkit UI v1.3.0
 
 ## 1. Features
