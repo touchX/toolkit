@@ -61,4 +61,4 @@ Ensure [`toolkit-ui`](https://github.com/sky-uk/toolkit-ui)'s dependency of tool
 
 **If releasing toolkit-ui, also:**
 
-Ensure [`toolkit`](https://github.com/sky-uk/toolkit)'s dependency of toolkit-ui is updated, following the same release process as above.
+Ensure [`toolkit`](https://github.com/sky-uk/toolkit)'s dependency of toolkit-ui is updated, following the same release process as above. Don't forget to bump the version in `README.md` examples too.
