@@ -155,9 +155,12 @@ $tooltip-z-base: 50;
  *
  * Aligns the tooltip to the right. Used when the trigger is aligned to the
  * right of a page or container.
+ *
+ * 1. Double up the selector’s specificity in order to override the hover and
+ *    active states for the Tooltip indicator and content.
  */
 .c-tooltip--right {
-  &#{&} {
+  &#{&} { /* [1] */
     .c-tooltip::after,
     .c-tooltip__content {
       left: auto;
