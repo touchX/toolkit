@@ -13,12 +13,18 @@ $tooltip-z-base: 50;
 /**
  * Tooltip
  *
- * Tooltip wrapper to contain content and trigger. Uses `before` pseudo for bubble
- * marker, and `after` for page whitewash.
+ * Tooltip wrapper to contain content and trigger. Uses `before` pseudo for
+ * bubble marker, and `after` for page whitewash.
+ *
+ * 1. Allows full width positioning for small devices and correct alignment for
+ *    medium devices.
  */
 .c-tooltip {
   display: inline-block;
-  position: relative;
+
+  @include mq($from: medium) {
+    position: relative; /* [1] */
+  }
 }
 
 .c-tooltip__content {
@@ -39,40 +45,39 @@ $tooltip-z-base: 50;
 .c-tooltip.is-active,
 .c-tooltip--hover:hover {
   /**
-   * Tooltip Indicator
-   *
-   * 1. Marker needs to sit above content, whitewash, and trigger
-   * 2. Position marker centrally below trigger and above content
-   * 3. Because marker is rotated, we need to double the size to give true size
-   * 4. Marker needs it's own shadow with negative spread to only show on one side
-   * 5. Subtle border to make marker more defined on white backgrounds
-   */
-  &::before {
-    content: "";
-    position: absolute;
-    z-index: $tooltip-z-base+3; /* [1] */
-    top: 100%; /* [2] */
-    left: 50%; /* [2] */
-    margin-left: -($tooltip-marker-size/2); /* [2] */
-    width: $tooltip-marker-size*2; /* [3] */
-    height: $tooltip-marker-size*2; /* [3] */
-    transform: rotate(45deg);
-    background-color: #fff;
-    box-shadow: -2px -2px 14px -10px #000; /* [4] */
-    border: 1px solid #eee; /* [5] */
-    border-width: 1px 0 0 1px; /* [5] */
-  }
-
-  /**
    * Tooltip Trigger
    *
    * The trigger can be any element
    *
-   * 1. Trigger is layered above whitewash but below marker
+   * 1. Trigger is layered above whitewash
    */
   .c-tooltip__trigger {
     position: relative;
-    z-index: $tooltip-z-base+2; /* [1] */
+    z-index: $tooltip-z-base+3; /* [1] */
+  }
+
+  /**
+   * Tooltip Indicator
+   *
+   * 1. Position marker centrally below trigger and above content
+   * 2. Because marker is rotated, we need to double the size to give true size
+   * 3. Marker needs it's own shadow with negative spread to only show on one side
+   * 4. Subtle border to make marker more defined on white backgrounds
+   */
+  .c-tooltip__trigger::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* [1] */
+    left: 50%; /* [1] */
+    margin-left: -($tooltip-marker-size); /* [1] */
+    width: $tooltip-marker-size*2; /* [2] */
+    height: $tooltip-marker-size*2; /* [2] */
+    transform: rotate(45deg);
+    background-color: color(white);
+    box-shadow: -2px -2px 14px -10px #000; /* [3] */
+    border-color: color(grey-10); /* [4] */
+    border-style: solid;
+    border-width: 1px 0 0 1px; /* [4] */
   }
 
   /**
@@ -81,9 +86,8 @@ $tooltip-z-base: 50;
    * The bubble of content that appears when triggered
    *
    * 1. Layer above whitewash
-   * 2. Position left aligned beneath the trigger
-   * 3. On mobile we need full width; we have to use `calc` because the positioning
-   *    context is relative to the tooltip itself, which isn't as wide as the container
+   * 2. On mobile we need full width; we use left and right positioning to achieve
+   * 3. Position left aligned beneath the trigger
    * 4. Take away the margin bottom on the last child, helps prevent unwanted paragraph
    *    margins
    */
@@ -92,21 +96,23 @@ $tooltip-z-base: 50;
     display: block;
     position: absolute;
     z-index: $tooltip-z-base+2; /* [1] */
-    top: 100%; /* [2] */
-    left: 0; /* [2] */
+    left: $global-spacing-unit; /* [2] */
+    right: $global-spacing-unit; /* [2] */
+    margin-top: $tooltip-marker-size;
     padding: $global-spacing-unit-small;
     background-color: color(white);
     border-radius: $global-border-radius;
     box-shadow: $global-shadow;
-    width: calc(100vw - #{$global-spacing-unit-large});  /* [3] */
-    margin-top: $tooltip-marker-size;
 
     @include mq($from: medium) {
+      top: 100%; /* [3] */
+      left: 0; /* [3] */
+      right: auto; /* [3] */
       width: $tooltip-width;
     }
 
     :last-child {
-      margin-bottom: 0;
+      margin-bottom: 0; /* [4] */
     }
   }
 }
@@ -136,7 +142,7 @@ $tooltip-z-base: 50;
  * Transparent pseudo element to increase surface area from trigger to content.
  */
 .c-tooltip--hover:hover {
-  &::after {
+  .c-tooltip__trigger::before {
     content: "";
     position: absolute;
     left: 0;
@@ -159,12 +165,17 @@ $tooltip-z-base: 50;
  * 1. Double up the selector’s specificity in order to override the hover and
  *    active states for the Tooltip indicator and content.
  */
+
+/* stylelint-disable max-nesting-depth */
 .c-tooltip--right {
   &#{&} { /* [1] */
     .c-tooltip::after,
     .c-tooltip__content {
-      left: auto;
-      right: 0;
+      @include mq($from: medium) {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }
+/* stylelint-enable */
