@@ -1,3 +1,17 @@
+# Toolkit UI v1.5.0
+
+## 1. Fixes
+- [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
+
+===
+
+# Toolkit UI v1.4.0
+
+## 1. Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.3.0`.
+
+===
+
 # Toolkit UI v1.3.0
 
 ## 1. Features
