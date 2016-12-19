@@ -1,6 +1,7 @@
 # Toolkit UI v1.5.0
 
 ## 1. Fixes
+- [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
 - [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
 
 ===
