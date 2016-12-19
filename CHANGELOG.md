@@ -1,3 +1,10 @@
+# Toolkit UI v1.5.0
+
+## 1. Fixes
+- [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
+
+===
+
 # Toolkit UI v1.4.0
 
 ## 1. Dependencies
