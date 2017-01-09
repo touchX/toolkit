@@ -1,3 +1,19 @@
+# Toolkit v1.5.0
+
+## Toolkit Core v1.4.0
+
+### 1. Dependencies
+- [[sky-css-lint]](https://github.com/sky-uk/css) Use sky-css-lint for CSS / Sass linting.
+
+## Toolkit UI v1.5.0
+
+### 1. Fixes
+- [dropdown] Fix for full-width dropdowns.
+- [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
+- [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
+
+===
+
 # Toolkit v1.4.0
 
 ## Toolkit Core v1.3.0
