@@ -1,5 +1,5 @@
 /* ==========================================================================
-   COMPONENTS / DROPDOWN
+   COMPONENTS / #DROPDOWN
    ========================================================================== */
 
 // Dropdown settings
@@ -49,6 +49,7 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   outline: 0;
   cursor: pointer;
   z-index: 1; /* [4] */
+  text-align: left;
   transition: border $dropdown-animation-speed ease, border-radius $dropdown-animation-speed ease, box-shadow $dropdown-animation-speed ease;
 
   &:focus {
@@ -217,6 +218,7 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
 .c-dropdown--full {
   display: block;
   width: 100%;
+
   .c-dropdown__toggle {
     width: 100%;
   }
@@ -226,9 +228,10 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
 * For dropdowns that need to display full-width on small devices only.
 */
 .c-dropdown--full\@small-only {
-  @include mq($until: medium) {
+  @include mq($until: small) {
     display: block;
     width: 100%;
+
     .c-dropdown__toggle {
       width: 100%;
     }
