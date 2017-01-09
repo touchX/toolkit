@@ -77,6 +77,8 @@ $panel-background-color-dark: color(grey-50) !default;
   right: $global-spacing-unit-small; /* [1] */
   color: color(text);
 
+  /* Toggle icon shouldn't inherit the default link text-decoration */
+  /* stylelint-disable declaration-no-important */
   &::after {
     display: inline-block;
     position: relative;  /* [2] */
@@ -86,6 +88,7 @@ $panel-background-color-dark: color(grey-50) !default;
     margin-left: $global-spacing-unit-tiny;
     text-decoration: none !important;
   }
+  /* stylelint-enable */
 
   .c-panel--dark & {
     color: color(white);
