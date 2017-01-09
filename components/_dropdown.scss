@@ -1,19 +1,22 @@
 /* ==========================================================================
-   COMPONENTS / DROPDOWN
+   COMPONENTS / #DROPDOWN
    ========================================================================== */
 
-// Dropdown settings
+// Dropdown Settings
 $dropdown-animation-speed: $global-animation-speed !default;
 $dropdown-background: color(white) !default;
 $dropdown-background-focus: #f4f4f4 !default;
 $dropdown-border: 1px solid color(grey-20) !default;
 $dropdown-border-radius: $global-border-radius !default;
 $dropdown-shadow-blur-radius: 8px !default;
-$dropdown-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2) !default;
 $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !default;
-$dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(highlight), 0.75);
+
+/* Base
+  =========================================== */
 
 /**
+ * Dropdown
+ *
  * Dropdown menus are useful tools for navigation, but shouldn't be used for
  * form input purposes (see `c-form-select` for form use).
  *
@@ -26,8 +29,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
 }
 
 /**
- * The Dropdown label provides context to the menu and acts as an input to
- * toggle the item list.
+ * Dropdown Toggle
+ *
+ * Provides context to the menu and acts as an input to toggle the item list.
  *
  * 1. Set font-size and line-height
  * 2. Displays the label stacked above its menu items.
@@ -40,8 +44,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   @include font-size(text-lead-small); /* [1] */
   display: block; /* [2] */
   position: relative;
-  font-weight: bold;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-large $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
+  font-weight: bold;
+  text-align: left;
   border: $dropdown-border;
   border-radius: $dropdown-border-radius;
   color: color(text);
@@ -52,12 +57,13 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   transition: border $dropdown-animation-speed ease, border-radius $dropdown-animation-speed ease, box-shadow $dropdown-animation-speed ease;
 
   &:focus {
-    box-shadow: $dropdown-focus;
-    outline: none;
+    @include focus-styles();
   }
 
   /**
-   * The Dropdown label uses an icon to indicate when the menu has been toggled.
+   * Dropdown Toggle - Icon
+   *
+   * The Dropdown toggle uses an icon to indicate when the menu is open.
    * N.B. Temporary use of Base64 until a Sky SVG solution is realised.
    *
    * 3. Allows for positioning from the top and right of the dropdown.
@@ -87,7 +93,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
 }
 
 /**
- * The Dropdown list contains menu items, appearing when the label is toggled.
+ * Dropdown List
+ *
+ * Contains menu items, appearing when the label is toggled.
  *
  * 1. Removes default list margins.
  * 2. Sets the list to be stacked above the the label.
@@ -117,7 +125,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   transition: all $dropdown-animation-speed ease; /* [13] */
 
   /**
-   * As the Dropdown label and Dropdown list use similar box-shadows, there will
+   * Dropdown Overlap Fix
+   *
+   * As the Dropdown toggle and list use similar box-shadows, there will
    * inevitably be overlap. To prevent this overlap, the Dropdown list uses a
    * pseudo-element with a matching background-color to cover the shadow.
    *
@@ -136,8 +146,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
 }
 
 /**
- * The Dropdown link class provides styling for individual menu items within the
- * Dropdown list.
+ * Dropdown Link
+ *
+ * Provides styling for individual menu items within the Dropdown list.
  *
  * 1. Overides default link color.
  * 2. As we use scaleY on the Dropdown list to toggle the menu, each item is
@@ -167,13 +178,14 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   }
 }
 
+/* States
+  =========================================== */
+
 /**
  * When a dropdown's state is toggled.
  */
 .c-dropdown.is-open {
   /**
-   * Dropdown list on toggle.
-   *
    * 1. Scales vertical axis to its full height to achieve 'slide' animation.
    * 2. Sets text to its correct height to animate upon.
   */
@@ -185,14 +197,12 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   }
 
   .c-dropdown__link {
+    opacity: 1;
     -ms-transform: scaleY(1); /* [2] */
     transform: scaleY(1); /* [2] */
-    opacity: 1;
   }
 
   /**
-   * Dropdown label on toggle.
-   *
    * 1. Removes border-radius on bottom edge to overlap the dropdown list.
    * 2. Rotates icon indicator 180 degrees.
   */
@@ -208,7 +218,7 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   }
 }
 
-/* Dropdown sizing modifiers
+/* Modifiers
    =========================================== */
 
 /**
@@ -217,14 +227,22 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
 .c-dropdown--full {
   display: block;
   width: 100%;
+
+  .c-dropdown__toggle {
+    width: 100%;
+  }
 }
 
 /**
 * For dropdowns that need to display full-width on small devices only.
 */
 .c-dropdown--full\@small-only {
-  @include mq($until: medium) {
+  @include mq($until: small) {
     display: block;
     width: 100%;
+
+    .c-dropdown__toggle {
+      width: 100%;
+    }
   }
 }
