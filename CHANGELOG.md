@@ -4,6 +4,7 @@
 - [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.4.0`.
 
 ## 2. Fixes
+- [dropdown] Fix for full-width dropdowns.
 - [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
 - [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
 
