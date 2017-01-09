@@ -46,8 +46,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   @include font-size(text-lead-small); /* [1] */
   display: block; /* [2] */
   position: relative;
-  font-weight: bold;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-large $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
+  font-weight: bold;
+  text-align: left;
   border: $dropdown-border;
   border-radius: $dropdown-border-radius;
   color: color(text);
@@ -55,7 +56,6 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   outline: 0;
   cursor: pointer;
   z-index: 1; /* [4] */
-  text-align: left;
   transition: border $dropdown-animation-speed ease, border-radius $dropdown-animation-speed ease, box-shadow $dropdown-animation-speed ease;
 
   &:focus {
@@ -200,9 +200,9 @@ $dropdown-focus: 1px 3px rgba(color(black), 0.4), 0 1px 15px 3px rgba(color(high
   }
 
   .c-dropdown__link {
+    opacity: 1;
     -ms-transform: scaleY(1); /* [2] */
     transform: scaleY(1); /* [2] */
-    opacity: 1;
   }
 
   /**
