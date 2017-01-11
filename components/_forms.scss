@@ -264,7 +264,7 @@ $form-animation-speed: $global-animation-speed-fast;
     content: "";
     position: absolute;
     top: 50%;
-    z-index: 2;
+    z-index: 1;
     margin-bottom: $global-spacing-unit-tiny;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -280,8 +280,9 @@ $form-animation-speed: $global-animation-speed-fast;
 
 .c-form-select__dropdown {
   padding: $global-spacing-unit-tiny $global-spacing-unit-tiny;
+  padding-right: $global-spacing-unit + 5px;
   position: relative;
-  z-index: 3;
+  z-index: 2;
   width: 100%;
   border: $form-border;
   border-radius: $global-border-radius;
