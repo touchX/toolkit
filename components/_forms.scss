@@ -235,6 +235,8 @@ $form-animation-speed: $global-animation-speed-fast;
   position: relative;
   width: 100%;
   cursor: pointer;
+  border-radius: $global-border-radius;
+  background-color: $form-background;
 
   /**
    * Gradient to hide the overflow of long labels
@@ -244,6 +246,7 @@ $form-animation-speed: $global-animation-speed-fast;
   &::before {
     content: "";
     position: absolute;
+    z-index: 1;
     top: $global-border-width; /* [1] */
     right: $form-border-width; /* [1] */
     bottom: $form-border-width; /* [1] */
@@ -252,7 +255,6 @@ $form-animation-speed: $global-animation-speed-fast;
     background: -ms-linear-gradient(right, rgba($form-background, 1) 60%, rgba($form-background, 0));
     background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
     border-radius: 0 $global-border-radius $global-border-radius 0;
-    pointer-events: none;
   }
 
   /**
@@ -262,6 +264,7 @@ $form-animation-speed: $global-animation-speed-fast;
     content: "";
     position: absolute;
     top: 50%;
+    z-index: 2;
     margin-bottom: $global-spacing-unit-tiny;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -272,16 +275,17 @@ $form-animation-speed: $global-animation-speed-fast;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    pointer-events: none;
   }
 }
 
 .c-form-select__dropdown {
   padding: $global-spacing-unit-tiny $global-spacing-unit-tiny;
+  position: relative;
+  z-index: 3;
   width: 100%;
   border: $form-border;
   border-radius: $global-border-radius;
-  background-color: $form-background;
+  background-color: transparent;
   box-shadow: $form-shadow;
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
