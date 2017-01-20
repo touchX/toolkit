@@ -4,9 +4,9 @@
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
+    "test": "node ./node_modules/mocha/bin/mocha ./test/sass.js",
     "test-circle": "npm run build && npm run test",
-    "lint": "stylelint ./**/*.scss --syntax scss",
+    "lint": "node ./node_modules/stylelint/bin/stylelint ./**/*.scss --syntax scss",
     "build": "mkdir build && cat ./test/_build.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > build/toolkit.css"
   },
   "pre-commit": [

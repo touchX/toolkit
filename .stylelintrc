@@ -1,1 +1,3 @@
-node_modules/sky-css-lint/.stylelintrc
+{
+  "extends": "./node_modules/sky-css-lint/.stylelintrc"
+}
