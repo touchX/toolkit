@@ -244,7 +244,7 @@ $form-animation-speed: $global-animation-speed-fast;
    * 1. Stretch to full height on the right (taking into account border width)
    */
   &::before {
-    display:none;
+    display: none;
     content: "";
     position: absolute;
     top: $global-border-width; /* [1] */
@@ -319,7 +319,7 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 
   .c-form-select__dropdown {
-    z-index:0;
+    z-index: 0;
     background-color: $form-background;
   }
 }
