@@ -128,14 +128,17 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  */
 .c-tile__link {
   display: block;
+  width: 100%;
   color: inherit;
-  transition: color $tile-animation-speed ease, box-shadow $global-animation-speed-fast ease;
+  background-color: transparent;
+  border: 0;
   outline: none;
+  transition: color $tile-animation-speed ease, box-shadow $global-animation-speed-fast ease;
 
   .c-tile--square & {
+    position: absolute;
     bottom: 0;
     left: 0;
-    position: absolute;
     right: 0;
     top: 0;
   }
