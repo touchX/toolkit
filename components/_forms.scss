@@ -284,7 +284,7 @@ $form-animation-speed: $global-animation-speed-fast;
   position: relative;
   z-index: 1;
   padding: $global-spacing-unit-tiny $global-spacing-unit-tiny;
-  padding-right: $global-spacing-unit + 5px;
+  padding-right: $global-spacing-unit + $global-spacing-unit-tiny;
   width: 100%;
   border: $form-border;
   border-radius: $global-border-radius;
@@ -308,19 +308,15 @@ $form-animation-speed: $global-animation-speed-fast;
 
 @supports (pointer-events:none) {
   .c-form-select {
-    &::before {
-      display: block;
-      z-index: 1;
-    }
-
+    &::before,
     &::after {
+      display: block;
       z-index: 1;
     }
   }
 
   .c-form-select__dropdown {
     z-index: 0;
-    background-color: $form-background;
   }
 }
 
