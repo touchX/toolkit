@@ -1,11 +1,11 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
-    "test-circle": "npm run build && npm run test",
+    "test-circle": "npm run build && npm run test && npm run lint",
     "lint": "stylelint ./**/*.scss --syntax scss",
     "build": "mkdir build && cat ./test/_build.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > build/toolkit.css"
   },
