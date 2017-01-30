@@ -60,7 +60,7 @@ $link-faux-border-radius: $global-border-radius;
       top: 0;
       right: -$link-faux-padding;
       bottom: 0;
-      left: -$link-padding;
+      left: -$link-faux-padding;
       border-radius: $link-faux-border-radius;
     }
   }
