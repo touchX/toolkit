@@ -5,7 +5,7 @@
 
 ## 2. Refactor
 - [panel] Utilise `c-link-faux` on `c-panel__toggle` for accessibility improvements.
-  - Existing panel toggle buttons **must** use the following markup: `<button className="c-link-faux c-panel__toggle">Close</button>`
+  - Existing panel toggle buttons **must** use the following markup: `<button class="c-link-faux c-panel__toggle">Close</button>`
 
 ===
 
