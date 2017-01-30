@@ -1,13 +1,8 @@
-// This is a basic style file with a single class.
-// If you wish, you can uncomment the toolkit below to apply some default styles.
-//
-@import "sky-toolkit-core/all";
-
 /* ==========================================================================
-   COMPONENTS / LINKS
+   COMPONENTS / LINK-FAUX
    ========================================================================== */
 
-// Link Settings
+// Link-Faux Settings
 $link-padding: $global-spacing-unit-tiny;
 $link-border-radius: $global-border-radius;
 
@@ -15,10 +10,10 @@ $link-border-radius: $global-border-radius;
   =========================================== */
 
 /**
- * Link Faux
+ * Link-Faux
  *
  * When a `<button>` needs to appear similar to a link for cosmetic reasons,
- * Link Faux should be used.
+ * Link-Faux should be used.
  *
  * 1. Reset browser styles.
  * 2. Tidy aligment for when the button size needs to be modified.
@@ -45,12 +40,12 @@ $link-border-radius: $global-border-radius;
   }
 
   /**
-   * Link Faux `:focus`
+   * Link-Faux `:focus`
    *
    * When a `<button>` needs to appear similar to a link for cosmetic reasons,
-   * Link Faux should be used.
+   * Link-Faux should be used.
    *
-   * To protect the link faux box-model, a pseudo-element with negative margins
+   * To protect the link-faux box-model, a pseudo-element with negative margins
    * is used to create the "button" focus appearance.
    *
    * 1.  Remove browser outline styles.
@@ -75,7 +70,7 @@ $link-border-radius: $global-border-radius;
    =========================================== */
 
 /**
-* For Link Fauxs used in dark areas of UI.
+* For Link-Fauxs used in dark areas of UI.
 */
 .c-link-faux--invert {
   color: color(white);
