@@ -1,7 +1,7 @@
 # Toolkit UI v1.6.0
 
 ## 1. Feature
-- [links] Added Link Faux component.
+- [links] Added Link Faux module.
 
 ===
 
