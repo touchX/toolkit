@@ -3,8 +3,8 @@
    ========================================================================== */
 
 // Link-Faux Settings
-$link-padding: $global-spacing-unit-tiny;
-$link-border-radius: $global-border-radius;
+$link-faux-padding: $global-spacing-unit-tiny;
+$link-faux-border-radius: $global-border-radius;
 
 /* Base
   =========================================== */
@@ -58,10 +58,10 @@ $link-border-radius: $global-border-radius;
       content: "";
       position: absolute;
       top: 0;
-      right: -$link-padding;
+      right: -$link-faux-padding;
       bottom: 0;
       left: -$link-padding;
-      border-radius: $link-border-radius;
+      border-radius: $link-faux-border-radius;
     }
   }
 }
