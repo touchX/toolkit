@@ -1,14 +1,8 @@
-# Toolkit UI v1.7.0
-
-## 1. Features
-- [link-faux] Created the link-faux module.
-
-===
-
 # Toolkit UI v1.6.0
 
 ## 1. Features
 - [tile] Allow `c-tile__link` to use either `<a>` or `<button>` allowing for more semantic use.
+- [link-faux] Created the link-faux module.
 
 ===
 
