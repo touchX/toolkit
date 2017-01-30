@@ -2,10 +2,6 @@
    COMPONENTS / LINKS
    ========================================================================== */
 
-// Link Settings
-$link-padding: $global-spacing-unit-tiny;
-$link-border-radius: $global-border-radius;
-
 /* Base
   =========================================== */
 
@@ -28,78 +24,5 @@ $link-border-radius: $global-border-radius;
     margin-left: $global-spacing-unit-small;
     width: 1em;
     height: 1em;
-  }
-}
-
-/**
- * Link Faux
- *
- * When a `<button>` needs to appear similar to a link for cosmetic reasons,
- * Link Faux should be used.
- *
- * 1. Reset browser styles.
- * 2. Tidy aligment for when the button size needs to be modified.
- * 3. Make buttons inherit font styles (necessary when styling `input`s as
- *    buttons).
- * 4. Base transparent background-color for modifers to alter.
- * 5. Force all button-styled elements to appear clickable.
- * 6. Mimic link underline.
- */
-.c-link-faux {
-  position: relative;
-  display: inline-block;
-  margin: 0; /* [1] */
-  padding: 0; /* [1] */
-  vertical-align: middle; /* [2] */
-  font: inherit; /* [3] */
-  color: color(text);
-  background-color: transparent; /* [4] */
-  border: 0; /* [1] */
-  cursor: pointer; /* [5] */
-
-  &:hover {
-    text-decoration: underline; /* [6] */
-  }
-
-  /**
-   * Link Faux `:focus`
-   *
-   * When a `<button>` needs to appear similar to a link for cosmetic reasons,
-   * Link Faux should be used.
-   *
-   * To protect the link faux box-model, a pseudo-element with negative margins
-   * is used to create the "button" focus appearance.
-   *
-   * 1.  Remove browser outline styles.
-   */
-  &:focus {
-    outline: 0; /* [1] */
-
-    &::before {
-      @include focus-styles();
-      content: "";
-      position: absolute;
-      top: 0;
-      right: -$link-padding;
-      bottom: 0;
-      left: -$link-padding;
-      border-radius: $link-border-radius;
-    }
-  }
-}
-
-/* Modifiers
-   =========================================== */
-
-/**
-* For Link Fauxs used in dark areas of UI.
-*/
-.c-link-faux--invert {
-  color: color(white);
-
-  &:focus {
-    &::before {
-      @include focus-styles(invert);
-    }
   }
 }
