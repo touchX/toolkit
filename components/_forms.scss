@@ -241,21 +241,21 @@ $form-animation-speed: $global-animation-speed-fast;
   /**
    * Gradient to hide the overflow of long labels
    *
-   * 1. Stretch to full height on the right (taking into account border width)
+   * 1. Hidden by default, shown on browsers that support pointer-events using feature detection
+   * 2. Stretch to full height on the right (taking into account border width)
    */
   &::before {
-    display: none;
+    display: none; /* [1] */
     content: "";
     position: absolute;
-    top: $global-border-width; /* [1] */
-    right: $form-border-width; /* [1] */
-    bottom: $form-border-width; /* [1] */
+    top: $global-border-width; /* [2] */
+    right: $form-border-width; /* [2] */
+    bottom: $form-border-width; /* [2] */
     width: $global-spacing-unit-large;
     background: $form-background;
     background: -ms-linear-gradient(right, rgba($form-background, 1) 60%, rgba($form-background, 0));
     background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
     border-radius: 0 $global-border-radius $global-border-radius 0;
-    pointer-events: none;
   }
 
   /**
@@ -276,7 +276,6 @@ $form-animation-speed: $global-animation-speed-fast;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    pointer-events: none;
   }
 }
 
@@ -306,12 +305,19 @@ $form-animation-speed: $global-animation-speed-fast;
   box-shadow: $form-shadow-focus;
 }
 
+/**
+ * Displays the fade out gradient from .c-form-select::before above the <select>
+ * input on browsers that support pointer-events (and feature detection).
+ * This prevents the gradient from blocking clicks on browsers that don't support
+ * pointer-events. (IE)
+ */
 @supports (pointer-events:none) {
   .c-form-select {
     &::before,
     &::after {
       display: block;
       z-index: 1;
+      pointer-events: none;
     }
   }
 
