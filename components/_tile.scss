@@ -121,21 +121,27 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   =========================================== */
 
 /**
- * Tiles can have links, just wrap the `.c-tile__content` with a `a.c-tile__link`
- * node.
+ * Tiles can have links, just wrap the `.c-tile__content` with a
+ * `a.c-tile__link` or `button.c-tile__link` node.
  *
  * Outline is set to "none" to utilise the `.has-focus` state on `c-tile`.
+ *
+ * 1. Reset .c-tile__link styling on <button> elements allowing more
+ *    semantic usage.
  */
 .c-tile__link {
   display: block;
+  width: 100%; /* [1] */
   color: inherit;
-  transition: color $tile-animation-speed ease, box-shadow $global-animation-speed-fast ease;
+  background-color: transparent; /* [1] */
+  border: 0; /* [1] */
   outline: none;
+  transition: color $tile-animation-speed ease, box-shadow $global-animation-speed-fast ease;
 
   .c-tile--square & {
+    position: absolute;
     bottom: 0;
     left: 0;
-    position: absolute;
     right: 0;
     top: 0;
   }
@@ -212,6 +218,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   position: relative;
   height: 45%;
   z-index: 20;
+  text-align: left;
 
   /**
    * Sets height to auto below medium on collapsable tiles
@@ -415,7 +422,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 @if $included-tile-themes {
   @each $brand in $included-tile-themes {
     @if map-has-key($gradients, $brand) {
-      // For each brand generate a tile theme class i.e. .t-tile-sky-1
+      // For each brand generate a tile theme class i.e. .c-tile--sky-1
       .c-tile--#{$brand} {
 
         .c-tile__link:hover {

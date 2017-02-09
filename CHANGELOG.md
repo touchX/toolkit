@@ -1,3 +1,12 @@
+# Toolkit UI v1.6.0
+
+## 1. Fixes
+- [tile] Allow `c-tile__link` to use either `<a>` or `<button>` allowing for more semantic use.
+- [c-form-select] Improvements to functionality on IE.
+- [[Stylelint]](http://stylelint.io) Fix linting command.
+
+===
+
 # Toolkit UI v1.5.0
 
 ## 1. Dependencies
