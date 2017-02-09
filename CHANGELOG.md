@@ -1,6 +1,20 @@
-# Toolkit UI v1.5.0
+# Toolkit UI v1.6.0
 
 ## 1. Fixes
+- [tile] Allow `c-tile__link` to use either `<a>` or `<button>` allowing for more semantic use.
+- [c-form-select] Improvements to functionality on IE.
+- [[Stylelint]](http://stylelint.io) Fix linting command.
+
+===
+
+# Toolkit UI v1.5.0
+
+## 1. Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.4.0`.
+
+## 2. Fixes
+- [dropdown] Fix for full-width dropdowns.
+- [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
 - [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
 
 ===

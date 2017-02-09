@@ -10,6 +10,8 @@ $form-background: color(white);
 $form-border-width: $global-border-width;
 $form-border: $form-border-width solid color(grey-20);
 $form-font-size: text-lead-small;
+$form-icon-size: $global-spacing-unit-small;
+$form-icon-offset: $global-spacing-unit;
 $form-checkbox-size: 1em;
 $form-checkbox-margin: $form-checkbox-size;
 $form-checkbox-y-offset: 3px;
@@ -232,6 +234,8 @@ $form-animation-speed: $global-animation-speed-fast;
   line-height: 1.2;
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
+  background-color: $form-background;
+  border-radius: $global-border-radius;
   position: relative;
   width: 100%;
   cursor: pointer;
@@ -239,20 +243,21 @@ $form-animation-speed: $global-animation-speed-fast;
   /**
    * Gradient to hide the overflow of long labels
    *
-   * 1. Stretch to full height on the right (taking into account border width)
+   * 1. Hidden by default, shown on browsers that support pointer-events using feature detection
+   * 2. Stretch to full height on the right (taking into account border width)
    */
   &::before {
+    display: none; /* [1] */
     content: "";
     position: absolute;
-    top: $global-border-width; /* [1] */
-    right: $form-border-width; /* [1] */
-    bottom: $form-border-width; /* [1] */
+    top: $global-border-width; /* [2] */
+    right: $form-border-width; /* [2] */
+    bottom: $form-border-width; /* [2] */
     width: $global-spacing-unit-large;
     background: $form-background;
     background: -ms-linear-gradient(right, rgba($form-background, 1) 60%, rgba($form-background, 0));
     background: linear-gradient(to left, rgba($form-background, 1) 60%, rgba($form-background, 0));
     border-radius: 0 $global-border-radius $global-border-radius 0;
-    pointer-events: none;
   }
 
   /**
@@ -261,27 +266,29 @@ $form-animation-speed: $global-animation-speed-fast;
   &::after {
     content: "";
     position: absolute;
+    z-index: 0;
     top: 50%;
     margin-bottom: $global-spacing-unit-tiny;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    right: $global-spacing-unit-small;
-    width: $global-spacing-unit-small;
-    height: $global-spacing-unit-small;
+    right: $form-icon-size;
+    width: $form-icon-size;
+    height: $form-icon-size;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAYAAAA5DDySAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPVJREFUeNrk2s0NgzAMhmFno47EKGzQETpSR2CEjkCjyEg0aiAhP7Y/IuUSuLyPhDg4RLycc5PfH78fBLy48/3TyYcrb1iEv53RISxCqpM4dkVGSMSHTakHKAhH8RvAExXhLD58AvziCw0hJz7+E8AgFMcjIVyOR0CojreM0CzeIkLzeEsI3eItIHSP14wwLF4jwvB4TQhi8RoQxOMlEdTESyCoix+JoDZ+BIL6+J4IZuJ7IJiLb4lgNr4Fgvn4GgSY+CsIcPGFCDP0bCIDAXowU4OANZ8sRMCcUGciYN9ROEGAv6BxhHCP+B3CvLubsEjFfwUYAKjtGJxFvDJsAAAAAElFTkSuQmCC");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-    pointer-events: none;
   }
 }
 
 .c-form-select__dropdown {
-  padding: $global-spacing-unit-tiny $global-spacing-unit-tiny;
+  position: relative;
+  z-index: 1;
+  padding: $global-spacing-unit-tiny $form-icon-offset $global-spacing-unit-tiny $global-spacing-unit-tiny;
   width: 100%;
   border: $form-border;
   border-radius: $global-border-radius;
-  background-color: $form-background;
+  background-color: transparent;
   box-shadow: $form-shadow;
   transition: box-shadow $form-animation-speed ease, border-color $form-animation-speed ease;
   outline: 0;
@@ -297,6 +304,27 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-select__dropdown:focus {
   border-color: $form-background;
   box-shadow: $form-shadow-focus;
+}
+
+/**
+ * Displays the fade out gradient from .c-form-select::before above the <select>
+ * input on browsers that support pointer-events (and feature detection).
+ * This prevents the gradient from blocking clicks on browsers that don't support
+ * pointer-events. (IE)
+ */
+@supports (pointer-events:none) {
+  .c-form-select {
+    &::before,
+    &::after {
+      display: block;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  .c-form-select__dropdown {
+    z-index: 0;
+  }
 }
 
 /* Form checkbox inputs

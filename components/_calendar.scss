@@ -204,6 +204,8 @@ $calendar-navigation-modifiers: (
   -webkit-transition: background $calendar-animation-speed, color $calendar-animation-speed, transform $calendar-animation-speed;
   transition: background $calendar-animation-speed, color $calendar-animation-speed, transform $calendar-animation-speed; /* [3] */
 
+  /* Box-shadow to smooth pixel border is hidden on high resolution displays */
+  /* stylelint-disable indentation, media-feature-name-no-unknown */
   @media
     only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (min--moz-device-pixel-ratio: 2),
@@ -211,8 +213,9 @@ $calendar-navigation-modifiers: (
     only screen and (min-device-pixel-ratio: 2),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    box-shadow: none; /* [4] */
+      box-shadow: none; /* [4] */
   }
+  /* stylelint-enable */
 
   @include hocus() {
     background: color(brand);
