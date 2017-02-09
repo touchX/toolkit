@@ -1,3 +1,21 @@
+# Toolkit v1.6.0
+
+## Toolkit Core v1.5.0
+
+## 1. Fixes
+- [ie9] Improvements to `c-form-select` functionality.
+- [[Stylelint]](http://stylelint.io) Fix linting command and amend errors.
+
+## Toolkit UI v1.6.0
+
+## 1. Fixes
+- [tile] Allow `c-tile__link` to use either `<a>` or `<button>` allowing for more semantic use.
+- [c-form-select] Improvements to functionality on IE.
+- [[Stylelint]](http://stylelint.io) Fix linting command.
+
+===
+
+
 # Toolkit v1.5.0
 
 ## Toolkit Core v1.4.0
