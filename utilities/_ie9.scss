@@ -18,6 +18,13 @@
   }
 
   /**
+   * Remove custom icon offset.
+   */
+  .c-form-select__dropdown {
+    padding-right: $global-spacing-unit-tiny;
+  }
+
+  /**
    * Remove custom icon and gradient overflow on form select inputs
    */
   .c-form-select::before,
