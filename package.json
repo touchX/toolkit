@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha ./test/sass.js",
-    "test-circle": "npm run build && npm run test",
-    "lint": "stylelint ./**/*.scss --syntax scss",
-    "build": "mkdir build && cat ./test/_build.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > build/toolkit.css"
+    "test-circle": "npm run lint && npm run test && npm run build",
+    "lint": "stylelint '**/*.scss' --syntax scss",
+    "build": "mkdir -p ./build && cat ./test/_build.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > build/toolkit.css"
   },
   "pre-commit": [
     "lint",
@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sky-toolkit-core": "1.4.0"
+    "sky-toolkit-core": "1.5.0"
   }
 }
