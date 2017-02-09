@@ -1,5 +1,13 @@
 # Toolkit Core v1.4.0
 
+## 1. Fixes
+- [ie9] Improvements to `c-form-select` functionality.
+- [[Stylelint]](http://stylelint.io) Fix linting command and amend errors.
+
+===
+
+# Toolkit Core v1.4.0
+
 ## 1. Dependencies
 - [[sky-css-lint]](https://github.com/sky-uk/css) Use sky-css-lint for CSS / Sass linting.
 
