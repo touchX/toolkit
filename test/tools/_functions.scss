@@ -10,14 +10,14 @@
 
 @mixin functions_before() {
   $text: (
-    testKey: (
+    testkey: (
       small: 18px,
       large: 20px
     )
   ) !global;
 
   $gradients: (
-    testKey: (
+    testkey: (
       end: #000,
       mid: #fff
     )
@@ -52,21 +52,21 @@
   @include functions_before();
 
   @include test("should return a large size value for given key") {
-    $actual: text("testKey", large);
+    $actual: text("testkey", large);
     $expected: 20px;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return a small size value for given key") {
-    $actual: text("testKey", small);
+    $actual: text("testkey", small);
     $expected: 18px;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return a large size value if no variant is provided") {
-    $actual: text("testKey");
+    $actual: text("testkey");
     $expected: 20px;
 
     @include assert-equal($actual, $expected);
@@ -80,21 +80,21 @@
   @include functions_before();
 
   @include test("should return an end hex value for given key") {
-    $actual: gradient("testKey", end);
+    $actual: gradient("testkey", end);
     $expected: #000;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return a mid hex value for given key") {
-    $actual: gradient("testKey", mid);
+    $actual: gradient("testkey", mid);
     $expected: #fff;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return an end hex if no variant is provided") {
-    $actual: gradient("testKey");
+    $actual: gradient("testkey");
     $expected: #000;
 
     @include assert-equal($actual, $expected);

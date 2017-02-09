@@ -17,7 +17,6 @@
   ) !global;
 }
 
-
 // Add color to color map (settings/_colors)
 // ===========================================
 
@@ -26,14 +25,14 @@
 
   @include test("should add new key and value to color map") {
     @include assert("merges color map with new values") {
-      @include input {
+      @include input() {
         @include add-color($test-key, $test-value);
         color: map-get($colors, white);
         background: map-get($colors, black);
         border-color: map-get($colors, $test-key);
       }
 
-      @include expect {
+      @include expect() {
         color: #fff;
         background: #000;
         border-color: $test-value;

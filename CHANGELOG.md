@@ -1,3 +1,11 @@
+# Toolkit Core v1.5.0
+
+## 1. Fixes
+- [ie9] Improvements to `c-form-select` functionality.
+- [[Stylelint]](http://stylelint.io) Fix linting command and amend errors.
+
+===
+
 # Toolkit Core v1.4.0
 
 ## 1. Dependencies
