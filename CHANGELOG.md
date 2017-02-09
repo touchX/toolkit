@@ -1,4 +1,4 @@
-# Toolkit Core v1.4.0
+# Toolkit Core v1.5.0
 
 ## 1. Fixes
 - [ie9] Improvements to `c-form-select` functionality.
