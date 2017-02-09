@@ -26,11 +26,11 @@
 
   @include test("should return a divider gradient for the bottom edge for when no direction is set") {
     @include assert("compiles divider gradient for the bottom edge") {
-      @include input {
+      @include input() {
         @include divider-gradient();
       }
 
-      @include expect {
+      @include expect() {
         background: #c0c0c0;
         background: -webkit-linear-gradient(left, rgba(192, 192, 192, 0), #c0c0c0, rgba(192, 192, 192, 0));
         background: -moz-linear-gradient(left, rgba(192, 192, 192, 0), #c0c0c0, rgba(192, 192, 192, 0));
@@ -43,11 +43,11 @@
 
   @include test("should return a divider gradient for the right edge when a right direction is set") {
     @include assert("compiles divider gradient for the right edge") {
-      @include input {
+      @include input() {
         @include divider-gradient(right);
       }
 
-      @include expect {
+      @include expect() {
         background: #c0c0c0;
         background: -webkit-linear-gradient(top, rgba(192, 192, 192, 0), #c0c0c0, rgba(192, 192, 192, 0));
         background: -moz-linear-gradient(top, rgba(192, 192, 192, 0), #c0c0c0, rgba(192, 192, 192, 0));
@@ -60,11 +60,11 @@
 
   @include test("should return a custom divider gradient for the right edge when a right direction and color is set") {
     @include assert("compiles a custom divider gradient for the right edge") {
-      @include input {
+      @include input() {
         @include divider-gradient(right, $divider-gradient-color);
       }
 
-      @include expect {
+      @include expect() {
         background: #bada55;
         background: -webkit-linear-gradient(top, rgba(186, 218, 85, 0), #bada55, rgba(186, 218, 85, 0));
         background: -moz-linear-gradient(top, rgba(186, 218, 85, 0), #bada55, rgba(186, 218, 85, 0));
@@ -76,17 +76,16 @@
   }
 }
 
-
 @include test-module("@mixin divider-shadow") {
   @include divider_before();
 
   @include test("should return a divider shadow for the bottom edge for when no direction is set") {
     @include assert("compiles divider shadow for the bottom edge") {
-      @include input {
+      @include input() {
         @include divider-shadow();
       }
 
-      @include expect {
+      @include expect() {
         background: -webkit-radial-gradient(50% 0%, rgba(74, 74, 74, 0.15), transparent 40%);
         background: -moz-radial-gradient(50% 0%, rgba(74, 74, 74, 0.15), transparent 40%);
         background: -ms-radial-gradient(50% 0%, rgba(74, 74, 74, 0.15), transparent 40%);
@@ -98,11 +97,11 @@
 
   @include test("should return a divider shadow for the right edge when a right direction is set") {
     @include assert("compiles divider shadow for the right edge") {
-      @include input {
+      @include input() {
         @include divider-shadow(right);
       }
 
-      @include expect {
+      @include expect() {
         background: -webkit-radial-gradient(0 50%, farthest-corner, rgba(74, 74, 74, 0.15), transparent 40%);
         background: -moz-radial-gradient(0 50%, farthest-corner, rgba(74, 74, 74, 0.15), transparent 40%);
         background: -ms-radial-gradient(0 50%, farthest-corner, rgba(74, 74, 74, 0.15), transparent 40%);
@@ -114,11 +113,11 @@
 
   @include test("should return a custom divider shadow for the right edge when a right direction and color is set") {
     @include assert("compiles a custom divider shadow for the right edge") {
-      @include input {
+      @include input() {
         @include divider-shadow(right, $divider-shadow-color);
       }
 
-      @include expect {
+      @include expect() {
         background: -webkit-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);
         background: -moz-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);
         background: -ms-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);

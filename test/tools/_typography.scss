@@ -26,11 +26,11 @@
 
   @include test("should return font size in pixels and rems") {
     @include assert("pixels and rems should be compiled") {
-      @include input {
+      @include input() {
         @include font-size(test);
       }
 
-      @include expect {
+      @include expect() {
         font-size: 20px;
         font-size: 1rem;
       }
@@ -39,11 +39,11 @@
 
   @include test("should return the provided typography variant") {
     @include assert("small font size should be compiled") {
-      @include input {
+      @include input() {
         @include font-size(test, small);
       }
 
-      @include expect {
+      @include expect() {
         font-size: 18px;
         font-size: 0.9rem;
       }
