@@ -38,7 +38,6 @@
 // choosing, and with the additional responsive suffix (e.g. `\@large`).
 
 /* Width utilities will override any matching property declarations */
-/* stylelint-disable declaration-no-important */
 
 @mixin widths($widths-columns, $widths-breakpoint: null) {
 
@@ -94,5 +93,3 @@
     @include widths(1 2 3 4 5, \@#{$alias});
   }
 }
-
-/* stylelint-enable declaration-no-important */

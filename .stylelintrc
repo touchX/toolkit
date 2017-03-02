@@ -1,3 +1,6 @@
 {
-  "extends": "stylelint-config-sky-uk"
+  "extends": "stylelint-config-sky-uk",
+  "rules": {
+    "declaration-no-important": null
+  }
 }
