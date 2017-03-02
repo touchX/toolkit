@@ -450,7 +450,6 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-date,
 .c-form-input,
 .c-form-select__dropdown {
-
   .is-error &,
   &.is-error,
   &:invalid {
@@ -467,11 +466,9 @@ $form-animation-speed: $global-animation-speed-fast;
  * Change checkbox/radio indicator border color
  */
 .c-form-checkbox__caption {
-
   .is-error &,
   &.is-error,
   &:invalid {
-
     &::before {
       border-color: color(error);
     }

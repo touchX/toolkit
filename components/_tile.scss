@@ -369,6 +369,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   &::before {
     @include background-gradient($tile-gradient-default, "radial");
   }
+
   .c-tile__link &::after {
     @include background-gradient($tile-gradient-default-hover, "radial");
   }
@@ -379,6 +380,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   &::before {
     @include background-gradient($tile-gradient-default);
   }
+
   .c-tile__link &::after {
     @include background-gradient($tile-gradient-default-hover);
   }
@@ -389,6 +391,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   &::before {
     background: color(white);
   }
+
   &::after {
     @include background-gradient(mid, vertical-invert, 0% 50%);
   }
@@ -424,7 +427,6 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     @if map-has-key($gradients, $brand) {
       // For each brand generate a tile theme class i.e. .c-tile--sky-1
       .c-tile--#{$brand} {
-
         .c-tile__link:hover {
           color: color(white);
         }

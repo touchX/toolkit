@@ -23,7 +23,6 @@ $shine-offset: 25%;
  * c-shine-context is applied to the parent node in which the shine is contained
  */
 .c-shine-context {
-
   .c-shine {
     opacity: 0;
   }
@@ -31,7 +30,6 @@ $shine-offset: 25%;
   &:hover .c-shine {
     opacity: 1;
   }
-
 }
 
 /**
