@@ -8,6 +8,7 @@
  * This class requires a set height on the parent element to function correctly.
  */
 .u-vertical-align-center {
+  /*! autoprefixer: off */
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -21,6 +22,7 @@
  * element.
  */
 .u-vertical-align-parent {
+  /*! autoprefixer: off */
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;

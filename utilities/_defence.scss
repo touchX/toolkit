@@ -10,7 +10,9 @@
 /**
  * Repair alterations to the current masthead caused by the Toolkit.
  */
-#skycom-masthead-wrapper { /* stylelint-disable-line selector-no-id */
+/* stylelint-disable-next-line selector-no-id */
+#skycom-masthead-wrapper {
+  /*! autoprefixer: off */
   background: #fff !important;
   font-size: 16px !important;
   box-sizing: content-box !important;
@@ -29,6 +31,7 @@
  * Repair alterations to the current footer caused by the Toolkit.
  */
 .skycom-footer {
+  /*! autoprefixer: off */
   font-size: 16px !important;
   box-sizing: content-box !important;
   -moz-osx-font-smoothing: initial !important;
