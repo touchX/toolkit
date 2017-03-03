@@ -41,6 +41,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * 1. Forces tile markers to sit above corresponding panels
  */
 .c-tile {
+  /*! autoprefixer: off */
   position: relative;
   background-color: $tile-border-colour;
   box-shadow: $tile-shadow;
@@ -197,6 +198,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   will-change: transform;
 
   .c-tile__link:hover & {
+    /*! autoprefixer: off */
     -ms-transform: scale(1.05, 1.05);
     transform: scale(1.05, 1.05);
   }
@@ -366,6 +368,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
 // Styling for default tiles
 .c-tile__body {
+  /*! autoprefixer: off */
   &::before {
     @include background-gradient($tile-gradient-default, "radial");
   }
@@ -377,6 +380,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
 // Styling for default tiles (with split image)
 .c-tile__caption {
+  /*! autoprefixer: off */
   &::before {
     @include background-gradient($tile-gradient-default);
   }
@@ -388,6 +392,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
 // Styling for full tiles
 .c-tile--full .c-tile__body {
+  /*! autoprefixer: off */
   &::before {
     background: color(white);
   }
@@ -427,6 +432,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     @if map-has-key($gradients, $brand) {
       // For each brand generate a tile theme class i.e. .c-tile--sky-1
       .c-tile--#{$brand} {
+        /*! autoprefixer: off */
         .c-tile__link:hover {
           color: color(white);
         }

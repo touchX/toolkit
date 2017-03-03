@@ -264,6 +264,7 @@ $form-animation-speed: $global-animation-speed-fast;
    * Custom dropdown indicator icon
    */
   &::after {
+    /*! autoprefixer: off */
     content: "";
     position: absolute;
     z-index: 0;

@@ -49,6 +49,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   overflow: hidden;
 
   &::after {
+    /*! autoprefixer: off */
     content: ""; /* [1] */
     position: absolute; /* [2] */
     width: $select-icon-width; /* [3] */
@@ -114,6 +115,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   padding-right: $select-icon-width / 2 + $select-icon-width;
 
   &::after {
+    /*! autoprefixer: off */
     -ms-transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);
