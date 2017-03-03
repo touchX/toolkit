@@ -129,9 +129,14 @@ $form-animation-speed: $global-animation-speed-fast;
 
 /**
  * For use on large text inputs such as textareas
+ *
+ * 1. As we no longer need to center our text, we can reset the line-height and
+ *    use standard box-model padding.
  */
 .c-form-input--long {
   height: 6em;
+  padding: $global-spacing-unit-tiny; /* [1] */
+  line-height: $global-line-height / $global-font-size; /* [1] */
 }
 
 /* Form date inputs
