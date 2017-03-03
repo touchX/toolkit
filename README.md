@@ -13,7 +13,7 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 * [Installation](#installation)
 * [Requirements](#requirements)
 * [Versioning](#versioning)
-* [Champions](#champions)
+* [Maintainers](#maintainers)
 * [Contributing](#contributing)
 
 ## Goals
@@ -74,12 +74,7 @@ The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the 
 
 ## Maintainers
 
-| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93)<br />[](mailto:joseph.bell@sky.uk) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale)<br />[](mailto:joseph.dinsdale@sky.uk) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas)<br />[](mailto:aaron.thomas@sky.uk) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin)<br />[](mailto:steve.duffin@sky.uk) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson)<br />[](mailto:sam.kitson@sky.uk) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt)<br />[](mailto:luke.barratt@sky.uk)
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-
-## Champions
-
-| [![Greg Pratt](https://avatars.githubusercontent.com/gregorypratt?s=100)<br /><sub>Greg Pratt</sub>](https://github.com/gregorypratt)<br />[](mailto:gregory.pratt@sky.uk) | [![Rich Gorman](https://avatars.githubusercontent.com/coderas?s=100)<br /><sub>Rich Gorman</sub>](https://github.com/coderas)<br />[](mailto:richard.gorman@sky.uk) | [![Alex Fenton](https://avatars.githubusercontent.com/afenton90?s=100)<br /><sub>Alex Fenton</sub>](https://github.com/afenton90)<br />[](mailto:alexander.fenton@sky.uk) | [![Chris Vernon](https://avatars.githubusercontent.com/welikeideas?s=100)<br /><sub>Chris Vernon</sub>](https://github.com/welikeideas)<br />[](mailto:christopher.vernon@sky.uk) | [![Stefan McCready](https://avatars.githubusercontent.com/StefanMcCready?s=100)<br /><sub>Stefan McCready</sub>](https://github.com/StefanMcCready)<br />[](mailto:stefan.mccready@sky.uk) | [![Djenan Kozic](https://avatars.githubusercontent.com/Djenan?s=100)<br /><sub>Djenan Kozic</sub>](https://github.com/Djenan)<br />[](mailto:djenan.kozic@sky.uk) |
+| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
 ## Contributing
@@ -88,8 +83,17 @@ We appreciate **any** contribution to the Toolkit, please check out [CONTRIBUTIN
 
 We keep a list of features and bugs [in the issue tracker](https://github.com/sky-uk/toolkit/issues).
 
+### Champions
+
+If you need any support getting to grips with the Toolkit, pop over to your tribe Toolkit Champion:
+
+| CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
+|---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
+| [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
+| [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [John Bower](https://github.com/beclamide)    | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
+|                                                   |                                                |                                               | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+
 **Special thanks to the following contributors:**
 
 - [Harry Roberts](https://github.com/csswizardry)
 - [Richard McIntyre](https://github.com/mackstar)
-- [Ross Warren](https://github.com/rosswarren)
