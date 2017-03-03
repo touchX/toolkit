@@ -13,7 +13,7 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 * [Installation](#installation)
 * [Requirements](#requirements)
 * [Versioning](#versioning)
-* [Champions](#champions)
+* [Maintainers](#maintainers)
 * [Contributing](#contributing)
 
 ## Goals
