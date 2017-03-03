@@ -87,10 +87,10 @@ We keep a list of features and bugs [in the issue tracker](https://github.com/sk
 
 If you need any support getting to grips with the Toolkit, pop over to your tribe Toolkit Champion:
 
-| DA                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
+| CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
-| [Mahesh Jagadeesan](https://github.com/maheshjag) | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
-|                                                   | [Djenan Kozic](https://github.com/djenan)      | [John Bower](https://github.com/beclamide)    | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
+| [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
+| [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [John Bower](https://github.com/beclamide)    | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
 |                                                   |                                                |                                               | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
 
 **Special thanks to the following contributors:**
