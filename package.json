@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Sky's CSS Toolkit",
   "main": "toolkit.scss",
   "scripts": {
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit#readme",
   "dependencies": {
-    "sky-toolkit-ui": "1.6.0"
+    "sky-toolkit-ui": "1.7.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.0",
+    "pre-commit": "^1.2.2"
   }
 }
