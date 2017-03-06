@@ -23,7 +23,6 @@ $shine-offset: 25%;
  * c-shine-context is applied to the parent node in which the shine is contained
  */
 .c-shine-context {
-
   .c-shine {
     opacity: 0;
   }
@@ -31,7 +30,6 @@ $shine-offset: 25%;
   &:hover .c-shine {
     opacity: 1;
   }
-
 }
 
 /**
@@ -39,6 +37,7 @@ $shine-offset: 25%;
  * it's context, and move it to it's natural position on hover.
  */
 .c-shine__rail {
+  /*! autoprefixer: off */
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
   transition: $global-animation-speed ease-out;
@@ -51,6 +50,7 @@ $shine-offset: 25%;
    * Reverse modifier for shines to move LTR rather than RTL
    */
   .c-shine--rev & {
+    /*! autoprefixer: off */
     -ms-transform: translateX(100%);
     transform: translateX(100%);
   }
@@ -101,6 +101,7 @@ $shine-offset: 25%;
   }
 
   .c-shine-context:hover & {
+    /*! autoprefixer: off */
     -ms-transform: none;
     transform: none;
   }

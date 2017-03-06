@@ -129,9 +129,14 @@ $form-animation-speed: $global-animation-speed-fast;
 
 /**
  * For use on large text inputs such as textareas
+ *
+ * 1. As we no longer need to center our text, we can reset the line-height and
+ *    use standard box-model padding.
  */
 .c-form-input--long {
   height: 6em;
+  padding: $global-spacing-unit-tiny; /* [1] */
+  line-height: $global-line-height / $global-font-size; /* [1] */
 }
 
 /* Form date inputs
@@ -264,6 +269,7 @@ $form-animation-speed: $global-animation-speed-fast;
    * Custom dropdown indicator icon
    */
   &::after {
+    /*! autoprefixer: off */
     content: "";
     position: absolute;
     z-index: 0;
@@ -450,7 +456,6 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-date,
 .c-form-input,
 .c-form-select__dropdown {
-
   .is-error &,
   &.is-error,
   &:invalid {
@@ -467,11 +472,9 @@ $form-animation-speed: $global-animation-speed-fast;
  * Change checkbox/radio indicator border color
  */
 .c-form-checkbox__caption {
-
   .is-error &,
   &.is-error,
   &:invalid {
-
     &::before {
       border-color: color(error);
     }

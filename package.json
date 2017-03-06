@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,17 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sky-toolkit-core": "1.5.0"
+    "sky-toolkit-core": "1.6.0"
+  },
+  "devDependencies": {
+    "eyeglass": "^1.2.1",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.0",
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }

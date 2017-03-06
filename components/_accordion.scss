@@ -75,6 +75,7 @@ $accordion-icon-size: 20px !default;
    * 6. Animates the transform property on transition.
    */
   &::after {
+    /*! autoprefixer: off */
     content: "";
     position: absolute; /* [1] */
     top: 50%; /* [1] */
@@ -133,6 +134,7 @@ $accordion-icon-size: 20px !default;
    */
   .c-accordion__label {
     &::after {
+      /*! autoprefixer: off */
       -ms-transform: translateY(-50%) rotate(180deg);
       transform: translateY(-50%) rotate(180deg);
     }

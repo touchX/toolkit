@@ -75,6 +75,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
    * 8. Animates the transform property on transition.
    */
   &::after {
+    /*! autoprefixer: off */
     content: ""; /* [1] */
     position: absolute; /* [2] */
     top: $global-spacing-unit-small - 4px; /* [3] */
@@ -107,6 +108,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  * 6. Sets the transform to animate from the top of the element.
  */
 .c-dropdown__list {
+  /*! autoprefixer: off */
   display: block;
   width: 100%;
   position: absolute;
@@ -158,6 +160,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  * 4. As we can't hide the overflow, a border-radius is set on the last-child.
  */
 .c-dropdown__link {
+  /*! autoprefixer: off */
   @include font-size(text-lead-small);
   display: block;
   width: 100%;
@@ -190,6 +193,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
    * 2. Sets text to its correct height to animate upon.
   */
   .c-dropdown__list {
+    /*! autoprefixer: off */
     opacity: 1;
     -ms-transform: scaleY(1); /* [1] */
     transform: scaleY(1); /* [1] */
@@ -197,6 +201,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
   }
 
   .c-dropdown__link {
+    /*! autoprefixer: off */
     opacity: 1;
     -ms-transform: scaleY(1); /* [2] */
     transform: scaleY(1); /* [2] */
@@ -212,6 +217,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
     border-radius: $dropdown-border-radius $dropdown-border-radius 0 0; /* [1] */
 
     &::after {
+      /*! autoprefixer: off */
       -ms-transform: translateZ(0) rotate(180deg); /* [2] */
       transform: translateZ(0) rotate(180deg); /* [2] */
     }
