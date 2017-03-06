@@ -19,5 +19,9 @@
   "homepage": "https://github.com/sky-uk/toolkit#readme",
   "dependencies": {
     "sky-toolkit-ui": "1.7.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.0",
+    "pre-commit": "^1.2.2"
   }
 }
