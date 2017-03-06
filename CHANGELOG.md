@@ -1,3 +1,27 @@
+# Toolkit v1.7.0
+
+## Toolkit Core v1.6.0
+
+### 1. Dependencies
+- [stylelint-config-sky-uk](https://github.com/sky-uk/css) implemented for linting.
+- Dependencies refactored to a flat structure.
+
+### 2. Fixes
+- [Autoprefixer] Utilise `/*! autoprefixer: off */` comments to prevent Autoprefixer rewrites.
+
+## Toolkit UI v1.7.0
+
+### 1. Dependencies
+- [stylelint-config-sky-uk](https://github.com/sky-uk/css) implemented for linting.
+- Dependencies refactored to a flat structure.
+
+### 2. Fixes
+- [Autoprefixer] Utilise `/*! autoprefixer: off */` comments to prevent Autoprefixer rewrites.
+- [forms] Fix oversized line-height on `c-form-input--long`.
+
+
+===
+
 # Toolkit v1.6.0
 
 ## Toolkit Core v1.5.0
