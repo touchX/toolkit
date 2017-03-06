@@ -17,6 +17,7 @@
  *    render text using sub-pixel anti-aliasing.
  */
 html {
+  /*! autoprefixer: off */
   @include background-page();
   font-size: ($global-font-size / 16px) * 1em;
   line-height: $global-line-height / $global-font-size;

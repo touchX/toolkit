@@ -1,1 +1,6 @@
-node_modules/sky-css-lint/.stylelintrc
+{
+  "extends": "stylelint-config-sky-uk",
+  "rules": {
+    "declaration-no-important": null
+  }
+}

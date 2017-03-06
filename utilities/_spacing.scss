@@ -13,7 +13,6 @@
  */
 
 /* Spacing utilities will override any matching property declarations */
-/* stylelint-disable declaration-no-important */
 
 $global-spacing-directions: (
   null,
@@ -48,19 +47,14 @@ $global-spacing-sizes: (
     }
 
     @each $size, $value in $global-spacing-sizes {
-
       .u-#{$property}#{$direction}#{$all}#{$size} {
         #{$property}#{$direction}: $value !important;
       }
-
     }
 
     .u-#{$property}#{$direction}#{$all}-none {
       #{$property}#{$direction}: 0 !important;
     }
-
   }
 
 }
-
-/* stylelint-enable */

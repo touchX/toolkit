@@ -2,9 +2,6 @@
    UTILITIES / DEFENCE
    ========================================================================== */
 
-/* Defence styles need to fully override existing legacy styles */
-/* stylelint-disable selector-no-id, declaration-no-important  */
-
 /**
  * Sets classic-masthead sass-mq breakpoint.
  */
@@ -13,7 +10,9 @@
 /**
  * Repair alterations to the current masthead caused by the Toolkit.
  */
+/* stylelint-disable-next-line selector-no-id */
 #skycom-masthead-wrapper {
+  /*! autoprefixer: off */
   background: #fff !important;
   font-size: 16px !important;
   box-sizing: content-box !important;
@@ -32,6 +31,7 @@
  * Repair alterations to the current footer caused by the Toolkit.
  */
 .skycom-footer {
+  /*! autoprefixer: off */
   font-size: 16px !important;
   box-sizing: content-box !important;
   -moz-osx-font-smoothing: initial !important;
@@ -69,5 +69,3 @@
     max-width: 1140px !important;
   }
 }
-
-/* stylelint-enable */

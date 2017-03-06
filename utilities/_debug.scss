@@ -11,12 +11,10 @@
    * already reversed.
    */
   .o-layout--reverse {
-
     > [class*="u-push"],
     > [class*="u-pull"] {
       outline: 10px solid red;
     }
-
   }
 
   /**
@@ -28,7 +26,6 @@
     .o-layout > & {
       outline: none;
     }
-
   }
 
 }

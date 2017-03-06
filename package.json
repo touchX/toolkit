@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit-core",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "The core of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
@@ -24,14 +24,17 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-core#readme",
   "dependencies": {
-    "mocha": "^2.4.5",
-    "node-sass": "^3.4.2",
-    "pre-commit": "^1.1.2",
-    "sass-mq": "^3.2.6",
-    "sass-true": "2.0.3",
-    "sky-css-lint": "1.0.0"
+    "sass-mq": "^3.3.2"
   },
   "devDependencies": {
-    "eyeglass": "^1.1.2"
+    "eyeglass": "^1.2.1",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.0",
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }
