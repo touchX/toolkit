@@ -96,12 +96,16 @@
 // General purpose responsive mixin
 // ===========================================
 
-// This mixin can be applied to any class and will produce classes that apply at breakpoints as well as one that applies to all breakpoints
+// This mixin can be applied to any class and will produce classes that apply at breakpoints as well as one that applies to all breakpoints.
+// The mixin takes one argument - a list of keys separated by spaces.
+// The keys in the argument must be present in the $mq-breakpoints map (small, medium, large, x-large).
+//
+// If no argument is provided, it is presumed that you want classes generating for all breakpoints in the $mq-breakpoints map.
 //
 // For example:
 //
 // .foo {
-//   @include responsive-utility() {
+//   @include responsivise() {
 //     color: red;
 //   }
 // }
@@ -112,23 +116,75 @@
 //   color: red;
 // }
 //
-// And for each breakpoint in $mq-breakpoints (example below for mobile breakpoint):
+// And for each breakpoint key in $mq-breakpoints (example below for small breakpoint):
 //
-// @media (min-width: 20em) {
-//   .foo\@mobile {
+// @media (min-width: 420px) {
+//   .foo\@small {
 //     color: red;
 //   }
 // }
+//
+// If an argument list is provided and it contains items that are keys in the $mq-breakpoints map,
+// responsive classes will be compiled for ONLY those breakpoints.
+//
+// For example:
+//
+// .foo {
+//   @include responsivise(small medium) {
+//     color: red;
+//   }
+// }
+//
+// Will produce the following:
+//
+// .foo {
+//   color: red;
+// }
+//
+// And for each item in the argument list that matches a breakpoint key in $mq-breakpoints:
+//
+// @media (min-width: 420px) {
+//   .foo\@small {
+//     color: red;
+//   }
+// }
+//
+// @media (min-width: 740px) {
+//   .foo\@medium {
+//     color: red;
+//   }
+// }
+//
+// If an argument list is provided but none of the items match any of the keys in the $mq-breakpoints map,
+// the class will be printed once with no media query wrapper:
+//
+// .foo {
+//   @include responsivise(nonsense gobbledigook) {
+//     color: red;
+//   }
+// }
+//
+// Will produce the following:
+//
+// .foo {
+//   color: red;
+// }
+//
 
-@mixin responsive-utility() {
+@mixin responsivise($breakpoints: $mq-breakpoints) {
   @at-root #{&} {
     @content;
   }
-  @each $alias, $bp in $mq-breakpoints {
-    @include mq($from: $bp) {
-      @at-root #{&}\@#{$alias} {
-        @content;
+  @each $alias, $bp in $breakpoints {
+    @if map-has-key($mq-breakpoints, $alias) {
+      @include mq($from: map-get($mq-breakpoints, $alias)) {
+        @at-root #{&}\@#{$alias} {
+          @content;
+        }
       }
+    }
+    @else {
+      @warn "Unrecognised breakpoint - `#{$alias}` does not match any of the keys in the $mq-breakpoints map";
     }
   }
 }
