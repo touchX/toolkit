@@ -93,7 +93,7 @@
   }
 }
 
-// General purpose responsive mixin
+// Responsivize mixin
 // ===========================================
 
 // This mixin can be applied to any class and will produce classes that apply at breakpoints as well as one that applies to all breakpoints.
@@ -155,23 +155,8 @@
 //   }
 // }
 //
-// If an argument list is provided but none of the items match any of the keys in the $mq-breakpoints map,
-// the class will be printed once with no media query wrapper:
-//
-// .foo {
-//   @include responsivise(nonsense gobbledigook) {
-//     color: red;
-//   }
-// }
-//
-// Will produce the following:
-//
-// .foo {
-//   color: red;
-// }
-//
 
-@mixin responsivise($breakpoints: $mq-breakpoints) {
+@mixin responsivize($breakpoints: $mq-breakpoints) {
   @at-root #{&} {
     @content;
   }

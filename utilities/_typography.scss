@@ -10,7 +10,7 @@
 
 @each $alignment-position in left center right justify {
   .u-text-#{$alignment-position} {
-    @include responsivise() {
+    @include responsivize() {
       text-align: $alignment-position !important;
     }
   }
