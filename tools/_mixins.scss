@@ -132,19 +132,3 @@
     }
   }
 }
-
-//  Text alignment mixin to generate breakpoint specific (using the responsive-utility mixin) and general use text alignment classes
-// ===========================================
-
-// To be used in the typography utilities file as so:
-// @include test-alignments(left center right justify);
-
-@mixin text-alignments($alignment-positions) {
-  @each $alignment-position in $alignment-positions {
-    .u-text-#{$alignment-position} {
-      @include responsive-utility() {
-        text-align: $alignment-position !important;
-      }
-    }
-  }
-}
