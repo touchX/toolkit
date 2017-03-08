@@ -92,3 +92,59 @@
     clear: both;
   }
 }
+
+// General purpose responsive mixin
+// ===========================================
+
+// This mixin can be applied to any class and will produce classes that apply at breakpoints as well as one that applies to all breakpoints
+//
+// For example:
+//
+// .foo {
+//   @include responsive-utility() {
+//     color: red;
+//   }
+// }
+//
+// Will produce the following:
+//
+// .foo {
+//   color: red;
+// }
+//
+// And for each breakpoint in $mq-breakpoints (example below for mobile breakpoint):
+//
+// @media (min-width: 20em) {
+//   .foo\@mobile {
+//     color: red;
+//   }
+// }
+
+@mixin responsive-utility() {
+  @at-root #{&} {
+    @content;
+  }
+  @each $alias, $bp in $mq-breakpoints {
+    @include mq($from: $bp) {
+      @at-root #{&}\@#{$alias} {
+        @content;
+      }
+    }
+  }
+}
+
+//  Text alignment mixin to generate breakpoint specific (using the responsive-utility mixin) and general use text alignment classes
+// ===========================================
+
+// To be used in the typography utilities file as so:
+// @include test-alignments(left center right justify);
+
+@mixin text-alignments($alignment-positions) {
+  @each $alignment-position in $alignment-positions {
+    .u-text-#{$alignment-position} {
+      @include responsive-utility() {
+        text-align: $alignment-position !important;
+      }
+    }
+  }
+}
