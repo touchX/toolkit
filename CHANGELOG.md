@@ -1,3 +1,10 @@
+# Toolkit UI v1.8.0
+
+## 1. Fixes
+- [shine] Adjusted positioning to provide greater flexibility when `transform`ing `c-shine-rail`.
+
+===
+
 # Toolkit UI v1.7.0
 
 ## 1. Dependencies
