@@ -57,7 +57,7 @@
 @include test-module("@mixin responsivize") {
   @include responsivize_before();
 
-  @include test("when no argument given to responisivize mixin") {
+  @include test("when no argument given to responisivize mixin - should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
     @include assert("should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
       @include input() {
         .foo {
@@ -99,7 +99,7 @@
     }
   }
 
-  @include test("when a list of arguments are provided to the responsivize mixin") {
+  @include test("when a list of arguments are provided to the responsivize mixin - should generate classes for each item in the argument list that matches map keys in the $mq-breakpoints map and one none specific class") {
     @include assert("should generate classes for each item in the argument list that matches map keys in the $mq-breakpoints map and one none specific class") {
       @include input() {
         .foo {
@@ -129,7 +129,7 @@
     }
   }
 
-  @include test("when the argument list contains items that do not match the keys in the $mq-breakpoint map") {
+  @include test("when the argument list contains items that do not match the keys in the $mq-breakpoint map - should only generate media queries for the items that match the $mq-breakpoint keys and one none specific class") {
     @include assert("should only generate media queries for the items that match the $mq-breakpoint keys and one none specific class") {
       @include input() {
         .foo {
