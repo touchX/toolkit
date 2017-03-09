@@ -6,21 +6,14 @@
 
 /* Text alignment utilities
    =========================================== */
+// @each loop to generate breakpoint specific (using the responsivize mixin) and general use text alignment classes
 
-.u-text-left {
-  text-align: left !important;
-}
-
-.u-text-center {
-  text-align: center !important;
-}
-
-.u-text-right {
-  text-align: right !important;
-}
-
-.u-text-justify {
-  text-align: justify !important;
+@each $alignment-position in left center right justify {
+  .u-text-#{$alignment-position} {
+    @include responsivize() {
+      text-align: $alignment-position !important;
+    }
+  }
 }
 
 /* Font style utilities

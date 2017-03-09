@@ -1,3 +1,14 @@
+# Toolkit Core v1.7.0
+
+## 1. Features
+- [mixins] responsivize mixin to make any class available at specified breakpoints
+
+## 2. Enhancements
+- [typography] used responsivize mixin to generate breakpoint specific text align classes
+- [hide] used responsivize mixin to generate breakpoint specific hide classes
+
+===
+
 # Toolkit Core v1.6.0
 
 ## 1. Dependencies

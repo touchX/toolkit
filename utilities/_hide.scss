@@ -3,9 +3,13 @@
    ========================================================================== */
 
 .u-hide-visually {
-  @include hide-visually();
+  @include responsivize() {
+    @include hide-visually();
+  }
 }
 
 .u-hide-completely {
-  @include hide-completely();
+  @include responsivize() {
+    @include hide-completely();
+  }
 }
