@@ -2,6 +2,7 @@
 // TEST / TOOLS / MIXINS
 // =============================================================================
 
+@import "sass-mq/mq";
 @import "../../tools/mixins";
 
 // Test config
@@ -14,6 +15,15 @@
   $colors: (
     white: #fff,
     black: #000,
+  ) !global;
+}
+
+@mixin responsivize_before() {
+  $mq-breakpoints: (
+    small:   420px,
+    medium:  740px,
+    large:   980px,
+    x-large: 1300px
   ) !global;
 }
 
@@ -36,6 +46,109 @@
         color: #fff;
         background: #000;
         border-color: $test-value;
+      }
+    }
+  }
+}
+
+// Responsivize mixin
+// ===========================================
+
+@include test-module("@mixin responsivize") {
+  @include responsivize_before();
+
+  @include test("when no argument given to responisivize mixin") {
+    @include assert("should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
+      @include input() {
+        .foo {
+          @include responsivize() {
+            color: red;
+          }
+        }
+      }
+
+      @include expect() {
+        .foo {
+          color: red;
+        }
+
+        @media (min-width: 420px) {
+          .foo\@small {
+            color: red;
+          }
+        }
+
+        @media (min-width: 740px) {
+          .foo\@medium {
+            color: red;
+          }
+        }
+
+        @media (min-width: 980px) {
+          .foo\@large {
+            color: red;
+          }
+        }
+
+        @media (min-width: 1300px) {
+          .foo\@x-large {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("when a list of arguments are provided to the responsivize mixin") {
+    @include assert("should generate classes for each item in the argument list that matches map keys in the $mq-breakpoints map and one none specific class") {
+      @include input() {
+        .foo {
+          @include responsivize(small medium) {
+            color: red;
+          }
+        }
+      }
+
+      @include expect() {
+        .foo {
+          color: red;
+        }
+
+        @media (min-width: 420px) {
+          .foo\@small {
+            color: red;
+          }
+        }
+
+        @media (min-width: 740px) {
+          .foo\@medium {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  @include test("when the argument list contains items that do not match the keys in the $mq-breakpoint map") {
+    @include assert("should only generate media queries for the items that match the $mq-breakpoint keys and one none specific class") {
+      @include input() {
+        .foo {
+          @include responsivize(small nonsense) {
+            color: red;
+          }
+        }
+      }
+
+      @include expect() {
+        .foo {
+          color: red;
+        }
+
+        @media (min-width: 420px) {
+          .foo\@small {
+            color: red;
+          }
+        }
       }
     }
   }
