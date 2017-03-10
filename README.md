@@ -51,7 +51,7 @@ See [sky.com/toolkit](http://sky.com/toolkit) for full individual component docu
 For rapid prototyping and static sites you can include our latest compiled CSS in the `<head>` of your page.
 
 ```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.8.0/toolkit.css">
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.8.1/toolkit.css">
 ```
 
 **We strongly advise not to use this method in live projects**.
@@ -82,7 +82,7 @@ To support IE9+, you **must** include the following at the top of your `index.ht
 
 ## Usage
 
-Once installed, include `sky-toolkit-core` at the top of your global `.scss` file. 
+Once installed, include `sky-toolkit-core` at the top of your global `.scss` file.
 
 This is required by all `sky-toolkit-ui` components.
 
