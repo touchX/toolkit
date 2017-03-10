@@ -108,14 +108,6 @@ There is the option to import all components, however, we strongly recommend onl
 @import "sky-toolkit-ui/all";
 ```
 
-### Webpack Helper
-
-If you're using Webpack, you may want to utilise Toolkit's settings / tools within extra individual components. Using the following import at the top of your component's `.scss` file will provide that feature without outputting any CSS:
-
-```css
-@import "sky-toolkit-core/tools";
-```
-
 ## Versioning
 
 Toolkit follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
