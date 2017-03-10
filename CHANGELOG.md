@@ -1,3 +1,10 @@
+# Toolkit UI v1.8.1
+
+## 1. Patches
+- [shine] Remove `opacity` animation from `c-shine-rail` and add to `c-shine-context`.
+
+===
+
 # Toolkit UI v1.8.0
 
 ## 1. Fixes
