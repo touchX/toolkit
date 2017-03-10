@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
