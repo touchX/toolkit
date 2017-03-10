@@ -12,6 +12,7 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 * [Structure](#structure)
 * [Installation](#installation)
 * [Requirements](#requirements)
+* [Usage](#usage)
 * [Versioning](#versioning)
 * [Maintainers](#maintainers)
 * [Contributing](#contributing)
@@ -43,19 +44,18 @@ $ npm install sky-toolkit --save
  * Include [Eyeglass](https://github.com/sass-eyeglass/eyeglass) in your [build tools](https://github.com/sass-eyeglass/eyeglass#building-sass-files-with-eyeglass-support) **or**
  * Set `node_modules` in your `includedPaths`
 
-See [sky.com/toolkit](http://sky.com/toolkit) for full documentation and information on how to [implement the Toolkit](http://sky.com/toolkit/getting-started) in your project.
+See [sky.com/toolkit](http://sky.com/toolkit) for full individual component documentation.
 
 ### Compiled
 
 For rapid prototyping and static sites you can include our latest compiled CSS in the `<head>` of your page.
 
 ```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.8.0/toolkit.css">
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.8.1/toolkit.css">
 ```
 
 **We strongly advise not to use this method in live projects**.
 Use `npm` installation to benefit from the Toolkit's modularity and extensibility.
-
 
 ## Requirements
 
@@ -68,9 +68,49 @@ If you're using [**webpack**](https://webpack.github.io/) you'll also need:
 
 * [sass-loader](https://github.com/jtangelder/sass-loader) (3.1 or greater)
 
+### Supporting IE9+
+
+To support IE9+, you **must** include the following at the top of your `index.html` / default container view.
+
+```html
+<!DOCTYPE html>
+<!--[if IE 9 ]>               <html lang="en-GB" class="ie9"> <![endif]-->
+<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]—>
+<head>
+  ...
+```
+
+## Usage
+
+Once installed, include `sky-toolkit-core` at the top of your global `.scss` file.
+
+This is required by all `sky-toolkit-ui` components.
+
+```css
+@import "sky-toolkit-core/all";
+```
+
+Following that, you can import individual toolkit-ui components and your own project-specific styles, for example:
+
+```css
+@import "sky-toolkit-core/all";
+
+@import "sky-toolkit-ui/components/typography";
+@import "sky-toolkit-ui/components/tile";
+@import "sky-toolkit-ui/components/panel";
+
+@import "your-component-here";
+```
+
+There is the option to import all components, however, we strongly recommend only importing the individual components required in your project.
+
+```css
+@import "sky-toolkit-ui/all";
+```
+
 ## Versioning
 
-The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
+Toolkit follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 ## Maintainers
 
@@ -85,7 +125,7 @@ We keep a list of features and bugs [in the issue tracker](https://github.com/sk
 
 ### Champions
 
-If you need any support getting to grips with the Toolkit, pop over to your tribe Toolkit Champion:
+If you need any support getting to grips with the Toolkit, pop over to your tribe champion:
 
 | CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
