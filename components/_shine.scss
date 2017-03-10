@@ -90,16 +90,20 @@ $shine-size: 45px;
  * Applied to the parent node in which the shine is contained, animating shine
  * rails on hover.
  */
-.c-shine-context:hover {
+.c-shine-context {
   /*! autoprefixer: off */
   .c-shine__rail {
-    opacity: 1;
-    -ms-transform: translateX(25%);
-    transform: translateX(25%);
+    opacity: 0;
   }
 
-  .c-shine--rev {
+  &:hover {
     .c-shine__rail {
+      opacity: 1;
+      -ms-transform: translateX(25%);
+      transform: translateX(25%);
+    }
+
+    .c-shine--rev .c-shine__rail {
       -ms-transform: translateX(-25%);
       transform: translateX(-25%);
     }
