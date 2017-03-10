@@ -56,7 +56,6 @@ For rapid prototyping and static sites you can include our latest compiled CSS i
 **We strongly advise not to use this method in live projects**.
 Use `npm` installation to benefit from the Toolkit's modularity and extensibility.
 
-
 ## Requirements
 
 Because of how the Toolkit loads third party dependencies (such as [sass-mq](https://github.com/sass-mq/sass-mq)), your development environment needs:
@@ -67,6 +66,54 @@ Because of how the Toolkit loads third party dependencies (such as [sass-mq](htt
 If you're using [**webpack**](https://webpack.github.io/) you'll also need:
 
 * [sass-loader](https://github.com/jtangelder/sass-loader) (3.1 or greater)
+
+### Supporting IE9+
+
+To support IE9+, you **must** include the following at the top of your `index.html` / default container view.
+
+```html
+<!DOCTYPE html>
+<!--[if IE 9 ]>               <html lang="en-GB" class="ie9"> <![endif]-->
+<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]—>
+<head>
+  ...
+```
+
+## Usage
+
+Once installed, include `sky-toolkit-core` at the top of your global `.scss` file. 
+
+This is required by all `sky-toolkit-ui` components.
+
+```css
+@import "sky-toolkit-core/all";
+```
+
+Following that, you can import your own project specific configuration and defaults, for example:
+
+```css
+@import "sky-toolkit-core/all";
+
+@import "sky-toolkit-ui/components/typography";
+@import "sky-toolkit-ui/components/tile";
+@import "sky-toolkit-ui/components/panel";
+
+@import "your-component-here";
+```
+
+There is an option to import all components, however, we strongly recommend only importing the individual components required in your project.
+
+```css
+@import "sky-toolkit-ui/all";
+```
+
+### Webpack Helper
+
+If you're using Webpack, you may want to utilise Toolkit's settings / tools within individual components. Using the following import at the top of your component's `.scss` file will provide that feature without outputting any CSS:
+
+```css
+@import "sky-toolkit-core/tools";
+```
 
 ## Versioning
 
