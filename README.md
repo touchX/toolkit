@@ -12,6 +12,7 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 * [Structure](#structure)
 * [Installation](#installation)
 * [Requirements](#requirements)
+* [Usage](#usage)
 * [Versioning](#versioning)
 * [Maintainers](#maintainers)
 * [Contributing](#contributing)
@@ -43,7 +44,7 @@ $ npm install sky-toolkit --save
  * Include [Eyeglass](https://github.com/sass-eyeglass/eyeglass) in your [build tools](https://github.com/sass-eyeglass/eyeglass#building-sass-files-with-eyeglass-support) **or**
  * Set `node_modules` in your `includedPaths`
 
-See [sky.com/toolkit](http://sky.com/toolkit) for full documentation and information on how to [implement the Toolkit](http://sky.com/toolkit/getting-started) in your project.
+See [sky.com/toolkit](http://sky.com/toolkit) for full individual component documentation.
 
 ### Compiled
 
@@ -89,7 +90,7 @@ This is required by all `sky-toolkit-ui` components.
 @import "sky-toolkit-core/all";
 ```
 
-Following that, you can import your own project specific configuration and defaults, for example:
+Following that, you can import individual toolkit-ui components and your own project-specific styles, for example:
 
 ```css
 @import "sky-toolkit-core/all";
@@ -101,7 +102,7 @@ Following that, you can import your own project specific configuration and defau
 @import "your-component-here";
 ```
 
-There is an option to import all components, however, we strongly recommend only importing the individual components required in your project.
+There is the option to import all components, however, we strongly recommend only importing the individual components required in your project.
 
 ```css
 @import "sky-toolkit-ui/all";
@@ -109,7 +110,7 @@ There is an option to import all components, however, we strongly recommend only
 
 ### Webpack Helper
 
-If you're using Webpack, you may want to utilise Toolkit's settings / tools within individual components. Using the following import at the top of your component's `.scss` file will provide that feature without outputting any CSS:
+If you're using Webpack, you may want to utilise Toolkit's settings / tools within extra individual components. Using the following import at the top of your component's `.scss` file will provide that feature without outputting any CSS:
 
 ```css
 @import "sky-toolkit-core/tools";
@@ -117,7 +118,7 @@ If you're using Webpack, you may want to utilise Toolkit's settings / tools with
 
 ## Versioning
 
-The Toolkit follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
+Toolkit follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 ## Maintainers
 
@@ -132,7 +133,7 @@ We keep a list of features and bugs [in the issue tracker](https://github.com/sk
 
 ### Champions
 
-If you need any support getting to grips with the Toolkit, pop over to your tribe Toolkit Champion:
+If you need any support getting to grips with the Toolkit, pop over to your tribe champion:
 
 | CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
