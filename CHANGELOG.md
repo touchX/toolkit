@@ -1,3 +1,10 @@
+# Toolkit Core v2.0.0
+
+## 1. Features
+- [colors] `grey-40` modified to meet AA accessibility.
+
+===
+
 # Toolkit Core v1.7.0
 
 ## 1. Features
