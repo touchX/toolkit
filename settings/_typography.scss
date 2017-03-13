@@ -13,39 +13,31 @@
 //   }
 $text: (
   heading-alpha: (
-    small: 32px,
-    large: 62px
+    small: 36px,
+    large: 50px
   ),
   heading-bravo: (
-    small: 28px,
-    large: 48px
+    small: 29px,
+    large: 40px
   ),
   heading-charlie: (
     small: 25px,
-    large: 36px
+    large: 34px
   ),
   heading-delta: (
-    small: 22px,
+    small: 20px,
     large: 28px
   ),
   text-lead: (
-    small: 20px,
+    small: 18px,
     large: 22px
   ),
   text-body: (
-    small: 18px,
-    large: 20px
-  ),
-  text-lead-small: (
     small: 16px,
     large: 18px
   ),
-  text-body-small: (
-    small: 16px,
-    large: 16px
-  ),
   text-smallprint: (
-    small: 14px,
-    large: 14px
+    small: 12px,
+    large: 12px
   )
 ) !default;
