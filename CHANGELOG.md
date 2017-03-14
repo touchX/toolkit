@@ -1,3 +1,12 @@
+# Toolkit v1.9.0
+
+## Toolkit Core v1.8.0
+
+### 1. Features
+- [defence] Protect links affected by the masthead's `skycom-focus` utility.
+
+===
+
 # Toolkit v1.8.1
 
 ## Toolkit UI v1.8.1
