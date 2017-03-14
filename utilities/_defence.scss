@@ -85,7 +85,7 @@ body a.skycom-focus {
 /**
  * Repair `.skycom-focus` styles for channel themed Tiles on hover.
  */
-.c-tile[class*="c-tile--sky-"] {
+[class*="c-tile--sky-"] {
   .c-tile__link:hover.skycom-focus {
     color: color(white) !important;
   }
