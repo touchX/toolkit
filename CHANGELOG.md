@@ -1,3 +1,10 @@
+# Toolkit UI v1.9.0
+
+## 1. Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.8.0`.
+
+===
+
 # Toolkit UI v1.8.1
 
 ## 1. Patches
