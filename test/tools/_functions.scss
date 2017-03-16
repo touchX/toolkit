@@ -144,7 +144,7 @@
 
   @include test("returns an em value when pixels are supplied.") {
     $actual: convert-to-em(30px);
-    $expected: 1.5em;
+    $expected: 1.666666667em;
 
     @include assert-equal($actual, $expected);
   }
