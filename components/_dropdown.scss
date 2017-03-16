@@ -41,7 +41,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  *    (essential for the shadow overlap fix)
  */
 .c-dropdown__toggle {
-  @include font-size(text-lead-small); /* [1] */
+  @include font-size(text-body); /* [1] */
   display: block; /* [2] */
   position: relative;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-large $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
@@ -161,7 +161,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  */
 .c-dropdown__link {
   /*! autoprefixer: off */
-  @include font-size(text-lead-small);
+  @include font-size(text-body);
   display: block;
   width: 100%;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-small;
