@@ -2,11 +2,6 @@
 
 ## 1. Features
 - [colors] `grey-40` modified to meet AA accessibility.
-- [typography] Updated sizing to the typographic scale.
-
-## 2. Deprecations
-- [typography] Removal of `text-lead-small` and `text-body-small`.
-    - Please use `text-body` instead.
 
 ===
 
