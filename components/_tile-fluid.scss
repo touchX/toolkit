@@ -182,3 +182,17 @@ $tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint
     @include tile-fluid-scales(1 2 3 4 5, \@#{$alias});
   }
 }
+
+/* Modifiers
+  =========================================== */
+
+/**
+ * Collapsible Fluid Tiles
+ *
+ * Collapsible Fluid Tiles are overriden to the correct size on medium screens.
+ */
+.c-tile--fluid.c-tile--collapsible {
+  @include mq($until: medium) {
+    font-size: $tile-fluid-base-font-size * (1 / 2);
+  }
+}
