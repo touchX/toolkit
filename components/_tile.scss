@@ -75,22 +75,21 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 }
 
 /**
- * Tile Body & Caption
- * Shared Background structure
+ * Tile Body & Caption - Shared Background structure
  *
- * We used before and after pseudo elements for the tile bg to allow easy
- * z-indexing and avoid issues with nested content.
- * The before element is always used as we always need the bg present.
- * The after element is only used when c-tile__link is used as this is purely
- * used for hover states to get around z-index issues.
+ * All Tiles utilise a `.c-tile__body` to wrap the main content area.
+ * Split Template Tiles utilise `.c-tile__body .c-tile__caption`.
  *
- * Tiles all have a class="c-tile__body" or class="c-tile__body c-tile__caption"
- * elements wrapping the main content area.
- * Therefore the caption can be used as an override for the default radial gradient.
+ * This allows us to use Pseudo Elemtents to build the Tile gradient background,
+ * allowing for easy z-indexing and avoiding issues with nested content.
  */
 .c-tile__body,
 .c-tile__caption {
-  // Set up shared pseudo element styling
+  /**
+   * Tile Body & Caption - Default/Active Backgrounds
+   *
+   * Set up shared pseudo element styling
+   */
   &::before,
   &::after {
     @include tile-edge-position();
@@ -99,14 +98,26 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     will-change: transform;
   }
 
+  /**
+   * Tile Body & Caption - Default Background
+   *
+   * Sets the default visible background for Tiles.
+   * Sits below the body/caption to avoid hiding content.
+   */
   &::before {
-    z-index: -2; // Set below caption to avoid hiding content
+    z-index: -2;
   }
 
+  /**
+   * Tile Body & Caption - Active Background
+   *
+   * Hidden by default and triggered on `.c-tile__link` hover.
+   * Sits between `::before` and body/caption.
+   */
   &::after {
-    opacity: 0; // Set initial opacity
+    opacity: 0;
     transition: opacity $tile-animation-speed ease;
-    z-index: -1; // Set between before and content.
+    z-index: -1;
   }
 }
 
@@ -117,7 +128,6 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * which doesn't sit flush to the edge of the tile.
  */
 .c-tile__body {
-  /*! autoprefixer: off */
   height: 100%;
   padding: $tile-padding;
   position: relative;
@@ -128,6 +138,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   }
 
   &::after {
+    /*! autoprefixer: off */
     @include background-gradient($tile-gradient-default, vertical-invert);
   }
 
@@ -143,17 +154,18 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  * take up the lower 50% of the tile.
  */
 .c-tile__caption {
-  /*! autoprefixer: off */
   position: relative;
   height: 45%;
   z-index: 20;
   text-align: left;
 
   &::before {
+    /*! autoprefixer: off */
     @include background-gradient($tile-gradient-caption);
   }
 
   &::after {
+    /*! autoprefixer: off */
     @include background-gradient($tile-gradient-caption-hover);
   }
 }
@@ -292,6 +304,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
      * Scale the Tile's Poster
      */
     .c-tile__poster {
+      /*! autoprefixer: off */
       -ms-transform: scale(1.05, 1.05);
       transform: scale(1.05, 1.05);
     }
@@ -331,18 +344,32 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 /* States
   =========================================== */
 
-.c-tile {
-  &.has-focus {
-    @include focus-styles();
-  }
+/**
+ * Keyboard Focus
+ *
+ * Should be applied to `.c-tile` on keyboard focus for Accessibility.
+ */
+.c-tile.has-focus {
+  @include focus-styles();
+}
 
-  &.is-selected {
-    @include panel-indicator();
-  }
+/**
+ * Selected
+ *
+ * Should be applied to `.c-tile` when used to trigger the opening of a
+ * corresponding `.c-panel`.
+ */
+.c-tile.is-selected {
+  @include panel-indicator();
+}
 
-  &.c-tile--dark.is-selected {
-    @include panel-indicator("dark");
-  }
+/**
+ * Selected (Dark Themed Panels)
+ *
+ * Identical to above for `.c-panel--dark`
+ */
+.c-tile--dark.is-selected {
+  @include panel-indicator("dark");
 }
 
 /* Modifiers
@@ -351,7 +378,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 /**
  * Square Tiles
  *
- * Forces the tile to keep a square ratio
+ * Forces a Tile to keep a square ratio.
  */
 .c-tile--square {
   height: 0;
@@ -365,18 +392,18 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
   .c-tile__link,
   .c-tile__link::before {
+    @include tile-edge-position();
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
   }
 }
 
 /**
  * Full Tiles
  *
- * For Tiles which aren't split
+ * Designed for Tiles that highlight a product, with the media set to fill
+ * the background to compliment transparent PNG images.
+ *
+ * Text should then `overlay` the content.
  */
 .c-tile--full {
   .c-tile__body {
@@ -411,7 +438,10 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 /**
  * Collapsible Tiles
  *
- * Collapses square ratio at medium and sets to auto height
+ * Collapses split tiles at medium size, placing image and caption side by side.
+ * Most of the code below resets changes to the structure by `.c-tile--square`.
+ *
+ * Please note: Only "Split Template" Tiles can be collapsed.
  */
 .c-tile--collapsible {
   @include mq($until: medium) {
@@ -434,22 +464,28 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
       width: 100%;
     }
 
-    .c-tile__body,
+    /**
+     * Display media and caption side by side.
+     */
+    .c-tile__caption,
     .c-tile__media {
       display: inline-block;
       vertical-align: top;
     }
 
-    .c-tile__media {
-      width: 35%;
-      position: relative;
-    }
-
-    .c-tile__body {
+    /**
+     * Caption positionined absolutely to prevent text overflowing media height.
+     */
+    .c-tile__caption {
+      position: absolute;
       width: 65%;
       height: 100%;
-      position: absolute;
       overflow: hidden;
+    }
+
+    .c-tile__media {
+      position: relative;
+      width: 35%;
     }
 
     .c-tile__title {
@@ -468,13 +504,13 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   @each $brand in $included-tile-themes {
     @if map-has-key($gradients, $brand) {
       .c-tile--#{$brand} {
-        /*! autoprefixer: off */
         .c-tile__link:hover {
           color: color(white);
         }
 
         // Set up style overides
         .c-tile__body::after {
+          /*! autoprefixer: off */
           @include background-gradient($brand);
         }
       }
