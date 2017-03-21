@@ -416,7 +416,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 .c-tile--collapsible {
   @include mq($until: medium) {
     height: auto;
-    padding: 5px;
+    padding: $tile-border-width;
 
     .c-tile__link {
       position: relative;
