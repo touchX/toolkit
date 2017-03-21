@@ -28,6 +28,13 @@ $tile-gradient-caption-hover: "large";
 //
 $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-cinema", "sky-kids", "sky-living", "sky-news", "sky-sports", "sky-store" !default;
 
+@mixin tile-edge-position($tile-edge-position-offset: 0) {
+  top: $tile-edge-position-offset;
+  right: $tile-edge-position-offset;
+  bottom: $tile-edge-position-offset;
+  left: $tile-edge-position-offset;
+}
+
 /* Base
   ============================================ */
 
@@ -86,12 +93,9 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   // Set up shared pseudo element styling
   &::before,
   &::after {
-    bottom: 0;
+    @include tile-edge-position();
     content: "";
-    left: 0;
     position: absolute;
-    right: 0;
-    top: 0;
     will-change: transform;
   }
 
@@ -120,7 +124,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   width: 100%;
 
   &::before {
-    background: color(white);
+    background-color: color(white);
   }
 
   &::after {
@@ -247,33 +251,46 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   position: relative;
   height: 100%;
 
-  // Hover Drop Shadow
+  /**
+   * Tile Link - Drop Shadow
+   *
+   * A pseudo-element is used to contain the hover box-shadow transition, set to
+   * be invisible by default.
+   * The `opacity` is then animated for smooth performance [1].
+   *
+   * 1. http://tobiasahlin.com/blog/how-to-animate-box-shadow/
+   */
   &::before {
+    @include tile-edge-position(-$tile-border-width);
     content: "";
     position: absolute;
-    top: -$tile-border-width;
-    right: -$tile-border-width;
-    bottom: -$tile-border-width;
-    left: -$tile-border-width;
     box-shadow: 0 10px 20px color(grey-20);
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity $tile-animation-speed ease;
   }
 
-  // Tile Hover Interaction
+  /**
+   * All default hover interaction for the Tile is handled via `.c-tile__link`.
+   */
   &:hover {
-    // Hover Drop Shadow (Show)
+    /**
+     * Show the Tile Link's Drop Shadow
+     */
     &::before {
       opacity: 1;
     }
 
-    // Show Body/Caption Gradient
+    /**
+     * Show the active Body / Caption gradient
+     */
     .c-tile__body::after,
     .c-tile__caption::after {
       opacity: 1; // Set hover opacity
     }
 
-    // Scale Poster
+    /**
+     * Scale the Tile's Poster
+     */
     .c-tile__poster {
       -ms-transform: scale(1.05, 1.05);
       transform: scale(1.05, 1.05);
@@ -292,6 +309,9 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
  *
  * Tile shine to be applied to a .c-shine component to give the correct positioning
  * when used on a Tile.
+ *
+ * The shine hover effect can then be applied by using `.c-shine-context`
+ * alongside `.c-tile__link`
  */
 .c-tile__shine {
   position: absolute;
@@ -339,11 +359,8 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   padding-bottom: 0;
 
   .c-tile__content {
+    @include tile-edge-position($tile-border-width);
     position: absolute;
-    top: $tile-border-width;
-    right: $tile-border-width;
-    bottom: $tile-border-width;
-    left: $tile-border-width;
   }
 
   .c-tile__link,
@@ -401,21 +418,43 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
     height: auto;
     padding: 5px;
 
-    .c-tile__link,
-    .c-tile__content {
+    .c-tile__link {
       position: relative;
-      display: table;
-      height: 100%;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
+
+      /* stylelint-disable-next-line max-nesting-depth */
+      &::before {
+        @include tile-edge-position(-$tile-border-width);
+      }
+    }
+
+    .c-tile__content {
+      @include tile-edge-position();
+      position: relative;
+      display: block;
+      width: 100%;
     }
 
     .c-tile__body,
     .c-tile__media {
-      display: table-cell;
-      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .c-tile__media {
+      width: 35%;
+      position: relative;
+    }
+
+    .c-tile__body {
+      width: 65%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .c-tile__title {
+      font-size: text(heading-delta);
+      line-height: 1.3;
     }
   }
 }
