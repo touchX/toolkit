@@ -3,18 +3,18 @@
    ========================================================================== */
 
 // Tile Settings
-$tile-padding: $global-spacing-unit-small !default;
-$tile-border-width: 5px !default;
-$tile-border-colour: rgba(color(white), 0.3) !default;
 $tile-animation-speed: $global-animation-speed;
 $tile-animation-speed-slow: $global-animation-speed-slow;
-$tile-shadow: $global-shadow !default;
-$tile-arrow-size: 22px !default;
 $tile-arrow-color: color(white);
-$tile-shadow-color: rgba(160, 160, 160, 0.5);
-$tile-gradient-default: "mid";
+$tile-arrow-size: 22px !default;
+$tile-border-colour: rgba(color(white), 0.3) !default;
+$tile-border-width: 5px !default;
+$tile-gradient: "mid";
 $tile-gradient-caption: "small";
 $tile-gradient-caption-hover: "large";
+$tile-padding: $global-spacing-unit-small !default;
+$tile-shadow: $global-shadow !default;
+$tile-shadow-color: rgba(160, 160, 160, 0.5);
 
 // Array of brands to generate specific themes for tile hover effects.
 // By default no themes are generated, to include themes overwrite the
@@ -124,7 +124,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 /**
  * Tile Body
  *
- * The body/copy container for the tile; This should be applied to any content
+ * The body container for the tile; This should be applied to any content
  * which doesn't sit flush to the edge of the tile.
  */
 .c-tile__body {
@@ -139,7 +139,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
   &::after {
     /*! autoprefixer: off */
-    @include background-gradient($tile-gradient-default, vertical-invert);
+    @include background-gradient($tile-gradient, vertical-invert);
   }
 
   > :last-child {
@@ -413,7 +413,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
     &::after {
       /*! autoprefixer: off */
-      @include background-gradient($tile-gradient-default, vertical-invert, 0% 50%);
+      @include background-gradient($tile-gradient, vertical-invert, 0% 50%);
     }
   }
 
