@@ -28,6 +28,7 @@ $tile-shadow-color: rgba(160, 160, 160, 0.5);
 //
 $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-cinema", "sky-kids", "sky-living", "sky-news", "sky-sports", "sky-store" !default;
 
+// Tile Edge Posititoning mixin
 @mixin tile-edge-position($tile-edge-position-offset: 0) {
   top: $tile-edge-position-offset;
   right: $tile-edge-position-offset;
