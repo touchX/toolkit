@@ -13,7 +13,7 @@ $tile-gradient: "mid";
 $tile-gradient-caption: "small";
 $tile-gradient-caption-hover: "large";
 $tile-padding: $global-spacing-unit-small !default;
-$tile-shadow: 0 1px 15px 0 rgba(color(black), 0.2) !default;
+$tile-shadow: 0 1px 10px 0 rgba(color(black), 0.2) !default;
 $tile-shadow-hover: 0 15px 20px -8px rgba(color(black), 0.2) !default;
 
 // Array of gradient names to generate specific brand themes for Tiles.
