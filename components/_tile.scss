@@ -273,11 +273,8 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
     position: absolute;
     box-shadow: $tile-shadow-hover;
     opacity: 0;
-    transform: scale(0.95);
     transform-origin: bottom;
-    transition-property: transform, opacity;
-    transition-duration: $tile-animation-speed;
-    transition-timing-function: ease;
+    transition: opacity $tile-animation-speed ease;
   }
 
   /**
@@ -289,7 +286,6 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
      */
     &::before {
       opacity: 1;
-      transform: scale(1);
     }
 
     /**
