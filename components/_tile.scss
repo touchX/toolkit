@@ -13,8 +13,8 @@ $tile-gradient: "mid";
 $tile-gradient-caption: "small";
 $tile-gradient-caption-hover: "large";
 $tile-padding: $global-spacing-unit-small !default;
-$tile-shadow: $global-shadow !default;
-$tile-shadow-color: rgba(160, 160, 160, 0.5);
+$tile-shadow: 0 1px 15px 0 rgba(color(black), 0.2) !default;
+$tile-shadow-hover: 0 15px 20px -8px rgba(color(black), 0.2) !default;
 
 // Array of gradient names to generate specific brand themes for Tiles.
 // By default all themes are generated.
@@ -271,9 +271,13 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
     @include tile-edge-position(-$tile-border-width);
     content: "";
     position: absolute;
-    box-shadow: 0 10px 20px color(grey-20);
+    box-shadow: $tile-shadow-hover;
     opacity: 0;
-    transition: opacity $tile-animation-speed ease;
+    transform: scale(0.95);
+    transform-origin: bottom;
+    transition-property: transform, opacity;
+    transition-duration: $tile-animation-speed;
+    transition-timing-function: ease;
   }
 
   /**
@@ -285,6 +289,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
      */
     &::before {
       opacity: 1;
+      transform: scale(1);
     }
 
     /**
