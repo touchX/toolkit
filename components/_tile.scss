@@ -1,8 +1,8 @@
 /* ==========================================================================
-   COMPONENTS / TILE
+   COMPONENTS / #TILE
    ========================================================================== */
 
-// Tile settings
+// Tile Settings
 $tile-padding: $global-spacing-unit-small !default;
 $tile-border-width: 5px !default;
 $tile-border-colour: rgba(color(white), 0.3) !default;
@@ -29,6 +29,20 @@ $tile-gradient-default-hover: "large";
  */
 
 $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-cinema", "sky-kids", "sky-living", "sky-news", "sky-sports", "sky-store" !default;
+
+// Dependencies (Optional)
+// =========================================== */
+
+// "Tile" builds upon "Shine" for `.c-tile__shine`.
+//
+// If you want to utilise this feature, you must import
+// `sky-toolkit-ui/components/shine` *before*
+// `sky-toolkit-ui/components/tile` in your main scss file.
+//
+// If you are using `sky-toolkit-ui/all`, please ignore the above.
+
+/* Base
+  ============================================ */
 
 /**
  * The base of the tile; provides the glass "border" and shadow.
