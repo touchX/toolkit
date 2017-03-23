@@ -2,11 +2,14 @@
    COMPONENTS / HERO
    ========================================================================== */
 
-// Hero settings
+// Hero Settings
 $hero-border-width: 5px;
 $hero-border-color: rgba(color(white), 0.3);
 $hero-text-shadow: 0 0 25px rgba(color(black), 0.25), 1px 1px 1px rgba(color(black), 0.5);
 $hero-overlap: 10vh;
+
+/* Base
+  ============================================ */
 
 /**
  * The Hero component provides a dominant piece of media to a page
@@ -54,6 +57,44 @@ $hero-overlap: 10vh;
 }
 
 /**
+ * The caption overlays at the bottom of a Hero, providing space for additional
+ * content such as titles or logos.
+ */
+.c-hero__caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: $global-spacing-unit 0;
+  text-shadow: $hero-text-shadow;
+
+  /**
+   * If hero has overlap modifier, shift caption upwards to compensate.
+   */
+  .c-hero--overlap & {
+    bottom: $hero-overlap;
+  }
+}
+
+/**
+ * Hero link inherits the Hero `color` to override anchor element styles.
+ */
+.c-hero__link {
+  color: inherit;
+}
+
+/**
+ * Hero video needs to be set to `display: block` to avoid spacing issues.
+ */
+.c-hero__video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Modifiers
+  ============================================ */
+
+/**
  * Make the Hero cover all available screenspace
  */
 .c-hero--cover {
@@ -74,39 +115,4 @@ $hero-overlap: 10vh;
  */
 .c-hero--overlap {
   margin-bottom: -$hero-overlap;
-}
-
-/**
- * The caption overlays at the bottom of a Hero, providing space for additional
- * content such as titles or logos.
- */
-.c-hero__caption {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: $global-spacing-unit 0;
-  text-shadow: $hero-text-shadow;
-
-  /**
-   * If hero has overlap modifier, shift caption upwards to compensate.
-   */
-  .c-hero--overlap & {
-    bottom: $hero-overlap;
-  }
-}
-
-/**
- * Hero video needs to be set to `display: block` to avoid spacing issues.
- */
-.c-hero__video {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-/**
- * Hero link inherits the Hero `color` to override anchor element styles.
- */
-.c-hero__link {
-  color: inherit;
 }
