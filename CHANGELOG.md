@@ -1,3 +1,16 @@
+# Toolkit v1.10.0
+
+## Toolkit UI v1.10.0
+
+### 1. Enhancements
+- [all] Restructure of imports to clarify dependencies.
+- [tile]
+  - Tidy up of file structure and documentation.
+  - `.c-hero__shine` for Hero Shine positioning.
+  - `.c-hero--borderless-` modifiers to hide top/bottom borders.
+
+===
+
 # Toolkit v1.9.0
 
 ## Toolkit Core v1.8.0
