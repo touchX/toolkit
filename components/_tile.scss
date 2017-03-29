@@ -21,7 +21,7 @@ $tile-shadow-hover: 0 15px 20px -8px rgba(color(black), 0.2) !default;
 // You can output specific themes by overwriting `$tile-themes`.
 $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-cinema", "sky-kids", "sky-living", "sky-news", "sky-sports", "sky-store" !default;
 
-// Tile Edge Posititoning Mixin
+// Tile Edge Positioning Mixin
 // Used to simplify and avoid repeated use of individual edge positioning.
 @mixin tile-edge-position($tile-edge-position-offset: 0) {
   top: $tile-edge-position-offset;
@@ -223,7 +223,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 /**
  * Tile Poster
  *
- * A poster is a full bleed image which scales when the lniked tile is hovered.
+ * A poster is a full bleed image which scales when the linked tile is hovered.
  *
  * 1. Prevent IE9 adding height attributes for asynchronously rendered images.
  */
