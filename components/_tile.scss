@@ -275,6 +275,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
     opacity: 0;
     transform-origin: bottom;
     transition: opacity $tile-animation-speed ease;
+    will-change: transform;
   }
 
   /**
