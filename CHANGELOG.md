@@ -5,6 +5,9 @@
 
 ## 1.11.0
 
+### Fixes
+- [tile] Enforce cursor style on `c-tile__link` to allow flexibility of markup.
+
 ### Dependencies
 - [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.9.0`.
 
@@ -27,7 +30,7 @@
 
 ## 1.8.1
 
-### Patches
+### Fixes
 - [shine] Remove `opacity` animation from `c-shine-rail` and add to `c-shine-context`.
 
 
