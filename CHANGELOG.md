@@ -5,7 +5,7 @@
 
 ## 1.9.0
 
-### Features
+### Dependencies
 
 * [[supercell](https://github.com/sky-uk/supercell)] Switch layout system to Supercell.
 
