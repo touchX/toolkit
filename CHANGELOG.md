@@ -1,7 +1,7 @@
 # Toolkit UI v2.0.0
 
 ## 1. Features
-- [link-faux] Created the link-faux module.
+- [link-faux] Created the Link (Faux) module.
 
 ## 2. Refactor
 - [panel] Utilise `c-link-faux` on `c-panel__toggle` for accessibility improvements.

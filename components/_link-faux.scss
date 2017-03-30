@@ -1,5 +1,5 @@
 /* ==========================================================================
-   COMPONENTS / LINK-FAUX
+   COMPONENTS / LINK (FAUX)
    ========================================================================== */
 
 // Link-Faux Settings
@@ -10,10 +10,10 @@ $link-faux-border-radius: $global-border-radius;
   =========================================== */
 
 /**
- * Link-Faux
+ * Link (Faux)
  *
  * When a `<button>` needs to appear similar to a link for cosmetic reasons,
- * Link-Faux should be used.
+ * Link (Faux) should be used.
  *
  * 1. Reset browser styles.
  * 2. Tidy aligment for when the button size needs to be modified.
@@ -40,12 +40,12 @@ $link-faux-border-radius: $global-border-radius;
   }
 
   /**
-   * Link-Faux `:focus`
+   * Link (Faux) `:focus`
    *
    * When a `<button>` needs to appear similar to a link for cosmetic reasons,
-   * Link-Faux should be used.
+   * Link (Faux) should be used.
    *
-   * To protect the link-faux box-model, a pseudo-element with negative margins
+   * To protect the Link (Faux) box-model, a pseudo-element with negative margins
    * is used to create the "button" focus appearance.
    *
    * 1.  Remove browser outline styles.
@@ -70,7 +70,7 @@ $link-faux-border-radius: $global-border-radius;
    =========================================== */
 
 /**
-* For Link-Fauxs used in dark areas of UI.
+* For Link (Faux)s' used in dark areas of UI.
 */
 .c-link-faux--invert {
   color: color(white);
