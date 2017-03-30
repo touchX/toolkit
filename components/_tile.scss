@@ -257,6 +257,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
   transition: color $tile-animation-speed ease, box-shadow $global-animation-speed-fast ease;
   position: relative;
   height: 100%;
+  cursor: pointer;
 
   /**
    * Tile Link - Drop Shadow
