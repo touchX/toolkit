@@ -1,8 +1,8 @@
 // =============================================================================
-// TEST / ASSERTION / SETTINGS / GLOBALS
+// TEST / ASSERTIONS / SETTINGS / GLOBALS
 // =============================================================================
 
-// Global Spacing Assertion
+// Global Spacing Assertions
 // ==============================================
 
 // Prevent modification of `-tiny`, `-small` and `-large` variations of
@@ -19,7 +19,7 @@
   @error "The value of `$global-spacing-unit-large` must not be changed.";
 }
 
-// Global Animation Assertion
+// Global Animation Assertions
 // ==============================================
 
 // Prevent modification of `-fast`, `-slow` variations of `$global-spacing-unit`
