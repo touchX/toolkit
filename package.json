@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf build",
-    "test": "node ./node_modules/mocha/bin/mocha ./test/sass.js",
+    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
     "test-circle": "npm run lint && npm run test && npm run build",
     "lint": "stylelint '**/*.scss' --syntax scss",
     "build": "npm run clean && mkdir -p ./build && cat _all.scss | node-sass --include-path node_modules/ --output-style compressed > build/toolkit-core.css"
