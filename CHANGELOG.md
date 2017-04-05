@@ -3,6 +3,21 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.11.0
+
+### toolkit-ui 1.11.0
+
+#### Fixes
+- [tile] Enforce cursor style on `c-tile__link` to allow flexibility of markup.
+
+### toolkit-core 1.9.0
+
+#### Dependencies
+
+* [[normalize.css](https://github.com/necolas/normalize.css)] Switch hard-coded Normalize to dependency.
+* [[supercell](https://github.com/sky-uk/supercell)] Switch layout system to Supercell.
+
+
 ## 1.10.0
 
 ### toolkit-ui 1.10.0
