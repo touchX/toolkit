@@ -263,11 +263,11 @@
 
 ### toolkit-core 0.5.2
 
-### Features
+#### Features
 
 - [divider] New mixins for creating divider gradient border and shadow.
 
-### Enhancements
+#### Enhancements
 
 - [colors] Added mid gradient to gradients variable map.
 - [forms] ie9 class to hide gradient text overflow for c-form-select.
@@ -278,12 +278,12 @@
 
 ### toolkit-ui 0.5.1
 
-### Features
+#### Features
 
 - [divider] c-divider for prominent horizontal (and vertical) rules for use between elements.
 - [tile] c-tile--full for Tiles that utilise a full size image and overlapping title.
 
-### Bug Fixes
+#### Bug Fixes
 
 - [accordion] Fixed arrow icon alignment in IE9.
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
