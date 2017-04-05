@@ -1,156 +1,165 @@
-# Toolkit v1.10.0
+# Changelog
 
-## Toolkit UI v1.10.0
+`sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
-### 1. Enhancements
+
+## 1.11.0
+
+### toolkit-ui 1.11.0
+
+#### Fixes
+- [tile] Enforce cursor style on `c-tile__link` to allow flexibility of markup.
+
+### toolkit-core 1.9.0
+
+#### Dependencies
+
+* [[normalize.css](https://github.com/necolas/normalize.css)] Switch hard-coded Normalize to dependency.
+* [[supercell](https://github.com/sky-uk/supercell)] Switch layout system to Supercell.
+
+
+## 1.10.0
+
+### toolkit-ui 1.10.0
+
+#### Enhancements
 - [all] Restructure of imports to clarify dependencies.
 - [tile]
   - Tidy up of file structure and documentation.
   - `.c-hero__shine` for Hero Shine positioning.
   - `.c-hero--borderless-` modifiers to hide top/bottom borders.
 
-===
 
-# Toolkit v1.9.0
+## 1.9.0
 
-## Toolkit Core v1.8.0
+### toolkit-core 1.8.0
 
-### 1. Features
+#### Features
 - [defence] Protect links affected by the masthead's `skycom-focus` utility.
 
-===
 
-# Toolkit v1.8.1
+## 1.8.1
 
-## Toolkit UI v1.8.1
+### toolkit-ui 1.8.1
 
-### 1. Patches
+#### Patches
 - [shine] Remove `opacity` animation from `c-shine-rail` and add to `c-shine-context`.
 
-===
 
-# Toolkit v1.8.0
+## 1.8.0
 
-## Toolkit Core v1.7.0
+### toolkit-core 1.7.0
 
-### 1. Features
+#### Features
 - [mixins] responsivize mixin to make any class available at specified breakpoints
 
-### 2. Enhancements
+#### Enhancements
 - [typography] used responsivize mixin to generate breakpoint specific text align classes
 - [hide] used responsivize mixin to generate breakpoint specific hide classes
 
-## Toolkit UI v1.8.0
+### toolkit-ui 1.8.0
 
-### 1. Fixes
+#### Fixes
 - [shine] Adjusted positioning to provide greater flexibility when `transform`ing `c-shine-rail`.
 
-===
 
-# Toolkit v1.7.0
+## 1.7.0
 
-## Toolkit Core v1.6.0
+### toolkit-core 1.6.0
 
-### 1. Dependencies
+#### Dependencies
 - [stylelint-config-sky-uk](https://github.com/sky-uk/css) implemented for linting.
 - Dependencies refactored to a flat structure.
 
-### 2. Fixes
+#### Fixes
 - [Autoprefixer] Utilise `/*! autoprefixer: off */` comments to prevent Autoprefixer rewrites.
 
-## Toolkit UI v1.7.0
+### toolkit-ui 1.7.0
 
-### 1. Dependencies
+#### Dependencies
 - [stylelint-config-sky-uk](https://github.com/sky-uk/css) implemented for linting.
 - Dependencies refactored to a flat structure.
 
-### 2. Fixes
+#### Fixes
 - [Autoprefixer] Utilise `/*! autoprefixer: off */` comments to prevent Autoprefixer rewrites.
 - [forms] Fix oversized line-height on `c-form-input--long`.
 
 
-===
 
-# Toolkit v1.6.0
+## 1.6.0
 
-## Toolkit Core v1.5.0
+### toolkit-core 1.5.0
 
-## 1. Fixes
+#### Fixes
 - [ie9] Improvements to `c-form-select` functionality.
 - [[Stylelint]](http://stylelint.io) Fix linting command and amend errors.
 
-## Toolkit UI v1.6.0
+### toolkit-ui 1.6.0
 
-## 1. Fixes
+#### Fixes
 - [tile] Allow `c-tile__link` to use either `<a>` or `<button>` allowing for more semantic use.
 - [c-form-select] Improvements to functionality on IE.
 - [[Stylelint]](http://stylelint.io) Fix linting command.
 
-===
 
 
-# Toolkit v1.5.0
+## 1.5.0
 
-## Toolkit Core v1.4.0
+### toolkit-core 1.4.0
 
-### 1. Dependencies
+#### Dependencies
 - [[sky-css-lint]](https://github.com/sky-uk/css) Use sky-css-lint for CSS / Sass linting.
 
-## Toolkit UI v1.5.0
+### toolkit-ui 1.5.0
 
-### 1. Fixes
+#### Fixes
 - [dropdown] Fix for full-width dropdowns.
 - [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
 - [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
 
-===
 
-# Toolkit v1.4.0
+## 1.4.0
 
-## Toolkit Core v1.3.0
+### toolkit-core 1.3.0
 
 ## 1. Dependencies
 - [[Stylelint]](http://stylelint.io) Update to latest Stylelint; allowing for further modification of `.stylelintrc` at a later date.
 
-===
 
-# Toolkit v1.3.0
+## 1.3.0
 
-## Toolkit UI v1.3.0
+### toolkit-ui 1.3.0
 
-## 1. Features
+#### Features
 - [Calendar] Adds the `c-calendar` component for use with date pickers.
 
-===
 
-# Toolkit v1.2.1
+## 1.2.1
 
-## Toolkit UI v1.2.1
+### toolkit-ui 1.2.1
 
-### 1. Fixes
+#### Fixes
 - [tile-fluid] Set `$tile-fluid-base-breakpoint` as `!default` to allow overwriting.
 
-===
 
-# Toolkit v1.2.0
+## 1.2.0
 
-## Toolkit Core v1.2.0
+### toolkit-core 1.2.0
 
-### 1. Dependencies
+#### Dependencies
 - [[Eyeglass]](https://github.com/sass-eyeglass/eyeglass) provide support for Eyeglass build tools. Fixes problems with importing nested `node_module` scss dependencies.
 
-===
 
-# Toolkit v1.1.0
+## 1.1.0
 
-## Toolkit Core v1.1.0
+### toolkit-core 1.1.0
 
-### 1. Features
+#### Features
 - [mixins-ui] `panel-indicator` extracted from tile into a mixin for use on any element. Use `@include panel-indicator();` for the default light panel or `@include panel-indicator("dark");` for the dark panel theme.
 
-## Toolkit UI v1.1.0
+### toolkit-ui 1.1.0
 
-### 1. Features
+#### Features
 - [tile] makes use of `panel-indicator` mixin for `is-selected`.
 - [tile] Added fluid tile styling to scale tiles based on the browser width.
 
@@ -158,7 +167,7 @@
   - `.c-tile-fluid-scale-1/2@medium` classes scale tile content. These are useful when using layouts.
   - `.c-tile-fluid-container` class sets a max-width on the fluid tiles (default 1200px) preventing scaling beyond that size.
 
-### Example Usage
+#### Example Usage
 
 ```
 <div class="o-container  c-tile-fluid-container">
@@ -182,87 +191,83 @@
 </div>
 ```
 
-===
 
-# Toolkit v1.0.2
+## 1.0.2
 
-## Toolkit UI v1.0.2
+### toolkit-ui 1.0.2
 
-### 1. Bug Fixes
+#### Bug Fixes
 - [shine] Repair background-sizing for shine patch in `1.0.1`.
 
-===
 
-# Toolkit v1.0.1
+## 1.0.1
 
-## Toolkit UI v1.0.1
+### toolkit-ui 1.0.1
 
-### 1. Bug Fixes
+#### Bug Fixes
 - [shine] Set shine height in px to avoid conflicts with differing font-sizes.
 
-===
 
-# Toolkit v1.0.0
+## 1.0.0
 
 - [Dependencies] As `toolkit-ui` consumes `toolkit-core`, we no longer need both in `package.json`.
 - [Style Guide] Please go to [#toolkit](https://sky.slack.com/messages/toolkit) on Slack for internal docs, or see the Wiki for public docs.
 - [README.md] New Core Maintainers and CDN access to CSS.
 - [CONTRIBUTING.md] Updated process.
 
-## Toolkit Core v1.0.0
+### toolkit-core 1.0.0
 
-### 1. Structure
+#### Structure
 - [project] devDependecies moved to Dependencies to enable sharing with `toolkit-ui`.
 - [imports] settings and tools now utilise `all` to share imports across `sky-toolkit-core/all` and `sky-toolkit-core/tools`.
 
-### 2. Features
+#### Features
 - [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
 - [mixins] `focus-styles` for creating consistent keyboard focus effects.
 
-### 3. Enhancements
+#### Enhancements
 - [settings] Added global container max width as variable rather than hard-coding.
 
-### 4. Bug Fixes
+#### Bug Fixes
 - [page] Gradient orientation fixed for small devices.
 - [font-face] Prevent Sky Text from outputting if a custom font is defined.
 
-### 5. Deprecations
+#### Deprecations
 - [legacy-typography] Config switch now fully deprecated.
 
 
-## Toolkit UI v1.0.0
+### toolkit-ui 1.0.0
 
-### 1. Project Structure
+#### Project Structure
 - `toolkit-core` added as a project dependency to run tests and share config files.
 
-### 2. Features
+#### Features
 - [colors] `ui-` prefixed colors have moved to a `grey-` prefix for greater flexibility.
 - [forms] `c-form-checkbox--inline` for inline checkbox/radio inputs.
 - [tile] Extra test for generating themed tiles.
 
-### 3. Deprecations
+#### Deprecations
 - [legacy-typography] Config switch now fully deprecated.
 
-### 4. Refactor
+#### Refactor
 - [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
 - [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
 - [shine] Shine is now rendered purely in CSS to improve performance - please note this won't be supported on ie9.
 
-### 5. Bug Fixes
+#### Bug Fixes
 - [forms] Fix for `.c-form-checkbox` error styles.
 - [tile] Fix for `.c-tile--square` height 100% + 5px causing tiles such as 555px x 560px.
 
-===
 
-# Toolkit v0.5.1
+## 0.5.1
 
-## Toolkit Core v0.5.2
+### toolkit-core 0.5.2
 
-### Features
+#### Features
 
 - [divider] New mixins for creating divider gradient border and shadow.
 
-### Enhancements
+#### Enhancements
 
 - [colors] Added mid gradient to gradients variable map.
 - [forms] ie9 class to hide gradient text overflow for c-form-select.
@@ -271,14 +276,14 @@
 - [gradients] background-gradient can now utilise an inverted horizontal direction and percentage overrides.
 - [settings] Update small breakpoint to 420px.
 
-## Toolkit UI v0.5.1
+### toolkit-ui 0.5.1
 
-### Features
+#### Features
 
 - [divider] c-divider for prominent horizontal (and vertical) rules for use between elements.
 - [tile] c-tile--full for Tiles that utilise a full size image and overlapping title.
 
-### Bug Fixes
+#### Bug Fixes
 
 - [accordion] Fixed arrow icon alignment in IE9.
 - [buttons] Added relative border to buttons so that the border width scales with font-size.
@@ -292,27 +297,26 @@
 - [select] Added :focus styles for accessibility.
 - [select] Fixed spacing of text.
 
-===
 
-# Toolkit v0.5.0
+## 0.5.0
 
-## Toolkit Core v0.5.1
+### toolkit-core 0.5.1
 
-### 1. Bug Fixes
+#### Bug Fixes
 - [page] Solid bg fallback for IE9 to replace broken gradient.
 
-## Toolkit UI v0.5.0
+### toolkit-ui 0.5.0
 
-### 1. Bug Fixes
+#### Bug Fixes
 - [bezel] Added `max-width: 100%` to prevent overflow issues on IE.
 - [forms] Removed tick on selected radio button.
 - [forms] Refactored checkbox structure to allow for keyboard focus. Instead of `c-form-checkbox__faux`, we now utilise `c-form-checkbox__caption`.
 - [select] Keyboard accessibility support.
 
-### 2. Enhancements
+#### Enhancements
 - [select] Different styles for hover, focus and active states.
 
-### ⚠️ Update Notes
+#### ⚠️ Update Notes
 
 To make our checkboxes and radio buttons keyboard accessible, a significant refactor was required.
 
@@ -351,177 +355,162 @@ Radio:
 </li>
 ```
 
-===
 
-# Toolkit v0.4.2
+## 0.4.2
 
-## Toolkit UI v0.4.2
+### toolkit-ui 0.4.2
 
-## 1. Bug Fixes
+#### Bug Fixes
 - [tiles] Only title now underlines on hover.
 - [tiles] Specificity reduced with hover style allowing easier customisation.
 
-===
 
-# Toolkit v0.4.1
+## 0.4.1
 
-## Toolkit UI v0.4.1
+### toolkit-ui 0.4.1
 
-## 1. Enhancements
+#### Enhancements
 - [select] Reduced horizontal padding from 60px to 40px.
 
-## 2. Bug Fixes
+#### Bug Fixes
 - [select] Border styles are now applied to the label element, this resolves a rendering issue were multiple select buttons  lost their borders.
 - [select] Webkit vendor prefixes applied so buttons look and function correctly in older versions of Safari (including iOS8).
 
-===
 
-# Toolkit v0.4.0
+## 0.4.0
 
-## Toolkit Core v0.5.0
+### toolkit-core 0.5.0
 
-### 1. Enhancements
+#### Enhancements
 - [gradients] Sky Cinema gradient implemented to `$gradients`, replacing Sky Movies.
 - [typography] Typographic scale implemented in a responsive sass-map under `$text`.
 - [sass-deprecate] Left-over code from sass-deprecate removed.
 
-### 2. Deprecations
+#### Deprecations
 - [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config. To continue using the previous classes set `$legacy-typography: true;` at the very top of your sass import, before toolkit-core.
 
-## Toolkit UI v0.4.0
+### toolkit-ui 0.4.0
 
-### 1. Enhancements
+#### Enhancements
 - [buttons] Secondary (invert) hover color changed to align with branding.
 - [panels] Panels now utilise a white background by default.
 - [tiles] Sky Cinema gradient implemented to `c-tile`, replacing Sky Movies.
 - [typography] New responsive Typographic scale (and added to components where used).
 
-### 2. Deprecations
+#### Deprecations
 - [legacy-typography] We removed the previous typographic variables in favour of a responsive approach. To deprecate gracefully, a toggle variable has been provided in settings/config.
 - [panels] Following branding, grey panels are no longer used.
 
-===
 
-# Toolkit v0.3.10
+## 0.3.10
 
-## Toolkit UI v0.3.10
+### toolkit-ui 0.3.10
 
-### 1. Enhancement
+#### Enhancement
 - [Tooltip] Added `c-tooltip--hover` modifier to allow tooltips to be triggered on hover.
 
-===
 
-# Toolkit v0.3.9
+## 0.3.9
 
-## Toolkit UI v0.3.9
+### toolkit-ui 0.3.9
 
-### 1. Feature
+#### Feature
 - [Tooltip] Adds the `c-tooltip` component. Easily apply tooltip bubbles to any trigger.
 
-===
 
-# Toolkit v0.3.8
+## 0.3.8
 
-## Toolkit UI v0.3.8
+### toolkit-ui 0.3.8
 
-### 1. Feature
+#### Feature
 - [Accordion] Integrate `c-accordion`, a simple accordion container which can be animated and controlled by a range of different frameworks.
 
-===
 
-# Toolkit v0.3.7
+## 0.3.7
 
 - [package.json] Switched dependencies to NPM packages instead of GitHub links.
 
-===
 
-# Toolkit v0.3.6
+## 0.3.6
 
-## Toolkit UI
+### toolkit-ui
 
-### 1. Bug Fixes
+#### Bug Fixes
 - [tile] Corrected `c-tile__media` overflow from `none` to `hidden`.
 
-===
 
-# Toolkit v0.3.5
+## 0.3.5
 
-## Toolkit UI
+### toolkit-ui
 
-### 1. Enhancements
+#### Enhancements
 - [tile] Removed outer border and refactor of variables.
 - [hero] Match glass border thickness to `c-tile`.
 
-### 2. Bug Fixes
+#### Bug Fixes
 - [select] Hover states moved to `.c-select__btn` rather than the hidden input (`.c-select__input`) to ensure better browser support.
 - [select] Focus style uses shaded border rather than matching the hover state to avoid confusion over the actual state.
 
-===
 
-# Toolkit v0.3.4
+## 0.3.4
 
-## Toolkit Core
+### toolkit-core
 
-### 1. Enhancements
+#### Enhancements
 - [settings] Set settings maps to `!default` to enable easier overwriting of values if needed
 
-### 2. Deprecations
+#### Deprecations
 - [sass-deprecate] We removed the sass-deprecate library in favour of changelogs and improved release notes
 
-===
 
-# Toolkit v0.3.3
+## 0.3.3
 
-## Toolkit UI
+### toolkit-ui
 
-## 1. Bezel
+#### Bezel
 - [bezel] Added the `.c-bezel` component, which provides a glass "bezel" inner border to the container of a media element.
 
-===
 
-# Toolkit v0.3.2
+## 0.3.2
 
-## Toolkit UI
+### toolkit-ui
 
-## 1. Bug Fixes
+#### Bug Fixes
 - [tile] Changed tile brand modifiers class to `.c-tile__body` rather than `.c-tile__caption` so that it applies to all tiles rather than just the split media tiles
 - [select] Fixes gap in bg and border on hover state caused by duplicate `border-radius` properties.
 
-===
 
-# Toolkit v0.3.1
+## 0.3.1
 
-## Toolkit UI
+### toolkit-ui
 
-### 1. Enhancements
+#### Enhancements
 - [select] Added `.is-selected` state to `.c-select__input` to change icon to cross
 
-===
 
-# Toolkit v0.3.0
+## 0.3.0
 
-## Toolkit Core
+### toolkit-core
 
-### 1. Enhancements
+#### Enhancements
 - [utilities] Added `.u-vertical-align` helper to allow vertical centering of elements
 - [utilities] Added `tiny` variation to the spacing utility
 - [tools] Added `radial` to the `background-gradient` mixin
 - [settings] Added `ui-mid` to the `colors` map
 
 
-### 2. Bug Fixes
+#### Bug Fixes
 - [layout] Fixed margin left on `o-layout--narrow`
 - [utilities] Fix missing zero-value spacing modifiers
 - [utilities] Added IE9 specific form fixes
 
-### 3. Deprecations
+#### Deprecations
 - [defence] Moved defence to `toolkit-ui`
 - [sass-deprecate] We removed the sass-deprecate library in favour of changelogs and improved release notes
 
+### toolkit-ui
 
-## Toolkit UI
-
-### 1. Enhancements
+#### Enhancements
 - [tile] Added `.c-tile--collapsable` modifier to replecate previous default of removing height and `.c-tile__media` on mobile
 - [tile] Refactored tile to improve performance
 - [tile] Added radial gradient for content tiles and linear for media tiles by default
@@ -529,7 +518,7 @@ Radio:
 - [select] Added hover state
 - [defence] Moved defence to `toolkit-ui` from `toolkit-core`
 
-### 2. Bug Fixes
+#### Bug Fixes
 - [tile] Branded Tile hover text and background tweaks to be more consistent between focus / active
 - [tile] Prevented multiple gradients being applied to single tiles
 - [forms] Fixed unwanted outline on inputs on firefox when element in focus
@@ -539,7 +528,7 @@ Radio:
 - [hero] Fixed IE9 video support
 - [typography] Corrected `.c-text-body` selector
 
-### 3. Deprecations
+#### Deprecations
 This release contains the following potentially breaking deprecations:
 
 - [tile] Default removal of height constraint and `.c-tile__media` on mobile has been replaced with the `.c-tile--collapsable` modifier
