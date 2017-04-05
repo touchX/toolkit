@@ -7,6 +7,7 @@
 
 ### Dependencies
 
+* [[normalize.css](https://github.com/necolas/normalize.css)] Switch hard-coded Normalize to dependency.
 * [[supercell](https://github.com/sky-uk/supercell)] Switch layout system to Supercell.
 
 
