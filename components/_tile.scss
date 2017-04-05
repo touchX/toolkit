@@ -152,6 +152,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   border: 0; /* [1] */
   outline: none;
   transition: color $tile-animation-speed ease, box-shadow $global-animation-speed-fast ease;
+  cursor: pointer;
 
   .c-tile--square & {
     position: absolute;
