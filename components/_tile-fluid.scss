@@ -88,9 +88,9 @@ $tile-fluid-max-width: $container-width !default;
    * 2. Set margin bottom in em relative to the elements font-size (36px)
    */
   .c-tile__title {
-    font-size: convert-to-em(text(heading-charlie)); /* [1] */
+    font-size: convert-to-em(text(heading-delta)); /* [1] */
     line-height: 1.25em;
-    margin-bottom: convert-to-em($global-spacing-unit-tiny, text(heading-charlie));  /* [2] */
+    margin-bottom: convert-to-em($global-spacing-unit-tiny, text(heading-delta));  /* [2] */
   }
 }
 
@@ -192,5 +192,19 @@ $tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint
 @each $alias, $bp in $mq-breakpoints {
   @include mq($from: $bp) {
     @include tile-fluid-scales(1 2 3 4 5, \@#{$alias});
+  }
+}
+
+/* Modifiers
+  =========================================== */
+
+/**
+ * Collapsible Fluid Tiles
+ *
+ * Collapsible Fluid Tiles are overriden to the correct size on medium screens.
+ */
+.c-tile--fluid.c-tile--collapsible {
+  @include mq($until: medium) {
+    font-size: $tile-fluid-base-font-size * (2 / 3);
   }
 }
