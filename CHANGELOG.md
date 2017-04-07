@@ -13,16 +13,15 @@
 ### Features
 - [tile]
   - Design Changes
-    - White background by default (replacing gradient<sup>[1]</sup>).
-    - Gradient<sup>[1]</sup> applied only on link interaction.
-    - Shadow increased on interaction.
-    - Decreased size of `c-tile__title`
-- Link text underline now only applies to `c-tile__title`.
+    - White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
+    - Shadow animation on link interaction.
+    - Decreased size of `c-tile__title`.
+- Link interaction now only applies text underline to `c-tile__title`.
 - `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
 - Improvements to inline documentation and code structure.
 
-
 ### Footnotes
+
 1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
 
 
