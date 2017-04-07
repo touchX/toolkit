@@ -205,6 +205,6 @@ $tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint
  */
 .c-tile--fluid.c-tile--collapsible {
   @include mq($until: medium) {
-    font-size: $tile-fluid-base-font-size * (1 / 1.5);
+    font-size: $tile-fluid-base-font-size * (2 / 3);
   }
 }
