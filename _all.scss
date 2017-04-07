@@ -61,6 +61,7 @@
  *
  * UTILITIES
  * Clearfix.............Utility class for applying a clearfix to an element.
+ * Fill.................Utility classes to position an element within its parent.
  * Hide.................Helper classes for hiding content in different ways.
  * Typography...........A suite of helper classes for manipulating typographical
  *                      elements (alignment, size, etc.).
@@ -117,3 +118,4 @@
 @import "utilities/vertical-align";
 @import "utilities/ie9";
 @import "utilities/debug";
+@import "utilities/fill";
