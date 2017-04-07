@@ -3,6 +3,26 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.0.0
+
+### Deprecations
+- [tile] - `--collapsable` modifer removed due to typo and changes in styling. Please use the `--collapsible` modifier instead.
+
+### Features
+- [tile]
+  - Design Changes
+     - White background by default (replacing gradient<sup>[1]</sup>).
+     - Gradient<sup>[1]</sup> applied only on link interaction.
+     - Shadow increased on interaction.
+ - Link text underline now only applies to `c-tile__title`.
+ - `--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
+ - Improvements to inline documentation and code structure.
+
+ 
+### Footnotes
+1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
+
+
 ## 1.11.0
 
 ### Fixes
