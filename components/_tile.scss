@@ -1,5 +1,5 @@
 /* ==========================================================================
-   COMPONENTS / TILE
+   COMPONENTS / #TILE
    ========================================================================== */
 
 // Tile Settings
@@ -29,6 +29,20 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
   bottom: $tile-edge-position-offset;
   left: $tile-edge-position-offset;
 }
+
+/* Base
+  ============================================ */
+
+// Dependencies (Optional)
+// =========================================== */
+
+// "Tile" builds upon "Shine" for `.c-tile__shine`.
+//
+// If you want to utilise this feature, you must import
+// `sky-toolkit-ui/components/shine` *before*
+// `sky-toolkit-ui/components/tile` in your main scss file.
+//
+// If you are using `sky-toolkit-ui/all`, please ignore the above.
 
 /* Base
   ============================================ */

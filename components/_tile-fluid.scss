@@ -1,7 +1,19 @@
 /* ==========================================================================
- * COMPONENTS / TILE FLUID
- * ==========================================================================
- *
+   COMPONENTS / #TILE-FLUID
+   ========================================================================== */
+
+// Dependencies (Required)
+// =========================================== */
+
+// "Tile Fluid" builds upon "Tile" for `.c-tile--fluid`.
+//
+// To use this component, you must import
+// `sky-toolkit-ui/components/tile` *before*
+// `sky-toolkit-ui/components/tile-fluid` in your main scss file.
+//
+// If you are using `sky-toolkit-ui/all`, please ignore the above.
+
+/**
  * Fluid tiles are designed to scale proportionally, this means the tile's
  * content scales in relation to its width.
  *
