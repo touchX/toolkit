@@ -3,6 +3,13 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.10.0
+
+### Features
+
+* [mixins] edge-positioning mixin to simplify and avoid repeated use of individual edge positioning.
+* [utilities] addition of `u-absolute-fill` to absolutely position an element to fully fill the parent container.
+
 ## 1.9.0
 
 ### Dependencies
