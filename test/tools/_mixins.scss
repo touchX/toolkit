@@ -162,7 +162,8 @@
     @include assert("should offest all positions by zero ") {
       @include input() {
         .foo {
-          @include edge-positioning()
+          @include edge-positioning();
+
         }
       }
 
@@ -181,7 +182,8 @@
     @include assert("should offest all positions by the value ") {
       @include input() {
         .foo {
-          @include edge-positioning(5px)
+          @include edge-positioning(5px);
+
         }
       }
 
