@@ -153,3 +153,46 @@
     }
   }
 }
+
+// Edge Positioning mixin
+// ===========================================
+
+@include test-module("@mixin edge-positioning") {
+  @include test("when no arguments are given to the edge-positioning mixin") {
+    @include assert("should offest all positions by zero ") {
+      @include input() {
+        .foo {
+          @include edge-positioning()
+        }
+      }
+
+      @include expect() {
+        .foo {
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @include test("when an argument is given to the edge-positioning mixin") {
+    @include assert("should offest all positions by the value ") {
+      @include input() {
+        .foo {
+          @include edge-positioning(5px)
+        }
+      }
+
+      @include expect() {
+        .foo {
+          top: 5px;
+          right: 5px;
+          bottom: 5px;
+          left: 5px;
+        }
+      }
+    }
+  }
+}

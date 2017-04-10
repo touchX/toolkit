@@ -8,5 +8,6 @@
 
 .u-absolute-fill {
   position: absolute;
-  @include edge-positioning(0);
+
+  @include edge-positioning();
 }
