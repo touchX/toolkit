@@ -5,10 +5,15 @@
 
 ## 1.10.0
 
+### Enhancements
+
+* [globals] Introduction of `$global-container-width` to replace `$container-width` from Layout in 2.0.
+
 ### Features
 
-* [mixins] edge-position mixin to simplify and avoid repeated use of individual edge positioning.
-* [utilities] addition of `u-fill-absolute` to absolutely position an element to fully fill the parent container.
+* [mixins] `edge-position()` mixin to simplify and avoid repeated use of individual edge positioning.
+* [utilities] Addition of `u-fill-absolute` to absolutely position an element to fully fill the parent container.
+
 
 ## 1.9.0
 
