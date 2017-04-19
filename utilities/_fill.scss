@@ -6,8 +6,8 @@
  * Utility classes to position an element within its parent.
  */
 
-.u-absolute-fill {
+.u-fill-absolute {
   position: absolute;
 
-  @include edge-positioning();
+  @include edge-position();
 }

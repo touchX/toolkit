@@ -154,7 +154,7 @@
   }
 }
 
-// Edge Positioning mixin
+// Edge Position mixin
 // ===========================================
 
 @include test-module("@mixin edge-positioning") {
@@ -162,7 +162,7 @@
     @include assert("should offest all positions by zero ") {
       @include input() {
         .foo {
-          @include edge-positioning();
+          @include edge-position();
 
         }
       }
@@ -182,7 +182,7 @@
     @include assert("should offest all positions by the value ") {
       @include input() {
         .foo {
-          @include edge-positioning(5px);
+          @include edge-position(5px);
 
         }
       }
