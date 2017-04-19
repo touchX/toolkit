@@ -3,6 +3,25 @@
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.12.0
+
+### toolkit-ui 1.12.0
+
+#### Features
+- [tabs] New component for in-page navigation.
+
+### toolkit-core 1.10.0
+
+#### Enhancements
+
+* [globals] Introduction of `$global-container-width` to replace `$container-width` from Layout in 2.0.
+
+#### Features
+
+* [mixins] `edge-position()` mixin to simplify and avoid repeated use of individual edge positioning.
+* [utilities] Addition of `u-fill-absolute` to absolutely position an element to fully fill the parent container.
+
+
 ## 1.11.0
 
 ### toolkit-ui 1.11.0
