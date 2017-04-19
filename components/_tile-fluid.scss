@@ -59,7 +59,7 @@ $tile-fluid-base-font-size: (strip-unit($global-font-size / $tile-fluid-base-bre
  *
  */
 
-$tile-fluid-max-width: $container-width !default;
+$tile-fluid-max-width: $global-container-width !default;
 
 /**
  * Now we have the fluid-base-font-size calculated we can apply this to the
