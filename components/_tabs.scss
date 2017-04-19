@@ -53,7 +53,7 @@ $tabs-container-width: $global-container-width;
    */
   @include mq($from: medium) {
     padding: 0 $global-spacing-unit;
-    min-width: 50%;
+    min-width: 70%;
     max-width: $tabs-container-width;
     width: auto;
   }
@@ -170,7 +170,7 @@ $tabs-container-width: $global-container-width;
   overflow: hidden; /* [1] */
 
   @include mq($from: medium) {
-    padding: 0 $global-spacing-unit-large; /* [2] */
+    padding: 0 $global-spacing-unit; /* [2] */
   }
 }
 
