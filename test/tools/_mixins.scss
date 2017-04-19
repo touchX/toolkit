@@ -157,8 +157,8 @@
 // Edge Position mixin
 // ===========================================
 
-@include test-module("@mixin edge-positioning") {
-  @include test("when no arguments are given to the edge-positioning mixin") {
+@include test-module("@mixin edge-position") {
+  @include test("when no arguments are given to the edge-position mixin") {
     @include assert("should offest all positions by zero ") {
       @include input() {
         .foo {
@@ -178,7 +178,7 @@
     }
   }
 
-  @include test("when an argument is given to the edge-positioning mixin") {
+  @include test("when an argument is given to the edge-position mixin") {
     @include assert("should offest all positions by the value ") {
       @include input() {
         .foo {
