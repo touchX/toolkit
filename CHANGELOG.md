@@ -8,6 +8,9 @@
 ### Features
 - [tabs] New component for in-page navigation.
 
+### Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.10.0`.
+
 
 ## 1.11.0
 
