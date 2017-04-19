@@ -1,6 +1,15 @@
 # Changelog
 
-`sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
+`sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
+
+
+## 1.12.0
+
+### Features
+- [tabs] New component for in-page navigation.
+
+### Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.10.0`.
 
 
 ## 1.11.0
