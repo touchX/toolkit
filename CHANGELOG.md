@@ -3,6 +3,13 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.10.0
+
+### Enhancements
+
+* [globals] Introduction of `$global-container-width` to replace `$container-width` from Layout in 2.0.
+
+
 ## 1.9.0
 
 ### Dependencies
