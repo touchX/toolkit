@@ -10,6 +10,26 @@
 * [colors] `grey-40` modified to meet AA accessibility.
 
 
+## 1.10.0
+
+### Enhancements
+
+* [globals] Introduction of `$global-container-width` to replace `$container-width` from Layout in 2.0.
+
+### Features
+
+* [mixins] `edge-position()` mixin to simplify and avoid repeated use of individual edge positioning.
+* [utilities] Addition of `u-fill-absolute` to absolutely position an element to fully fill the parent container.
+
+
+## 1.9.0
+
+### Dependencies
+
+* [[normalize.css](https://github.com/necolas/normalize.css)] Switch hard-coded Normalize to dependency.
+* [[supercell](https://github.com/sky-uk/supercell)] Switch layout system to Supercell.
+
+
 ## 1.8.0
 
 ### Features
@@ -156,7 +176,6 @@
 * [utilities] Added `tiny` variation to the spacing utility
 * [tools] Added `radial` to the `background-gradient` mixin
 * [settings] Added `ui-mid` to the `colors` map
-
 
 ### Bug Fixes
 

@@ -7,6 +7,7 @@
  *
  * Sass MQ..............Neat little library for managing and using Media Queries
  *                      throughout the rest of the project.
+ * Supercell............Third-party width generator mixin.
  * Functions............A collection of custom Sass functions.
  * Mixins...............A collection of custom Sass mixins.
  * Mixins UI............A collection of custom Sass mixins supporting UI components.
@@ -19,6 +20,7 @@
  */
 
 @import "sass-mq/mq";
+@import "supercell/tools.widths";
 @import "functions";
 @import "mixins";
 @import "mixins-ui";
