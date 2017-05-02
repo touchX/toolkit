@@ -3,6 +3,20 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.11.0
+
+### Enhancements
+
+* [font-face]
+  * Moved assets from subdomain to host domain (also improves performance).
+  * Reduced font assets by 75% by doing more thorough cross-examination of browser support and usage (turns out we only need `.woff`).
+
+### Fixes
+
+* [test] Removal of `@mixin responsivize` test which generated terminal warnings.
+* Various typo fixes.
+
+
 ## 1.10.0
 
 ### Enhancements

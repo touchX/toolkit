@@ -128,30 +128,6 @@
       }
     }
   }
-
-  @include test("when the argument list contains items that do not match the keys in the $mq-breakpoint map - should only generate media queries for the items that match the $mq-breakpoint keys and one none specific class") {
-    @include assert("should only generate media queries for the items that match the $mq-breakpoint keys and one none specific class") {
-      @include input() {
-        .foo {
-          @include responsivize(small nonsense) {
-            color: red;
-          }
-        }
-      }
-
-      @include expect() {
-        .foo {
-          color: red;
-        }
-
-        @media (min-width: 420px) {
-          .foo\@small {
-            color: red;
-          }
-        }
-      }
-    }
-  }
 }
 
 // Edge Position mixin
