@@ -9,6 +9,11 @@
 
 * [colors] `grey-40` modified to meet AA accessibility.
 
+### Fixes
+
+* [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
+  pre-defined setting.
+
 
 ## 1.10.0
 
