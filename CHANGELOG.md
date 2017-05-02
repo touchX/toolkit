@@ -3,6 +3,13 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.0.0
+
+### Features
+
+* [colors] `grey-40` modified to meet AA accessibility.
+
+
 ## 1.10.0
 
 ### Enhancements
@@ -169,7 +176,6 @@
 * [utilities] Added `tiny` variation to the spacing utility
 * [tools] Added `radial` to the `background-gradient` mixin
 * [settings] Added `ui-mid` to the `colors` map
-
 
 ### Bug Fixes
 
