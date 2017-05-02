@@ -7,7 +7,9 @@
 
 ### Enhancements
 
-* [font-face] Replacement and streamlining of Sky Text `@font-face` sources.
+* [font-face]
+  * Moved assets from subdomain to host domain (also improves performance).
+  * Reduced font assets by 75% by doing more thorough cross-examination of browser support and usage (turns out we only need `.woff`).
 
 ### Fixes
 
