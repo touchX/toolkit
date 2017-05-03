@@ -296,10 +296,9 @@ $tabs-container-width: $global-container-width;
  */
 .c-tabs__body {
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: $tabs-animation-speed*2;
-  transform-style: ease;
-  transition-delay: 0s;
+  visibility: hidden;
+  transition: opacity $tabs-animation-speed ease, visibility 0s;
+  transition-delay: 0s, $tabs-animation-speed;
 }
 
 /* States
@@ -325,9 +324,11 @@ $tabs-container-width: $global-container-width;
  */
 .c-tabs__article.is-active {
   position: relative;
+  z-index: 1;
 
   .c-tabs__body {
     opacity: 1;
+    visibility: visible;
     transition-delay: $tabs-animation-speed; /* [1] */
   }
 }
