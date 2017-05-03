@@ -8,7 +8,7 @@
 ### toolkit-ui 1.13.0
 
 #### Fixes
-- [tabs] Accessibility improvements and fix for selectable tab content.
+* [tabs] Accessibility improvements and fix for selectable tab content.
 
 ### toolkit-core 1.11.0
 
@@ -29,7 +29,7 @@
 ### toolkit-ui 1.12.0
 
 #### Features
-- [tabs] New component for in-page navigation.
+* [tabs] New component for in-page navigation.
 
 ### toolkit-core 1.10.0
 
