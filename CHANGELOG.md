@@ -3,6 +3,27 @@
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.13.0
+
+### toolkit-ui 1.13.0
+
+#### Fixes
+- [tabs] Accessibility improvements and fix for selectable tab content.
+
+### toolkit-core 1.11.0
+
+#### Enhancements
+
+* [font-face]
+  * Moved assets from subdomain to host domain (also improves performance).
+  * Reduced font assets by 75% by doing more thorough cross-examination of browser support and usage (turns out we only need `.woff`).
+
+#### Fixes
+
+* [test] Removal of `@mixin responsivize` test which generated terminal warnings.
+* Various typo fixes.
+
+
 ## 1.12.0
 
 ### toolkit-ui 1.12.0
