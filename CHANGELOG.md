@@ -3,6 +3,15 @@
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.13.0
+
+### Fixes
+- [tabs] Accessibility improvements and fix for selectable tab content.
+
+### Dependencies
+- [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.11.0`.
+
+
 ## 1.12.0
 
 ### Features
