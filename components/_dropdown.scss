@@ -170,6 +170,9 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
   transform: scaleY(2.5); /* [2] */
   opacity: 0; /* [3] */
   transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease;
+  border: 0;
+  background: color(white);
+  text-align: left;
 
   .c-dropdown__item:last-child & {
     border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [4] */
@@ -178,6 +181,12 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
   &:hover,
   &:focus {
     background-color: $dropdown-background-focus;
+    outline: 0;
+    text-decoration: underline;
+  }
+
+  &:active {
+    outline: 0;
   }
 }
 
