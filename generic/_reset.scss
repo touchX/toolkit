@@ -27,3 +27,11 @@ li > {
     margin-bottom: 0;
   }
 }
+
+/**
+ * Let’s get `<table>`s behaving how we expect.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
