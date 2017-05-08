@@ -2,6 +2,11 @@
 
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
+## 1.14.0
+
+### Enhancements
+- [dropdown] Buttons can now be used as dropdown items.
+
 
 ## 1.13.0
 
