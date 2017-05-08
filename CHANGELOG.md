@@ -3,6 +3,13 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.12.0
+
+### Dependencies
+
+* [[supercell](https://github.com/sky-uk/supercell)] upgrade to utilise `.u-width-auto` classes.
+
+
 ## 1.11.0
 
 ### Enhancements
