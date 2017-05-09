@@ -19,20 +19,20 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
 ## Goals
 
-- Enable teams across tribes to share common styles.
-- Provide a modular approach to handling CSS/Sass components.
-- Provide a single source of truth for Polaris brand guidelines.
+* Enable teams across tribes to share common styles.
+* Provide a modular approach to handling CSS/Sass components.
+* Provide a single source of truth for Polaris brand guidelines.
 
 ## Structure
 
 The project consists of 3 repositories:
 
-- **this repo**: provides the UI and Core layers.
-- [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
-- [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components.
+* **this repo**: provides the UI and Core layers.
+* [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
+* [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components.
 
 ### Libraries
-- [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
+* [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
 
 ## Installation
 
@@ -51,7 +51,7 @@ See [sky.com/toolkit](http://sky.com/toolkit) for full individual component docu
 For rapid prototyping and static sites you can include our latest compiled CSS in the `<head>` of your page.
 
 ```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.13.0/toolkit.css">
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.14.0/toolkit.css">
 ```
 
 **We strongly advise not to use this method in live projects**.
@@ -72,7 +72,7 @@ If you're using [**webpack**](https://webpack.github.io/) you'll also need:
 
 To support IE9+, you **must** include the following at the top of your `index.html` / default container view.
 
-```html
+```
 <!DOCTYPE html>
 <!--[if IE 9 ]>               <html lang="en-GB" class="ie9"> <![endif]-->
 <!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]—>
@@ -130,10 +130,10 @@ If you need any support getting to grips with the Toolkit, pop over to your trib
 | CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
 | [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
-| [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [John Bower](https://github.com/beclamide)    | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
-|                                                   |                                                |                                               | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+| [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [Jag Sispal](https://github.com/jsispal)      | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
+|                                                   |                                                | [John Bower](https://github.com/beclamide)    | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
 
 **Special thanks to the following contributors:**
 
-- [Harry Roberts](https://github.com/csswizardry)
-- [Richard McIntyre](https://github.com/mackstar)
+* [Harry Roberts](https://github.com/csswizardry)
+* [Richard McIntyre](https://github.com/mackstar)
