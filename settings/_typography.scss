@@ -11,33 +11,108 @@
 //   .foo {
 //     font-size: text(heading-alpha, large);
 //   }
+//
+// Before Refactor (Remove before merge)
+// $text: (
+//   heading-alpha: (
+//     small: 36px,
+//     large: 50px
+//   ),
+//   heading-bravo: (
+//     small: 29px,
+//     large: 40px
+//   ),
+//   heading-charlie: (
+//     small: 25px,
+//     large: 34px
+//   ),
+//   heading-delta: (
+//     small: 20px,
+//     large: 28px
+//   ),
+//   text-lead: (
+//     small: 18px,
+//     large: 22px
+//   ),
+//   text-body: (
+//     small: 16px,
+//     large: 18px
+//   ),
+//   text-smallprint: (
+//     small: 12px,
+//     large: 12px
+//   )
+// ) !default;
+
 $text: (
   heading-alpha: (
-    small: 36px,
-    large: 50px
+    small: (
+      font-size: 36px,
+      line-height: 1.16
+    ),
+    large: (
+      font-size: 50px,
+      line-height: 1.12
+    )
   ),
   heading-bravo: (
-    small: 29px,
-    large: 40px
+    small: (
+      font-size: 29px,
+      line-height: 1.2
+    ),
+    large: (
+      font-size: 40px,
+      line-height: 1.15
+    )
   ),
   heading-charlie: (
-    small: 25px,
-    large: 34px
+    small: (
+      font-size: 25px,
+      line-height: 1.24
+    ),
+    large: (
+      font-size: 34px,
+      line-height: 1.18
+    )
   ),
   heading-delta: (
-    small: 20px,
-    large: 28px
+    small: (
+      font-size: 20px,
+      line-height: 1.3
+    ),
+    large: (
+      font-size: 28px,
+      line-height: 1.21
+    )
   ),
   text-lead: (
-    small: 18px,
-    large: 22px
+    small: (
+      font-size: 18px,
+      line-height: 1.44
+    ),
+    large: (
+      font-size: 22px,
+      line-height: 1.36
+    )
   ),
   text-body: (
-    small: 16px,
-    large: 18px
+    small: (
+      font-size: 16px,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 18px,
+      line-height: 1.44
+    )
   ),
   text-smallprint: (
-    small: 12px,
-    large: 12px
+    small: (
+      font-size: 12px,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 12px,
+      line-height: 1.5
+    )
   )
 ) !default;
