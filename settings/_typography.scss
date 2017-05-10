@@ -2,48 +2,13 @@
 // SETTINGS / #TYPOGRAPHY
 // =============================================================================
 
-// Our brand and project font-sizes are held in maps. Access these using:
+// Our brand and project font-sizes and line-heights are held in maps.
+// Access these using `@include font-size()` in `tools/mixins`.
 //
-//   text($KEY, $VARIANT)
+// TODO: Remove `text()` function to encourage mixin use.
+// TODO: Just an idea for the mixin to disable line-height output:
 //
-// For example:
-//
-//   .foo {
-//     font-size: text(heading-alpha, large);
-//   }
-//
-// Before Refactor (Remove before merge)
-// $text: (
-//   heading-alpha: (
-//     small: 36px,
-//     large: 50px
-//   ),
-//   heading-bravo: (
-//     small: 29px,
-//     large: 40px
-//   ),
-//   heading-charlie: (
-//     small: 25px,
-//     large: 34px
-//   ),
-//   heading-delta: (
-//     small: 20px,
-//     large: 28px
-//   ),
-//   text-lead: (
-//     small: 18px,
-//     large: 22px
-//   ),
-//   text-body: (
-//     small: 16px,
-//     large: 18px
-//   ),
-//   text-smallprint: (
-//     small: 12px,
-//     large: 12px
-//   )
-// ) !default;
-
+// @include font-size(heading-alpha, small, line-height: disabled);
 $text: (
   heading-alpha: (
     small: (
