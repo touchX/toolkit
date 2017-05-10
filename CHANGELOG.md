@@ -3,6 +3,17 @@
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.0.0
+
+### toolkit-core 2.0.0 (WIP)
+
+* See [toolkit-core changelog](https://github.com/sky-uk/toolkit-core/blob/release/v2/CHANGELOG.md).
+
+### toolkit-ui 2.0.0 (WIP)
+
+* See [toolkit-ui changelog](https://github.com/sky-uk/toolkit-ui/blob/release/v2/CHANGELOG.md).
+
+
 ## 1.14.0
 
 ### toolkit-ui 1.14.0
