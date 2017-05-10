@@ -57,7 +57,10 @@
 
 * [test] Removal of `@mixin responsivize` test which generated terminal warnings.
 * Various typo fixes.
+<<<<<<< HEAD
 >>>>>>> master
+=======
+>>>>>>> release/v2
 
 
 ## 1.10.0
