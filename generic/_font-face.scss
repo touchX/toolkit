@@ -1,5 +1,5 @@
 /* ==========================================================================
-   GENERIC / FONT-FACE
+   GENERIC / #FONT-FACE
    ========================================================================== */
 
 @if (str-index(#{$global-font-family}, "Sky Text") != null) {
@@ -11,18 +11,12 @@
    */
   @font-face {
     font-family: "Sky Text";
-    src: url("//assets.sky.com/fonts/sky_regular.eot");
-    src: url("//assets.sky.com/fonts/sky_regular.woff") format("woff"),
-         url("//assets.sky.com/fonts/sky_regular.ttf") format("truetype"),
-         url("//assets.sky.com/fonts/sky_regular.svg#sky_regular") format("svg");
+    src: url("//www.sky.com/assets/fonts/sky-regular.woff") format("woff");
   }
 
   @font-face {
     font-family: "Sky Text";
-    src: url("//assets.sky.com/fonts/sky_medium.eot");
-    src: url("//assets.sky.com/fonts/sky_medium.woff") format("woff"),
-         url("//assets.sky.com/fonts/sky_medium.ttf") format("truetype"),
-         url("//assets.sky.com/fonts/sky_medium.svg#sky_medium") format("svg");
+    src: url("//www.sky.com/assets/fonts/sky-medium.woff") format("woff");
     font-weight: bold;
   }
 }
