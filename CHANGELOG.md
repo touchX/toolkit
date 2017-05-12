@@ -2,6 +2,23 @@
 
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
+## 1.15.0
+
+### toolkit-ui 1.15.0
+
+#### Features
+
+* [switch] New component for toggling checkbox or radio inputs
+
+##### Example usage
+
+```html
+<label class="c-switch">
+    <input class="c-switch__input" type="checkbox" value="test" />
+    <div class="c-switch__button"></div>
+    <span class="c-switch__label">Example</span>
+</label>
+```
 
 ## 1.14.0
 
