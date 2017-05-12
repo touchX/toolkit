@@ -75,7 +75,7 @@ To support IE9+, you **must** include the following at the top of your `index.ht
 ```
 <!DOCTYPE html>
 <!--[if IE 9 ]>               <html lang="en-GB" class="ie9"> <![endif]-->
-<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]—>
+<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]-->
 <head>
   ...
 ```
