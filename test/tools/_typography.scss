@@ -21,13 +21,13 @@
 // Font size mixin
 // ===========================================
 
-@include test-module("@mixin font-size") {
+@include test-module("@mixin font") {
   @include typography_before();
 
   @include test("should return font size in pixels and rems") {
     @include assert("pixels and rems should be compiled") {
       @include input() {
-        @include font-size(test);
+        @include font(test);
       }
 
       @include expect() {
@@ -40,7 +40,7 @@
   @include test("should return the provided typography variant") {
     @include assert("small font size should be compiled") {
       @include input() {
-        @include font-size(test, small);
+        @include font(test, small);
       }
 
       @include expect() {

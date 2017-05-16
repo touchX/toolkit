@@ -1,0 +1,41 @@
+// =============================================================================
+// TOOLS / LEGACY
+// =============================================================================
+
+/* stylelint-disable string-no-newline */
+
+// In order to support our legacy tooling, wrappers are provided for modified
+// mixins and functions.
+// This allows developers to use the older Toolkit API before removal.
+
+// All the following will be removed Toolkit@2.0.0.
+
+// Functions
+// =============================================================================
+
+// $text map reader
+// ===========================================
+
+// Please see tools/functions for `font-size()` replacement.
+@function text($args...) {
+  @warn "Deprecation [function]: `text()`
+  Support for `text()` will be removed in Toolkit@2.0.0. Use `font-size()` instead.
+  If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+  @return font-size($args...);
+}
+
+// Mixins
+// =============================================================================
+
+// Font-sizing and vertical rhythm mixin
+// ===========================================
+
+// Please see tools/typography for `text()` replacement.
+@mixin font-size($args...) {
+  @include font($args...);
+  @warn "Deprecation [mixin]: `font-size()`
+  Support for `font-size()` will be removed in Toolkit@2.0.0. Use `font()` instead.
+  If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+}
+
+/* stylelint-enable */

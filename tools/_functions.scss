@@ -5,9 +5,20 @@
 // $text map reader
 // ===========================================
 
-// Function to get text instead of using `map-get`.
-@function text($key, $variant:large) {
+// Function to get font-size instead of using `map-get`.
+@function font-size($key, $variant:large) {
   @if map-has-key($text, $key) {
+
+    // Warning to be removed Toolkit@2.0.0
+    /* stylelint-disable string-no-newline */
+    @if $key == "text-lead-small" or $key == "text-body-small" {
+      @warn "Deprecation [typography]: `#{$key}`
+      Support for `#{$key}` (and `.c-#{$key}`) will be removed in Toolkit@2.0.0.
+      Use `text-body` (or `.c-text-body`) instead.
+      If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+    }
+    /* stylelint-enable */
+
     @if ($variant != null) {
       @return map-get(map-get($text, $key), $variant);
     }
@@ -87,5 +98,4 @@
   @else {
     @warn "Value must be em or px";
   }
-
 }
