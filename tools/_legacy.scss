@@ -33,8 +33,8 @@
 // Please see tools/typography for `text()` replacement.
 @mixin font-size($args...) {
   @include font($args...);
-  @warn "Deprecation [mixin]: `font-size()`
-  Support for `font-size()` will be removed in Toolkit@2.0.0. Use `font()` instead.
+  @warn "Deprecation [mixin]: `@include font-size()`
+  Support for `@include font-size()` will be removed in Toolkit@2.0.0. Use `@include font()` instead.
   If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
 }
 

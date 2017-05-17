@@ -3,11 +3,27 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.13.0
+
+### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [tools]
+  * Functions: Removal of `text()`. Use `font-size()` instead.
+  * Mixins: Removal of `@include font-size()`. Use `@include font()` instead.
+* [typography]
+  * Removal of `text-lead-small`. Use `text-body` instead.
+  * Removal of `text-body-small`. Use `text-body` instead.
+* [utilities] Removal of `_defence.scss` due to deprecation of the current masthead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
 ## 1.12.0
 
 ### Dependencies
 
-* [[supercell](https://github.com/sky-uk/supercell)] upgrade to utilise `.u-width-auto` classes.
+* [[supercell]](https://github.com/sky-uk/supercell)] upgrade to utilise `.u-width-auto` classes.
 
 
 ## 1.11.0
