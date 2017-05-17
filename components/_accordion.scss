@@ -49,7 +49,7 @@ $accordion-icon-size: 20px !default;
  * 5. Overwrite browser interaction styles to hide outline and show pointer.
  */
 .c-accordion__label {
-  @include font-size(text-body-small); /* [1] */
+  @include font(text-body-small); /* [1] */
   display: block; /* [2] */
   position: relative; /* [2] */
   font-weight: bold; /* [1] */
