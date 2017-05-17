@@ -19,9 +19,10 @@
 //     font-size: 1rem;
 // }
 //
+// legacy-warning to be removed in Toolkit@2.0.0
 
-@mixin font($key, $variant:large) {
-  $font-size: font-size($key, $variant);
+@mixin font($key, $variant:large, $legacy-warning:null) {
+  $font-size: font-size($key, $variant, $legacy-warning);
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
 }
