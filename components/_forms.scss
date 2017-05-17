@@ -340,7 +340,7 @@ $form-animation-speed: $global-animation-speed-fast;
   display: inline-block;
   width: 100%;
   margin-bottom: $global-spacing-unit-tiny;
-  font-size: text($form-font-size);
+  font-size: font-size($form-font-size);
   cursor: pointer;
 }
 
