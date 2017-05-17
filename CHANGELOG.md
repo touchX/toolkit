@@ -19,6 +19,7 @@ The following will be removed in Toolkit@2.0.0:
 
 If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
 
+
 ## 1.12.0
 
 ### Dependencies
