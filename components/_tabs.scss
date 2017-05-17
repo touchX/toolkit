@@ -210,11 +210,18 @@ $tabs-container-width: $global-container-width;
  * Tabs Link
  *
  * The "Tabs"; the key interaction for switching between Tabs Articles.
+ * Can be used on `<a>` or `<button>`.
  */
 .c-tabs__link {
+  display: inline-block;
   position: relative;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
   color: inherit;
-  overflow: hidden;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
 
   /**
    * Tabs Link - Indicator
@@ -230,7 +237,7 @@ $tabs-container-width: $global-container-width;
     display: block;
     left: -$global-spacing-unit-tiny; /* [1] */
     right: -$global-spacing-unit-tiny; /* [1] */
-    bottom: -($tabs-link-padding + $tabs-indicator-height + $tabs-border-width*3);
+    bottom: -($global-spacing-unit-tiny + $tabs-border-width);
     height: $tabs-indicator-height;
     z-index: 100;
     background-color: color(text);
