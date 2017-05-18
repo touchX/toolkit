@@ -2,6 +2,24 @@
 
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
+
+## 1.16.0
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.13.0`.
+
+### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [typography]
+  * Removal of `.c-text-lead-small`. Use `.c-text-body` instead.
+  * Removal of `.c-text-body-small`. Use `.c-text-body` instead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
+
 ## 1.15.0
 
 ### Features
@@ -17,6 +35,7 @@
     <span class="c-switch__label">Example</span>
 </label>
 ```
+
 
 ## 1.14.0
 
