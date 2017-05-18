@@ -94,6 +94,7 @@ $tabs-container-width: $global-container-width;
   &::before {
     @include divider-gradient();
     height: $tabs-border-width;
+    z-index: 1;
   }
 
   /**
