@@ -4,9 +4,9 @@
 
 // Tabs Settings
 $tabs-border-width: $global-border-width;
-$tabs-shadow-height: 10px;
+$tabs-shadow-height: 14px;
 $tabs-indicator-height: 2px;
-$tabs-link-padding: $global-spacing-unit-tiny;
+$tabs-link-padding: 5px;
 $tabs-animation-speed: $global-animation-speed-fast;
 $tabs-container-width: $global-container-width;
 
@@ -85,7 +85,8 @@ $tabs-container-width: $global-container-width;
     content: "";
     position: absolute;
     display: block;
-    width: 100%;
+    width: 130%;
+    margin-left: -15%;
   }
 
   /**
