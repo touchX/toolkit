@@ -171,6 +171,7 @@ $tabs-container-width: $global-container-width;
   width: 100%;
   padding: 0;
   overflow: hidden; /* [1] */
+  display: inline;
 
   @include mq($from: medium) {
     padding: 0 $global-spacing-unit; /* [2] */
