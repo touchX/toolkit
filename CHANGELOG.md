@@ -2,6 +2,38 @@
 
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
+
+## 1.16.0
+
+### toolkit-core 1.13.0
+
+#### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [tools]
+  * Functions: Removal of `text()`. Use `font-size()` instead.
+  * Mixins: Removal of `@include font-size()`. Use `@include font()` instead.
+* [typography]
+  * Removal of `text-lead-small`. Use `text-body` instead.
+  * Removal of `text-body-small`. Use `text-body` instead.
+* [utilities] Removal of `_defence.scss` due to deprecation of the current masthead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
+### toolkit-ui 1.16.0
+
+#### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [typography]
+  * Removal of `.c-text-lead-small`. Use `.c-text-body` instead.
+  * Removal of `.c-text-body-small`. Use `.c-text-body` instead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
+
 ## 1.15.0
 
 ### toolkit-ui 1.15.0
@@ -19,6 +51,7 @@
     <span class="c-switch__label">Example</span>
 </label>
 ```
+
 
 ## 1.14.0
 
