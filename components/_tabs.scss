@@ -125,7 +125,7 @@ $tabs-container-width: $global-container-width;
    */
   &::after {
     @include divider-shadow(top);
-    bottom: $tabs-border-width;
+    bottom: 0;
   }
 }
 
