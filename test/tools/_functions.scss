@@ -32,7 +32,7 @@
 // ===========================================
 
 // Function to get text instead of using `map-get`.
-@function text($key, $variant:large) {
+@function font-size($key, $variant:large) {
   @if map-has-key($text, $key) {
     @if ($variant != null) {
       @return map-get(map-get($text, $key), $variant);
@@ -48,25 +48,25 @@
 // $text map reader
 // ===========================================
 
-@include test-module("@function text") {
+@include test-module("@function font-size") {
   @include functions_before();
 
   @include test("should return a large size value for given key") {
-    $actual: text("testkey", large);
+    $actual: font-size("testkey", large);
     $expected: 20px;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return a small size value for given key") {
-    $actual: text("testkey", small);
+    $actual: font-size("testkey", small);
     $expected: 18px;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return a large size value if no variant is provided") {
-    $actual: text("testkey");
+    $actual: font-size("testkey");
     $expected: 20px;
 
     @include assert-equal($actual, $expected);
