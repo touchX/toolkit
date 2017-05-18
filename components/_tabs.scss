@@ -102,7 +102,7 @@ $tabs-container-width: $global-container-width;
    * Shared height for top and bottom shadow.
    */
   &::after {
-    height: $tabs-shadow-height;
+    height: $tabs-shadow-height + $tabs-border-width;
   }
 }
 
@@ -150,7 +150,7 @@ $tabs-container-width: $global-container-width;
    */
   &::after {
     @include divider-shadow();
-    top: $tabs-border-width;
+    top: 0;
   }
 }
 
