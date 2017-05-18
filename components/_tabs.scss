@@ -125,8 +125,6 @@ $tabs-container-width: $global-container-width;
   &::after {
     @include divider-shadow(top);
     bottom: 0;
-    width: 130%;
-    margin-left: -15%;
   }
 }
 
@@ -152,8 +150,6 @@ $tabs-container-width: $global-container-width;
   &::after {
     @include divider-shadow();
     top: 0;
-    width: 130%;
-    margin-left: -15%;
   }
 }
 
