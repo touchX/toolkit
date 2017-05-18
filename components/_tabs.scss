@@ -239,7 +239,7 @@ $tabs-container-width: $global-container-width;
     display: block;
     left: -$global-spacing-unit-tiny; /* [1] */
     right: -$global-spacing-unit-tiny; /* [1] */
-    bottom: -($global-spacing-unit-tiny + $tabs-border-width);
+    bottom: -($tabs-link-padding + $tabs-border-width);
     height: $tabs-indicator-height;
     z-index: 100;
     background-color: color(text);
