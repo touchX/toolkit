@@ -103,6 +103,8 @@ $tabs-container-width: $global-container-width;
    */
   &::after {
     height: $tabs-shadow-height + $tabs-border-width;
+    width: 130%;
+    margin-left: -15%;
   }
 }
 
