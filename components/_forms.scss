@@ -88,7 +88,7 @@ $form-animation-speed: $global-animation-speed-fast;
  *
  */
 .c-form-label {
-  @include font($form-font-size, large);
+  @include font($form-font-size, large, disable-warning);
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
 }
@@ -104,7 +104,7 @@ $form-animation-speed: $global-animation-speed-fast;
  * 2. Padding added via line-height/height to re-center text for all browsers (38px to account for border).
  */
 .c-form-input {
-  @include font($form-font-size, large);
+  @include font($form-font-size, large, disable-warning);
   display: inline-block;
   padding: 0 $global-spacing-unit-tiny; /* [1] */
   margin-bottom: $global-spacing-unit-tiny;
@@ -149,7 +149,7 @@ $form-animation-speed: $global-animation-speed-fast;
  * iOS Safari and Android. Other browsers will fallback to a text field.
  */
 .c-form-date {
-  @include font($form-font-size, large);
+  @include font($form-font-size, large, disable-warning);
   display: inline-block;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
   margin-bottom: $global-spacing-unit-tiny;
@@ -226,7 +226,7 @@ $form-animation-speed: $global-animation-speed-fast;
  */
 .c-form-combo__btn,
 .c-form-combo__input {
-  @include font($form-font-size, large);
+  @include font($form-font-size, large, disable-warning);
   padding-top: $global-spacing-unit-tiny/2;
   padding-bottom: $global-spacing-unit-tiny/2;
 }
@@ -235,7 +235,7 @@ $form-animation-speed: $global-animation-speed-fast;
   =========================================== */
 
 .c-form-select {
-  @include font($form-font-size, large);
+  @include font($form-font-size, large, disable-warning);
   line-height: 1.2;
   display: inline-block;
   margin-bottom: $global-spacing-unit-tiny;
@@ -340,7 +340,7 @@ $form-animation-speed: $global-animation-speed-fast;
   display: inline-block;
   width: 100%;
   margin-bottom: $global-spacing-unit-tiny;
-  font-size: font-size($form-font-size);
+  font-size: font-size($form-font-size, large, disable-warning);
   cursor: pointer;
 }
 

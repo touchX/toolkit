@@ -77,20 +77,22 @@
 }
 
 .c-text-lead-small {
-  @include font(text-lead-small, small);
+  @include font(text-lead-small, small, disable-warning);
   line-height: 1.5;
 
   @include mq($from: medium) {
+    // Leave one warning to alert all consumers of upcoming changes
     @include font(text-lead-small, large);
     line-height: 1.4;
   }
 }
 
 .c-text-body-small {
-  @include font(text-body-small, small);
+  @include font(text-body-small, small, disable-warning);
   line-height: 1.5;
 
   @include mq($from: medium) {
+    // Leave one warning to alert all consumers of upcoming changes
     @include font(text-body-small, large);
     line-height: 1.5;
   }
