@@ -131,7 +131,8 @@ If you need any support getting to grips with the Toolkit, pop over to your trib
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
 | [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
 | [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [Jag Sispal](https://github.com/jsispal)      | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
-|                                                   |                                                | [John Bower](https://github.com/beclamide)    | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+|                                                   |                                                | [James Peiris](https://github.com/jamespeiris)| [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+|                                                   |                                                | [John Bower](https://github.com/beclamide)    |                                                |                                                      |
 
 **Special thanks to the following contributors:**
 
