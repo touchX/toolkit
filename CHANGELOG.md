@@ -3,6 +3,17 @@
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.17.0
+
+### toolkit-ui 1.17.0
+
+#### Fixes
+
+* [tabs]
+  * Allow `.c-tabs__link` to be used on `<button>`.
+  * Style changes to match the original design (smaller navigation height, larger shadow size).
+
+
 ## 1.16.0
 
 ### toolkit-core 1.13.0
