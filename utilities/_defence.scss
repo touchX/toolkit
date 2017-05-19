@@ -2,6 +2,12 @@
    UTILITIES / #DEFENCE
    ========================================================================== */
 
+/* stylelint-disable string-no-newline */
+@warn "Deprecation [utility]: Defence
+Support for `_defence.scss` will be removed in Toolkit@2.0.0 due to deprecation of the existing Masthead.
+If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+/* stylelint-enable */
+
 // Defence Settings
 // 1. Sets classic-masthead sass-mq breakpoint.
 // 2. Sets default Tile themes to defend.
