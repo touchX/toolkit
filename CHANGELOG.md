@@ -7,6 +7,7 @@
 
 ### Fixes
 
+* [tabs] Allow `.c-tabs__link` to be used on `<button>`.
 * [tabs] Style changes to match the original design (smaller navigation height, larger shadow size).
 
 
