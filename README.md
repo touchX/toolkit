@@ -51,7 +51,7 @@ See [sky.com/toolkit](http://sky.com/toolkit) for full individual component docu
 For rapid prototyping and static sites you can include our latest compiled CSS in the `<head>` of your page.
 
 ```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.16.0/toolkit.css">
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v1.17.0/toolkit.css">
 ```
 
 **We strongly advise not to use this method in live projects**.
@@ -131,7 +131,8 @@ If you need any support getting to grips with the Toolkit, pop over to your trib
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
 | [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
 | [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [Jag Sispal](https://github.com/jsispal)      | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
-|                                                   |                                                | [John Bower](https://github.com/beclamide)    | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+|                                                   |                                                | [James Peiris](https://github.com/jamespeiris)| [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+|                                                   |                                                | [John Bower](https://github.com/beclamide)    |                                                |                                                      |
 
 **Special thanks to the following contributors:**
 
