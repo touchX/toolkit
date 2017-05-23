@@ -3,12 +3,7 @@
 // =============================================================================
 
 // Our brand and project font-sizes and line-heights are held in maps.
-// Access these using `@include font-size()` in `tools/mixins`.
-//
-// TODO: Remove `text()` function to encourage mixin use.
-// TODO: Just an idea for the mixin to disable line-height output:
-//
-// @include font-size(heading-alpha, small, line-height: disabled);
+// Access these using `@include font()` from `tools/typography`.
 $text: (
   heading-alpha: (
     small: (
