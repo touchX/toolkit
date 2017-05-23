@@ -92,7 +92,7 @@ $tooltip-z-base: 50;
    *    margins
    */
   .c-tooltip__content {
-    @include font-size(text-body);
+    @include font(text-body);
     display: block;
     position: absolute;
     z-index: $tooltip-z-base+2; /* [1] */
