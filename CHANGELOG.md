@@ -25,6 +25,49 @@
 1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
 
 
+## 1.17.0
+
+### Fixes
+
+* [tabs]
+  * Allow `.c-tabs__link` to be used on `<button>`.
+  * Style changes to match the original design (smaller navigation height, larger shadow size).
+
+
+## 1.16.0
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.13.0`.
+
+### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [typography]
+  * Removal of `.c-text-lead-small`. Use `.c-text-body` instead.
+  * Removal of `.c-text-body-small`. Use `.c-text-body` instead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
+
+## 1.15.0
+
+### Features
+
+* [switch] New component for toggling checkbox or radio inputs
+
+#### Example usage
+
+```html
+<label class="c-switch">
+    <input class="c-switch__input" type="checkbox" value="test" />
+    <div class="c-switch__button"></div>
+    <span class="c-switch__label">Example</span>
+</label>
+```
+
+
 ## 1.14.0
 
 ### Enhancements
@@ -177,7 +220,7 @@
 
 #### Example Usage
 
-```
+```html
 <div class="o-container  c-tile-fluid-container">
   <div class="o-layout">
     <div class="o-layout__item  u-width-1/2@medium  c-tile-fluid-scale-1/2@medium">
