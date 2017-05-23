@@ -70,7 +70,7 @@ $panel-background-color-dark: color(grey-50) !default;
  */
 
 .c-panel__toggle {
-  @include font-size(text-body);
+  font-size: font-size(text-body);
   line-height: 1;
   position: absolute; /* [1] */
   top: $global-spacing-unit-small; /* [1] */
