@@ -11,22 +11,20 @@
   @if ($property == font-size or $property == line-height) {
     // Check the`$key` exists in `$text`.
     @if map-has-key($text, $key) {
-      // Check `$variant` is defined
-      @if ($variant != null) {
-        // Check the font-size `$variant` exists for `$key`.
-        @if map-has-key(map-get($text, $key), $variant) {
-          // Return the font-size value from `$text`.
-          @return map-get(map-get(map-get($text, $key), $variant), $property);
-        }
-        @warn "Unknown variant of `#{$variant}` for `#{$key}` in $text.";
-        @return null;
+      // Check the font-size `$variant` exists for `$key`.
+      @if map-has-key(map-get($text, $key), $variant) {
+        // Return the font-size value from `$text`.
+        @return map-get(map-get(map-get($text, $key), $variant), $property);
       }
-      @warn "Variant must be defined for `#{$key}` in $text. Leave empty to use default `large` variant.";
+
+      @warn "Unknown variant of `#{$variant}` for `#{$key}` in $text. Leave empty to use default `large` variant.";
       @return null;
     }
+
     @warn "Unknown `#{$key}` in $text.";
     @return null;
   }
+
   @warn "Unknown property of `#{$property}` for `#{$key}` in $text. Valid properties include `font-size` and `line-height`.";
   @return null;
 }
