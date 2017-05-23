@@ -5,14 +5,83 @@
 
 ## 2.0.0
 
-### Features
-
-* [typography] Updated sizing to the typographic scale.
-
 ### Deprecations
 
+* [tile]
+  * `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
+  * `c-tile__small-title` removed due to lack of use.
 * [typography] Removal of `.c-text-lead-small` and `.c-text-body-small`.
-    * Please use `.c-text-body` instead.
+  * Please use `.c-text-body` instead.
+
+### Features
+* [tile]
+    * Design Changes
+        * White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
+        * Shadow animation on link interaction.
+        * Decreased size of `c-tile__title`.
+        * Link interaction now only applies text underline to `c-tile__title`.
+        * `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
+    * Improvements to inline documentation and code structure.
+* [typography] Updated sizing to the typographic scale.
+
+### Footnotes
+
+1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
+
+
+## 1.14.0
+
+### Enhancements
+
+* [dropdown] Buttons can now be used as dropdown items.
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.12.0`.
+
+
+## 1.13.0
+
+### Fixes
+
+* [tabs] Accessibility improvements and fix for selectable tab content.
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.11.0`.
+
+
+## 1.12.0
+
+### Features
+
+* [tabs] New component for in-page navigation.
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.10.0`.
+
+
+## 1.11.0
+
+### Fixes
+
+* [tile] Enforce cursor style on `c-tile__link` to allow flexibility of markup.
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.9.0`.
+
+
+## 1.10.0
+
+### Enhancements
+
+* [all] Restructure of imports to clarify dependencies.
+* [tile]
+  * Tidy up of file structure and documentation.
+  * `.c-hero__shine` for Hero Shine positioning.
+  * `.c-hero--borderless-` modifiers to hide top/bottom borders.
 
 
 ## 1.9.0
@@ -24,7 +93,7 @@
 
 ## 1.8.1
 
-### Patches
+### Fixes
 
 * [shine] Remove `opacity` animation from `c-shine-rail` and add to `c-shine-context`.
 
@@ -66,6 +135,7 @@
 
 ### Fixes
 
+>>>>>>> release/v2
 * [dropdown] Fix for full-width dropdowns.
 * [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
 * [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
@@ -168,7 +238,7 @@
 
 * [dropdown] No longer utilises a checkbox hack, improving semantic structure and accessibility. Now implements a stateful `.is-open` class.
 * [panel] Panel fits to content by default, with full viewport height achieved with the `c-panel--constrain` modifier.
-* [shine] Shine is now rendered purely in CSS to improve performance * please note this won't be supported on ie9.
+* [shine] Shine is now rendered purely in CSS to improve performance  * please note this won't be supported on ie9.
 
 ### Bug Fixes
 
@@ -291,7 +361,6 @@ Radio:
 ### Feature
 
 * [Tooltip] Adds the `c-tooltip` component. Easily apply tooltip bubbles to any trigger.
-
 
 
 ## 0.3.8

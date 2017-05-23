@@ -3,22 +3,27 @@
 // =============================================================================
 
 // Components
-@import "components/typography";
-@import "components/links";
+@import "components/accordion";
 @import "components/bezel";
 @import "components/buttons";
-@import "components/select";
+@import "components/calendar";
 @import "components/dropdown";
+@import "components/divider";
+@import "components/forms";
+@import "components/links";
+@import "components/keyline";
+@import "components/panel";
 @import "components/tables";
+@import "components/tabs";
+@import "components/tooltip";
+@import "components/typography";
+@import "components/shine";
+@import "components/spinner";
+
+// Components with *optional* dependencies
 @import "components/hero";
 @import "components/tile";
+
+// Components with *required* dependencies
+@import "components/select";
 @import "components/tile-fluid";
-@import "components/spinner";
-@import "components/shine";
-@import "components/panel";
-@import "components/keyline";
-@import "components/divider";
-@import "components/accordion";
-@import "components/forms";
-@import "components/tooltip";
-@import "components/calendar";
