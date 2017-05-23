@@ -135,7 +135,6 @@
 
 ### Fixes
 
->>>>>>> release/v2
 * [dropdown] Fix for full-width dropdowns.
 * [tile] Prevent IE9 adding height attributes for asynchronously rendered images.
 * [tooltip] Fix for mobile appearance. Fix for `c-tooltip--right` on hover.
