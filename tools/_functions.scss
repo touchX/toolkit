@@ -2,22 +2,53 @@
 // TOOLS / FUNCTIONS
 // =============================================================================
 
-// $text map reader
+// Private / Framework-Only Functions
 // ===========================================
 
-// Function to get font-size instead of using `map-get`.
-@function font-size($key, $variant:large) {
-  @if map-has-key($text, $key) {
-
-    @if ($variant != null) {
-      @return map-get(map-get($text, $key), $variant);
+// $text Map Reader
+// Please access ONLY via `font-size` and `line-height` functions.
+@function _text-map-get($property, $key, $variant: large) {
+  @if ($property == font-size or $property == line-height) {
+    // Check the`$key` exists in `$text`.
+    @if map-has-key($text, $key) {
+      // Check `$variant` is defined
+      @if ($variant != null) {
+        // Check the font-size `$variant` exists for `$key`.
+        @if map-has-key(map-get($text, $key), $variant) {
+          // Return the font-size value from `$text`.
+          @return map-get(map-get(map-get($text, $key), $variant), $property);
+        }
+        @warn "Unknown variant of `#{$variant}` for `#{$key}` in $text.";
+        @return null;
+      }
+      @warn "Variant must be defined for `#{$key}` in $text. Leave empty to use default `large` variant.";
+      @return null;
     }
-
-    @return map-get($text, $key);
+    @warn "Unknown `#{$key}` in $text.";
+    @return null;
   }
-
-  @warn "Unknown `#{$key}` in $text.";
+  @warn "Unknown property of `#{$property}` for `#{$key}` in $text. Valid properties include `font-size` and `line-height`.";
   @return null;
+}
+
+// Font Size
+// ===========================================
+
+// Function to get font-size from `$text` instead of using `map-get`.
+@function font-size($key, $variant:large) {
+  @return _text-map-get(font-size, $key, $variant);
+}
+
+// .test {
+//   font-size: font-size(text-body, small)
+// }
+
+// Line Height
+// ===========================================
+
+// Function to get font-size from `$text` instead of using `map-get`.
+@function line-height($key, $variant:large) {
+  @return _text-map-get(line-height, $key, $variant);
 }
 
 // $colors map reader

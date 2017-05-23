@@ -25,4 +25,5 @@
   $font-size: font-size($key, $variant);
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
+  line-height: line-height($key, $variant);
 }
