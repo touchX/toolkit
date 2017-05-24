@@ -7,10 +7,11 @@
  * define opinionated typographical styles against classes, NOT against
  * typographic HTML elements.
  *
- * Further reading: http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ * http://csswizardry.com/2016/02/managing-typography-on-large-apps/
  *
- * Using the values defined in toolkit-core/settings/typography, the loop below
- * will generate us a suite of responsive typographical component classes:
+ * Using the properties defined in toolkit-core/settings/typography,
+ * the loop below will generate us a suite of mobile-first responsive
+ * typographical component classes:
  *
  *   Heading-level Typography
  *   ---------------------------------
@@ -26,11 +27,14 @@
  *   .c-text-smallprint
  */
 
-// Anything in the loop should output like this:
-// .c-heading-alpha {
-//   @include font(heading-alpha, small);
-//
-//   @include mq($from: medium) {
-//     @include font(heading-alpha, large);
-//   }
-// }
+// Separate out the properties to get the font size name.
+@each $name, $properties in $text {
+  // Output the font size name with component prefix.
+  .c-#{$name} {
+    @include font($name, small);
+
+    @include mq($from: medium) {
+      @include font($name, large);
+    }
+  }
+}
