@@ -8,66 +8,29 @@
  * typographic HTML elements.
  *
  * Further reading: http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ *
+ * Using the values defined in toolkit-core/settings/typography, the loop below
+ * will generate us a suite of responsive typographical component classes:
+ *
+ *   Heading-level Typography
+ *   ---------------------------------
+ *   .c-heading-alpha
+ *   .c-heading-bravo
+ *   .c-heading-charlie
+ *   .c-heading-delta
+ *
+ *   Text-level Typography
+ *   ---------------------------------
+ *   .c-text-lead
+ *   .c-text-body
+ *   .c-text-smallprint
  */
 
-/* Heading-level typography
-  =========================================== */
-
-.c-heading-alpha {
-  @include font(heading-alpha, small);
-
-  @include mq($from: medium) {
-    @include font(heading-alpha, large);
-  }
-}
-
-.c-heading-bravo {
-  @include font(heading-bravo, small);
-
-  @include mq($from: medium) {
-    @include font(heading-bravo, large);
-  }
-}
-
-.c-heading-charlie {
-  @include font(heading-charlie, small);
-
-  @include mq($from: medium) {
-    @include font(heading-charlie, large);
-  }
-}
-
-.c-heading-delta {
-  @include font(heading-delta, small);
-
-  @include mq($from: medium) {
-    @include font(heading-delta, large);
-  }
-}
-
-/* Text-level typography
-  =========================================== */
-
-.c-text-lead {
-  @include font(text-lead, small);
-
-  @include mq($from: medium) {
-    @include font(text-lead, large);
-  }
-}
-
-.c-text-body {
-  @include font(text-body, small);
-
-  @include mq($from: medium) {
-    @include font(text-body, large);
-  }
-}
-
-.c-text-smallprint {
-  @include font(text-smallprint, small);
-
-  @include mq($from: medium) {
-    @include font(text-smallprint, large);
-  }
-}
+// Anything in the loop should output like this:
+// .c-heading-alpha {
+//   @include font(heading-alpha, small);
+//
+//   @include mq($from: medium) {
+//     @include font(heading-alpha, large);
+//   }
+// }
