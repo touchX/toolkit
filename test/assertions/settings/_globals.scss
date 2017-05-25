@@ -23,10 +23,10 @@
 // ==============================================
 
 // Prevent modification of `-fast`, `-slow` variations of `$global-spacing-unit`
-@if ($global-animation-speed-fast != round(0.5 * $global-animation-speed)) {
+@if ($global-animation-speed-fast != 0.5 * $global-animation-speed) {
   @error "The value of `$global-animation-speed-fast` must not be changed.";
 }
 
-@if ($global-animation-speed-slow != round(2 * $global-animation-speed)) {
+@if ($global-animation-speed-slow != 2 * $global-animation-speed) {
   @error "The value of `$global-animation-speed-slow` must not be changed.";
 }
