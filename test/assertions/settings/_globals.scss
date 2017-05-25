@@ -22,7 +22,8 @@
 // Global Animation Assertions
 // ==============================================
 
-// Prevent modification of `-fast`, `-slow` variations of `$global-spacing-unit`
+// Prevent modification of `-fast`, `-slow` variations of
+// `$global-animation-speed`
 @if ($global-animation-speed-fast != 0.5 * $global-animation-speed) {
   @error "The value of `$global-animation-speed-fast` must not be changed.";
 }
