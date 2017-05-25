@@ -41,7 +41,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  *    (essential for the shadow overlap fix)
  */
 .c-dropdown__toggle {
-  @include font-size(text-lead-small); /* [1] */
+  @include font(text-lead-small, large, disable-warning); /* [1] */
   display: block; /* [2] */
   position: relative;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-large $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
@@ -161,7 +161,7 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  */
 .c-dropdown__link {
   /*! autoprefixer: off */
-  @include font-size(text-lead-small);
+  @include font(text-lead-small, large, disable-warning);
   display: block;
   width: 100%;
   padding: $global-spacing-unit-tiny/2 $global-spacing-unit-small;
@@ -170,6 +170,9 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
   transform: scaleY(2.5); /* [2] */
   opacity: 0; /* [3] */
   transition: transform $dropdown-animation-speed ease, opacity $global-animation-speed-fast ease;
+  border: 0;
+  background-color: $dropdown-background;
+  text-align: left;
 
   .c-dropdown__item:last-child & {
     border-radius: 0 0 $dropdown-border-radius $dropdown-border-radius; /* [4] */
@@ -178,6 +181,12 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
   &:hover,
   &:focus {
     background-color: $dropdown-background-focus;
+    outline: 0;
+    text-decoration: underline;
+  }
+
+  &:active {
+    outline: 0;
   }
 }
 
