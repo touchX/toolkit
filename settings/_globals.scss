@@ -32,8 +32,8 @@ $global-border-radius: 0.25em !default;
 // ==============================================
 
 $global-animation-speed: 0.5s !default;
-$global-animation-speed-fast: round(0.5 * $global-animation-speed);
-$global-animation-speed-slow: round(2 * $global-animation-speed);
+$global-animation-speed-fast: 0.5 * $global-animation-speed;
+$global-animation-speed-slow: 2 * $global-animation-speed;
 
 // Global Shadow Settings
 // ==============================================
