@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sky-toolkit-core": "git+ssh@github.com:sky-uk/toolkit-core.git#new-typography"
+    "sky-toolkit-core": "git+ssh@github.com:sky-uk/toolkit-core.git#release/v2"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",
