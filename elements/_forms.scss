@@ -19,6 +19,10 @@ legend {
  * them to use ours. This may need reverting as more design information becomes
  * available, and we start putting together more complete forms.
  */
-input {
+button,
+input,
+optgroup,
+select,
+textarea {
   font: inherit;
 }
