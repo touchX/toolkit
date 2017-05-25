@@ -13,7 +13,7 @@
     @if map-has-key($text, $key) {
       // Check the font-size `$variant` exists for `$key`.
       @if map-has-key(map-get($text, $key), $variant) {
-        // Return the font-size value from `$text`.
+        // Return the specified property values (font-size or line-height) from $text.
         @return map-get(map-get(map-get($text, $key), $variant), $property);
       }
 
