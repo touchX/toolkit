@@ -12,15 +12,15 @@
 
 ### Deprecations
 
-* [typography] Removal of `text-lead-small` and `text-body-small`.
+* [typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
 
 ### Upgrade notes
 * [spacing] Default spacing unit value changed from 30px to 20px.
-    * **Variables** - if used in your project, please change the following:
+    * **Variables** - if used in your project, you may want to consider changing the following:
         * `$global-spacing-unit-small` to `$global-spacing-unit`
         * `$global-spacing-unit-tiny` to `$global-spacing-unit-small`
-    * **Classes** - if used in your project, please change the following:
+    * **Classes** - if used in your project, you may want to consider changing the following:
         * `.u-margin-all-small` to `.u-margin-all`
         * `.u-margin-top-small` to `.u-margin-top`
         * `.u-margin-right-small` to `.u-margin-right`
