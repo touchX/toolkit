@@ -3,6 +3,15 @@
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.18.0
+
+### toolkit-core 1.14.0
+
+#### Features
+
+* [colors] Add `color(offer)`.
+
+
 ## 1.17.0
 
 ### toolkit-ui 1.17.0
