@@ -2,40 +2,53 @@
 // TOOLS / FUNCTIONS
 // =============================================================================
 
-// $text map reader
+// Private / Framework-Only
 // ===========================================
 
-// Function to get font-size instead of using `map-get`.
-@function font-size($key, $variant:large, $legacy-warning:null) {
-  @if map-has-key($text, $key) {
-
-    // Warning to be removed Toolkit@2.0.0
-    /* stylelint-disable string-no-newline */
-    @if $legacy-warning != "disable-warning" {
-      @if $key == "text-lead-small" or $key == "text-body-small" {
-        @warn "Deprecation [typography]: `#{$key}`
-        Support for `#{$key}` (and `.c-#{$key}`) will be removed in Toolkit@2.0.0.
-        Use `text-body` (or `.c-text-body`) instead.
-        If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+// Function to get values from `$text` instead of using `map-get`.
+// Please access ONLY via `font-size` and `line-height` functions.
+@function _text-map-get($property, $key, $variant: large) {
+  @if ($property == font-size or $property == line-height) {
+    // Check the`$key` exists in `$text`.
+    @if map-has-key($text, $key) {
+      // Check the font-size `$variant` exists for `$key`.
+      @if map-has-key(map-get($text, $key), $variant) {
+        // Return the specified property values (font-size or line-height) from $text.
+        @return map-get(map-get(map-get($text, $key), $variant), $property);
       }
-    }
-    /* stylelint-enable */
 
-    @if ($variant != null) {
-      @return map-get(map-get($text, $key), $variant);
+      @warn "Unknown variant of `#{$variant}` for `#{$key}` in $text. Leave empty to use default `large` variant.";
+      @return null;
     }
 
-    @return map-get($text, $key);
+    @warn "Unknown `#{$key}` in $text.";
+    @return null;
   }
 
-  @warn "Unknown `#{$key}` in $text.";
+  @warn "Unknown property of `#{$property}` for `#{$key}` in $text. Valid properties include `font-size` and `line-height`.";
   @return null;
 }
 
-// $colors map reader
+// font-size()
 // ===========================================
 
-// Function to get colour values instead of using nested `map-gets`.
+// Function to get font-size from `$text` instead of using `map-get`.
+@function font-size($key, $variant:large) {
+  @return _text-map-get(font-size, $key, $variant);
+}
+
+// line-height()
+// ===========================================
+
+// Function to get line-height from `$text` instead of using `map-get`.
+@function line-height($key, $variant:large) {
+  @return _text-map-get(line-height, $key, $variant);
+}
+
+// color()
+// ===========================================
+
+// Function to get color from `$colors` instead of using `map-get`.
 //
 // Usage:
 //
@@ -52,10 +65,10 @@
   @return null;
 }
 
-// $gradients map reader
+// gradient()
 // ===========================================
 
-// Function to get gradients instead of using `map-get`.
+// Function to get gradient from `$gradients` instead of using `map-get`..
 @function gradient($key, $variant:end) {
   @if map-has-key($gradients, $key) {
     @if ($variant != null) {
@@ -69,7 +82,7 @@
   @return null;
 }
 
-// Strip units
+// strip-unit()
 // ===========================================
 
 // Function to remove the unit from a value i.e. strip-unit(20px) would return 20.
@@ -83,7 +96,7 @@
   }
 }
 
-// Convert to em
+// convert-to-em()
 // ===========================================
 
 // Function to remove the unit from a value to em i.e. strip-unit(30px) would
@@ -98,6 +111,6 @@
   }
 
   @else {
-    @warn "Value must be em or px";
+    @warn "Value must be em or px.";
   }
 }

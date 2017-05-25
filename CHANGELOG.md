@@ -8,6 +8,29 @@
 ### Features
 
 * [colors] `grey-40` modified to meet AA accessibility.
+* [typography] Updated sizing to the typographic scale.
+
+### Deprecations
+
+* [typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
+    * Please use `text-body` instead.
+
+### Upgrade notes
+* [spacing] Default spacing unit value changed from 30px to 20px.
+    * **Variables** - if used in your project, you may want to consider changing the following:
+        * `$global-spacing-unit-small` to `$global-spacing-unit`
+        * `$global-spacing-unit-tiny` to `$global-spacing-unit-small`
+    * **Classes** - if used in your project, you may want to consider changing the following:
+        * `.u-margin-all-small` to `.u-margin-all`
+        * `.u-margin-top-small` to `.u-margin-top`
+        * `.u-margin-right-small` to `.u-margin-right`
+        * `.u-margin-bottom-small` to `.u-margin-bottom`
+        * `.u-margin-left-small` to `.u-margin-left`
+        * `.u-margin-all-tiny` to `.u-margin-all-small`
+        * `.u-margin-top-tiny` to `.u-margin-top-small`
+        * `.u-margin-right-tiny` to `.u-margin-right-small`
+        * `.u-margin-bottom-tiny` to `.u-margin-bottom-small`
+        * `.u-margin-left-tiny` to `.u-margin-left-small`
 
 ### Fixes
 

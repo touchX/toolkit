@@ -2,27 +2,28 @@
 // TOOLS / TYPOGRAPHY
 // =============================================================================
 
-// Font-sizing and vertical rhythm mixin
+// @mixin font()
 // ===========================================
 
-// Create a fully formed type style (sizing and vertical rhythm) by passing in a
+// Create a fully formed type style (sizing and line-height) by passing in a
 // single value, e.g:
 //
 // .foo {
-//     @include font-size(text-body);
+//   @include font(text-body);
 // }
 //
-// This will generate a rem-based font-size with its pixel fallback e.g:
+// This will generate a rem-based font-size with its pixel fallback and
+// line-height, e.g:
 //
 // .foo {
-//     font-size: 20px;
-//     font-size: 1rem;
+//   font-size: 18px;
+//   font-size: 1rem;
+//   line-height: 1.4;
 // }
-//
-// legacy-warning to be removed in Toolkit@2.0.0
 
-@mixin font($key, $variant:large, $legacy-warning:null) {
-  $font-size: font-size($key, $variant, $legacy-warning);
+@mixin font($key, $variant:large) {
+  $font-size: font-size($key, $variant);
   font-size: $font-size;
   font-size: ($font-size / $global-font-size) * 1rem;
+  line-height: line-height($key, $variant);
 }

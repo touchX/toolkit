@@ -1,0 +1,182 @@
+// =============================================================================
+// TEST / TOOLS / FUNCTIONS
+// =============================================================================
+
+@import "../../../tools/functions";
+@import "../../../settings/globals";
+
+// Test Configuration
+// ===========================================
+
+@mixin functions_before() {
+  $text: (
+    test: (
+      small: (
+        font-size: 18px,
+        line-height: 1.5
+      ),
+      large: (
+        font-size: 20px,
+        line-height: 1.4
+      )
+    )
+  ) !global;
+
+  $gradients: (
+    test: (
+      end: #000,
+      mid: #fff
+    )
+  ) !global;
+
+  $colors: (
+    test: #bada55
+  ) !global;
+}
+
+// color()
+// ===========================================
+
+@include test-module("@function color") {
+  @include functions_before();
+
+  @include test("should return a hex value for given key.") {
+    $actual: color("test");
+    $expected: #bada55;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// convert-to-em()
+// ===========================================
+
+@include test-module("@function convert-to-em") {
+  @include functions_before();
+
+  @include test("returns an em value when pixels are supplied.") {
+    $actual: convert-to-em(27px);
+    $expected: 1.5em;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns a number with no units when a number with no units is supplied.") {
+    $actual: convert-to-em(2rem);
+    $expected: 2em;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns the correct value when different base font size is set.") {
+    $actual: convert-to-em(20px, 10px);
+    $expected: 2em;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// font-size()
+// ===========================================
+
+@include test-module("@function font-size") {
+  @include functions_before();
+
+  @include test("should return a large font-size value for given key.") {
+    $actual: font-size(test, large);
+    $expected: 20px;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return a small font-size value for given key.") {
+    $actual: font-size(test, small);
+    $expected: 18px;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return a large font-size value if no variant is provided.") {
+    $actual: font-size(test);
+    $expected: 20px;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// gradient()
+// ===========================================
+
+@include test-module("@function gradient") {
+  @include functions_before();
+
+  @include test("should return an end hex value for given key.") {
+    $actual: gradient("test", end);
+    $expected: #000;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return a mid hex value for given key.") {
+    $actual: gradient("test", mid);
+    $expected: #fff;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return an end hex if no variant is provided.") {
+    $actual: gradient("test");
+    $expected: #000;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// line-height()
+// ===========================================
+
+@include test-module("@function line-height") {
+  @include functions_before();
+
+  @include test("should return a large line-height value for given key.") {
+    $actual: line-height(test, large);
+    $expected: 1.4;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return a small line-height value for given key.") {
+    $actual: line-height(test, small);
+    $expected: 1.5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return a large line-height value if no variant is provided.") {
+    $actual: line-height(test);
+    $expected: 1.4;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// strip-unit()
+// ===========================================
+
+@include test-module("@function strip-unit") {
+  @include functions_before();
+
+  @include test("returns a number with no units when a number with units is supplied.") {
+    $actual: strip-unit(20vw);
+    $expected: 20;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("returns a number with no units when a number with no units is supplied.") {
+    $actual: strip-unit(400);
+    $expected: 400;
+
+    @include assert-equal($actual, $expected);
+  }
+}

@@ -2,9 +2,9 @@
 // TEST / TOOLS / TYPOGRAPHY
 // =============================================================================
 
-@import "../../tools/typography";
+@import "../../../tools/typography";
 
-// Test configuration
+// Test Configuration
 // ===========================================
 
 @mixin typography_before {
@@ -12,19 +12,25 @@
 
   $text: (
     test: (
-      small: 18px,
-      large: 20px
+      small: (
+        font-size: 18px,
+        line-height: 1.5
+      ),
+      large: (
+        font-size: 20px,
+        line-height: 1.4
+      )
     )
   ) !global;
 }
 
-// Font size mixin
+// @mixin font()
 // ===========================================
 
 @include test-module("@mixin font") {
   @include typography_before();
 
-  @include test("should return font size in pixels and rems") {
+  @include test("should return font-size in pixels, font-size in rems and line-height.") {
     @include assert("pixels and rems should be compiled") {
       @include input() {
         @include font(test);
@@ -33,11 +39,12 @@
       @include expect() {
         font-size: 20px;
         font-size: 1rem;
+        line-height: 1.4;
       }
     }
   }
 
-  @include test("should return the provided typography variant") {
+  @include test("should return values for the provided text variant.") {
     @include assert("small font size should be compiled") {
       @include input() {
         @include font(test, small);
@@ -46,6 +53,7 @@
       @include expect() {
         font-size: 18px;
         font-size: 0.9rem;
+        line-height: 1.5;
       }
     }
   }
