@@ -23,7 +23,13 @@
 // px to rem generator
 // ===========================================
 
-// This will generate a rem-based font-size with its pixel fallback e.g:
+// Generates a rem-based font-size with its pixel fallback e.g:
+//
+// .foo {
+//     @include rem(20px);
+// }
+//
+// Will output:
 //
 // .foo {
 //     font-size: 20px;
