@@ -7,7 +7,7 @@
 
 ### Features
 
-* [tools] Add `rem() mixin`.
+* [tools] Add `rem()` mixin.
 
 ## 1.14.0
 
