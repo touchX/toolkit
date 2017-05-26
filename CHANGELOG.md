@@ -3,6 +3,12 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.15.0
+
+### Features
+
+* [tools] Add `rem()` mixin.
+
 ## 1.14.0
 
 ### Features
