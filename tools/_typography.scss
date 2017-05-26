@@ -12,17 +12,25 @@
 //     @include font-size(text-body);
 // }
 //
+// legacy-warning to be removed in Toolkit@2.0.0
+
+@mixin font($key, $variant:large, $legacy-warning:null) {
+  $font-size: font-size($key, $variant, $legacy-warning);
+
+  @include rem($font-size);
+}
+
+// px to rem generator
+// ===========================================
+
 // This will generate a rem-based font-size with its pixel fallback e.g:
 //
 // .foo {
 //     font-size: 20px;
 //     font-size: 1rem;
 // }
-//
-// legacy-warning to be removed in Toolkit@2.0.0
 
-@mixin font($key, $variant:large, $legacy-warning:null) {
-  $font-size: font-size($key, $variant, $legacy-warning);
-  font-size: $font-size;
-  font-size: ($font-size / $global-font-size) * 1rem;
+@mixin rem($value) {
+  font-size: $value;
+  font-size: ($value / $global-font-size) * 1rem;
 }
