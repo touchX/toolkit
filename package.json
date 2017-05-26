@@ -4,10 +4,11 @@
   "description": "The core of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha ./test/sass.js",
+    "clean": "rm -rf build",
+    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
     "test-circle": "npm run lint && npm run test && npm run build",
     "lint": "stylelint '**/*.scss' --syntax scss",
-    "build": "mkdir -p ./build && cat _all.scss | node-sass --include-path node_modules/ --output-style compressed > build/toolkit-core.css"
+    "build": "npm run clean && mkdir -p ./build && cat _all.scss | node-sass --include-path node_modules/ --output-style compressed > build/toolkit-core.css"
   },
   "pre-commit": [
     "lint",
@@ -26,7 +27,7 @@
   "dependencies": {
     "normalize.css": "7.0.0",
     "sass-mq": "^3.3.2",
-    "supercell": "^1.0.0"
+    "supercell": "^1.2.0"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",

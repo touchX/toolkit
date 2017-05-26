@@ -8,6 +8,72 @@
 ### Features
 
 * [colors] `grey-40` modified to meet AA accessibility.
+* [typography] Updated sizing to the typographic scale.
+
+### Deprecations
+
+* [typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
+    * Please use `text-body` instead.
+
+### Upgrade notes
+* [spacing] Default spacing unit value changed from 30px to 20px.
+    * **Variables** - if used in your project, you may want to consider changing the following:
+        * `$global-spacing-unit-small` to `$global-spacing-unit`
+        * `$global-spacing-unit-tiny` to `$global-spacing-unit-small`
+    * **Classes** - if used in your project, you may want to consider changing the following:
+        * `.u-margin-all-small` to `.u-margin-all`
+        * `.u-margin-top-small` to `.u-margin-top`
+        * `.u-margin-right-small` to `.u-margin-right`
+        * `.u-margin-bottom-small` to `.u-margin-bottom`
+        * `.u-margin-left-small` to `.u-margin-left`
+        * `.u-margin-all-tiny` to `.u-margin-all-small`
+        * `.u-margin-top-tiny` to `.u-margin-top-small`
+        * `.u-margin-right-tiny` to `.u-margin-right-small`
+        * `.u-margin-bottom-tiny` to `.u-margin-bottom-small`
+        * `.u-margin-left-tiny` to `.u-margin-left-small`
+
+### Fixes
+
+* [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
+  pre-defined setting.
+
+
+## 1.13.0
+
+### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [tools]
+  * Functions: Removal of `text()`. Use `font-size()` instead.
+  * Mixins: Removal of `@include font-size()`. Use `@include font()` instead.
+* [typography]
+  * Removal of `text-lead-small`. Use `text-body` instead.
+  * Removal of `text-body-small`. Use `text-body` instead.
+* [utilities] Removal of `_defence.scss` due to deprecation of the current masthead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
+
+## 1.12.0
+
+### Dependencies
+
+* [[supercell]](https://github.com/sky-uk/supercell)] upgrade to utilise `.u-width-auto` classes.
+
+
+## 1.11.0
+
+### Enhancements
+
+* [font-face]
+  * Moved assets from subdomain to host domain (also improves performance).
+  * Reduced font assets by 75% by doing more thorough cross-examination of browser support and usage (turns out we only need `.woff`).
+
+### Fixes
+
+* [test] Removal of `@mixin responsivize` test which generated terminal warnings.
+* Various typo fixes.
 
 
 ## 1.10.0

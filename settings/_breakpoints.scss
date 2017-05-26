@@ -1,5 +1,5 @@
 // =============================================================================
-// SETTINGS / BREAKPOINTS
+// SETTINGS / #BREAKPOINTS
 // =============================================================================
 
 // Sass MQ Configuration
@@ -39,6 +39,16 @@ $mq-breakpoints: (
   large:   980px,
   x-large: 1300px
 ) !default;
+
+// Sass MQ Configuration
+// ==============================================
+
+// Sass MQ needs telling about our base font size so that it can generate the
+// appropriate em-based media queries. Luckily our base font size is already
+// contained in a variable, so we can just map Sass MQ onto that. Further, any
+// time we make a change to our project’s font size, Sass MQ will always pick it
+// up automatically.
+$mq-base-font-size: $global-font-size;
 
 // Supercell Configuration
 // ==============================================
