@@ -10,7 +10,7 @@ $form-background: color(white);
 $form-border-width: $global-border-width;
 $form-border: $form-border-width solid color(grey-20);
 $form-font-size: text-body;
-$form-icon-size: $global-spacing-unit-small;
+$form-icon-size: 15px;
 $form-icon-offset: $global-spacing-unit;
 $form-checkbox-size: 1em;
 $form-checkbox-margin: $form-checkbox-size;
@@ -57,7 +57,7 @@ $form-animation-speed: $global-animation-speed-fast;
  * Inline pairs of form labels and inputs should be wrapped in a form-pair.
  */
 .c-form-pair {
-  margin-bottom: $global-spacing-unit-tiny;
+  margin-bottom: $global-spacing-unit-small;
 
   @include mq($from: medium) {
     display: table;
@@ -69,7 +69,7 @@ $form-animation-speed: $global-animation-speed-fast;
     }
 
     .c-form-pair__label {
-      margin-right: $global-spacing-unit-tiny;
+      margin-right: $global-spacing-unit-small;
     }
   }
 }
@@ -106,8 +106,8 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-input {
   @include font($form-font-size, large);
   display: inline-block;
-  padding: 0 $global-spacing-unit-tiny; /* [1] */
-  margin-bottom: $global-spacing-unit-tiny;
+  padding: 0 $global-spacing-unit-small; /* [1] */
+  margin-bottom: $global-spacing-unit-small;
   height: 2.111em; /* [2] */
   width: 100%;
   background-color: $form-background;
@@ -135,7 +135,7 @@ $form-animation-speed: $global-animation-speed-fast;
  */
 .c-form-input--long {
   height: 6em;
-  padding: $global-spacing-unit-tiny; /* [1] */
+  padding: $global-spacing-unit-small; /* [1] */
   line-height: $global-line-height / $global-font-size; /* [1] */
 }
 
@@ -151,8 +151,8 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-date {
   @include font($form-font-size, large);
   display: inline-block;
-  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-tiny;
-  margin-bottom: $global-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny $global-spacing-unit-small;
+  margin-bottom: $global-spacing-unit-small;
   width: 100%;
   background-color: $form-background;
   border: $form-border;
@@ -227,8 +227,8 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-combo__btn,
 .c-form-combo__input {
   @include font($form-font-size, large);
-  padding-top: $global-spacing-unit-tiny/2;
-  padding-bottom: $global-spacing-unit-tiny/2;
+  padding-top: $global-spacing-unit-tiny;
+  padding-bottom: $global-spacing-unit-tiny;
 }
 
 /* Form select inputs
@@ -236,9 +236,8 @@ $form-animation-speed: $global-animation-speed-fast;
 
 .c-form-select {
   @include font($form-font-size, large);
-  line-height: 1.2;
   display: inline-block;
-  margin-bottom: $global-spacing-unit-tiny;
+  margin-bottom: $global-spacing-unit-small;
   background-color: $form-background;
   border-radius: $global-border-radius;
   position: relative;
@@ -290,7 +289,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-select__dropdown {
   position: relative;
   z-index: 1;
-  padding: $global-spacing-unit-tiny $form-icon-offset $global-spacing-unit-tiny $global-spacing-unit-tiny;
+  padding: $global-spacing-unit-tiny $form-icon-offset $global-spacing-unit-tiny $global-spacing-unit-small;
   width: 100%;
   border: $form-border;
   border-radius: $global-border-radius;
@@ -339,7 +338,7 @@ $form-animation-speed: $global-animation-speed-fast;
 .c-form-checkbox {
   display: inline-block;
   width: 100%;
-  margin-bottom: $global-spacing-unit-tiny;
+  margin-bottom: $global-spacing-unit-small;
   font-size: font-size($form-font-size, large);
   cursor: pointer;
 }
