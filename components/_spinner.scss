@@ -3,9 +3,9 @@
    ========================================================================== */
 
 // Spinner settings
-$spinner-size: round($global-spacing-unit * 2.5);
-$spinner-size-small: round($global-spacing-unit * 2);
-$spinner-size-large: round($global-spacing-unit * 3);
+$spinner-size: 75px;
+$spinner-size-small: $spinner-size - 15px;
+$spinner-size-large: $spinner-size + 15px;
 $spinner-animation-speed: $global-animation-speed-slow;
 $spinner-transition-delay: $global-animation-speed;
 

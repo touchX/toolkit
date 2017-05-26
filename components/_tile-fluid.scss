@@ -88,9 +88,9 @@ $tile-fluid-max-width: $global-container-width !default;
    * 2. Set margin bottom in em relative to the elements font-size (36px)
    */
   .c-tile__title {
-    font-size: convert-to-em(text(heading-delta)); /* [1] */
+    font-size: convert-to-em(font-size(heading-delta)); /* [1] */
     line-height: 1.25em;
-    margin-bottom: convert-to-em($global-spacing-unit-tiny, text(heading-delta));  /* [2] */
+    margin-bottom: convert-to-em($global-spacing-unit-tiny, font-size(heading-delta));  /* [2] */
   }
 }
 

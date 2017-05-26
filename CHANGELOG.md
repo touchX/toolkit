@@ -6,19 +6,23 @@
 ## 2.0.0
 
 ### Deprecations
-- [tile]
-  - `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
-  - `c-tile__small-title` removed due to lack of use.
+
+* [tile]
+  * `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
+  * `c-tile__small-title` removed due to lack of use.
+* [typography] Removal of `.c-text-lead-small` and `.c-text-body-small`.
+  * Please use `.c-text-body` instead.
 
 ### Features
-- [tile]
-  - Design Changes
-    - White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
-    - Shadow animation on link interaction.
-    - Decreased size of `c-tile__title`.
-- Link interaction now only applies text underline to `c-tile__title`.
-- `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
-- Improvements to inline documentation and code structure.
+* [tile]
+    * Design Changes
+        * White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
+        * Shadow animation on link interaction.
+        * Decreased size of `c-tile__title`.
+        * Link interaction now only applies text underline to `c-tile__title`.
+        * `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
+    * Improvements to inline documentation and code structure.
+* [typography] Updated sizing to the typographic scale.
 
 ### Footnotes
 
@@ -213,7 +217,6 @@ If you experience any issues with these required changes, please visit https://g
 
 * [tile] makes use of `panel-indicator` mixin for `is-selected`.
 * [tile] Added fluid tile styling to scale tiles based on the browser width.
-
   * `.c-tile--fluid` modifier sets essential core styling for the tile.
   * `.c-tile-fluid-scale-1/2@medium` classes scale tile content. These are useful when using layouts.
   * `.c-tile-fluid-container` class sets a max-width on the fluid tiles (default 1200px) preventing scaling beyond that size.

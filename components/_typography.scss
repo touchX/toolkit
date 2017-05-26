@@ -7,103 +7,34 @@
  * define opinionated typographical styles against classes, NOT against
  * typographic HTML elements.
  *
- * Further reading: http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ * https://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ *
+ * Using the properties defined in toolkit-core/settings/typography,
+ * the loop below will generate us a suite of mobile-first responsive
+ * typographical component classes:
+ *
+ *   Heading-level Typography
+ *   ---------------------------------
+ *   .c-heading-alpha
+ *   .c-heading-bravo
+ *   .c-heading-charlie
+ *   .c-heading-delta
+ *
+ *   Text-level Typography
+ *   ---------------------------------
+ *   .c-text-lead
+ *   .c-text-body
+ *   .c-text-smallprint
  */
 
-/* Heading-level typography
-  =========================================== */
+// Separate out the properties to get the font size name.
+@each $name, $properties in $text {
+  // Output the font size name with component prefix.
+  .c-#{$name} {
+    @include font($name, small);
 
-.c-heading-alpha {
-  @include font(heading-alpha, small);
-  line-height: 1.3;
-
-  @include mq($from: medium) {
-    @include font(heading-alpha, large);
-    line-height: 1.2;
-  }
-}
-
-.c-heading-bravo {
-  @include font(heading-bravo, small);
-  line-height: 1.3;
-
-  @include mq($from: medium) {
-    @include font(heading-bravo, large);
-    line-height: 1.25;
-  }
-}
-
-.c-heading-charlie {
-  @include font(heading-charlie, small);
-  line-height: 1.3;
-
-  @include mq($from: medium) {
-    @include font(heading-charlie, large);
-    line-height: 1.25;
-  }
-}
-
-.c-heading-delta {
-  @include font(heading-delta, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font(heading-delta, large);
-    line-height: 1.3;
-  }
-}
-
-/* Text-level typography
-  =========================================== */
-
-.c-text-lead {
-  @include font(text-lead, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font(text-lead, large);
-    line-height: 1.4;
-  }
-}
-
-.c-text-body {
-  @include font(text-body, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font(text-body, large);
-    line-height: 1.4;
-  }
-}
-
-.c-text-lead-small {
-  @include font(text-lead-small, small, disable-warning);
-  line-height: 1.5;
-
-  @include mq($from: medium) {
-    // Leave one warning to alert all consumers of upcoming changes
-    @include font(text-lead-small, large);
-    line-height: 1.4;
-  }
-}
-
-.c-text-body-small {
-  @include font(text-body-small, small, disable-warning);
-  line-height: 1.5;
-
-  @include mq($from: medium) {
-    // Leave one warning to alert all consumers of upcoming changes
-    @include font(text-body-small, large);
-    line-height: 1.5;
-  }
-}
-
-.c-text-smallprint {
-  @include font(text-smallprint, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font(text-smallprint, large);
-    line-height: 1.4;
+    @include mq($from: medium) {
+      @include font($name, large);
+    }
   }
 }

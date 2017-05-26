@@ -6,7 +6,7 @@
 $tabs-border-width: $global-border-width;
 $tabs-shadow-height: 14px;
 $tabs-indicator-height: 2px;
-$tabs-link-padding: 5px;
+$tabs-link-padding: $global-spacing-unit-tiny;
 $tabs-animation-speed: $global-animation-speed-fast;
 $tabs-container-width: $global-container-width;
 
@@ -359,17 +359,22 @@ $tabs-container-width: $global-container-width;
     &::before {
       @include divider-gradient(bottom, color(white));
     }
+
+    /* Reduce the intensity of divider shadows */
+    &::after {
+      opacity: 0.25;
+    }
   }
 
   .c-tabs__divider--top {
     &::after {
-      @include divider-shadow(top, color(grey-40));
+      @include divider-shadow(top, color(white));
     }
   }
 
   .c-tabs__divider--bottom {
     &::after {
-      @include divider-shadow(bottom, color(grey-40));
+      @include divider-shadow(bottom, color(white));
     }
   }
 

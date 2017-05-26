@@ -10,6 +10,7 @@ $dropdown-border: 1px solid color(grey-20) !default;
 $dropdown-border-radius: $global-border-radius !default;
 $dropdown-shadow-blur-radius: 8px !default;
 $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !default;
+$dropdown-icon-size: 15px;
 
 /* Base
   ============================================ */
@@ -35,16 +36,17 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  *
  * 1. Set font-size and line-height
  * 2. Displays the label stacked above its menu items.
- * 3. Sets padding on top, left and bottom whilst providing extra padding on the
- *    right for the icon.
+ * 3. This wall of math automagically works out paddings and reserved space for
+ *    the toggle indicator. Feel free to reverse engineer, but we’d recommend
+ *    leaving it as is.
  * 4. Sets stacking order for the menu items to overlap above the label
  *    (essential for the shadow overlap fix)
  */
 .c-dropdown__toggle {
-  @include font(text-lead-small, large, disable-warning); /* [1] */
+  @include font(text-body); /* [1] */
   display: block; /* [2] */
   position: relative;
-  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-large $global-spacing-unit-tiny/2 $global-spacing-unit-small; /* [3] */
+  padding: $global-spacing-unit-tiny ($global-spacing-unit*1.5 + $dropdown-icon-size) $global-spacing-unit-tiny $global-spacing-unit-small; /* [3] */
   font-weight: bold;
   text-align: left;
   border: $dropdown-border;
@@ -78,10 +80,10 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
     /*! autoprefixer: off */
     content: ""; /* [1] */
     position: absolute; /* [2] */
-    top: $global-spacing-unit-small - 4px; /* [3] */
+    top: $global-spacing-unit-small; /* [3] */
     right: $global-spacing-unit-small; /* [3] */
-    width: $global-spacing-unit-small; /* [4] */
-    height: $global-spacing-unit-small; /* [4] */
+    width: $dropdown-icon-size; /* [4] */
+    height: $dropdown-icon-size; /* [4] */
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAkCAYAAAA5DDySAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAPVJREFUeNrk2s0NgzAMhmFno47EKGzQETpSR2CEjkCjyEg0aiAhP7Y/IuUSuLyPhDg4RLycc5PfH78fBLy48/3TyYcrb1iEv53RISxCqpM4dkVGSMSHTakHKAhH8RvAExXhLD58AvziCw0hJz7+E8AgFMcjIVyOR0CojreM0CzeIkLzeEsI3eItIHSP14wwLF4jwvB4TQhi8RoQxOMlEdTESyCoix+JoDZ+BIL6+J4IZuJ7IJiLb4lgNr4Fgvn4GgSY+CsIcPGFCDP0bCIDAXowU4OANZ8sRMCcUGciYN9ROEGAv6BxhHCP+B3CvLubsEjFfwUYAKjtGJxFvDJsAAAAAElFTkSuQmCC"); /* [5] */
     background-repeat: no-repeat; /* [5] */
     background-size: contain; /* [5] */
@@ -161,10 +163,10 @@ $dropdown-shadow-active: 0 0 $dropdown-shadow-blur-radius 0 rgba(0, 0, 0, 0.2) !
  */
 .c-dropdown__link {
   /*! autoprefixer: off */
-  @include font(text-lead-small, large, disable-warning);
+  @include font(text-body);
   display: block;
   width: 100%;
-  padding: $global-spacing-unit-tiny/2 $global-spacing-unit-small;
+  padding: $global-spacing-unit-tiny $global-spacing-unit-small;
   color: color(text); /* [1] */
   -ms-transform: scaleY(2.5); /* [2] */
   transform: scaleY(2.5); /* [2] */

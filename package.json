@@ -4,11 +4,12 @@
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf build",
+    "clean": "rm -rf build && mkdir -p ./build",
     "test": "node ./node_modules/mocha/bin/mocha ./test/sass.js",
     "test-circle": "npm run lint && npm run test && npm run build",
     "lint": "stylelint '**/*.scss' --syntax scss",
-    "build": "npm run clean && mkdir -p ./build && cat ./test/_build.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > build/toolkit.css"
+    "scss": "node-sass --include-path node_modules/ --precision 9 --output-style expanded test/_build.scss > build/toolkit.css",
+    "build": "npm run clean && npm run scss"
   },
   "pre-commit": [
     "lint",
@@ -25,7 +26,7 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sky-toolkit-core": "git+ssh://git@github.com/sky-uk/toolkit-core.git#release/v2"
+    "sky-toolkit-core": "git+ssh@github.com:sky-uk/toolkit-core.git#release/v2"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",
