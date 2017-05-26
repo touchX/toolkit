@@ -37,6 +37,9 @@
 // }
 
 @mixin rem($value) {
+  @if unit($value) != "px" {
+    @warn "Value must by a px unit";
+  }
   font-size: $value;
   font-size: ($value / $global-font-size) * 1rem;
 }
