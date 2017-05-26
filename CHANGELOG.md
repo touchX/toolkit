@@ -10,10 +10,21 @@
 * [colors] `grey-40` modified to meet AA accessibility.
 * [typography] Updated sizing to the typographic scale.
 
+### Dependencies
+
+* [Normalize.css] Major upgrade to Normalize.css from 4.1.1 to 7.0.0. Cursory
+  checks show everything is A-okay, but be vigilant—and inexplicable and/or
+  subtle rendering issues might be caused by this change.
+
 ### Deprecations
 
 * [typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
+
+### Fixes
+
+* [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
+  pre-defined setting.
 
 ### Upgrade notes
 * [spacing] Default spacing unit value changed from 30px to 20px.
@@ -31,11 +42,6 @@
         * `.u-margin-right-tiny` to `.u-margin-right-small`
         * `.u-margin-bottom-tiny` to `.u-margin-bottom-small`
         * `.u-margin-left-tiny` to `.u-margin-left-small`
-
-### Fixes
-
-* [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
-  pre-defined setting.
 
 
 ## 1.13.0
