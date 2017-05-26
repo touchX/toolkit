@@ -46,7 +46,7 @@ $dropdown-icon-size: 15px;
   @include font(text-body); /* [1] */
   display: block; /* [2] */
   position: relative;
-  padding: $global-spacing-unit-tiny ($global-spacing-unit + $dropdown-icon-size) $global-spacing-unit-tiny $global-spacing-unit-small; /* [3] */
+  padding: $global-spacing-unit-tiny ($global-spacing-unit*1.5 + $dropdown-icon-size) $global-spacing-unit-tiny $global-spacing-unit-small; /* [3] */
   font-weight: bold;
   text-align: left;
   border: $dropdown-border;
