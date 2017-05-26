@@ -26,13 +26,13 @@
  *                      contents.
  *
  * GENERIC
+ * Font-face............Our @font-face definitions for custom fonts.
  * Box-sizing...........Better default box-model.
  * Normalize.css........Normalise differences across different browsers.
  * Reset................Simple reset to complement Normalize.css: set everything
  *                      to zero.
  * Vertical Rhythm......Define common vertical spacing across all block-level
  *                      elements in one go.
- * Font-face............Our @font-face definitions for custom fonts.
  * Generic..............Our @keyframe definitions for animations.
  *
  * ELEMENTS
@@ -87,11 +87,11 @@
 @import "tools/all";
 
 // Generic
+@import "generic/font-face";
 @import "generic/box-sizing";
 @import "normalize.css/normalize";
 @import "generic/reset";
 @import "generic/vertical-rhythm";
-@import "generic/font-face";
 @import "generic/keyframes";
 
 // Elements

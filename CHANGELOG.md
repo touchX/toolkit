@@ -44,6 +44,13 @@
         * `.u-margin-left-tiny` to `.u-margin-left-small`
 
 
+## 1.14.0
+
+### Features
+
+* [colors] Add `color(offer)`.
+
+
 ## 1.13.0
 
 ### Deprecation Warnings
