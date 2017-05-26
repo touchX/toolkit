@@ -58,3 +58,21 @@
     }
   }
 }
+
+// Rem generator mixin
+// ===========================================
+
+@include test-module("@mixin rem") {
+  @include test("should return font size in pixels and rems") {
+    @include assert("pixels and rems should be compiled") {
+      @include input() {
+        @include rem(20px);
+      }
+
+      @include expect() {
+        font-size: 20px;
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -23,7 +23,31 @@
 
 @mixin font($key, $variant:large) {
   $font-size: font-size($key, $variant);
-  font-size: $font-size;
-  font-size: ($font-size / $global-font-size) * 1rem;
+
+  @include rem($font-size);
   line-height: line-height($key, $variant);
+}
+
+// px to rem generator
+// ===========================================
+
+// Generates a rem-based font-size with its pixel fallback e.g:
+//
+// .foo {
+//     @include rem(20px);
+// }
+//
+// Will output:
+//
+// .foo {
+//   font-size: 18px;
+//   font-size: 1rem;
+// }
+
+@mixin rem($value) {
+  @if unit($value) != "px" {
+    @warn "Value must by a px unit";
+  }
+  font-size: $value;
+  font-size: ($value / $global-font-size) * 1rem;
 }

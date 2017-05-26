@@ -44,6 +44,13 @@
         * `.u-margin-left-tiny` to `.u-margin-left-small`
 
 
+## 1.15.0
+
+### Features
+
+* [tools] Add `rem()` mixin.
+
+
 ## 1.14.0
 
 ### Features
