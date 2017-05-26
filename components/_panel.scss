@@ -36,8 +36,8 @@ $panel-background-color-dark: color(grey-50) !default;
 }
 
 .c-panel__content {
-  padding-top: $global-spacing-unit;
-  padding-bottom: $global-spacing-unit;
+  padding-top: $global-spacing-unit-large;
+  padding-bottom: $global-spacing-unit-large;
 }
 
 /**
@@ -73,8 +73,8 @@ $panel-background-color-dark: color(grey-50) !default;
   font-size: font-size(text-body);
   line-height: 1;
   position: absolute; /* [1] */
-  top: $global-spacing-unit-small; /* [1] */
-  right: $global-spacing-unit-small; /* [1] */
+  top: $global-spacing-unit-large; /* [1] */
+  right: $global-spacing-unit; /* [1] */
   color: color(text);
 
   /* Toggle icon shouldn't inherit the default link text-decoration */
