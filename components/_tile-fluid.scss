@@ -1,7 +1,19 @@
 /* ==========================================================================
- * COMPONENTS / TILE FLUID
- * ==========================================================================
- *
+   COMPONENTS / #TILE-FLUID
+   ========================================================================== */
+
+// Dependencies (Required)
+// =========================================== */
+
+// "Tile Fluid" builds upon "Tile" for `.c-tile--fluid`.
+//
+// To use this component, you must import
+// `sky-toolkit-ui/components/tile` *before*
+// `sky-toolkit-ui/components/tile-fluid` in your main scss file.
+//
+// If you are using `sky-toolkit-ui/all`, please ignore the above.
+
+/**
  * Fluid tiles are designed to scale proportionally, this means the tile's
  * content scales in relation to its width.
  *
@@ -47,7 +59,7 @@ $tile-fluid-base-font-size: (strip-unit($global-font-size / $tile-fluid-base-bre
  *
  */
 
-$tile-fluid-max-width: $container-width !default;
+$tile-fluid-max-width: $global-container-width !default;
 
 /**
  * Now we have the fluid-base-font-size calculated we can apply this to the
@@ -76,9 +88,9 @@ $tile-fluid-max-width: $container-width !default;
    * 2. Set margin bottom in em relative to the elements font-size (36px)
    */
   .c-tile__title {
-    font-size: convert-to-em(text(heading-charlie)); /* [1] */
+    font-size: convert-to-em(font-size(heading-delta)); /* [1] */
     line-height: 1.25em;
-    margin-bottom: convert-to-em($global-spacing-unit-tiny, text(heading-charlie));  /* [2] */
+    margin-bottom: convert-to-em($global-spacing-unit-tiny, font-size(heading-delta));  /* [2] */
   }
 }
 
@@ -180,5 +192,19 @@ $tile-fluid-constrain-ratio: $tile-fluid-max-width / $tile-fluid-base-breakpoint
 @each $alias, $bp in $mq-breakpoints {
   @include mq($from: $bp) {
     @include tile-fluid-scales(1 2 3 4 5, \@#{$alias});
+  }
+}
+
+/* Modifiers
+  =========================================== */
+
+/**
+ * Collapsible Fluid Tiles
+ *
+ * Collapsible Fluid Tiles are overriden to the correct size on medium screens.
+ */
+.c-tile--fluid.c-tile--collapsible {
+  @include mq($until: medium) {
+    font-size: $tile-fluid-base-font-size * (2 / 3);
   }
 }

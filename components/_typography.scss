@@ -7,101 +7,34 @@
  * define opinionated typographical styles against classes, NOT against
  * typographic HTML elements.
  *
- * Further reading: http://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ * https://csswizardry.com/2016/02/managing-typography-on-large-apps/
+ *
+ * Using the properties defined in toolkit-core/settings/typography,
+ * the loop below will generate us a suite of mobile-first responsive
+ * typographical component classes:
+ *
+ *   Heading-level Typography
+ *   ---------------------------------
+ *   .c-heading-alpha
+ *   .c-heading-bravo
+ *   .c-heading-charlie
+ *   .c-heading-delta
+ *
+ *   Text-level Typography
+ *   ---------------------------------
+ *   .c-text-lead
+ *   .c-text-body
+ *   .c-text-smallprint
  */
 
-/* Heading-level typography
-  =========================================== */
+// Separate out the properties to get the font size name.
+@each $name, $properties in $text {
+  // Output the font size name with component prefix.
+  .c-#{$name} {
+    @include font($name, small);
 
-.c-heading-alpha {
-  @include font-size(heading-alpha, small);
-  line-height: 1.3;
-
-  @include mq($from: medium) {
-    @include font-size(heading-alpha, large);
-    line-height: 1.2;
-  }
-}
-
-.c-heading-bravo {
-  @include font-size(heading-bravo, small);
-  line-height: 1.3;
-
-  @include mq($from: medium) {
-    @include font-size(heading-bravo, large);
-    line-height: 1.25;
-  }
-}
-
-.c-heading-charlie {
-  @include font-size(heading-charlie, small);
-  line-height: 1.3;
-
-  @include mq($from: medium) {
-    @include font-size(heading-charlie, large);
-    line-height: 1.25;
-  }
-}
-
-.c-heading-delta {
-  @include font-size(heading-delta, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font-size(heading-delta, large);
-    line-height: 1.3;
-  }
-}
-
-/* Text-level typography
-  =========================================== */
-
-.c-text-lead {
-  @include font-size(text-lead, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font-size(text-lead, large);
-    line-height: 1.4;
-  }
-}
-
-.c-text-body {
-  @include font-size(text-body, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font-size(text-body, large);
-    line-height: 1.4;
-  }
-}
-
-.c-text-lead-small {
-  @include font-size(text-lead-small, small);
-  line-height: 1.5;
-
-  @include mq($from: medium) {
-    @include font-size(text-lead-small, large);
-    line-height: 1.4;
-  }
-}
-
-.c-text-body-small {
-  @include font-size(text-body-small, small);
-  line-height: 1.5;
-
-  @include mq($from: medium) {
-    @include font-size(text-body-small, large);
-    line-height: 1.5;
-  }
-}
-
-.c-text-smallprint {
-  @include font-size(text-smallprint, small);
-  line-height: 1.4;
-
-  @include mq($from: medium) {
-    @include font-size(text-smallprint, large);
-    line-height: 1.4;
+    @include mq($from: medium) {
+      @include font($name, large);
+    }
   }
 }

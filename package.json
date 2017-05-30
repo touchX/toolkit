@@ -1,13 +1,15 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha ./test/sass.js",
-    "test-circle": "npm run build && npm run test && npm run lint",
-    "lint": "stylelint ./**/*.scss --syntax scss",
-    "build": "mkdir build && cat ./test/_build.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > build/toolkit.css"
+    "clean": "rm -rf build && mkdir -p ./build",
+    "test": "node ./node_modules/mocha/bin/mocha ./test/sass.js",
+    "test-circle": "npm run lint && npm run test && npm run build",
+    "lint": "stylelint '**/*.scss' --syntax scss",
+    "scss": "node-sass --include-path node_modules/ --precision 9 --output-style expanded test/_build.scss > build/toolkit.css",
+    "build": "npm run clean && npm run scss"
   },
   "pre-commit": [
     "lint",
@@ -24,6 +26,17 @@
   },
   "homepage": "https://github.com/sky-uk/toolkit-ui#readme",
   "dependencies": {
-    "sky-toolkit-core": "1.4.0"
+    "sky-toolkit-core": "git+ssh@github.com:sky-uk/toolkit-core.git#release/v2"
+  },
+  "devDependencies": {
+    "eyeglass": "^1.2.1",
+    "mocha": "^3.2.0",
+    "node-sass": "^4.5.0",
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }

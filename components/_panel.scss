@@ -11,6 +11,7 @@ $panel-shadow: $panel-shadow-size-top $panel-shadow-color, $panel-shadow-size-bo
 $panel-shadow-dark: $panel-shadow-size-top $panel-shadow-color-dark, $panel-shadow-size-bottom $panel-shadow-color-dark;
 $panel-background-color: color(white) !default;
 $panel-background-color-dark: color(grey-50) !default;
+$panel-spacing: $global-spacing-unit * 3;
 
 /* Base
   =========================================== */
@@ -36,8 +37,8 @@ $panel-background-color-dark: color(grey-50) !default;
 }
 
 .c-panel__content {
-  padding-top: $global-spacing-unit;
-  padding-bottom: $global-spacing-unit;
+  padding-top: $panel-spacing;
+  padding-bottom: $panel-spacing;
 }
 
 /**
@@ -54,7 +55,8 @@ $panel-background-color-dark: color(grey-50) !default;
  * 4. Offset cross icon to align with text
  */
 .c-panel__toggle {
-  @include font-size(text-lead-small);
+  font-size: font-size(text-body);
+  line-height: 1;
   position: absolute; /* [1] */
   top: $global-spacing-unit-small; /* [1] */
   right: $global-spacing-unit-small; /* [1] */

@@ -54,6 +54,7 @@ $divider-modifiers: (
    * Divider gradient border.
    */
   &::before {
+    /*! autoprefixer: off */
     @include divider-gradient();
     bottom: 0;
     height: $divider-width;
@@ -63,6 +64,7 @@ $divider-modifiers: (
    * Divider shadow.
    */
   &::after {
+    /*! autoprefixer: off */
     @include divider-shadow();
     top: 100%;
     height: $divider-shadow-depth;
@@ -92,6 +94,7 @@ $divider-modifiers: (
      * 1. Attach the border to the appropriate edge.
      */
     &::before {
+      /*! autoprefixer: off */
       @include divider-gradient(#{$modifier});
 
       @if $modifier == "top" {
@@ -112,6 +115,7 @@ $divider-modifiers: (
      * 1. Flow the shadow over the appropriate edge.
      */
     &::after {
+      /*! autoprefixer: off */
       @include divider-shadow(#{$modifier});
 
       @if $modifier == "top" {

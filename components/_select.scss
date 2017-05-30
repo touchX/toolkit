@@ -1,5 +1,5 @@
 /* ==========================================================================
-   COMPONENTS / SELECT
+   COMPONENTS / #SELECT
    ========================================================================== */
 
 /* Select settings
@@ -13,6 +13,20 @@ $select-border-radius: $global-border-radius !default;
 $select-icon-padding: $global-spacing-unit-tiny !default;
 $select-icon-width: 40px !default; /* [1] */
 $select-animation-speed: $global-animation-speed-fast !default;
+
+// Dependencies (Required)
+// =========================================== */
+
+// "Select" builds upon "Buttons" for `.c-select__btn`.
+//
+// To use this component, you must import
+// `sky-toolkit-ui/components/buttons` *before*
+// `sky-toolkit-ui/components/select` in your main scss file.
+//
+// If you are using `sky-toolkit-ui/all`, please ignore the above.
+
+/* Base
+   =========================================== */
 
 /**
  * 1. Allows styling of box model properties.
@@ -49,6 +63,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   overflow: hidden;
 
   &::after {
+    /*! autoprefixer: off */
     content: ""; /* [1] */
     position: absolute; /* [2] */
     width: $select-icon-width; /* [3] */
@@ -114,6 +129,7 @@ $select-animation-speed: $global-animation-speed-fast !default;
   padding-right: $select-icon-width / 2 + $select-icon-width;
 
   &::after {
+    /*! autoprefixer: off */
     -ms-transform: translate(0, 0);
     -webkit-transform: translate(0, 0);
     transform: translate(0, 0);

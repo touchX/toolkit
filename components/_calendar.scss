@@ -60,6 +60,7 @@ $calendar-navigation-modifiers: (
  * Button navigation for switching between calendar content.
  */
 .c-calendar__nav {
+  /*! autoprefixer: off */
   position: absolute;
   top: 0;
   width: $calendar-nav-width;
@@ -95,6 +96,7 @@ $calendar-navigation-modifiers: (
   $translate: map-get($direction, translate);
 
   .c-calendar__nav--#{$modifier} {
+    /*! autoprefixer: off */
     @if($modifier == "next") {
       right: 0;
     }
@@ -188,6 +190,7 @@ $calendar-navigation-modifiers: (
  * 5. Reduced focus style shadow to prevent overlaps or cutoffs
  */
 .c-calendar__day {
+  /*! autoprefixer: off */
   padding: 0;
   width: $calendar-day-size;
   height: $calendar-day-size;
@@ -245,6 +248,7 @@ $calendar-navigation-modifiers: (
 }
 
 .c-calendar__day.is-disabled {
+  /*! autoprefixer: off */
   color: color(grey-20);
   background: none;
   border: none;
