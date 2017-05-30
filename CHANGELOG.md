@@ -2,6 +2,53 @@
 
 `sky-toolkit` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
+## 1.19.0
+
+### toolkit-ui 1.19.0
+
+#### Features
+
+* [price] New component for displays prices, with optional strikethrough styling
+
+##### Example usage
+
+```html
+<s class="c-price c-price--strike">
+  £10
+  <span class="c-price__fractional">.50</span>
+</s>
+```
+
+* [costing] New component which composes one or more `price`s with supporting text and styling for price points and marketing
+
+##### Example usage
+
+```html
+<div class="c-costing">
+    <div class="c-costing__prefix">From</div>
+    <span class="c-price c-costing__price">
+        10
+        <span class="c-price__fractional">.55</span>
+    </span>
+    <div class="c-costing__suffix">a month</div>
+    <s class="c-price c-price--strike c-costing__strike">
+        20
+        <span class="c-price__fractional">.99</span>
+    </s>
+</div>
+```
+
+#### Fixes
+
+* [Tooltip] - Property prefixes to support IE.
+
+### toolkit-core 1.14.0
+
+#### Features
+
+* [tools] Add `rem()` mixin.
+
+
 
 ## 1.18.0
 
