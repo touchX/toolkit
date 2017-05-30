@@ -15,7 +15,7 @@
 
 ### Features
 
-* [link-faux] Created the Link (Faux) module.
+* [link-faux] New component to display buttons as links, whilst maintaining functionality and semantic code.
 * [tile]
     * Design Changes
         * White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
