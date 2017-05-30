@@ -65,6 +65,7 @@ $tooltip-z-base: 50;
    * 4. Subtle border to make marker more defined on white backgrounds
    */
   .c-tooltip__trigger::after {
+    /*! autoprefixer: off */
     content: "";
     position: absolute;
     top: 100%; /* [1] */
@@ -72,6 +73,7 @@ $tooltip-z-base: 50;
     margin-left: -($tooltip-marker-size); /* [1] */
     width: $tooltip-marker-size*2; /* [2] */
     height: $tooltip-marker-size*2; /* [2] */
+    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
     background-color: color(white);
     box-shadow: -2px -2px 14px -10px #000; /* [3] */
