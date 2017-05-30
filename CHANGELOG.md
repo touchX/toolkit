@@ -2,6 +2,40 @@
 
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
+
+## 2.0.0
+
+### Deprecations
+
+* [tile]
+  * `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
+  * `c-tile__small-title` removed due to lack of use.
+* [typography] Removal of `.c-text-lead-small` and `.c-text-body-small`.
+  * Please use `.c-text-body` instead.
+
+### Features
+
+* [link-faux] New component to display buttons as links, whilst maintaining functionality and semantic code.
+* [tile]
+    * Design Changes
+        * White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
+        * Shadow animation on link interaction.
+        * Decreased size of `c-tile__title`.
+        * Link interaction now only applies text underline to `c-tile__title`.
+        * `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
+    * Improvements to inline documentation and code structure.
+* [typography] Updated sizing to the typographic scale.
+
+### Refactor
+
+* [panel] Utilise `c-link-faux` on `c-panel__toggle` for accessibility improvements.
+  * Existing panel toggle buttons **must** be changed to use the following markup: `<button class="c-link-faux c-panel__toggle">Close</button>`
+
+### Footnotes
+
+1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
+
+
 ## 1.19.0
 
 ### Features
@@ -50,32 +84,6 @@
 ### Dependencies
 
 * [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.14.0`.
-
-
-## 2.0.0
-
-### Deprecations
-
-* [tile]
-  * `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
-  * `c-tile__small-title` removed due to lack of use.
-* [typography] Removal of `.c-text-lead-small` and `.c-text-body-small`.
-  * Please use `.c-text-body` instead.
-
-### Features
-* [tile]
-    * Design Changes
-        * White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
-        * Shadow animation on link interaction.
-        * Decreased size of `c-tile__title`.
-        * Link interaction now only applies text underline to `c-tile__title`.
-        * `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
-    * Improvements to inline documentation and code structure.
-* [typography] Updated sizing to the typographic scale.
-
-### Footnotes
-
-1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
 
 
 ## 1.17.0
