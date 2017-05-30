@@ -42,7 +42,7 @@
 
 * [Tooltip] - Property prefixes to support IE.
 
-### toolkit-core 1.14.0
+### toolkit-core 1.15.0
 
 #### Features
 
