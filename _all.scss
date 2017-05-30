@@ -20,10 +20,12 @@
 @import "components/shine";
 @import "components/spinner";
 @import "components/switch";
+@import "components/price";
 
 // Components with *optional* dependencies
 @import "components/hero";
 @import "components/tile";
+@import "components/costing";
 
 // Components with *required* dependencies
 @import "components/select";
