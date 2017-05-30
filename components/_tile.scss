@@ -21,15 +21,6 @@ $tile-shadow-hover: 0 15px 20px -8px rgba(color(black), 0.2) !default;
 // You can output specific themes by overwriting `$tile-themes`.
 $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-cinema", "sky-kids", "sky-living", "sky-news", "sky-sports", "sky-store" !default;
 
-// Tile Edge Positioning Mixin
-// Used to simplify and avoid repeated use of individual edge positioning.
-@mixin tile-edge-position($tile-edge-position-offset: 0) {
-  top: $tile-edge-position-offset;
-  right: $tile-edge-position-offset;
-  bottom: $tile-edge-position-offset;
-  left: $tile-edge-position-offset;
-}
-
 /* Base
   ============================================ */
 
@@ -101,7 +92,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
    */
   &::before,
   &::after {
-    @include tile-edge-position();
+    @include edge-position();
     content: "";
     position: absolute;
     will-change: transform;
@@ -283,7 +274,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
    * 1. http://tobiasahlin.com/blog/how-to-animate-box-shadow/
    */
   &::before {
-    @include tile-edge-position(-$tile-border-width);
+    @include edge-position(-$tile-border-width);
     content: "";
     position: absolute;
     box-shadow: $tile-shadow-hover;
@@ -406,13 +397,13 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
   padding-bottom: 0;
 
   .c-tile__content {
-    @include tile-edge-position($tile-border-width);
+    @include edge-position($tile-border-width);
     position: absolute;
   }
 
   .c-tile__link,
   .c-tile__link::before {
-    @include tile-edge-position();
+    @include edge-position();
     position: absolute;
   }
 
@@ -485,12 +476,12 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
       /* stylelint-disable-next-line max-nesting-depth */
       &::before {
-        @include tile-edge-position(-$tile-border-width);
+        @include edge-position(-$tile-border-width);
       }
     }
 
     .c-tile__content {
-      @include tile-edge-position();
+      @include edge-position();
       position: relative;
       display: block;
       width: 100%;
