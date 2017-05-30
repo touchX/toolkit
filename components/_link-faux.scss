@@ -54,13 +54,10 @@ $link-faux-border-radius: $global-border-radius;
     outline: 0; /* [1] */
 
     &::before {
+      @include edge-position(-$link-faux-padding);
       @include focus-styles();
       content: "";
       position: absolute;
-      top: 0;
-      right: -$link-faux-padding;
-      bottom: 0;
-      left: -$link-faux-padding;
       border-radius: $link-faux-border-radius;
     }
   }

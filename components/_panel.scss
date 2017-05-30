@@ -3,6 +3,7 @@
    ========================================================================== */
 
 // Panel settings
+$panel-icon-size: 1.5em;
 $panel-shadow-size-top: inset 0 12px 12px -12px;
 $panel-shadow-size-bottom: inset 0 -12px 12px -12px;
 $panel-shadow-color: #9f9f9f;
@@ -58,9 +59,9 @@ $panel-spacing: $global-spacing-unit * 3;
   font-size: font-size(text-body);
   line-height: 1;
   position: absolute; /* [1] */
-  top: $global-spacing-unit-small; /* [1] */
-  right: $global-spacing-unit-small; /* [1] */
-  padding-right: $global-spacing-unit; /* [2] */
+  top: $global-spacing-unit; /* [1] */
+  right: $global-spacing-unit; /* [1] */
+  padding-right: $panel-icon-size; /* [2] */
   color: inherit; /* [3] */
 
   &::after {
