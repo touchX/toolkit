@@ -57,7 +57,6 @@ $panel-spacing: $global-spacing-unit * 3;
  */
 .c-panel__toggle {
   font-size: font-size(text-body);
-  line-height: 1;
   position: absolute; /* [1] */
   top: $global-spacing-unit; /* [1] */
   right: $global-spacing-unit; /* [1] */
