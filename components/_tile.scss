@@ -21,9 +21,6 @@ $tile-shadow-hover: 0 15px 20px -8px rgba(color(black), 0.2) !default;
 // You can output specific themes by overwriting `$tile-themes`.
 $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets", "sky-cinema", "sky-kids", "sky-living", "sky-news", "sky-sports", "sky-store" !default;
 
-/* Base
-  ============================================ */
-
 // Dependencies (Optional)
 // =========================================== */
 
@@ -335,21 +332,21 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
  * alongside `.c-tile__link`.
  *
  * 1. As `.c-tile__link` sits inside a relative `.c-tile__content` by default,
- *    we have to ensure *both* top and bottom Tile borders are counted.
+ *    we have to ensure *both* top and bottom Tile paddings are counted.
  */
 .c-tile__shine {
   position: absolute;
   right: 0;
   left: 0;
-  z-index: 1;
+  z-index: 30;
 }
 
 .c-tile__shine--top {
-  top: -($tile-padding + ($tile-border-width * 2)); /* [1] */
+  top: -(($tile-padding * 2) + $tile-border-width); /* [1] */
 }
 
 .c-tile__shine--bottom {
-  bottom: -($tile-padding + ($tile-border-width * 2)); /* [1] */
+  bottom: -(($tile-padding * 2) + $tile-border-width); /* [1] */
 }
 
 /* States
@@ -403,20 +400,20 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
   .c-tile__link,
   .c-tile__link::before {
-    @include edge-position();
+    @include edge-position(0);
     position: absolute;
   }
 
   /**
-   * 1. As `.c-tile__content` is now absolute, we can reduce the border to a
-   *    single side.
+   * 1. As `.c-tile__content` is now absolute, we can reduce the offset to both
+   *    borders instead of paddings
    */
   .c-tile__shine--top {
-    top: -($tile-padding + $tile-border-width); /* [1] */
+    top: -($tile-padding + ($tile-border-width * 2)); /* [1] */
   }
 
   .c-tile__shine--bottom {
-    bottom: -($tile-padding + $tile-border-width); /* [1] */
+    bottom: -($tile-padding + ($tile-border-width * 2)); /* [1] */
   }
 }
 
@@ -481,7 +478,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
     }
 
     .c-tile__content {
-      @include edge-position();
+      @include edge-position(0);
       position: relative;
       display: block;
       width: 100%;
