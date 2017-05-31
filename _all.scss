@@ -17,7 +17,6 @@
 @import "components/tables";
 @import "components/tabs";
 @import "components/tooltip";
-@import "components/typography";
 @import "components/shine";
 @import "components/spinner";
 @import "components/switch";
@@ -31,3 +30,6 @@
 // Components with *required* dependencies
 @import "components/select";
 @import "components/tile-fluid";
+
+// Components with high priority
+@import "components/typography";
