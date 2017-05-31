@@ -32,6 +32,10 @@
   $colors: (
     test: #bada55
   ) !global;
+
+  $z-index: (
+    test: 100
+  ) !global;
 }
 
 // color()
@@ -176,6 +180,20 @@
   @include test("returns a number with no units when a number with no units is supplied.") {
     $actual: strip-unit(400);
     $expected: 400;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// z-index()
+// ===========================================
+
+@include test-module("@function z-index") {
+  @include functions_before();
+
+  @include test("should return a value for given key.") {
+    $actual: z-index("test");
+    $expected: 100;
 
     @include assert-equal($actual, $expected);
   }

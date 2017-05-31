@@ -114,3 +114,23 @@
     @warn "Value must be em or px.";
   }
 }
+
+// z-index()
+// ===========================================
+
+// Function to get value from `$z-index` instead of using `map-get`.
+//
+// Usage:
+//
+//   .foo {
+//     z-index: z-index(<key>);
+//   }
+//
+@function z-index($key) {
+  @if map-has-key($z-index, $key) {
+    @return map-get($z-index, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $z-index.";
+  @return null;
+}

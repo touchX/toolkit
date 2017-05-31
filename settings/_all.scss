@@ -11,6 +11,7 @@
  * Typography...........Define our typographical settings in one place.
  * Breakpoints..........Hold sitewide breakpoint values in an array for use with
  *                      Sass MQ.
+ * z-index..............Centrally managed z-index settings.
  */
 
 @import "config";
@@ -18,3 +19,4 @@
 @import "colors";
 @import "typography";
 @import "breakpoints";
+@import "z-index";
