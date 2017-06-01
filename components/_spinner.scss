@@ -1,13 +1,19 @@
 /* ==========================================================================
-   COMPONENTS / SPINNER
+   COMPONENTS / #SPINNER
    ========================================================================== */
 
-// Spinner settings
+// Spinner Settings
 $spinner-size: 75px;
 $spinner-size-small: $spinner-size - 15px;
 $spinner-size-large: $spinner-size + 15px;
 $spinner-animation-speed: $global-animation-speed-slow;
 $spinner-transition-delay: $global-animation-speed;
+
+/* Spinner
+  =========================================== */
+
+/* Base
+  ---------------------------------- */
 
 /**
  * 1. Set the size of the spinner to whatever the font size is: much more terse.
@@ -34,6 +40,9 @@ $spinner-transition-delay: $global-animation-speed;
   transition: opacity $spinner-animation-speed ease, visibility $spinner-animation-speed ease;
 }
 
+/* States
+  ---------------------------------- */
+
 /**
  * The spinning indicator uses a stateful `.is-complete` class to provide a
  * default "completed" transition and state.
@@ -46,8 +55,8 @@ $spinner-transition-delay: $global-animation-speed;
   visibility: hidden;
 }
 
-/* Colour Modifiers
-   =========================================== */
+/* Modifiers
+  ---------------------------------- */
 
 /**
  * Because we set the spinner’s borders using `currentColor`, we can change its
@@ -59,9 +68,6 @@ $spinner-transition-delay: $global-animation-speed;
 .c-spinner--inverse {
   color: color(white);
 }
-
-/* Spinning Size Modifiers
-   =========================================== */
 
 /**
  * Beacuse we set the spinner’s dimensions in ems, we can change its size just
@@ -80,8 +86,11 @@ $spinner-transition-delay: $global-animation-speed;
   font-size: $spinner-size-large;
 }
 
-/* Spinning Overlay
-   ========================================================================== */
+/* Spinner Overlay
+  =========================================== */
+
+/* Base
+  ---------------------------------- */
 
 /**
  * The spinning overlay is used to cover any loadable content until complete.
@@ -128,6 +137,9 @@ $spinner-transition-delay: $global-animation-speed;
   }
 }
 
+/* States
+  ---------------------------------- */
+
 /**
  * The spinning overlay uses a stateful `.is-complete` class to provide a
  * default "completed" transition and state.
@@ -146,9 +158,6 @@ $spinner-transition-delay: $global-animation-speed;
     visibility: hidden;
   }
 }
-
-/* Spinning Overlay Background Modifiers
-   =========================================== */
 
 /**
  * The background of the overlay is intentionally simple to extend and modify.

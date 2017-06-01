@@ -1,8 +1,8 @@
 /* ==========================================================================
-   COMPONENTS / FORMS
+   COMPONENTS / #FORMS
    ========================================================================== */
 
-// Form settings
+// Form Settings
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
@@ -17,8 +17,11 @@ $form-checkbox-margin: $form-checkbox-size;
 $form-checkbox-y-offset: 3px;
 $form-animation-speed: $global-animation-speed-fast;
 
-/* Form list
-  =========================================== */
+/* Base
+  ============================================ */
+
+/* Form List
+  ---------------------------------- */
 
 /**
  * All form fields should be presented in a list so that
@@ -50,8 +53,8 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
-/* Form pair
-  =========================================== */
+/* Form Pair
+  ---------------------------------- */
 
 /**
  * Inline pairs of form labels and inputs should be wrapped in a form-pair.
@@ -74,8 +77,8 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
-/* Form labels
-  =========================================== */
+/* Form Labels
+  ---------------------------------- */
 
 /**
  * All LABEL elements must also carry a class of `.c-form-label`. By applying
@@ -93,8 +96,8 @@ $form-animation-speed: $global-animation-speed-fast;
   margin-bottom: $global-spacing-unit-tiny;
 }
 
-/* Form text inputs
-  =========================================== */
+/* Form Text Inputs
+  ---------------------------------- */
 
 /**
  * All text-like form inputs require a class of `.c-form-input`: we do not use
@@ -139,8 +142,8 @@ $form-animation-speed: $global-animation-speed-fast;
   line-height: $global-line-height / $global-font-size; /* [1] */
 }
 
-/* Form date inputs
-  =========================================== */
+/* Form Date Inputs
+  ---------------------------------- */
 
 /**
  * All date-like form inputs require a class of `.c-form-date`: we do not use
@@ -182,8 +185,8 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
-/* Combination inputs
-  =========================================== */
+/* Combination Inputs
+  ---------------------------------- */
 
 /**
  * Text and button combo pairs
@@ -231,8 +234,8 @@ $form-animation-speed: $global-animation-speed-fast;
   padding-bottom: $global-spacing-unit-tiny;
 }
 
-/* Form select inputs
-  =========================================== */
+/* Form Select Inputs
+  ---------------------------------- */
 
 .c-form-select {
   @include font($form-font-size, large);
@@ -332,8 +335,8 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
-/* Form checkbox inputs
-  =========================================== */
+/* Form Checkbox & Radio Inputs
+  ---------------------------------- */
 
 .c-form-checkbox {
   display: inline-block;
@@ -412,8 +415,8 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
-/* Form modifiers
-  =========================================== */
+/* Required Form Inputs
+  ---------------------------------- */
 
 /**
  * All required fields must have a styled piece of text present in their LABEL
@@ -437,14 +440,13 @@ $form-animation-speed: $global-animation-speed-fast;
   }
 }
 
-/* Form errors
+/* States
   =========================================== */
 
 /**
  * Errors are handled by adding the .is-error class to the field's parent –
  * usually the .c-form-list__item.
  */
-
 .is-error {
   color: color(error);
 }
