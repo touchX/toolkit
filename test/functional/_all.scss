@@ -1,6 +1,10 @@
+// Import Sass-True
 @import "true";
 
-// Import Test files
+// Import Settings for Access During Tests
+@import "../../settings/all";
+
+// Import Tests
 @import "tools/functions";
 @import "tools/gradients";
 @import "tools/divider";
@@ -8,5 +12,5 @@
 @import "tools/mixins-ui";
 @import "tools/typography";
 
-// Run the tests
+// Run Tests
 @include report();
