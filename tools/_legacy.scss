@@ -30,7 +30,7 @@
 // Background gradient generator mixin
 // ===========================================
 
-// Please see tools/gradients for `@include gradient-background()` replacement.
+// Please see tools/gradients for `@include background-gradient()` replacement.
 @mixin background-gradient($args...) {
   @include gradient-background($args...);
   @warn "Deprecation [mixin]: `@include background-gradient()`
@@ -52,7 +52,7 @@
 // Background gradient page mixin
 // ===========================================
 
-// Please see tools/page for `@include page-background()` replacement.
+// Please see tools/page for `@include background-page()` replacement.
 @mixin background-page($args...) {
   @include page-background($args...);
   @warn "Deprecation [mixin]: `@include background-page()`
