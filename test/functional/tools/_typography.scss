@@ -1,45 +1,21 @@
 // =============================================================================
-// TEST / TOOLS / TYPOGRAPHY
+// TEST / FUNCTIONAL / TOOLS / TYPOGRAPHY
 // =============================================================================
 
-@import "../../../tools/typography";
-
-// Test Configuration
-// ===========================================
-
-@mixin typography_before {
-  $global-font-size: 20px !global;
-
-  $text: (
-    test: (
-      small: (
-        font-size: 18px,
-        line-height: 1.5
-      ),
-      large: (
-        font-size: 20px,
-        line-height: 1.4
-      )
-    )
-  ) !global;
-}
-
-// @mixin font()
+// @mixin font
 // ===========================================
 
 @include test-module("@mixin font") {
-  @include typography_before();
-
   @include test("should return font-size in pixels, font-size in rems and line-height.") {
     @include assert("pixels and rems should be compiled") {
       @include input() {
-        @include font(test);
+        @include font(text-body);
       }
 
       @include expect() {
-        font-size: 20px;
+        font-size: 18px;
         font-size: 1rem;
-        line-height: 1.4;
+        line-height: 1.44;
       }
     }
   }
@@ -47,30 +23,30 @@
   @include test("should return values for the provided text variant.") {
     @include assert("small font size should be compiled") {
       @include input() {
-        @include font(test, small);
+        @include font(text-body, small);
       }
 
       @include expect() {
-        font-size: 18px;
-        font-size: 0.9rem;
+        font-size: 16px;
+        font-size: 0.888888889rem;
         line-height: 1.5;
       }
     }
   }
 }
 
-// Rem generator mixin
+// @mixin rem
 // ===========================================
 
 @include test-module("@mixin rem") {
   @include test("should return font size in pixels and rems") {
     @include assert("pixels and rems should be compiled") {
       @include input() {
-        @include rem(20px);
+        @include rem(18px);
       }
 
       @include expect() {
-        font-size: 20px;
+        font-size: 18px;
         font-size: 1rem;
       }
     }

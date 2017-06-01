@@ -1,8 +1,8 @@
 // Import Sass-True
 @import "true";
 
-// Import Settings for Access During Tests
-@import "../../settings/all";
+// Import Settings & Tools for Access During Tests
+@import "../../tools";
 
 // Import Tests
 @import "tools/functions";
