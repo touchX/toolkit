@@ -1,14 +1,19 @@
 /* ==========================================================================
-   COMPONENTS / BEZEL
+   COMPONENTS / #BEZEL
    ========================================================================== */
 
+// Bezel Settings
 $bezel-border-width: 5px !default;
 $bezel-border-colour: rgba(color(white), 0.3) !default;
 
-/*
+/* Base
+  ============================================ */
+
+/**
+ * Bezel
+ *
  * Provides a glass "bezel" border to the container of a media element.
  */
-
 .c-bezel {
   display: inline-block;
   max-width: 100%;

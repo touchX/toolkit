@@ -1,8 +1,8 @@
 /* ==========================================================================
-   COMPONENTS / SWITCH
+   COMPONENTS / #SWITCH
    ========================================================================== */
 
-// Switch settings
+// Switch Settings
 $switch-size: 22px !default;
 $switch-inactive-color: color(grey-30) !default;
 $switch-inactive-hover-color: color(grey-20) !default;
@@ -10,24 +10,31 @@ $switch-active-color: color(brand) !default;
 $switch-active-hover-color: color(highlight) !default;
 $switch-transition: all $global-animation-speed-fast cubic-bezier(0.2, 0.9, 0.3, 1) !default;
 
+/* Base
+  =========================================== */
+
 /**
+ * Switch
+ *
  * 1. Otherwise the switches clickable area will span the entire block
  */
-
 .c-switch {
   display: inline-block;  /* [1] */
 }
 
 /**
+ * Switch Input & Label
+ *
  * 1. Visually hide the `input` element and the label text, but leave it acessible for screenreaders
  */
-
 .c-switch__input,
 .c-switch__label {
   @include hide-visually(); /* [1] */
 }
 
 /**
+ * Switch Button
+ *
  * 1. The switch is always twice as wide as the marker
  * 2. `content-box` allows us to align the marker inside the button border
  * 3. Using `color` allows us to use `currentColor` for borders and backgrounds and avoid repeated
@@ -35,7 +42,6 @@ $switch-transition: all $global-animation-speed-fast cubic-bezier(0.2, 0.9, 0.3,
  * 4. Explicitly force coarse pointer devices to use non-hover colors in order to avoid sticky
  *    hover states on touch devices
  */
-
 .c-switch__button {
   height: $switch-size;
   width: $switch-size * 2; /* [1] */
@@ -75,7 +81,6 @@ $switch-transition: all $global-animation-speed-fast cubic-bezier(0.2, 0.9, 0.3,
  * 1. Explicitly force coarse pointer devices to use non-hover colors in order to avoid sticky
  *    hover states on touch devices
  */
-
 .c-switch__input:checked + .c-switch__button {
   color: $switch-active-color;
 

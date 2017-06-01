@@ -1,8 +1,8 @@
 /* ==========================================================================
-   COMPONENTS / BUTTONS
+   COMPONENTS / #BUTTONS
    ========================================================================== */
 
-// Button settings
+// Button Settings
 $btn-font-size: font-size(text-body) !default;
 $btn-padding-x: 15px !default;
 $btn-padding-y: 5px !default;
@@ -11,7 +11,12 @@ $btn-border-radius: $global-border-radius !default;
 $btn-animation-speed: $global-animation-speed !default;
 $btn-animation-speed-fast: $global-animation-speed-fast !default;
 
+/* Base
+  ============================================ */
+
 /**
+ * Button
+ *
  * 1.  Allows styling of box model properties.
  * 2.  Reset browser styles.
  * 3.  Subtract border-width from the padding so buttons don't grow if the
@@ -51,17 +56,16 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
     outline: none; /* [15] */
   }
 
+  /**
+   * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+   */
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
 }
 
-/**
- * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
- */
-.c-btn::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/* Button aesthetic modifiers
+/* Modifiers (Cosmetic)
    =========================================== */
 
 /**
@@ -124,7 +128,7 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   }
 }
 
-/* Button state modifiers
+/* States
    =========================================== */
 
 /**
@@ -177,7 +181,7 @@ $btn-animation-speed-fast: $global-animation-speed-fast !default;
   transition: all $btn-animation-speed-fast ease;
 }
 
-/* Button sizing modifiers
+/* Modifiers (Sizing)
    =========================================== */
 
 /**

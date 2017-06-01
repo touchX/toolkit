@@ -10,7 +10,7 @@ $calendar-day-size: 38px; // 1
 $calendar-nav-width: 44px; // 2
 $calendar-animation-speed: 0.25s; // 3
 
-// Navigation modifiers and their additional settings
+// Navigation Modifiers and their Additional Settings
 $calendar-navigation-modifiers: (
   next: (
     position: right,
@@ -31,7 +31,6 @@ $calendar-navigation-modifiers: (
  * 1. Recomended max-size for calendar, accounting for padding
  * 2. Provide spacing either side of the calendar that allows room for transformed navigation buttons
  */
-
 .c-calendar-container {
   max-width: 380px; /* [1] */
   margin: 0 auto;
@@ -66,7 +65,7 @@ $calendar-navigation-modifiers: (
   width: $calendar-nav-width;
   height: 30px;
   padding: 0;
-  z-index: 1;
+  z-index: z-index(1);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;

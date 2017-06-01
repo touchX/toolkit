@@ -1,17 +1,16 @@
 /* ==========================================================================
-   COMPONENTS / PRICE
+   COMPONENTS / #PRICE
    ========================================================================== */
 
 /* Modifiers
   ============================================ */
 
 /**
- * Striked pricing
+ * Striked Pricing
  *
  * 1. Removes the browser-default strikethrough decoration
  * 2. Renders a diagonal line through the text from bottom left to top right
  */
-
 .c-price--strike {
   position: relative;
   text-decoration: none;  /* [1] */

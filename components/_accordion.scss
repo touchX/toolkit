@@ -1,14 +1,20 @@
 /* ==========================================================================
-   COMPONENTS / ACCORDION
+   COMPONENTS / #ACCORDION
    ========================================================================== */
 
+// Accordion Settings
 $accordion-animation-speed: $global-animation-speed !default;
 $accordion-background: transparent !default;
 $accordion-border: 1px solid color(grey-20) !default;
 $accordion-border-radius: $global-border-radius !default;
 $accordion-icon-size: 20px !default;
 
+/* Base
+  ============================================ */
+
 /**
+ * Accordion
+ *
  * Accordions are useful for grouping content whilst saving screen space.
  *
  * 1. Allows styling of box-model properties and absolute potitioning of child/
@@ -23,6 +29,8 @@ $accordion-icon-size: 20px !default;
 }
 
 /**
+ * Accordion Section
+ *
  * Accordion sections wrap the label and content into a single container.
  * A bottom border is used to indicate a break between each section.
  */
@@ -39,6 +47,8 @@ $accordion-icon-size: 20px !default;
 }
 
 /**
+ * Accordion Label
+ *
  * Accordion labels provide context on the group and also toggles content.
  *
  * 1. Set the label's font properties.
@@ -62,6 +72,8 @@ $accordion-icon-size: 20px !default;
   }
 
   /**
+   * Accordion Label - Indicator
+   *
    * Accordion icons provide an extra form of 'toggle' indication.
    *
    * 1. Allows for absolute positioning from the top and right of the label.
@@ -93,6 +105,8 @@ $accordion-icon-size: 20px !default;
 }
 
 /**
+ * Accordion Content
+ *
  * The content for an accordion section, which is displayed on toggle.
  *
  * 1. Allows styling of box-model properties and absolute potitioning of child/
@@ -111,12 +125,17 @@ $accordion-icon-size: 20px !default;
 }
 
 /**
+ * Accordion Inner
+ *
  * Any padding must be set on `.c-accordion__inner` to allow
  * `.c-accordion__inner` to collapse completely when toggled.
  */
 .c-accordion__inner {
   padding: $global-spacing-unit-small;
 }
+
+/* States
+  ============================================ */
 
 /**
  * For Accordion Sections whose state is toggled.

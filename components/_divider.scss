@@ -1,12 +1,12 @@
 /* ==========================================================================
-   COMPONENTS / DIVIDER
+   COMPONENTS / #DIVIDER
    ========================================================================== */
 
-// Divider settings
+// Divider Settings
 $divider-shadow-depth: 10px;
 $divider-width: 1px !default;
 
-// Divider modifiers and their additional settings
+// Divider Modifiers and their Additional Settings
 $divider-modifiers: (
   top: (
     border-width: $divider-width 0 0 0,
@@ -19,9 +19,13 @@ $divider-modifiers: (
   )
 );
 
+/* Base
+  ============================================ */
+
 /**
- * Divider component to provide more prominent horizontal (and vertical) rules
- * between other elements.
+ * Divider
+ *
+ * Prominent horizontal (and vertical) rules between other elements.
  *
  * The default Divider and it's `--top` modifier are intended for use on
  * horizontal rules.
@@ -51,7 +55,7 @@ $divider-modifiers: (
   }
 
   /**
-   * Divider gradient border.
+   * Divider - Gradient Border
    */
   &::before {
     /*! autoprefixer: off */
@@ -61,7 +65,7 @@ $divider-modifiers: (
   }
 
   /**
-   * Divider shadow.
+   * Divider - Shadow
    */
   &::after {
     /*! autoprefixer: off */
@@ -70,6 +74,9 @@ $divider-modifiers: (
     height: $divider-shadow-depth;
   }
 }
+
+/* Modifiers
+  ============================================ */
 
 /**
  * Loop to generate our suite of modifiers for each divider direction:

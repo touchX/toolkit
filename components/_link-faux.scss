@@ -1,5 +1,5 @@
 /* ==========================================================================
-   COMPONENTS / LINK (FAUX)
+   COMPONENTS / #LINK-FAUX
    ========================================================================== */
 
 // Link-Faux Settings
@@ -67,7 +67,7 @@ $link-faux-border-radius: $global-border-radius;
    =========================================== */
 
 /**
-* For Link (Faux)s' used in dark areas of UI.
+* For Link (Faux)s used in dark areas of UI.
 */
 .c-link-faux--invert {
   color: color(white);
