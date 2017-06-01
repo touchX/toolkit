@@ -3,6 +3,19 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 1.16.0
+
+### Deprecation Warnings
+
+The following will be removed in Toolkit@2.0.0:
+
+* [tools]
+  * Gradients: Removal of `@include background-gradient()`. Use `@include gradient-background()` instead.
+  * Page: Removal of `@include background-page()`. Use `@include page-background()` instead.
+
+If you experience any issues with these required changes, please visit https://git.io/v9b7v for next steps.
+
+
 ## 1.15.0
 
 ### Features
