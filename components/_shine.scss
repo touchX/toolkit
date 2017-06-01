@@ -20,7 +20,7 @@ $shine-size: 45px;
   display: block;
   height: $shine-size;
   width: 100%;
-  z-index: 1000;
+  z-index: z-index(10);
 }
 
 /**
