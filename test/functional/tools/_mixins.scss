@@ -1,62 +1,33 @@
 // =============================================================================
-// TEST / TOOLS / MIXINS
+// TEST / FUNCTIONAL / TOOLS / MIXINS
 // =============================================================================
 
-@import "sass-mq/mq";
-@import "../../../tools/mixins";
-
-// Test config
-// ===========================================
-
-@mixin add-color_before() {
-  $test-key: test-color !global;
-  $test-value: #bada55 !global;
-
-  $colors: (
-    white: #fff,
-    black: #000,
-  ) !global;
-}
-
-@mixin responsivize_before() {
-  $mq-breakpoints: (
-    small:   420px,
-    medium:  740px,
-    large:   980px,
-    x-large: 1300px
-  ) !global;
-}
-
-// Add color to color map (settings/_colors)
+// @mixin add-color
 // ===========================================
 
 @include test-module("@mixin add-color") {
-  @include add-color_before();
-
   @include test("should add new key and value to color map") {
     @include assert("merges color map with new values") {
       @include input() {
-        @include add-color($test-key, $test-value);
+        @include add-color(testkey, #bada55);
         color: map-get($colors, white);
         background: map-get($colors, black);
-        border-color: map-get($colors, $test-key);
+        border-color: map-get($colors, testkey);
       }
 
       @include expect() {
         color: #fff;
         background: #000;
-        border-color: $test-value;
+        border-color: #bada55;
       }
     }
   }
 }
 
-// Responsivize mixin
+// @mixin responsivize
 // ===========================================
 
 @include test-module("@mixin responsivize") {
-  @include responsivize_before();
-
   @include test("when no argument given to responisivize mixin - should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
     @include assert("should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
       @include input() {
@@ -130,7 +101,7 @@
   }
 }
 
-// Edge Position mixin
+// @mixin edge-position
 // ===========================================
 
 @include test-module("@mixin edge-position") {

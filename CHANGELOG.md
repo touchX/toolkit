@@ -9,6 +9,7 @@
 
 * [colors] `grey-40` modified to meet AA accessibility.
 * [typography] Updated sizing to the typographic scale.
+* [z-index] `z-index()` function for easier access and management of `z-index` values across the project.
 
 ### Dependencies
 

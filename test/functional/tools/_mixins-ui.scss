@@ -1,28 +1,8 @@
 // =============================================================================
-// TEST / TOOLS / MIXINS UI
+// TEST / FUNCTIONAL / TOOLS / MIXINS UI
 // =============================================================================
 
-@import "../../../tools/mixins-ui";
-
-// Test config
-// ===========================================
-
-@mixin mixins-ui_before {
-  $colors: (
-    grey-50: #222,
-    black: #000,
-    white: #fff
-  ) !global;
-}
-
-// Add Panel Indicator to element
-// ===========================================
-
-// *Issue with mixins returning pseudo element styling incorrectly*
-
 @include test-module("@mixin panel-indicator") {
-  @include mixins-ui_before();
-
   @include test("adds panel indicator") {
     @include assert("sets default theme by default") {
       @include input() {

@@ -1,29 +1,11 @@
 // =============================================================================
-// TEST / TOOLS / DIVIDER
+// TEST / FUNCTIONAL / TOOLS / DIVIDER
 // =============================================================================
 
-@import "../../../tools/functions";
-@import "../../../tools/divider";
-
-// Test configuration
-// ===========================================
-
-@mixin divider_before {
-  $colors: (
-    grey-20: #c0c0c0,
-    text: #4a4a4a
-  ) !global;
-
-  $divider-gradient-color: #bada55 !global;
-  $divider-shadow-color: #000 !global;
-}
-
-// Background gradient mixin
+// @mixin divider-gradient
 // ===========================================
 
 @include test-module("@mixin divider-gradient") {
-  @include divider_before();
-
   @include test("should return a divider gradient for the bottom edge for when no direction is set") {
     @include assert("compiles divider gradient for the bottom edge") {
       @include input() {
@@ -61,7 +43,7 @@
   @include test("should return a custom divider gradient for the right edge when a right direction and color is set") {
     @include assert("compiles a custom divider gradient for the right edge") {
       @include input() {
-        @include divider-gradient(right, $divider-gradient-color);
+        @include divider-gradient(right, #bada55);
       }
 
       @include expect() {
@@ -76,9 +58,10 @@
   }
 }
 
-@include test-module("@mixin divider-shadow") {
-  @include divider_before();
+// @mixin divider-shadow
+// ===========================================
 
+@include test-module("@mixin divider-shadow") {
   @include test("should return a divider shadow for the bottom edge for when no direction is set") {
     @include assert("compiles divider shadow for the bottom edge") {
       @include input() {
@@ -114,15 +97,15 @@
   @include test("should return a custom divider shadow for the right edge when a right direction and color is set") {
     @include assert("compiles a custom divider shadow for the right edge") {
       @include input() {
-        @include divider-shadow(right, $divider-shadow-color);
+        @include divider-shadow(right, #bada55);
       }
 
       @include expect() {
-        background: -webkit-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);
-        background: -moz-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);
-        background: -ms-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);
-        background: -o-radial-gradient(0 50%, farthest-corner, #000, transparent 40%);
-        background: radial-gradient(farthest-corner at 0 50%, #000, transparent 40%);
+        background: -webkit-radial-gradient(0 50%, farthest-corner, #bada55, transparent 40%);
+        background: -moz-radial-gradient(0 50%, farthest-corner, #bada55, transparent 40%);
+        background: -ms-radial-gradient(0 50%, farthest-corner, #bada55, transparent 40%);
+        background: -o-radial-gradient(0 50%, farthest-corner, #bada55, transparent 40%);
+        background: radial-gradient(farthest-corner at 0 50%, #bada55, transparent 40%);
       }
     }
   }
