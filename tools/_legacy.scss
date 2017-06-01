@@ -27,14 +27,36 @@
 // Mixins
 // =============================================================================
 
+// Background gradient generator mixin
+// ===========================================
+
+// Please see tools/gradients for `@include gradient-background()` replacement.
+@mixin background-gradient($args...) {
+  @include gradient-background($args...);
+  @warn "Deprecation [mixin]: `@include background-gradient()`
+  Support for `@include background-gradient()` will be removed in Toolkit@2.0.0. Use `@include gradient-background()` instead.
+  If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+}
+
 // Font-sizing and vertical rhythm mixin
 // ===========================================
 
-// Please see tools/typography for `text()` replacement.
+// Please see tools/typography for `@include font()` replacement.
 @mixin font-size($args...) {
   @include font($args...);
   @warn "Deprecation [mixin]: `@include font-size()`
   Support for `@include font-size()` will be removed in Toolkit@2.0.0. Use `@include font()` instead.
+  If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
+}
+
+// Background gradient page mixin
+// ===========================================
+
+// Please see tools/page for `@include page-background()` replacement.
+@mixin background-page($args...) {
+  @include page-background($args...);
+  @warn "Deprecation [mixin]: `@include background-page()`
+  Support for `@include background-page()` will be removed in Toolkit@2.0.0. Use `@include page-background()` instead.
   If you experience any issues with this required change, please visit https://git.io/v9b7v for next steps.";
 }
 

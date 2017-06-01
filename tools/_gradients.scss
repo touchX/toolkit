@@ -2,7 +2,7 @@
 // TOOLS / GRADIENTS
 // =============================================================================
 
-// Background Gradient generator
+// @mixin gradient-background()
 // ===========================================
 
 // Mixin to generate complete background gradients. Uses values from our map in
@@ -11,7 +11,7 @@
 // Example usage:
 //
 //   html {
-//     @include background-gradient(sky-sports, horizontal-invert, 0% 50%);
+//     @include gradient-background(sky-sports, horizontal-invert, 0% 50%);
 //   }
 //
 // OPTIONS
@@ -21,7 +21,7 @@
 //    - "horizontal" Horizontal 3 point gradient
 //    - "radial" Radial 2 point gradient
 
-@mixin background-gradient($key, $direction:"vertical", $start-stop:0% 100%) {
+@mixin gradient-background($key, $direction:"vertical", $start-stop:0% 100%) {
   @if map-has-key($gradients, $key) {
 
     // Set values from $gradients variable map to local variables

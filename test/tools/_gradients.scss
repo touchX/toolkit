@@ -19,13 +19,13 @@
 // Background gradient mixin
 // ===========================================
 
-@include test-module("@mixin background-gradient") {
+@include test-module("@mixin gradient-background") {
   @include gradients_before();
 
   @include test("should return a vertical linear gradient for the given key when no direction is set") {
     @include assert("compiles vertical linear gradient") {
       @include input() {
-        @include background-gradient(testkey);
+        @include gradient-background(testkey);
       }
 
       @include expect() {
@@ -41,7 +41,7 @@
   @include test("should return a vertical linear gradient for the given key when a vertical direction is set") {
     @include assert("compiles vertical linear gradient") {
       @include input() {
-        @include background-gradient(testkey, "vertical");
+        @include gradient-background(testkey, "vertical");
       }
 
       @include expect() {
@@ -57,7 +57,7 @@
   @include test("should return a horizontal linear gradient for the given key when a horizontal direction is set") {
     @include assert("compiles horizontal linear gradient") {
       @include input() {
-        @include background-gradient(testkey, "horizontal");
+        @include gradient-background(testkey, "horizontal");
       }
 
       @include expect() {
@@ -73,7 +73,7 @@
   @include test("should return a radial gradient for the given key when a radial direction is set") {
     @include assert("compiles radial linear gradient") {
       @include input() {
-        @include background-gradient(testkey, "radial");
+        @include gradient-background(testkey, "radial");
       }
 
       @include expect() {
