@@ -69,13 +69,14 @@
 // ===========================================
 
 // Function to get gradient from `$gradients` instead of using `map-get`..
-@function gradient($key, $variant:end) {
+@function gradient($key, $variant:100%) {
   @if map-has-key($gradients, $key) {
-    @if ($variant != null) {
+    @if map-has-key(map-get($gradients, $key), $variant) {
       @return map-get(map-get($gradients, $key), $variant);
     }
 
-    @return map-get($gradients, $key);
+    @warn "Unknown #{$variant} value of `#{$key}` in $gradients.";
+    @return null;
   }
 
   @warn "Unknown `#{$key}` in $gradients.";

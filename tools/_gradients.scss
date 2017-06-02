@@ -25,8 +25,8 @@
   @if map-has-key($gradients, $key) {
 
     // Set values from $gradients variable map to local variables
-    $startColor: gradient($key, start);
-    $endColor: gradient($key, end);
+    $startColor: gradient($key, 0%);
+    $endColor: gradient($key, 100%);
 
     $startPoint: nth($start-stop, 1);
     $endPoint: nth($start-stop, 2);
@@ -56,6 +56,8 @@
         type: radial
       )
     );
+
+    $colorPoints: "";
 
     // Check if direction exists in direction map:
     @if map-has-key($direction-map, $direction) {

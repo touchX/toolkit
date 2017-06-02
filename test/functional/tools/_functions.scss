@@ -71,14 +71,14 @@
 
 @include test-module("@function gradient") {
   @include test("should return a start hex value for given key.") {
-    $actual: gradient("sky-1", start);
+    $actual: gradient("sky-1", 0%);
     $expected: #0082dc;
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return an end hex value for given key.") {
-    $actual: gradient("sky-1", end);
+    $actual: gradient("sky-1", 100%);
     $expected: #1ea0f5;
 
     @include assert-equal($actual, $expected);
