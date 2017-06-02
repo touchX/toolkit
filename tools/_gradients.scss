@@ -21,15 +21,29 @@
 //    - "horizontal" Horizontal 3 point gradient
 //    - "radial" Radial 2 point gradient
 
-@mixin gradient-background($key, $direction:"vertical", $start-stop:0% 100%) {
+@mixin gradient-background($key, $direction:"vertical") {
   @if map-has-key($gradients, $key) {
 
-    // Set values from $gradients variable map to local variables
-    $startColor: gradient($key, 0%);
-    $endColor: gradient($key, 100%);
+    // Color Values & Percentages
+    $gradient: map-get($gradients, $key);
 
-    $startPoint: nth($start-stop, 1);
-    $endPoint: nth($start-stop, 2);
+    // Grab the Start and End values of the specified Gradient, for later use
+    // in our radial and horizontal gradient styles.
+    $gradient-color-start: gradient($key, start);
+    $gradient-color-end: gradient($key, end);
+
+    // Define a list of gradient color stops.
+    $gradient-color-stops: null;
+    // Grab each percentage and color value of the specified gradient from
+    // $gradients, then add it to the $gradient-color-stops list.
+    @each $percentage, $color in $gradient {
+      $gradient-color-stop: unquote($color + " " + $percentage);
+      $gradient-color-stops: $gradient-color-stops, ($gradient-color-stop, );
+    }
+    // Testing purposes only
+    @warn "#{$gradient-color-stops}";
+
+    // Direction Map
 
     // The direction map stores values for the direction for both prefixed and
     // standard linear-gradient
@@ -56,8 +70,6 @@
         type: radial
       )
     );
-
-    $colorPoints: "";
 
     // Check if direction exists in direction map:
     @if map-has-key($direction-map, $direction) {
@@ -95,4 +107,8 @@
   @else {
     @warn "Unknown `#{$key}` in $gradients.";
   }
+}
+
+.test {
+  @include gradient-background(sky-1, vertical);
 }
