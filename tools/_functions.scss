@@ -70,6 +70,15 @@
 
 // Function to get gradient from `$gradients` instead of using `map-get`..
 @function gradient($key, $variant:100%) {
+  // Allow consumers to continue using `start` and `end` color point shortcuts.
+  @if $variant == start {
+    $variant: 0%;
+  }
+
+  @if $variant == end {
+    $variant: 100%;
+  }
+
   @if map-has-key($gradients, $key) {
     @if map-has-key(map-get($gradients, $key), $variant) {
       @return map-get(map-get($gradients, $key), $variant);
