@@ -31,9 +31,10 @@
  * Normalize.css........Normalise differences across different browsers.
  * Reset................Simple reset to complement Normalize.css: set everything
  *                      to zero.
+ * Overflow.............Prevent horizontal scrolling by default.
  * Vertical Rhythm......Define common vertical spacing across all block-level
  *                      elements in one go.
- * Generic..............Our @keyframe definitions for animations.
+ * Keyframes............Our @keyframe definitions for animations.
  *
  * ELEMENTS
  * Page.................Set up our HTML and/or BODY elements.
@@ -78,6 +79,7 @@
  * Debug................Enabling debugging mode will point out various errors
  *                      and mistakes in our HTML.
  * Fill.................Utility classes to position an element within its parent.
+ * Overflow.............Utility classes to control element overflow.
  */
 
 // Settings
@@ -91,6 +93,7 @@
 @import "generic/box-sizing";
 @import "normalize.css/normalize";
 @import "generic/reset";
+@import "generic/overflow";
 @import "generic/vertical-rhythm";
 @import "generic/keyframes";
 
@@ -121,6 +124,7 @@
 @import "utilities/ie9";
 @import "utilities/debug";
 @import "utilities/fill";
+@import "utilities/overflow";
 
 // Assertions
 @import "test/assertions/all";

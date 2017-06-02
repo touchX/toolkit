@@ -7,8 +7,8 @@
 
 ### Features
 
-* [colors] `grey-40` modified to meet AA accessibility.
-* [typography] Updated sizing to the typographic scale.
+* [Colors] `grey-40` modified to meet AA accessibility.
+* [Typography] Updated sizing to the typographic scale.
 * [z-index] `z-index()` function for easier access and management of `z-index` values across the project.
 
 ### Dependencies
@@ -19,16 +19,17 @@
 
 ### Deprecations
 
-* [typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
+* [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
 
 ### Fixes
 
+* [Generic] Horizontal scrolling bugs caused by full-width (`100vw`) UI elements.
 * [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
   pre-defined setting.
 
 ### Upgrade notes
-* [spacing] Default spacing unit value changed from 30px to 20px.
+* [Spacing] Default spacing unit value changed from 30px to 20px.
     * **Variables** - if used in your project, you may want to consider changing the following:
         * `$global-spacing-unit-small` to `$global-spacing-unit`
         * `$global-spacing-unit-tiny` to `$global-spacing-unit-small`
@@ -43,7 +44,7 @@
         * `.u-margin-right-tiny` to `.u-margin-right-small`
         * `.u-margin-bottom-tiny` to `.u-margin-bottom-small`
         * `.u-margin-left-tiny` to `.u-margin-left-small`
-
+* [Horizontal Scrolling] If your app uses horizontal scrolling, you may need to apply `.u-overflow-x-scroll` to your `<html>` and `<body>` elements.
 
 ## 1.15.0
 
