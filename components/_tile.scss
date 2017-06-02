@@ -385,11 +385,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 .c-tile__body {
   /*! autoprefixer: off */
   &::before {
-    @include background-gradient($tile-gradient-default, "radial");
+    @include gradient-background($tile-gradient-default, "radial");
   }
 
   .c-tile__link &::after {
-    @include background-gradient($tile-gradient-default-hover, "radial");
+    @include gradient-background($tile-gradient-default-hover, "radial");
   }
 }
 
@@ -397,11 +397,11 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 .c-tile__caption {
   /*! autoprefixer: off */
   &::before {
-    @include background-gradient($tile-gradient-default);
+    @include gradient-background($tile-gradient-default);
   }
 
   .c-tile__link &::after {
-    @include background-gradient($tile-gradient-default-hover);
+    @include gradient-background($tile-gradient-default-hover);
   }
 }
 
@@ -413,7 +413,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
   }
 
   &::after {
-    @include background-gradient(mid, vertical-invert, 0% 50%);
+    @include gradient-background(mid, vertical-invert, 0% 50%);
   }
 }
 
@@ -454,7 +454,7 @@ $included-tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-
 
         // Set up style overides
         .c-tile__link .c-tile__body::after {
-          @include background-gradient($brand);
+          @include gradient-background($brand);
         }
       }
     }
