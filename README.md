@@ -25,11 +25,11 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
 ## Structure
 
-The project consists of 3 repositories:
+The project consists of 3 packages:
 
-* **this repo**: provides the UI and Core layers.
-* [toolkit-core](https://github.com/sky-uk/toolkit-core): Global styles and defaults for all projects.
-* [toolkit-ui](https://github.com/sky-uk/toolkit-ui): Aesthetic components.
+* [sky-toolkit]: provides the UI and Core layers.
+  * [sky-toolkit-core](https://github.com/sky-uk/toolkit/toolkit-core): Global styles and defaults for all projects.
+  * [sky-toolkit-ui](https://github.com/sky-uk/toolkit/toolkit-ui): Aesthetic components.
 
 ### Libraries
 * [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
