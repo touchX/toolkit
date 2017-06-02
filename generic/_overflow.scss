@@ -6,7 +6,7 @@
  * As browsers interpret `vw` differently, some of our full-width (`100vw`) UI
  * components cause unwanted horizontal scrolling.
  *
- * This can be overriden using the classes in utilities/overflow
+ * Note: this can be overriden using the classes in utilities/overflow.
  */
 html,
 body {
