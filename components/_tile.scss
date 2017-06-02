@@ -136,7 +136,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
   &::after {
     /*! autoprefixer: off */
-    @include background-gradient($tile-gradient, vertical-invert);
+    @include gradient-background($tile-gradient, vertical-invert);
   }
 
   > :last-child {
@@ -158,12 +158,12 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
   &::before {
     /*! autoprefixer: off */
-    @include background-gradient($tile-gradient-caption);
+    @include gradient-background($tile-gradient-caption);
   }
 
   &::after {
     /*! autoprefixer: off */
-    @include background-gradient($tile-gradient-caption-hover);
+    @include gradient-background($tile-gradient-caption-hover);
   }
 }
 
@@ -433,7 +433,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
     &::after {
       /*! autoprefixer: off */
-      @include background-gradient($tile-gradient, vertical-invert, 0% 50%);
+      @include gradient-background($tile-gradient, vertical-invert, 0% 50%);
     }
   }
 
@@ -537,7 +537,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
         // Set up style overides
         .c-tile__body::after {
           /*! autoprefixer: off */
-          @include background-gradient($brand);
+          @include gradient-background($brand);
         }
       }
     }
