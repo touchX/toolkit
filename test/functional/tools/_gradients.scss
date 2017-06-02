@@ -2,11 +2,11 @@
 // TEST / FUNCTIONAL / TOOLS / GRADIENTS
 // =============================================================================
 
-@include test-module("@mixin background-gradient") {
+@include test-module("@mixin gradient-background") {
   @include test("should return a vertical linear gradient for the given key when no direction is set") {
     @include assert("compiles vertical linear gradient") {
       @include input() {
-        @include background-gradient(sky-1);
+        @include gradient-background(sky-1);
       }
 
       @include expect() {
@@ -22,7 +22,7 @@
   @include test("should return a vertical linear gradient for the given key when a vertical direction is set") {
     @include assert("compiles vertical linear gradient") {
       @include input() {
-        @include background-gradient(sky-1, "vertical");
+        @include gradient-background(sky-1, "vertical");
       }
 
       @include expect() {
@@ -38,7 +38,7 @@
   @include test("should return a horizontal linear gradient for the given key when a horizontal direction is set") {
     @include assert("compiles horizontal linear gradient") {
       @include input() {
-        @include background-gradient(sky-1, "horizontal");
+        @include gradient-background(sky-1, "horizontal");
       }
 
       @include expect() {
@@ -54,7 +54,7 @@
   @include test("should return a radial gradient for the given key when a radial direction is set") {
     @include assert("compiles radial linear gradient") {
       @include input() {
-        @include background-gradient(sky-1, "radial");
+        @include gradient-background(sky-1, "radial");
       }
 
       @include expect() {

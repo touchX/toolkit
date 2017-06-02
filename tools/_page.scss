@@ -9,11 +9,11 @@
 // Example usage:
 //
 //   html {
-//     @include background-page();
+//     @include page-background();
 //   }
 
-@mixin background-page() {
-  @include background-gradient("small", horizontal);
+@mixin page-background() {
+  @include gradient-background("small", horizontal);
 
   @include mq($from: medium) {
     background-color: color(white);
