@@ -10,6 +10,10 @@
 // which that breakpoint kicks in. These pixel values will be conveted into ems
 // by Sass MQ.
 //
+// Note: Sass MQ's `em` values are calculated via the browser-default HTML 
+//       font-size of `16px`, *not* Toolkit's $global-font-size.
+//       Further reading: https://stackoverflow.com/a/39935188
+//
 // Make use of these breakpoints like so:
 //
 //   .foo {
