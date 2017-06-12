@@ -25,8 +25,6 @@
 ### Fixes
 
 * [Generic] Horizontal scrolling bugs caused by full-width (`100vw`) UI elements.
-* [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
-  pre-defined setting.
 
 ### Upgrade notes
 * [Spacing] Default spacing unit value changed from 30px to 20px.
