@@ -65,26 +65,32 @@
   @return null;
 }
 
-// gradient()
+// gradient-color()
 // ===========================================
 
-// Function to get gradient from `$gradients` instead of using `map-get`..
-@function gradient($key, $variant:100%) {
-  // Allow consumers to continue using `start` and `end` color point shortcuts.
-  @if $variant == start {
-    $variant: 0%;
-  }
-
-  @if $variant == end {
-    $variant: 100%;
-  }
-
+// Function to get gradient colors from `$gradients` instead of using `map-get`.
+@function gradient-color($key, $color-stop: 100%) {
+  // Check the specified gradient exists in `$gradients`.
   @if map-has-key($gradients, $key) {
-    @if map-has-key(map-get($gradients, $key), $variant) {
-      @return map-get(map-get($gradients, $key), $variant);
+    // Store the available color stop keys (e.g. 0%, 50%, 100%)
+    $color-stop-keys: map-keys(map-get($gradients, $key));
+    $color-stop-keys-length: length($color-stop-keys);
+
+    // If the `start` color stop is specified, select the first available key.
+    @if $color-stop == start {
+      $color-stop: nth($color-stop-keys, 1);
     }
 
-    @warn "Unknown #{$variant} value of `#{$key}` in $gradients.";
+    // If the `end` color stop is specified, select the last available key.
+    @if $color-stop == end {
+      $color-stop: nth($color-stop-keys, $color-stop-keys-length);
+    }
+
+    @if map-has-key(map-get($gradients, $key), $color-stop) {
+      @return map-get(map-get($gradients, $key), $color-stop);
+    }
+
+    @warn "Unknown #{$color-stop} stop of `#{$key}` in $gradients.";
     @return null;
   }
 
