@@ -117,3 +117,22 @@
   @warn "Unknown `#{$key}` in $z-index.";
   @return null;
 }
+
+// Reverse list
+// ===========================================
+
+// Function to reverse list of values
+//
+// Example:
+//    reverse(1,2,3,4) => 4,3,2,1
+//    reverst(a 1, b 2, c 3) => c 3, b 2, a 1
+//
+@function reverse($list) {
+  $reversed-list: ();
+
+  @for $index from length($list)*-1 through -1 {
+    $reversed-list: append($reversed-list, nth($list, abs($index)), comma);
+  }
+
+  @return $reversed-list;
+}

@@ -5,6 +5,9 @@
 // Functions
 // ===========================================
 
+// $gradient-color()
+// ------------------------------------
+
 @include test-module("@function gradient-color") {
   @include test("should return a start hex value for given key.") {
     $actual: gradient-color("sky-1", 0%);
@@ -27,6 +30,27 @@
     @include assert-equal($actual, $expected);
   }
 }
+
+// $gradient-color-stops()
+// ------------------------------------
+
+@include test-module("@function gradient-color-stops") {
+
+  @include test("should return correct color points with given key") {
+    $actual: gradient-color-stops(sky-1);
+    $expected: null, #0082dc 0%, #1ea0f5 100%; // Unknown bug in tests prepending `null`
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return correct color points with given key when inverted") {
+    $actual: gradient-color-stops(sky-1, invert);
+    $expected: null, #1ea0f5 0%, #0082dc 100%; // Unknown bug in tests prepending `null`
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
 
 // Mixins
 // ===========================================
@@ -64,22 +88,6 @@
     }
   }
 
-  @include test("should return a horizontal linear gradient for the given key when a horizontal direction is set") {
-    @include assert("compiles horizontal linear gradient") {
-      @include input() {
-        @include gradient-background(sky-1, "horizontal");
-      }
-
-      @include expect() {
-        background-color: #1ea0f5;
-        background-image: -webkit-linear-gradient(left, #0082dc 0%, #1ea0f5 50%, #0082dc 100%);
-        background-image: -moz-linear-gradient(left, #0082dc 0%, #1ea0f5 50%, #0082dc 100%);
-        background-image: -o-linear-gradient(left, #0082dc 0%, #1ea0f5 50%, #0082dc 100%);
-        background-image: linear-gradient(to right, #0082dc 0%, #1ea0f5 50%, #0082dc 100%);
-      }
-    }
-  }
-
   @include test("should return a radial gradient for the given key when a radial direction is set") {
     @include assert("compiles radial linear gradient") {
       @include input() {
@@ -92,6 +100,22 @@
         background-image: -moz-radial-gradient(center, ellipse cover, #1ea0f5 0%, #0082dc 100%);
         background-image: -o-radial-gradient(center, ellipse cover, #1ea0f5 0%, #0082dc 100%);
         background-image: radial-gradient(ellipse at center, #1ea0f5 0%, #0082dc 100%);
+      }
+    }
+  }
+
+  @include test("should return the correct fallback color if set") {
+    @include assert("compiles vertical linear gradient") {
+      @include input() {
+        @include gradient-background(sky-1, "vertical", color(grey-50));
+      }
+
+      @include expect() {
+        background-color: #222;
+        background-image: -webkit-linear-gradient(top, #0082dc 0%, #1ea0f5 100%);
+        background-image: -moz-linear-gradient(top, #0082dc 0%, #1ea0f5 100%);
+        background-image: -o-linear-gradient(top, #0082dc 0%, #1ea0f5 100%);
+        background-image: linear-gradient(to bottom, #0082dc 0%, #1ea0f5 100%);
       }
     }
   }
