@@ -35,7 +35,6 @@
 // ------------------------------------
 
 @include test-module("@function gradient-color-stops") {
-
   @include test("should return correct color points with given key") {
     $actual: gradient-color-stops(sky-1);
     $expected: null, #0082dc 0%, #1ea0f5 100%; // Unknown bug in tests prepending `null`
@@ -50,7 +49,6 @@
     @include assert-equal($actual, $expected);
   }
 }
-
 
 // Mixins
 // ===========================================
