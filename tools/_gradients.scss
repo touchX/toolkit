@@ -2,8 +2,54 @@
 // TOOLS / GRADIENTS
 // =============================================================================
 
-// @mixin gradient-background()
+// Functions
+// ==============================================
+
+// gradient-color()
+// ------------------------------------
+
+// Function to get gradient colors from `$gradients` instead of using `map-get`.
+//
+// Options:
+// - key: Name of gradient (see toolkit-core/settings/colors)
+// - color-stop:
+//    - `×%` specific percentage value
+//    - `start` the first defined percentage value
+//    - `end` the last defined percentage value
+@function gradient-color($key, $color-stop: end) {
+  // Check the specified gradient exists in `$gradients`.
+  @if map-has-key($gradients, $key) {
+    // Store the available color stop keys (e.g. 0%, 50%, 100%)
+    $color-stop-keys: map-keys(map-get($gradients, $key));
+    $color-stop-keys-length: length($color-stop-keys);
+
+    // If the `start` color stop is specified, select the first available key.
+    @if $color-stop == start {
+      $color-stop: nth($color-stop-keys, 1);
+    }
+
+    // If the `end` color stop is specified, select the last available key.
+    @if $color-stop == end {
+      $color-stop: nth($color-stop-keys, $color-stop-keys-length);
+    }
+
+    @if map-has-key(map-get($gradients, $key), $color-stop) {
+      @return map-get(map-get($gradients, $key), $color-stop);
+    }
+
+    @warn "Unknown #{$color-stop} stop of `#{$key}` in $gradients.";
+    @return null;
+  }
+
+  @warn "Unknown `#{$key}` in $gradients.";
+  @return null;
+}
+
+// Mixins
 // ===========================================
+
+// @include gradient-background()
+// ------------------------------------
 
 // Mixin to generate complete background gradients. Uses values from our map in
 // `settings/_colors.scss`.
@@ -29,8 +75,8 @@
 
     // Grab the Start and End values of the specified Gradient, for later use
     // in our radial and horizontal gradient styles.
-    $gradient-color-start: gradient($key, start);
-    $gradient-color-end: gradient($key, end);
+    $gradient-color-start: gradient-color($key, start);
+    $gradient-color-end: gradient-color($key, end);
 
     // Define a list of gradient color stops.
     $gradient-color-stops: null;
@@ -40,6 +86,7 @@
       $gradient-color-stop: unquote($color + " " + $percentage);
       $gradient-color-stops: $gradient-color-stops, ($gradient-color-stop, );
     }
+
     // Testing purposes only
     @warn "#{$gradient-color-stops}";
 
@@ -80,23 +127,23 @@
       // Fetch linear or radial
       $type: map-get(map-get($direction-map, $direction), type);
 
-      $gradient-color-points: $startColor $startPoint, $endColor $endPoint !default;
-
       // Force horizontal to conform to brand 3 point gradient and vertical or
       // radial to a 2 point gradient.
       @if ($direction == "radial") {
-        $gradient-color-points: $endColor $startPoint, $startColor $endPoint;
+        // TODO: Reverse this order
+        // $gradient-color-points: reverse($gradient-color-points);
       }
 
       @else if ($direction == "horizontal") {
-        $gradient-color-points: $startColor 0%, $endColor 50%, $startColor 100%;
+        // TODO: Discuss IDEAL solution
+        $gradient-color-stops: $gradient-color-start 0%, $gradient-color-end 50%, $gradient-color-start 100%;
       }
 
-      background-color: $endColor; // Fallback for browsers lacking css gradient
-      background-image: -webkit-#{$type}-gradient(#{$direction-legacy}, $gradient-color-points);
-      background-image: -moz-#{$type}-gradient(#{$direction-legacy}, $gradient-color-points);
-      background-image: -o-#{$type}-gradient(#{$direction-legacy}, $gradient-color-points);
-      background-image: #{$type}-gradient(#{$direction-standard}, $gradient-color-points);
+      background-color: $gradient-color-end; // Fallback for browsers lacking css gradient
+      background-image: -webkit-#{$type}-gradient(#{$direction-legacy}, $gradient-color-stops);
+      background-image: -moz-#{$type}-gradient(#{$direction-legacy}, $gradient-color-stops);
+      background-image: -o-#{$type}-gradient(#{$direction-legacy}, $gradient-color-stops);
+      background-image: #{$type}-gradient(#{$direction-standard}, $gradient-color-stops);
     }
 
     @else {
@@ -109,6 +156,6 @@
   }
 }
 
-.test {
-  @include gradient-background(sky-1, vertical);
-}
+// .test {
+//   @include gradient-background(sky-1, radial);
+// }
