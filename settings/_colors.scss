@@ -28,16 +28,12 @@ $colors: (
 ) !default;
 
 $gradients: (
-  large: (
-    0%:   #cdccd4,
-    100%: #fff
-  ),
-  mid: (
-    0%:   #e6e6ea,
-    100%: #fff
-  ),
-  small: (
+  default: (
     0%:   #f2f2f5,
+    100%: #fff
+  ),
+  highlight: (
+    0%:   #cdccd4,
     100%: #fff
   ),
   page: (
@@ -96,5 +92,9 @@ $gradients: (
   sky-store: (
     0%:   #036,
     100%: #0e429e
+  ),
+  tile: (
+    0%:  #fff,
+    50%: #e6e6ea,
   )
 ) !default;
