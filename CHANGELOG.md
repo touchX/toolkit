@@ -36,6 +36,13 @@
 1. **Gradients** - "Radial" gradients are no longer encouraged by Design. Please use the linear options provided.
 
 
+## 1.20.0
+
+### Dependencies
+
+* [toolkit-core](https://github.com/sky-uk/toolkit-core) updated to `1.16.0`.
+
+
 ## 1.19.0
 
 ### Features
