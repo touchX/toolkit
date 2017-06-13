@@ -57,22 +57,27 @@
 
 // Example output:
 // `gradient-color-stops(sky-cinema)` = `#903 0%, #cb0033 100%`
-// `gradient-color-stops(sky-cinema, true)` = `#cb0033 0%, #903 100%`
+// `gradient-color-stops(sky-cinema, reverse)` = `#cb0033 0%, #903 100%`
 //
 @function gradient-color-stops($key, $modifier: null) {
-  @if map-has-key($gradients, $key) { // Check gradient exists
+  // Check gradient exists in `$gradients`
+  @if map-has-key($gradients, $key) {
     $gradient: map-get($gradients, $key);
-    $gradient-color-stops: null; // Create blank list to store color points
+    // Create blank list to store color points
+    $gradient-color-stops: null;
 
-    @if $modifier == invert {
-      $gradient-inverted: reverse($gradient); // Reverse order of gradient list
+    // If specified, reverse the order of the gradient color stops
+    @if $modifier == reverse {
+      $gradient-reversed: reverse($gradient);
 
-      @each $position, $value in $gradient-inverted {
-        $inverted-position: 100% - $position; // Invert percentages i.e. 6% => 94%
-        $gradient-color-stops: append($gradient-color-stops, ($value $inverted-position), comma); // Append ordered values to point list
+      @each $position, $value in $gradient-reversed {
+        // Invert percentages i.e. 6% => 94%
+        $reversed-position: 100% - $position;
+        // Append ordered values to stop list
+        $gradient-color-stops: append($gradient-color-stops, ($value $reversed-position), comma);
       }
     }
-
+    // By default, append a list of color stops for each percentage key.
     @else {
       @each $position, $value in $gradient {
         $gradient-color-stops: append($gradient-color-stops, ($value $position), comma);
@@ -92,21 +97,22 @@
 // @include gradient-background()
 // ------------------------------------
 
-// Mixin to generate complete background gradients. Uses values from our map in
-// `settings/_colors.scss`.
+// Mixin to generate complete background gradients. Uses values from our
+// `$gradients` map in `settings/_colors.scss`.
 //
 // Example usage:
 //
 //   html {
-//     @include gradient-background(sky-sports, horizontal-invert, 0% 50%);
+//     @include gradient-background(sky-sports, vertical);
 //   }
 //
 // OPTIONS
 // - key: Name of gradient (see toolkit-core/settings/_colors.scss)
 // - direction:
-//    - "vertical" Vertical 2 point gradient
-//    - "horizontal" Horizontal 3 point gradient
-//    - "radial" Radial 2 point gradient
+//    - "vertical" top to bottom gradient
+//    - "vertical-invert" bottom to top gradient
+//    - "horizontal" left to right gradient
+//    - "radial" center to edge gradient
 
 @mixin gradient-background($key, $direction:"vertical", $fallback: null) {
   @if map-has-key($gradients, $key) {
@@ -117,60 +123,57 @@
       vertical: (
         legacy: "top",
         standard: "to bottom",
-        type: linear,
-        invert: false
+        type: linear
       ),
       vertical-invert: (
         legacy: "bottom",
         standard: "to top",
-        type: linear,
-        invert: true
+        type: linear
       ),
       horizontal: (
         legacy: "left",
         standard: "to right",
-        type: linear,
-        invert: false
+        type: linear
       ),
       radial: (
         legacy: "center, ellipse cover",
         standard: "ellipse at center",
         type: radial,
-        invert: true
+        reverse: true
       )
     );
 
-    // Define a list of gradient color stops.
+    // Fetch a list of the gradient's color stops from `$gradients`.
     $gradient-color-stops: gradient-color-stops($key);
 
-    // Check if direction exists in direction map:
+    // Check if direction exists in direction map.
     @if map-has-key($direction-map, $direction) {
-      // Fetch both the legacy and standards version for given direction
+      // Fetch the direction map settings and assign to variables.
       $direction-legacy: map-get(map-get($direction-map, $direction), legacy);
       $direction-standard: map-get(map-get($direction-map, $direction), standard);
-
-      // Fetch linear or radial
       $direction-type: map-get(map-get($direction-map, $direction), type);
-      $direction-invert: map-get(map-get($direction-map, $direction), invert);
+      $direction-reverse: map-get(map-get($direction-map, $direction), reverse);
 
-      // Force horizontal to conform to brand 3 point gradient and vertical or
-      // radial to a 2 point gradient.
-      @if ($direction-invert == true) {
-        $gradient-color-stops: gradient-color-stops($key, invert);
+      // Reverse our gradient color stops for specified directions.
+      @if ($direction-reverse == true) {
+        $gradient-color-stops: gradient-color-stops($key, reverse);
       }
 
-      @if ($fallback != null) {
-        @if (type-of($fallback) != color) {
-          @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
-          $fallback: gradient-color($key, end);
-        }
+      // Define our fallback background-color
+      // Set a default fallback value for undefined / invalid color values.
+      $fallback-default: gradient-color($key, end);
+      // Check validity of custom defined fallback color.
+      @if $fallback and type-of($fallback) != color {
+        @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
+        $fallback: $fallback-default;
       }
-      // If the `$fallback` is undefined, use the end gradient color stop.
+      // If undefined, use the default fallback value.
       @else {
-        $fallback: gradient-color($key, end);
+        $fallback: $fallback-default;
       }
 
-      background-color: $fallback; // Fallback for browsers lacking css gradient
+      // Output fallback background color + gradient with appropriate prefixes.
+      background-color: $fallback;
       background-image: -webkit-#{$direction-type}-gradient(#{$direction-legacy}, $gradient-color-stops);
       background-image: -moz-#{$direction-type}-gradient(#{$direction-legacy}, $gradient-color-stops);
       background-image: -o-#{$direction-type}-gradient(#{$direction-legacy}, $gradient-color-stops);
@@ -178,7 +181,7 @@
     }
 
     @else {
-      @warn "#{$direction}` is not a valid direction, see toolkit-core/tools/gradients for available options.";
+      @warn "`#{$direction}` is not a valid direction, see toolkit-core/tools/gradients for available options.";
     }
   }
 
