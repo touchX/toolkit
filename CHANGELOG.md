@@ -8,6 +8,9 @@
 ### Features
 
 * [Colors] `grey-40` modified to meet AA accessibility.
+* [Gradients]
+    * `@include gradient-background()` refactored to support color stop percentages rather than start and end values.
+    * New `gradient-color-stops()` function to fetch a list of gradient color stop percentages and values.
 * [Typography] Updated sizing to the typographic scale.
 * [z-index] `z-index()` function for easier access and management of `z-index` values across the project.
 
@@ -19,14 +22,16 @@
 
 ### Deprecations
 
+* [Gradients]
+  * `gradient()` function renamed to `gradient-color()`.
+  * Removal of `@include page-background()`, please use `@include gradient-background(page)` instead.
+  * Refactor of `@include gradient-background()`'s '`horizontal` option to output the percentages defined, rather than "end start end" values.
 * [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
 
 ### Fixes
 
 * [Generic] Horizontal scrolling bugs caused by full-width (`100vw`) UI elements.
-* [Sass-MQ] Tell Sass MQ to use our actual base font size and not its
-  pre-defined setting.
 
 ### Upgrade notes
 * [Spacing] Default spacing unit value changed from 30px to 20px.
