@@ -162,13 +162,14 @@
       // Define our fallback background-color
       // Set a default fallback value for undefined / invalid color values.
       $fallback-default: gradient-color($key, end);
-      // Check validity of custom defined fallback color.
-      @if $fallback and type-of($fallback) != color {
-        @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
+
+      // If undefined, use the default fallback value.
+      @if $fallback == null {
         $fallback: $fallback-default;
       }
-      // If undefined, use the default fallback value.
-      @else {
+      // Check validity of custom defined fallback color.
+      @else if type-of($fallback) != color {
+        @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
         $fallback: $fallback-default;
       }
 

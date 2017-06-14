@@ -43,7 +43,7 @@
   }
 
   @include test("should return correct color points with given key when inverted") {
-    $actual: gradient-color-stops(sky-1, invert);
+    $actual: gradient-color-stops(sky-1, reverse);
     $expected: null, #1ea0f5 0%, #0082dc 100%; // Unknown bug in tests prepending `null`
 
     @include assert-equal($actual, $expected);
