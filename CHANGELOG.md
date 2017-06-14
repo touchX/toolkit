@@ -24,12 +24,14 @@
 ### Deprecations
 
 * [Gradients]
-  * `gradient()` function renamed to `gradient-color()`.
-  * Removal of `@include page-background()`, please use `@include gradient-background(page, horizontal)` instead for the large page background gradient or `@include gradient-background(page-small, horizontal)` for the small page background gradient.
-  * Refactor of `@include gradient-background()`'s '`horizontal` option to output the percentages defined, rather than "end start end" values.
-  * `large` gradient renamed to `default`.
-  * `small` gradient renamed to `highlight`.
-  * `mid` gradient renamed to `tile`.
+    * `gradient()` function renamed to `gradient-color()`.
+    * Removal of `@include page-background()`, please use:
+        * `@include gradient-background(page, horizontal)` instead for the **large** page background gradient, or
+        * `@include gradient-background(page-small, horizontal)` instead for the **small** page background gradient.
+    * Refactor of `@include gradient-background()`'s '`horizontal` option to output the percentages defined, rather than "end start end" values.
+    * `large` gradient renamed to `default`.
+    * `small` gradient renamed to `highlight`.
+    * `mid` gradient renamed to `tile`.
 * [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
 
