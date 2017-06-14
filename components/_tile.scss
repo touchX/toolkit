@@ -9,9 +9,9 @@ $tile-arrow-color: color(white);
 $tile-arrow-size: 22px !default;
 $tile-border-colour: rgba(color(white), 0.3) !default;
 $tile-border-width: 5px !default;
-$tile-gradient: "mid";
-$tile-gradient-caption: "small";
-$tile-gradient-caption-hover: "large";
+$tile-gradient: "tile";
+$tile-gradient-caption: "default";
+$tile-gradient-caption-hover: "highlight";
 $tile-padding: $global-spacing-unit-small !default;
 $tile-shadow: 0 1px 10px 0 rgba(color(black), 0.2) !default;
 $tile-shadow-hover: 0 15px 20px -8px rgba(color(black), 0.2) !default;
@@ -136,7 +136,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
   &::after {
     /*! autoprefixer: off */
-    @include gradient-background($tile-gradient, vertical-invert);
+    @include gradient-background($tile-gradient);
   }
 
   > :last-child {
@@ -433,7 +433,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
 
     &::after {
       /*! autoprefixer: off */
-      @include gradient-background($tile-gradient, vertical-invert, 0% 50%);
+      @include gradient-background($tile-gradient);
     }
   }
 
