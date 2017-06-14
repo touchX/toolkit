@@ -25,7 +25,7 @@
 
 * [Gradients]
   * `gradient()` function renamed to `gradient-color()`.
-  * Removal of `@include page-background()`, please use `@include gradient-background(page)` instead.
+  * Removal of `@include page-background()`, please use `@include gradient-background(page, horizontal)` instead for the large page background gradient or `@include gradient-background(page-small, horizontal)` for the small page background gradient.
   * Refactor of `@include gradient-background()`'s '`horizontal` option to output the percentages defined, rather than "end start end" values.
   * `large` gradient renamed to `default`.
   * `small` gradient renamed to `highlight`.
