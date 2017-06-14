@@ -11,7 +11,7 @@
 * [Gradients]
     * `@include gradient-background()` refactored to support color stop percentages rather than start and end values.
     * `@include gradient-background()` now supports custom `background-color` fallbacks.
-    * New `gradient-color-stops()` function to fetch a list of gradient color stop percentages and values.
+    * `gradient-color-stops()` function to fetch a list of gradient color stop percentages and values.
 * [Typography] Updated sizing to the typographic scale.
 * [z-index] `z-index()` function for easier access and management of `z-index` values across the project.
 
@@ -28,7 +28,7 @@
     * Removal of `@include page-background()`, please use:
         * `@include gradient-background(page, horizontal)` instead for the **large** page background gradient, or
         * `@include gradient-background(page-small, horizontal)` instead for the **small** page background gradient.
-    * Refactor of `@include gradient-background()`'s '`horizontal` option to output the percentages defined, rather than "end start end" values.
+    * Refactor of `@include gradient-background()`'s `horizontal` option to output the percentages defined, rather than "end start end" values.
     * `large` gradient renamed to `default`.
     * `small` gradient renamed to `highlight`.
     * `mid` gradient renamed to `tile`.
