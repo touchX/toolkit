@@ -27,6 +27,9 @@
   * `gradient()` function renamed to `gradient-color()`.
   * Removal of `@include page-background()`, please use `@include gradient-background(page)` instead.
   * Refactor of `@include gradient-background()`'s '`horizontal` option to output the percentages defined, rather than "end start end" values.
+  * `large` gradient renamed to `default`.
+  * `small` gradient renamed to `highlight`.
+  * `mid` gradient renamed to `tile`.
 * [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
 
