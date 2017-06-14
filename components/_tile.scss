@@ -442,7 +442,7 @@ $tile-themes: "sky-1", "sky-account", "sky-atlantic", "sky-arts", "sky-box-sets"
    */
   .c-tile__media {
     height: auto;
-    z-index: 10;
+    z-index: z-index(2);
     position: relative;
   }
 
