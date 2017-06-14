@@ -164,7 +164,7 @@
       $fallback-default: gradient-color($key, end);
 
       // If undefined, use the default fallback value.
-      @if $fallback == null {
+      @if not $fallback {
         $fallback: $fallback-default;
       }
       // Check validity of custom defined fallback color.
