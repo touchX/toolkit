@@ -2,7 +2,10 @@
    COMPONENTS / #SWITCH
    ========================================================================== */
 
-// Switch Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $switch-size: 22px !default;
 $switch-inactive-color: color(grey-30) !default;
 $switch-inactive-hover-color: color(grey-20) !default;

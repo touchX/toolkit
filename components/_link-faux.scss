@@ -2,7 +2,10 @@
    COMPONENTS / #LINK-FAUX
    ========================================================================== */
 
-// Link-Faux Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $link-faux-padding: $global-spacing-unit-tiny;
 $link-faux-border-radius: $global-border-radius;
 

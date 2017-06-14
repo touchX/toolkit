@@ -2,7 +2,10 @@
    COMPONENTS / #ACCORDION
    ========================================================================== */
 
-// Accordion Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $accordion-animation-speed: $global-animation-speed !default;
 $accordion-background: transparent !default;
 $accordion-border: 1px solid color(grey-20) !default;

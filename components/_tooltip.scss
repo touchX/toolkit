@@ -2,7 +2,10 @@
    COMPONENTS / #TOOLTIP
    ========================================================================== */
 
-// Tooltip Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $tooltip-width: 20em;
 $tooltip-marker-size: 10px;
 $tooltip-z-base: z-index(8);

@@ -2,7 +2,10 @@
    COMPONENTS / #BEZEL
    ========================================================================== */
 
-// Bezel Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $bezel-border-width: 5px !default;
 $bezel-border-colour: rgba(color(white), 0.3) !default;
 

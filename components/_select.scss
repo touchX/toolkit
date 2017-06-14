@@ -2,7 +2,10 @@
    COMPONENTS / #SELECT
    ========================================================================== */
 
-// Select Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 // 1. Should be kept consitent with padding used on .c-btn--select
 $select-border-width: $global-border-width !default;
 $select-border-radius: $global-border-radius !default;

@@ -2,7 +2,10 @@
    COMPONENTS / #DROPDOWN
    ========================================================================== */
 
-// Dropdown Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $dropdown-animation-speed: $global-animation-speed !default;
 $dropdown-background: color(white) !default;
 $dropdown-background-focus: #f4f4f4 !default;
