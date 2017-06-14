@@ -66,32 +66,6 @@
   }
 }
 
-// gradient()
-// ===========================================
-
-@include test-module("@function gradient") {
-  @include test("should return a start hex value for given key.") {
-    $actual: gradient("sky-1", start);
-    $expected: #0082dc;
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return an end hex value for given key.") {
-    $actual: gradient("sky-1", end);
-    $expected: #1ea0f5;
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return an end hex if no variant is provided.") {
-    $actual: gradient("sky-1");
-    $expected: #1ea0f5;
-
-    @include assert-equal($actual, $expected);
-  }
-}
-
 // line-height()
 // ===========================================
 
@@ -122,14 +96,14 @@
 // ===========================================
 
 @include test-module("@function strip-unit") {
-  @include test("returns a number with no units when a number with units is supplied.") {
+  @include test("should return a number with no units when a number with units is supplied.") {
     $actual: strip-unit(20vw);
     $expected: 20;
 
     @include assert-equal($actual, $expected);
   }
 
-  @include test("returns a number with no units when a number with no units is supplied.") {
+  @include test("should return a number with no units when a number with no units is supplied.") {
     $actual: strip-unit(400);
     $expected: 400;
 
@@ -144,6 +118,27 @@
   @include test("should return a value for given key.") {
     $actual: z-index(1);
     $expected: 10;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// $reverse
+// ===========================================
+
+@include test-module("@function reverse") {
+  @include test("should return a reversed list.") {
+    $list: 1, 2, 3, 4;
+    $actual: reverse($list);
+    $expected: 4, 3, 2, 1;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return a reversed map.") {
+
+    $actual: reverse(map-get($gradients, sky-1));
+    $expected: (100% #1ea0f5), (0% #0082dc);
 
     @include assert-equal($actual, $expected);
   }
