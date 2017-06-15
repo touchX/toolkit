@@ -190,3 +190,48 @@
     @warn "Unknown `#{$key}` in $gradients.";
   }
 }
+
+// Text Gradient
+// ============================
+
+// Mixin to generate a text gradient styling.
+
+// Example usage:
+//    .grad-text {
+//        @include text-gradient(left, sky-1);
+//    }
+
+// Use of existing gradients with alternative fallback colour:
+//    .grad-text {
+//      @include gradient-text(bottom right, sky-1, color(brand));
+//    }
+
+/**
+ * 1. Vendor prefix required as other browsers lack support.
+ * 2. Fallback color for unsupported browsers.
+ */
+
+@mixin gradient-text($key, $direction: left, $fallback: null) {
+  $fallback-default: gradient-color($key, end);
+
+  // If undefined, use the default fallback value.
+  @if not $fallback {
+    $fallback: $fallback-default;
+  }
+  // Check validity of custom defined fallback color.
+  @else if type-of($fallback) != color {
+    @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
+    $fallback: $fallback-default;
+  }
+
+  /*! autoprefixer: off */
+  /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+  -webkit-background-clip: text; /* [1] */
+  -webkit-text-fill-color: transparent; /* [1] */
+  -webkit-transform: translate3d(0, 0, 0); /* [1] */
+  display: inline-block;
+  color: $fallback; /* [2] */
+  background-image: -webkit-linear-gradient($direction, gradient-color-stops($key)); /* [1] */
+  background-size: 100%;
+  /* stylelint-enable */
+}

@@ -118,3 +118,44 @@
     }
   }
 }
+
+// Add Gradient Text to element
+// ===========================================
+
+@include test-module("@mixin gradient-text") {
+  @include test("with key and direction") {
+    @include assert("sets correct values") {
+      @include input() {
+        @include gradient-text(sky-1, left);
+      }
+
+      @include expect() {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-transform: translate3d(0, 0, 0);
+        display: inline-block;
+        color: #1ea0f5;
+        background-image: -webkit-linear-gradient(left, #0082dc 0%, #1ea0f5 100%);
+        background-size: 100%;
+      }
+    }
+  }
+
+  @include test("with key, direction and fallback") {
+    @include assert("sets correct values") {
+      @include input() {
+        @include gradient-text(sky-1, left, color(brand));
+      }
+
+      @include expect() {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-transform: translate3d(0, 0, 0);
+        display: inline-block;
+        color: #0072c9;
+        background-image: -webkit-linear-gradient(left, #0082dc 0%, #1ea0f5 100%);
+        background-size: 100%;
+      }
+    }
+  }
+}
