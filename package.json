@@ -4,11 +4,14 @@
   "description": "The core of Sky's CSS Toolkit",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf build",
+    "clean": "rm -rf build && mkdir -p ./build",
     "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
-    "test-circle": "npm run lint && npm run test && npm run build",
+    "circle": "npm run lint && npm run test && npm run build",
     "lint": "stylelint '**/*.scss' --syntax scss",
-    "build": "npm run clean && mkdir -p ./build && cat _all.scss | node-sass --include-path node_modules/ --output-style compressed > build/toolkit-core.css"
+    "build:scss": "node-sass --include-path node_modules/ --precision 9 _all.scss > build/toolkit-core.css",
+    "build": "npm run clean && npm run build:scss -- --output-style expanded",
+    "dist": "npm run clean && npm run build:scss -- --output-style compressed && npm run dist:gzip",
+    "dist:gzip": "gzip -9 build/toolkit-core.css && mv build/toolkit-core.css.gz build/toolkit-core.css"
   },
   "pre-commit": [
     "lint",
