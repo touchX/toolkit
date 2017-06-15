@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /**
- * The list-inline object displays any list of items as a single line.
+ * The list-inline object displays any list of items spaced on a single line.
  */
 
 /* [ul|ol] */.o-list-inline {
@@ -13,19 +13,35 @@
 
 /* li */.o-list-inline__item {
   display: inline-block;
+  margin-right: $global-spacing-unit;
 }
 
-/* Spacing modifiers
+/* Modifiers
    =========================================== */
 
-/* [ul|ol] */.o-list-inline--wide {
-  > /* li */.o-list-inline__item {
-    margin-right: $global-spacing-unit;
+/**
+ * Smaller spacing between list items.
+ */
+.o-list-inline--narrow {
+  > .o-list-inline__item {
+    margin-right: $global-spacing-unit-small;
   }
 }
 
-/* [ul|ol] */.o-list-inline--narrow {
-  > /* li */.o-list-inline__item {
-    margin-right: $global-spacing-unit-small;
+/**
+ * Wider spacing between list items.
+ */
+.o-list-inline--wide {
+  > .o-list-inline__item {
+    margin-right: $global-spacing-unit-large;
+  }
+}
+
+/**
+ * No spacing between list items.
+ */
+.o-list-inline--flush {
+  > .o-list-inline__item {
+    margin-right: 0;
   }
 }
