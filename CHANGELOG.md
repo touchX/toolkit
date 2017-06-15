@@ -12,8 +12,15 @@
     * `@include gradient-background()` refactored to support color stop percentages rather than start and end values.
     * `@include gradient-background()` now supports custom `background-color` fallbacks.
     * `gradient-color-stops()` function to fetch a list of gradient color stop percentages and values.
+* [Objects]
+    * `.o-list-inline` now aligns with [Supercell](https://github.com/sky-uk/supercell)] modifiers; featuring `--flush`, `--narrow` and `--wide` spacing.
+    * `.o-media` now aligns with [Supercell](https://github.com/sky-uk/supercell)] modifiers; featuring `--flush`, `--narrow` and `--wide` spacing.
 * [Typography] Updated sizing to the typographic scale.
 * [z-index] `z-index()` function for easier access and management of `z-index` values across the project.
+
+### Fixes
+
+* [Generic] Horizontal scrolling bugs caused by full-width (`100vw`) UI elements.
 
 ### Dependencies
 
@@ -32,14 +39,13 @@
     * `large` gradient renamed to `default`.
     * `small` gradient renamed to `highlight`.
     * `mid` gradient renamed to `tile`.
-* [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
-    * Please use `text-body` instead.
-
-### Fixes
-
-* [Generic] Horizontal scrolling bugs caused by full-width (`100vw`) UI elements.
+* [Objects]
+    * `.o-media--small` renamed to `.o-media--narrow`.
+    * `.o-media--large` renamed to `.o-media--wide`.
 
 ### Upgrade notes
+* [Objects]
+    * `.o-list-inline` now adds spacing by default, use the additional `.o-list-inline--flush` modifier to remove spacing.
 * [Spacing] Default spacing unit value changed from 30px to 20px.
     * **Variables** - if used in your project, you may want to consider changing the following:
         * `$global-spacing-unit-small` to `$global-spacing-unit`
