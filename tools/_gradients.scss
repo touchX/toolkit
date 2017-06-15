@@ -123,17 +123,20 @@
       vertical: (
         legacy: "top",
         standard: "to bottom",
-        type: linear
+        type: linear,
+        reverse: false
       ),
       vertical-invert: (
         legacy: "bottom",
         standard: "to top",
-        type: linear
+        type: linear,
+        reverse: false
       ),
       horizontal: (
         legacy: "left",
         standard: "to right",
-        type: linear
+        type: linear,
+        reverse: false
       ),
       radial: (
         legacy: "center, ellipse cover",
