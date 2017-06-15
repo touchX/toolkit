@@ -3,6 +3,17 @@
   "version": "2.0.0",
   "description": "The core of Sky's CSS Toolkit",
   "main": "index.js",
+  "author": "Sky UK",
+  "repository": "sky-uk/toolkit",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
+  },
+  "homepage": "http://sky.com/toolkit",
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "scripts": {
     "clean": "rm -rf build && mkdir -p ./build",
     "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
@@ -13,20 +24,6 @@
     "dist": "npm run clean && npm run build:scss -- --output-style compressed && npm run dist:gzip",
     "dist:gzip": "gzip -9 build/toolkit-core.css && mv build/toolkit-core.css.gz build/toolkit-core.css"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sky-uk/toolkit-core.git"
-  },
-  "author": "Sky UK",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/sky-uk/toolkit-core/issues"
-  },
-  "homepage": "https://github.com/sky-uk/toolkit-core#readme",
   "dependencies": {
     "normalize.css": "7.0.0",
     "sass-mq": "^3.3.2",
