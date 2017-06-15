@@ -2,7 +2,10 @@
    COMPONENTS / #CALENDAR
    ========================================================================== */
 
-// Calendar Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 // 1. Size of each individual day - should be divisible by two to ensure no sup-pixel rendering issues
 // 2. Size of the navigation buttons, should also be divisible by two
 // 3. Speed to animate elements such as hover on the navigiton and days

@@ -2,7 +2,10 @@
    COMPONENTS / #PANEL
    ========================================================================== */
 
-// Panel Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $panel-icon-size: 1.5em;
 $panel-shadow-size-top: inset 0 12px 12px -12px;
 $panel-shadow-size-bottom: inset 0 -12px 12px -12px;

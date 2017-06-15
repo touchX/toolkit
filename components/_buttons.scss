@@ -2,7 +2,10 @@
    COMPONENTS / #BUTTONS
    ========================================================================== */
 
-// Button Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $btn-font-size: font-size(text-body) !default;
 $btn-padding-x: 15px !default;
 $btn-padding-y: 5px !default;

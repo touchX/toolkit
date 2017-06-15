@@ -5,18 +5,10 @@
 
 ## 2.0.0
 
-### Deprecations
-
-* [tile]
-  * `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
-  * `c-tile__small-title` removed due to lack of use.
-* [typography] Removal of `.c-text-lead-small` and `.c-text-body-small`.
-  * Please use `.c-text-body` instead.
-
 ### Features
 
-* [link-faux] New component to display buttons as links, whilst maintaining functionality and semantic code.
-* [tile]
+* [Link Faux] New component to display buttons as links, whilst maintaining functionality and semantic code.
+* [Tile]
     * Design Changes
         * White background by default (replacing the gradient<sup>[1]</sup>, which is now only applied on link interaction).
         * Shadow animation on link interaction.
@@ -24,12 +16,34 @@
         * Link interaction now only applies text underline to `c-tile__title`.
         * `c-tile--collapsible` modifier for Split Tiles; displaying image and caption side-by-side at the `medium` breakpoint.
     * Improvements to inline documentation and code structure.
-* [typography] Updated sizing to the typographic scale.
+* [Typography] Updated sizing to the typographic scale using `sky-toolkit-core@2.0.0`.
 
 ### Refactor
 
-* [panel] Utilise `c-link-faux` on `c-panel__toggle` for accessibility improvements.
-  * Existing panel toggle buttons **must** be changed to use the following markup: `<button class="c-link-faux c-panel__toggle">Close</button>`
+* [Panel] Utilise `c-link-faux` on `c-panel__toggle` for accessibility improvements.
+  * Existing panel toggle buttons **must** be changed to use the following markup: `<button class="c-link-faux c-panel__toggle">Close</button>`.
+
+### Enhancements
+
+#### Imports
+
+For projects consuming—via CDN—or building `sky-toolkit-core` separately, you now no longer need to import `sky-toolkit-core/tools` to build Toolkit UI components. For example:
+
+```scss
+@import sky-toolkit-ui/components/tile
+```
+
+Will compile all Tile UI CSS.
+
+**Note:** for projects that utilise Toolkit tools and settings to build custom UI, it is still recommended to import `sky-toolkit-core/tools` at the top of your main scss imports file.
+
+### Deprecations
+
+* [Tile]
+  * `c-tile--collapsable` modifier removed due to typo and changes in styling. Please use the `c-tile--collapsible` modifier instead.
+  * `c-tile__small-title` removed due to lack of use.
+* [Typography] Removal of `.c-text-lead-small` and `.c-text-body-small`.
+  * Please use `.c-text-body` instead.
 
 ### Footnotes
 

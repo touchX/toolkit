@@ -1,9 +1,9 @@
 // =============================================================================
-// BUILD IMPORTS
+// TEST / BUILD / IMPORTS
 // =============================================================================
 
-// Core
-@import "../../sky-toolkit-core/all";
+// toolkit-core
+@import "../../../sky-toolkit-core/all";
 
-// UI
-@import "all";
+// toolkit-ui
+@import "../../all";

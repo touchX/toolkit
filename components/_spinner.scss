@@ -2,7 +2,10 @@
    COMPONENTS / #SPINNER
    ========================================================================== */
 
-// Spinner Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $spinner-size: 75px;
 $spinner-size-small: $spinner-size - 15px;
 $spinner-size-large: $spinner-size + 15px;

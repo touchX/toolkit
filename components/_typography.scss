@@ -2,6 +2,9 @@
    COMPONENTS / #TYPOGRAPHY
    ========================================================================== */
 
+// Imports
+@import "sky-toolkit-core/tools";
+
 /**
  * In order to divorce our semantic decisions from our stylistic ones, we only
  * define opinionated typographical styles against classes, NOT against

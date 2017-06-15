@@ -2,7 +2,10 @@
    COMPONENTS / #TABS
    ========================================================================== */
 
-// Tabs Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $tabs-border-width: $global-border-width;
 $tabs-shadow-height: 14px;
 $tabs-indicator-height: 2px;

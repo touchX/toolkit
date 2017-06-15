@@ -2,7 +2,10 @@
    COMPONENTS / #TILE
    ========================================================================== */
 
-// Tile Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $tile-animation-speed: $global-animation-speed;
 $tile-animation-speed-slow: $global-animation-speed-slow;
 $tile-arrow-color: color(white);

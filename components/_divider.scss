@@ -2,7 +2,10 @@
    COMPONENTS / #DIVIDER
    ========================================================================== */
 
-// Divider Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $divider-shadow-depth: 10px;
 $divider-width: 1px !default;
 

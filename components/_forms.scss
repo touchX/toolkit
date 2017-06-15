@@ -2,7 +2,10 @@
    COMPONENTS / #FORMS
    ========================================================================== */
 
-// Form Settings
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
 $form-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
 $form-shadow-focus: 0 0 8px 0 rgba(0, 0, 0, 0.2);
 $form-shadow-error: 0 0 8px 0 rgba(color(error), 0.75);
