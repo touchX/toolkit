@@ -42,6 +42,8 @@
 * [Objects]
     * `.o-media--small` renamed to `.o-media--narrow`.
     * `.o-media--large` renamed to `.o-media--wide`.
+* [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
+    * Please use `text-body` instead.
 
 ### Upgrade notes
 * [Objects]
