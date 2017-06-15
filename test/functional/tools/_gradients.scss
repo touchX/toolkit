@@ -50,6 +50,32 @@
   }
 }
 
+// $gradient-fallback()
+// ------------------------------------
+
+@include test-module("@function gradient-fallback") {
+  @include test("should return correct fallback when no value set") {
+    $actual: gradient-fallback(sky-1);
+    $expected: #1ea0f5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return correct fallback when incorrect value set") {
+    $actual: gradient-fallback(sky-1, true);
+    $expected: #1ea0f5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return correct fallback when color set") {
+    $actual: gradient-fallback(sky-1, color(brand));
+    $expected: #0072c9;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
 // Mixins
 // ===========================================
 
