@@ -33,8 +33,8 @@
       $color-stop: nth($color-stop-keys, $color-stop-keys-length);
     }
 
-    @if map-has-key(map-get($gradients, $key), $color-stop) {
-      @return map-get(map-get($gradients, $key), $color-stop);
+    @if map-has-keys-deep($gradients, $key, $color-stop) {
+      @return map-get-deep($gradients, $key, $color-stop);
     }
 
     @warn "Unknown #{$color-stop} stop of `#{$key}` in $gradients.";
@@ -149,10 +149,10 @@
     // Check if direction exists in direction map.
     @if map-has-key($direction-map, $direction) {
       // Fetch the direction map settings and assign to variables.
-      $direction-legacy: map-get(map-get($direction-map, $direction), legacy);
-      $direction-standard: map-get(map-get($direction-map, $direction), standard);
-      $direction-type: map-get(map-get($direction-map, $direction), type);
-      $direction-reverse: map-get(map-get($direction-map, $direction), reverse);
+      $direction-legacy: map-get-deep($direction-map, $direction, legacy);
+      $direction-standard: map-get-deep($direction-map, $direction, standard);
+      $direction-type: map-get-deep($direction-map, $direction, type);
+      $direction-reverse: map-get-deep($direction-map, $direction, reverse);
 
       // Reverse our gradient color stops for specified directions.
       @if ($direction-reverse == true) {
