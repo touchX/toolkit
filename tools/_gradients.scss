@@ -2,6 +2,32 @@
 // TOOLS / GRADIENTS
 // =============================================================================
 
+// The direction map stores values for the direction for both prefixed and
+// standard linear-gradient
+$gradient-direction-map: (
+  vertical: (
+    legacy: "top",
+    standard: "to bottom",
+    type: linear
+  ),
+  vertical-invert: (
+    legacy: "bottom",
+    standard: "to top",
+    type: linear
+  ),
+  horizontal: (
+    legacy: "left",
+    standard: "to right",
+    type: linear
+  ),
+  radial: (
+    legacy: "center, ellipse cover",
+    standard: "ellipse at center",
+    type: radial,
+    reverse: true
+  )
+);
+
 // Functions
 // ==============================================
 
@@ -91,6 +117,32 @@
   @return null;
 }
 
+// gradient-fallback()
+// ------------------------------------
+
+// Function to automate selecting a fallback value for our gradient mixins,
+// handling the logic of selecting a value if a valid colour is not supplied.
+
+// `gradient-fallback()` takes two arguments:
+//   - $key - The gradient key i.e. `sky-arts`
+//   - $fallback - The supplied fallback color to check
+
+@function gradient-fallback($key, $fallback:null) {
+  // Set default fallback value
+  $fallback-default: gradient-color($key, end);
+
+  @if not $fallback {
+    $fallback: $fallback-default;
+  }
+  // Check validity of custom defined fallback color.
+  @else if type-of($fallback) != color {
+    @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
+    $fallback: $fallback-default;
+  }
+
+  @return $fallback;
+}
+
 // Mixins
 // ===========================================
 
@@ -117,42 +169,16 @@
 @mixin gradient-background($key, $direction:"vertical", $fallback: null) {
   @if map-has-key($gradients, $key) {
 
-    // The direction map stores values for the direction for both prefixed and
-    // standard linear-gradient
-    $direction-map: (
-      vertical: (
-        legacy: "top",
-        standard: "to bottom",
-        type: linear
-      ),
-      vertical-invert: (
-        legacy: "bottom",
-        standard: "to top",
-        type: linear
-      ),
-      horizontal: (
-        legacy: "left",
-        standard: "to right",
-        type: linear
-      ),
-      radial: (
-        legacy: "center, ellipse cover",
-        standard: "ellipse at center",
-        type: radial,
-        reverse: true
-      )
-    );
-
     // Fetch a list of the gradient's color stops from `$gradients`.
     $gradient-color-stops: gradient-color-stops($key);
 
     // Check if direction exists in direction map.
-    @if map-has-key($direction-map, $direction) {
+    @if map-has-key($gradient-direction-map, $direction) {
       // Fetch the direction map settings and assign to variables.
-      $direction-legacy: map-get(map-get($direction-map, $direction), legacy);
-      $direction-standard: map-get(map-get($direction-map, $direction), standard);
-      $direction-type: map-get(map-get($direction-map, $direction), type);
-      $direction-reverse: map-get(map-get($direction-map, $direction), reverse);
+      $direction-legacy: map-get(map-get($gradient-direction-map, $direction), legacy);
+      $direction-standard: map-get(map-get($gradient-direction-map, $direction), standard);
+      $direction-type: map-get(map-get($gradient-direction-map, $direction), type);
+      $direction-reverse: map-get(map-get($gradient-direction-map, $direction), reverse);
 
       // Reverse our gradient color stops for specified directions.
       @if ($direction-reverse == true) {
@@ -160,18 +186,7 @@
       }
 
       // Define our fallback background-color
-      // Set a default fallback value for undefined / invalid color values.
-      $fallback-default: gradient-color($key, end);
-
-      // If undefined, use the default fallback value.
-      @if not $fallback {
-        $fallback: $fallback-default;
-      }
-      // Check validity of custom defined fallback color.
-      @else if type-of($fallback) != color {
-        @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
-        $fallback: $fallback-default;
-      }
+      $fallback: gradient-fallback($key, $fallback);
 
       // Output fallback background color + gradient with appropriate prefixes.
       background-color: $fallback;
@@ -191,47 +206,69 @@
   }
 }
 
-// Text Gradient
-// ============================
+// @include gradient-text()
+// ------------------------------------
 
 // Mixin to generate a text gradient styling.
+//
+// OPTIONS
+// - key: Name of gradient (see toolkit-core/settings/_colors.scss)
+// - direction:
+//    - "vertical" top to bottom gradient
+//    - "vertical-invert" bottom to top gradient
+//    - "horizontal" left to right gradient
+//    - "radial" center to edge gradient
 
 // Example usage:
 //    .grad-text {
-//        @include text-gradient(left, sky-1);
+//        @include text-gradient(sky-1, horizontal);
 //    }
 
 // Use of existing gradients with alternative fallback colour:
 //    .grad-text {
-//      @include gradient-text(bottom right, sky-1, color(brand));
+//      @include gradient-text(sky-1, vertical, color(brand));
 //    }
 
-/**
- * 1. Vendor prefix required as other browsers lack support.
- * 2. Fallback color for unsupported browsers.
- */
+@mixin gradient-text($key, $direction: horizontal, $fallback: null) {
+  @if map-has-key($gradients, $key) {
+    @if map-has-key($gradient-direction-map, $direction) {
+      // Fetch the direction map settings and assign to variables.
+      $direction-legacy: map-get(map-get($gradient-direction-map, $direction), legacy);
+      $direction-type: map-get(map-get($gradient-direction-map, $direction), type);
+      $direction-reverse: map-get(map-get($gradient-direction-map, $direction), reverse);
 
-@mixin gradient-text($key, $direction: left, $fallback: null) {
-  $fallback-default: gradient-color($key, end);
+      // Fetch a list of the gradient's color stops from `$gradients`.
+      $gradient-color-stops: gradient-color-stops($key);
 
-  // If undefined, use the default fallback value.
-  @if not $fallback {
-    $fallback: $fallback-default;
+      // Reverse our gradient color stops for specified directions.
+      @if ($direction-reverse == true) {
+        $gradient-color-stops: gradient-color-stops($key, reverse);
+      }
+
+      // Define our fallback background-color
+      $fallback: gradient-fallback($key, $fallback);
+
+      /*! autoprefixer: off */
+      /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
+
+      // Vendor prefix required as other browsers lack support.
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-transform: translate3d(0, 0, 0);
+      display: inline-block;
+      // Fallback color for unsupported browsers.
+      color: $fallback;
+      background-image: -webkit-#{$direction-type}-gradient(#{$direction-legacy}, $gradient-color-stops);
+      background-size: 100%;
+      /* stylelint-enable */
+    }
+
+    @else {
+      @warn "`#{$direction}` is not a valid direction, see toolkit-core/tools/gradients for available options.";
+    }
   }
-  // Check validity of custom defined fallback color.
-  @else if type-of($fallback) != color {
-    @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
-    $fallback: $fallback-default;
-  }
 
-  /*! autoprefixer: off */
-  /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
-  -webkit-background-clip: text; /* [1] */
-  -webkit-text-fill-color: transparent; /* [1] */
-  -webkit-transform: translate3d(0, 0, 0); /* [1] */
-  display: inline-block;
-  color: $fallback; /* [2] */
-  background-image: -webkit-linear-gradient($direction, gradient-color-stops($key)); /* [1] */
-  background-size: 100%;
-  /* stylelint-enable */
+  @else {
+    @warn "Unknown `#{$key}` in $gradients.";
+  }
 }
