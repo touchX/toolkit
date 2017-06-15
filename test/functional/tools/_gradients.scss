@@ -2,13 +2,15 @@
 // TEST / FUNCTIONAL / TOOLS / GRADIENTS
 // =============================================================================
 
+$test-module-area: "Tools / Gradients /";
+
 // Functions
 // ===========================================
 
 // $gradient-color()
 // ------------------------------------
 
-@include test-module("@function gradient-color") {
+@include test-module("#{$test-module-area} @function gradient-color") {
   @include test("should return a start hex value for given key.") {
     $actual: gradient-color("sky-1", 0%);
     $expected: #0082dc;
@@ -34,7 +36,7 @@
 // $gradient-color-stops()
 // ------------------------------------
 
-@include test-module("@function gradient-color-stops") {
+@include test-module("#{$test-module-area} @function gradient-color-stops") {
   @include test("should return correct color points with given key") {
     $actual: gradient-color-stops(sky-1);
     $expected: null, #0082dc 0%, #1ea0f5 100%; // Unknown bug in tests prepending `null`
@@ -53,7 +55,7 @@
 // Mixins
 // ===========================================
 
-@include test-module("@mixin gradient-background") {
+@include test-module("#{$test-module-area} @mixin gradient-background") {
   @include test("should return a vertical linear gradient for the given key when no direction is set") {
     @include assert("compiles vertical linear gradient") {
       @include input() {

@@ -2,10 +2,12 @@
 // TEST / FUNCTIONAL / TOOLS / DIVIDER
 // =============================================================================
 
-// @mixin divider-gradient
-// ===========================================
+$test-module-area: "Tools / Divider /";
 
-@include test-module("@mixin divider-gradient") {
+// @include divider-gradient
+// ==============================================
+
+@include test-module("#{$test-module-area} @mixin divider-gradient") {
   @include test("should return a divider gradient for the bottom edge for when no direction is set") {
     @include assert("compiles divider gradient for the bottom edge") {
       @include input() {
@@ -58,10 +60,10 @@
   }
 }
 
-// @mixin divider-shadow
-// ===========================================
+// @include divider-shadow
+// ==============================================
 
-@include test-module("@mixin divider-shadow") {
+@include test-module("#{$test-module-area} @mixin divider-shadow") {
   @include test("should return a divider shadow for the bottom edge for when no direction is set") {
     @include assert("compiles divider shadow for the bottom edge") {
       @include input() {

@@ -23,6 +23,9 @@
   @return null;
 }
 
+// map-has-keys-deep()
+// ------------------------------------
+
 // Check for keys in nested maps.
 // @author Hugo Giraudel
 @function map-has-keys-deep($map, $keys...) {

@@ -2,10 +2,12 @@
 // TEST / FUNCTIONAL / TOOLS / MIXINS
 // =============================================================================
 
-// @mixin add-color
-// ===========================================
+$test-module-area: "Tools / Mixins /";
 
-@include test-module("@mixin add-color") {
+// @include add-color
+// ==============================================
+
+@include test-module("#{$test-module-area} @mixin add-color") {
   @include test("should add new key and value to color map") {
     @include assert("merges color map with new values") {
       @include input() {
@@ -24,10 +26,10 @@
   }
 }
 
-// @mixin responsivize
-// ===========================================
+// @include responsivize
+// ==============================================
 
-@include test-module("@mixin responsivize") {
+@include test-module("#{$test-module-area} @mixin responsivize") {
   @include test("when no argument given to responisivize mixin - should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
     @include assert("should generate classes for each breakpoint in the $mq-breakpoints map and one non-specific class") {
       @include input() {
@@ -101,10 +103,10 @@
   }
 }
 
-// @mixin edge-position
-// ===========================================
+// @include edge-position
+// ==============================================
 
-@include test-module("@mixin edge-position") {
+@include test-module("#{$test-module-area} @mixin edge-position") {
   @include test("when no arguments are given to the edge-position mixin") {
     @include assert("should offest all positions by zero ") {
       @include input() {
