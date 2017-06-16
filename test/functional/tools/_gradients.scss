@@ -33,20 +33,39 @@ $test-module-area: "Tools / Gradients /";
   }
 }
 
-// $gradient-color-stops()
+// $_gradient-color-stops()
 // ------------------------------------
 
-@include test-module("#{$test-module-area} @function gradient-color-stops") {
+@include test-module("#{$test-module-area} @function _gradient-color-stops") {
   @include test("should return correct color points with given key") {
-    $actual: gradient-color-stops(sky-1);
+    $actual: _gradient-color-stops(sky-1);
     $expected: null, #0082dc 0%, #1ea0f5 100%; // Unknown bug in tests prepending `null`
 
     @include assert-equal($actual, $expected);
   }
 
   @include test("should return correct color points with given key when inverted") {
-    $actual: gradient-color-stops(sky-1, reverse);
+    $actual: _gradient-color-stops(sky-1, reverse);
     $expected: null, #1ea0f5 0%, #0082dc 100%; // Unknown bug in tests prepending `null`
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// $_gradient-fallback()
+// ------------------------------------
+
+@include test-module("#{$test-module-area} @function _gradient-fallback") {
+  @include test("should return correct fallback when no value set") {
+    $actual: _gradient-fallback(sky-1);
+    $expected: #1ea0f5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return correct fallback when color set") {
+    $actual: _gradient-fallback(sky-1, color(brand));
+    $expected: #0072c9;
 
     @include assert-equal($actual, $expected);
   }
@@ -116,6 +135,47 @@ $test-module-area: "Tools / Gradients /";
         background-image: -moz-linear-gradient(top, #0082dc 0%, #1ea0f5 100%);
         background-image: -o-linear-gradient(top, #0082dc 0%, #1ea0f5 100%);
         background-image: linear-gradient(to bottom, #0082dc 0%, #1ea0f5 100%);
+      }
+    }
+  }
+}
+
+// Add Gradient Text to element
+// ===========================================
+
+@include test-module("@mixin gradient-text") {
+  @include test("with key and direction") {
+    @include assert("sets correct values") {
+      @include input() {
+        @include gradient-text(sky-1, horizontal);
+      }
+
+      @include expect() {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-transform: translate3d(0, 0, 0);
+        display: inline-block;
+        color: #1ea0f5;
+        background-image: -webkit-linear-gradient(left, #0082dc 0%, #1ea0f5 100%);
+        background-size: 100%;
+      }
+    }
+  }
+
+  @include test("with key, direction and fallback") {
+    @include assert("sets correct values") {
+      @include input() {
+        @include gradient-text(sky-1, radial, color(brand));
+      }
+
+      @include expect() {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-transform: translate3d(0, 0, 0);
+        display: inline-block;
+        color: #0072c9;
+        background-image: -webkit-radial-gradient(center, ellipse cover, #1ea0f5 0%, #0082dc 100%);
+        background-size: 100%;
       }
     }
   }

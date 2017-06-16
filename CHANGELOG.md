@@ -11,6 +11,7 @@
 * [Gradients]
     * `@include gradient-background()` refactored to support color stop percentages rather than start and end values.
     * `@include gradient-background()` now supports custom `background-color` fallbacks.
+    * `@include gradient-text()` add customisable gradient text fills using the gradients map.
     * `gradient-color-stops()` function to fetch a list of gradient color stop percentages and values.
 * [Objects]
     * `.o-list-inline` now aligns with [Supercell](https://github.com/sky-uk/supercell)] modifiers; featuring `--flush`, `--narrow` and `--wide` spacing.

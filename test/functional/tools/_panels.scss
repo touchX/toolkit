@@ -1,8 +1,8 @@
 // =============================================================================
-// TEST / FUNCTIONAL / TOOLS / MIXINS UI
+// TEST / FUNCTIONAL / TOOLS / PANELS
 // =============================================================================
 
-$test-module-area: "Tools / Mixins UI /";
+$test-module-area: "Tools / Panels /";
 
 @include test-module("#{$test-module-area} @mixin panel-indicator") {
   @include test("should add panel indicator") {
