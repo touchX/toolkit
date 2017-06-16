@@ -2,6 +2,81 @@
 // TOOLS / GRADIENTS
 // =============================================================================
 
+// Functions (Private / Framework Only)
+// ==============================================
+
+// _gradient-color-stops()
+// ------------------------------------
+
+// Function to return the gradient color points in a format usable by
+// `linear-gradient` and other gradient mixins.
+
+// `_gradient-color-stops()` takes two arguments:
+//   - $key - The gradient key i.e. `sky-arts`
+//   - $modifier - To reverse the gradient direction set this to 'invert'
+
+// Example output:
+// `_gradient-color-stops(sky-cinema)` = `#903 0%, #cb0033 100%`
+// `_gradient-color-stops(sky-cinema, reverse)` = `#cb0033 0%, #903 100%`
+//
+@function _gradient-color-stops($key, $modifier: null) {
+  // Check gradient exists in `$gradients`
+  @if map-has-key($gradients, $key) {
+    $gradient: map-get($gradients, $key);
+    // Create blank list to store color points
+    $gradient-color-stops: null;
+
+    // If specified, reverse the order of the gradient color stops
+    @if $modifier == reverse {
+      $gradient-reversed: reverse($gradient);
+
+      @each $position, $value in $gradient-reversed {
+        // Invert percentages i.e. 6% => 94%
+        $reversed-position: 100% - $position;
+        // Append ordered values to stop list
+        $gradient-color-stops: append($gradient-color-stops, ($value $reversed-position), comma);
+      }
+    }
+    // By default, append a list of color stops for each percentage key.
+    @else {
+      @each $position, $value in $gradient {
+        $gradient-color-stops: append($gradient-color-stops, ($value $position), comma);
+      }
+    }
+
+    @return $gradient-color-stops;
+  }
+
+  @warn "Unknown `#{$key}` in $gradients.";
+  @return null;
+}
+
+// _gradient-fallback()
+// ------------------------------------
+
+// Function to automate selecting a fallback value for our gradient mixins,
+// handling the logic of selecting a value if a valid colour is not supplied.
+
+// `_gradient-fallback()` takes two arguments:
+//   - $key - The gradient key i.e. `sky-arts`
+//   - $fallback - The supplied fallback color to check
+
+@function _gradient-fallback($key, $fallback:null) {
+  // Set default fallback value
+  $fallback-default: gradient-color($key, end);
+
+  @if not $fallback {
+    $fallback: $fallback-default;
+  }
+  // Check validity of custom defined fallback color.
+  @else if type-of($fallback) != color {
+    @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
+    $fallback: $fallback-default;
+  }
+
+  @return $fallback;
+}
+
 // Functions
 // ==============================================
 
@@ -45,78 +120,6 @@
   @return null;
 }
 
-// gradient-color-stops()
-// ------------------------------------
-
-// Function to return the gradient color points in a format usable by
-// `linear-gradient` and other gradient mixins.
-
-// `gradient-color-stops()` takes two arguments:
-//   - $key - The gradient key i.e. `sky-arts`
-//   - $modifier - To reverse the gradient direction set this to 'invert'
-
-// Example output:
-// `gradient-color-stops(sky-cinema)` = `#903 0%, #cb0033 100%`
-// `gradient-color-stops(sky-cinema, reverse)` = `#cb0033 0%, #903 100%`
-//
-@function gradient-color-stops($key, $modifier: null) {
-  // Check gradient exists in `$gradients`
-  @if map-has-key($gradients, $key) {
-    $gradient: map-get($gradients, $key);
-    // Create blank list to store color points
-    $gradient-color-stops: null;
-
-    // If specified, reverse the order of the gradient color stops
-    @if $modifier == reverse {
-      $gradient-reversed: reverse($gradient);
-
-      @each $position, $value in $gradient-reversed {
-        // Invert percentages i.e. 6% => 94%
-        $reversed-position: 100% - $position;
-        // Append ordered values to stop list
-        $gradient-color-stops: append($gradient-color-stops, ($value $reversed-position), comma);
-      }
-    }
-    // By default, append a list of color stops for each percentage key.
-    @else {
-      @each $position, $value in $gradient {
-        $gradient-color-stops: append($gradient-color-stops, ($value $position), comma);
-      }
-    }
-
-    @return $gradient-color-stops;
-  }
-
-  @warn "Unknown `#{$key}` in $gradients.";
-  @return null;
-}
-
-// gradient-fallback()
-// ------------------------------------
-
-// Function to automate selecting a fallback value for our gradient mixins,
-// handling the logic of selecting a value if a valid colour is not supplied.
-
-// `gradient-fallback()` takes two arguments:
-//   - $key - The gradient key i.e. `sky-arts`
-//   - $fallback - The supplied fallback color to check
-
-@function gradient-fallback($key, $fallback:null) {
-  // Set default fallback value
-  $fallback-default: gradient-color($key, end);
-
-  @if not $fallback {
-    $fallback: $fallback-default;
-  }
-  // Check validity of custom defined fallback color.
-  @else if type-of($fallback) != color {
-    @warn "#{$fallback} is not a valid color, falling back to last color in gradient";
-    $fallback: $fallback-default;
-  }
-
-  @return $fallback;
-}
-
 // Mixins
 // ===========================================
 
@@ -144,7 +147,7 @@
   @if map-has-key($gradients, $key) {
 
     // Fetch a list of the gradient's color stops from `$gradients`.
-    $gradient-color-stops: gradient-color-stops($key);
+    $gradient-color-stops: _gradient-color-stops($key);
 
     // Check if direction exists in direction map.
     @if map-has-key($gradient-direction-map, $direction) {
@@ -156,11 +159,11 @@
 
       // Reverse our gradient color stops for specified directions.
       @if ($direction-reverse == true) {
-        $gradient-color-stops: gradient-color-stops($key, reverse);
+        $gradient-color-stops: _gradient-color-stops($key, reverse);
       }
 
       // Define our fallback background-color
-      $fallback: gradient-fallback($key, $fallback);
+      $fallback: _gradient-fallback($key, $fallback);
 
       // Output fallback background color + gradient with appropriate prefixes.
       background-color: $fallback;
@@ -212,15 +215,15 @@
       $direction-reverse: map-get(map-get($gradient-direction-map, $direction), reverse);
 
       // Fetch a list of the gradient's color stops from `$gradients`.
-      $gradient-color-stops: gradient-color-stops($key);
+      $gradient-color-stops: _gradient-color-stops($key);
 
       // Reverse our gradient color stops for specified directions.
       @if ($direction-reverse == true) {
-        $gradient-color-stops: gradient-color-stops($key, reverse);
+        $gradient-color-stops: _gradient-color-stops($key, reverse);
       }
 
       // Define our fallback background-color
-      $fallback: gradient-fallback($key, $fallback);
+      $fallback: _gradient-fallback($key, $fallback);
 
       /*! autoprefixer: off */
       /* stylelint-disable property-no-vendor-prefix, value-no-vendor-prefix */
