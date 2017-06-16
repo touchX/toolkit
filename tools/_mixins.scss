@@ -97,7 +97,7 @@
   }
 }
 
-// @include responsivise()
+// @include responsivize()
 // ==============================================
 
 // This mixin can be applied to any class and will produce classes that apply at
@@ -112,7 +112,7 @@
 // For example:
 //
 // .foo {
-//   @include responsivise() {
+//   @include responsivize() {
 //     color: red;
 //   }
 // }
@@ -139,7 +139,7 @@
 // For example:
 //
 // .foo {
-//   @include responsivise(small medium) {
+//   @include responsivize(small medium) {
 //     color: red;
 //   }
 // }
