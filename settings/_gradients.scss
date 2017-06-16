@@ -8,10 +8,11 @@
 // `gradient-color(sky-1, 100%)` function returns a single color
 // value from a gradient.
 //
-// `gradient-background(sky-cinema, vertical, color(grey-40))` mixin to set a
-// background gradient.
+// `@include gradient-background(sky-cinema, vertical, color(grey-40))` to set
+// a background gradient.
 //
-// `gradient-text(sky-arts, vertical, color(brand))` mixin to set a text gradient effect.
+// `@include gradient-text(sky-arts, vertical, color(brand))` mixin to set a
+// text gradient effect.
 //
 // For more information on available options see `/tools/_gradients.scss`
 
