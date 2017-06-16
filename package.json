@@ -5,6 +5,7 @@
   "main": "toolkit.scss",
   "scripts": {
     "test": "echo 'No tests to run'",
+    "lint": "stylelint '**/*.scss' --syntax scss",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
   "repository": {

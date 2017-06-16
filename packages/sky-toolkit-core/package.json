@@ -10,15 +10,10 @@
     "url": "https://github.com/sky-uk/toolkit/issues"
   },
   "homepage": "http://sky.com/toolkit",
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
   "scripts": {
     "clean": "rm -rf build && mkdir -p ./build",
     "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
     "circle": "npm run lint && npm run test && npm run build",
-    "lint": "stylelint '**/*.scss' --syntax scss",
     "build:scss": "node-sass --include-path node_modules/ --precision 9 _all.scss > build/toolkit-core.css",
     "build": "npm run clean && npm run build:scss -- --output-style expanded",
     "dist": "npm run clean && npm run build:scss -- --output-style compressed && npm run dist:gzip",
@@ -33,11 +28,6 @@
     "eyeglass": "^1.2.1",
     "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
-    "pre-commit": "^1.2.2",
     "sass-true": "2.0.3",
-    "stylelint": "^7.9.0",
-    "stylelint-config-sky-uk": "3.0.0",
-    "stylelint-scss": "^1.4.3",
-    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }
