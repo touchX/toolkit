@@ -1,0 +1,35 @@
+{
+  "name": "sky-toolkit",
+  "version": "2.0.0",
+  "description": "Sky's CSS Toolkit",
+  "main": "toolkit.scss",
+  "scripts": {
+    "test": "echo 'No tests to run'",
+    "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sky-uk/toolkit-ui.git"
+  },
+  "author": "Sky UK",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
+  },
+  "homepage": "https://github.com/sky-uk/toolkit#readme",
+  "dependencies": {
+    "sky-toolkit-ui": "git+ssh://git@github.com/sky-uk/toolkit-ui.git#release/v2"
+  },
+  "devDependencies": {
+    "eyeglass": "^1.2.1",
+    "lerna": "^2.0.0-rc.5",
+    "node-sass": "^4.5.0",
+    "mocha": "^3.2.0",
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
+  }
+}
