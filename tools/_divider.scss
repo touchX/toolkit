@@ -1,9 +1,9 @@
 // =============================================================================
-// TOOLS / DIVIDER
+// TOOLS / #DIVIDER
 // =============================================================================
 
-// Divider Gradient generator
-// ===========================================
+// @include divider-gradient()
+// ==============================================
 
 // Mixin to generate a gradient for the divider border.
 //
@@ -50,11 +50,11 @@
   // Check if direction exists in direction map:
   @if map-has-key($directions, $direction) {
     // Fetch both the legacy and standard versions for given direction
-    $direction-legacy: map-get(map-get($directions, $direction), legacy);
-    $direction-standard: map-get(map-get($directions, $direction), standard);
+    $direction-legacy: map-get-deep($directions, $direction, legacy);
+    $direction-standard: map-get-deep($directions, $direction, standard);
     // Fetch other gradient properties
     $color-points: rgba($color, 0), $color, rgba($color, 0);
-    $position: map-get(map-get($directions, $direction), position);
+    $position: map-get-deep($directions, $direction, position);
     // Set vendor prefixes for use on legacy gradients
     $vendor-prefixes: "webkit", "moz", "ms", "o";
 
@@ -72,8 +72,8 @@
   }
 }
 
-// Divider Shadow generator
-// ===========================================
+// @include divider-shadow()
+// ==============================================
 
 // Mixin to generate a faux-shadow gradient for the divider.
 //
@@ -118,8 +118,8 @@
   // Check if direction exists in direction map:
   @if map-has-key($directions, $direction) {
     // Fetch both the legacy and standard versions for given direction
-    $standard: map-get(map-get($directions, $direction), standard);
-    $legacy: map-get(map-get($directions, $direction), legacy);
+    $standard: map-get-deep($directions, $direction, standard);
+    $legacy: map-get-deep($directions, $direction, legacy);
     // Fetch other gradient properties
     $color-points: $color, transparent 40%;
     // Set vendor prefixes for use on legacy gradients

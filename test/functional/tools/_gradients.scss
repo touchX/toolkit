@@ -2,13 +2,56 @@
 // TEST / FUNCTIONAL / TOOLS / GRADIENTS
 // =============================================================================
 
+$test-module-area: "Tools / Gradients /";
+
+// Functions (Private / Framework Only)
+// ==============================================
+
+// $_gradient-color-stops()
+// ------------------------------------
+
+@include test-module("#{$test-module-area} @function _gradient-color-stops") {
+  @include test("should return correct color points with given key") {
+    $actual: _gradient-color-stops(sky-1);
+    $expected: null, #0082dc 0%, #1ea0f5 100%; // Unknown bug in tests prepending `null`
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return correct color points with given key when inverted") {
+    $actual: _gradient-color-stops(sky-1, reverse);
+    $expected: null, #1ea0f5 0%, #0082dc 100%; // Unknown bug in tests prepending `null`
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
+// $_gradient-fallback()
+// ------------------------------------
+
+@include test-module("#{$test-module-area} @function _gradient-fallback") {
+  @include test("should return correct fallback when no value set") {
+    $actual: _gradient-fallback(sky-1);
+    $expected: #1ea0f5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return correct fallback when color set") {
+    $actual: _gradient-fallback(sky-1, color(brand));
+    $expected: #0072c9;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
 // Functions
 // ===========================================
 
 // $gradient-color()
 // ------------------------------------
 
-@include test-module("@function gradient-color") {
+@include test-module("#{$test-module-area} @function gradient-color") {
   @include test("should return a start hex value for given key.") {
     $actual: gradient-color("sky-1", 0%);
     $expected: #0082dc;
@@ -31,55 +74,13 @@
   }
 }
 
-// $_gradient-color-stops()
-// ------------------------------------
-
-@include test-module("@function _gradient-color-stops") {
-  @include test("should return correct color points with given key") {
-    $actual: _gradient-color-stops(sky-1);
-    $expected: null, #0082dc 0%, #1ea0f5 100%; // Unknown bug in tests prepending `null`
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return correct color points with given key when inverted") {
-    $actual: _gradient-color-stops(sky-1, reverse);
-    $expected: null, #1ea0f5 0%, #0082dc 100%; // Unknown bug in tests prepending `null`
-
-    @include assert-equal($actual, $expected);
-  }
-}
-
-// $_gradient-fallback()
-// ------------------------------------
-
-@include test-module("@function _gradient-fallback") {
-  @include test("should return correct fallback when no value set") {
-    $actual: _gradient-fallback(sky-1);
-    $expected: #1ea0f5;
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return correct fallback when incorrect value set") {
-    $actual: _gradient-fallback(sky-1, true);
-    $expected: #1ea0f5;
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return correct fallback when color set") {
-    $actual: _gradient-fallback(sky-1, color(brand));
-    $expected: #0072c9;
-
-    @include assert-equal($actual, $expected);
-  }
-}
-
 // Mixins
 // ===========================================
 
-@include test-module("@mixin gradient-background") {
+// @include gradient-background()
+// ------------------------------------
+
+@include test-module("#{$test-module-area} @mixin gradient-background") {
   @include test("should return a vertical linear gradient for the given key when no direction is set") {
     @include assert("compiles vertical linear gradient") {
       @include input() {
@@ -145,8 +146,8 @@
   }
 }
 
-// Add Gradient Text to element
-// ===========================================
+// @include gradient-text()
+// ------------------------------------
 
 @include test-module("@mixin gradient-text") {
   @include test("with key and direction") {

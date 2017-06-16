@@ -1,5 +1,5 @@
 // =============================================================================
-// TOOLS / GRADIENTS
+// TOOLS / #GRADIENTS
 // =============================================================================
 
 // Functions (Private / Framework Only)
@@ -150,12 +150,12 @@
     $gradient-color-stops: _gradient-color-stops($key);
 
     // Check if direction exists in direction map.
-    @if map-has-key($gradient-direction-map, $direction) {
+    @if map-has-key($gradient-directions, $direction) {
       // Fetch the direction map settings and assign to variables.
-      $direction-legacy: map-get(map-get($gradient-direction-map, $direction), legacy);
-      $direction-standard: map-get(map-get($gradient-direction-map, $direction), standard);
-      $direction-type: map-get(map-get($gradient-direction-map, $direction), type);
-      $direction-reverse: map-get(map-get($gradient-direction-map, $direction), reverse);
+      $direction-legacy: map-get-deep($gradient-directions, $direction, legacy);
+      $direction-standard: map-get-deep($gradient-directions, $direction, standard);
+      $direction-type: map-get-deep($gradient-directions, $direction, type);
+      $direction-reverse: map-get-deep($gradient-directions, $direction, reverse);
 
       // Reverse our gradient color stops for specified directions.
       @if ($direction-reverse == true) {
@@ -208,11 +208,11 @@
 
 @mixin gradient-text($key, $direction: horizontal, $fallback: null) {
   @if map-has-key($gradients, $key) {
-    @if map-has-key($gradient-direction-map, $direction) {
+    @if map-has-key($gradient-directions, $direction) {
       // Fetch the direction map settings and assign to variables.
-      $direction-legacy: map-get(map-get($gradient-direction-map, $direction), legacy);
-      $direction-type: map-get(map-get($gradient-direction-map, $direction), type);
-      $direction-reverse: map-get(map-get($gradient-direction-map, $direction), reverse);
+      $direction-legacy: map-get(map-get($gradient-directions, $direction), legacy);
+      $direction-type: map-get(map-get($gradient-directions, $direction), type);
+      $direction-reverse: map-get(map-get($gradient-directions, $direction), reverse);
 
       // Fetch a list of the gradient's color stops from `$gradients`.
       $gradient-color-stops: _gradient-color-stops($key);

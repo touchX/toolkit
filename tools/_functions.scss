@@ -1,52 +1,49 @@
 // =============================================================================
-// TOOLS / FUNCTIONS
+// TOOLS / #FUNCTIONS
 // =============================================================================
 
-// Private / Framework-Only
-// ===========================================
+// Maps
+// ==============================================
 
-// Function to get values from `$text` instead of using `map-get`.
-// Please access ONLY via `font-size` and `line-height` functions.
-@function _text-map-get($property, $key, $variant: large) {
-  @if ($property == font-size or $property == line-height) {
-    // Check the`$key` exists in `$text`.
-    @if map-has-key($text, $key) {
-      // Check the font-size `$variant` exists for `$key`.
-      @if map-has-key(map-get($text, $key), $variant) {
-        // Return the specified property values (font-size or line-height) from $text.
-        @return map-get(map-get(map-get($text, $key), $variant), $property);
-      }
+// map-get-deep()
+// ------------------------------------
 
-      @warn "Unknown variant of `#{$variant}` for `#{$key}` in $text. Leave empty to use default `large` variant.";
-      @return null;
+// Access nested map values.
+// @author Hugo Giraudel (with modifications)
+@function map-get-deep($map, $keys...) {
+  @if map-has-keys-deep($map, $keys...) {
+    @each $key in $keys {
+      $map: map-get($map, $key);
     }
 
-    @warn "Unknown `#{$key}` in $text.";
-    @return null;
+    @return $map;
   }
 
-  @warn "Unknown property of `#{$property}` for `#{$key}` in $text. Valid properties include `font-size` and `line-height`.";
+  @warn "Unknown keys of `#{$keys...}` in the defined map";
   @return null;
 }
 
-// font-size()
-// ===========================================
+// map-has-keys-deep()
+// ------------------------------------
 
-// Function to get font-size from `$text` instead of using `map-get`.
-@function font-size($key, $variant:large) {
-  @return _text-map-get(font-size, $key, $variant);
+// Check for keys in nested maps.
+// @author Hugo Giraudel
+@function map-has-keys-deep($map, $keys...) {
+  @each $key in $keys {
+    @if not map-has-key($map, $key) {
+      @return false;
+    }
+    $map: map-get($map, $key);
+  }
+
+  @return true;
 }
 
-// line-height()
-// ===========================================
-
-// Function to get line-height from `$text` instead of using `map-get`.
-@function line-height($key, $variant:large) {
-  @return _text-map-get(line-height, $key, $variant);
-}
+// Map Shorcuts
+// ==============================================
 
 // color()
-// ===========================================
+// ------------------------------------
 
 // Function to get color from `$colors` instead of using `map-get`.
 //
@@ -57,30 +54,29 @@
 //   }
 //
 @function color($key) {
-  @if map-has-key($colors, $key) {
-    @return map-get($colors, $key);
-  }
-
-  @warn "Unknown `#{$key}` in $colors.";
-  @return null;
+  @return map-get-deep($colors, $key);
 }
 
-// strip-unit()
-// ===========================================
+// z-index()
+// ------------------------------------
 
-// Function to remove the unit from a value i.e. strip-unit(20px) would return 20.
-@function strip-unit($num) {
-  @if type_of($num) == number {
-    @return $num / ($num * 0 + 1);
-  }
-
-  @else {
-    @warn "Value must be a number i.e. 12, 24px etc.";
-  }
+// Function to get value from `$z-index` instead of using `map-get`.
+//
+// Usage:
+//
+//   .foo {
+//     z-index: z-index(<key>);
+//   }
+//
+@function z-index($key) {
+  @return map-get-deep($z-index, $key);
 }
+
+// Conversion
+// ==============================================
 
 // convert-to-em()
-// ===========================================
+// ------------------------------------
 
 // Function to remove the unit from a value to em i.e. strip-unit(30px) would
 // return 1.5em assuming $global-font-size was 20px.
@@ -98,28 +94,8 @@
   }
 }
 
-// z-index()
-// ===========================================
-
-// Function to get value from `$z-index` instead of using `map-get`.
-//
-// Usage:
-//
-//   .foo {
-//     z-index: z-index(<key>);
-//   }
-//
-@function z-index($key) {
-  @if map-has-key($z-index, $key) {
-    @return map-get($z-index, $key);
-  }
-
-  @warn "Unknown `#{$key}` in $z-index.";
-  @return null;
-}
-
-// Reverse list
-// ===========================================
+// reverse()
+// ------------------------------------
 
 // Function to reverse list of values
 //
@@ -135,4 +111,19 @@
   }
 
   @return $reversed-list;
+}
+
+// strip-unit()
+// ------------------------------------
+
+// Function to remove the unit from a value
+// i.e. strip-unit(20px) would return 20.
+@function strip-unit($num) {
+  @if type_of($num) == number {
+    @return $num / ($num * 0 + 1);
+  }
+
+  @else {
+    @warn "Value must be a number i.e. 12, 24px etc.";
+  }
 }

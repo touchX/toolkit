@@ -3,27 +3,27 @@
   "version": "2.0.0",
   "description": "The core of Sky's CSS Toolkit",
   "main": "index.js",
-  "scripts": {
-    "clean": "rm -rf build",
-    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
-    "test-circle": "npm run lint && npm run test && npm run build",
-    "lint": "stylelint '**/*.scss' --syntax scss",
-    "build": "npm run clean && mkdir -p ./build && cat _all.scss | node-sass --include-path node_modules/ --output-style compressed > build/toolkit-core.css"
+  "author": "Sky UK",
+  "repository": "sky-uk/toolkit",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
   },
+  "homepage": "http://sky.com/toolkit",
   "pre-commit": [
     "lint",
     "test"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sky-uk/toolkit-core.git"
+  "scripts": {
+    "clean": "rm -rf build && mkdir -p ./build",
+    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
+    "circle": "npm run lint && npm run test && npm run build",
+    "lint": "stylelint '**/*.scss' --syntax scss",
+    "build:scss": "node-sass --include-path node_modules/ --precision 9 _all.scss > build/toolkit-core.css",
+    "build": "npm run clean && npm run build:scss -- --output-style expanded",
+    "dist": "npm run clean && npm run build:scss -- --output-style compressed && npm run dist:gzip",
+    "dist:gzip": "gzip -9 build/toolkit-core.css && mv build/toolkit-core.css.gz build/toolkit-core.css"
   },
-  "author": "Sky UK",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/sky-uk/toolkit-core/issues"
-  },
-  "homepage": "https://github.com/sky-uk/toolkit-core#readme",
   "dependencies": {
     "normalize.css": "7.0.0",
     "sass-mq": "^3.3.2",

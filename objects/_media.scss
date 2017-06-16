@@ -10,7 +10,6 @@
  * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
  *
  */
-
 .o-media {
   @include clearfix();
 }
@@ -22,40 +21,60 @@
 .o-media__img {
   float: left;
   margin-right: $global-spacing-unit;
+}
 
-  /**
-   * Small Media Objects simply have smaller gaps between the image and the body.
-   */
-  .o-media--small > & {
+/* Modifiers
+   =========================================== */
+
+/**
+ * Smaller spacing between media items.
+ */
+.o-media--narrow {
+  > .o-media__img {
     margin-right: $global-spacing-unit-small;
   }
+}
 
-  /**
-   * …and larger ones are, well, larger.
-   */
-  .o-media--large > & {
+/**
+ * Wider spacing between media items.
+ */
+.o-media--wide {
+  > .o-media__img {
     margin-right: $global-spacing-unit-large;
   }
+}
 
-  /**
-   * We can quite easily swap the image and body around by adding the
-   * `--reverse` Modifier to the Block.
-   */
-  .o-media--reverse > & {
+/**
+ * No spacing between media items.
+ */
+.o-media--flush {
+  > .o-media__img {
+    margin-right: 0;
+  }
+}
+
+/**
+ * Swap the image and body around.
+ */
+.o-media--reverse {
+  > .o-media__img {
     float: right;
     margin-right: 0;
     margin-left: $global-spacing-unit;
-  }
 
-  /**
-   * …then we can have small or large versions of that.
-   */
-  .o-media--small.o-media--reverse > & {
-    margin-left: $global-spacing-unit-small;
-  }
+    /**
+     * Adjust our previously defined modifiers to work in reverse.
+     */
+    .o-media--narrow & {
+      margin-left: $global-spacing-unit-small;
+    }
 
-  .o-media--large.o-media--reverse > & {
-    margin-left: $global-spacing-unit-large;
-  }
+    .o-media--wide & {
+      margin-left: $global-spacing-unit-large;
+    }
 
+    .o-media--flush & {
+      margin-left: 0;
+    }
+  }
 }

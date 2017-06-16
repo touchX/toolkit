@@ -2,10 +2,6 @@
    OBJECTS / #CONTAINER
    ========================================================================== */
 
-// The $container-width variable will be removed in Toolkit 2.0.
-// Please use $global-container-width.
-$container-width: $global-container-width;
-
 .o-container {
   max-width: $global-container-width;
   padding-right: $global-spacing-unit;

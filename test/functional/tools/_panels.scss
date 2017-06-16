@@ -2,8 +2,10 @@
 // TEST / FUNCTIONAL / TOOLS / PANELS
 // =============================================================================
 
-@include test-module("@mixin panel-indicator") {
-  @include test("adds panel indicator") {
+$test-module-area: "Tools / Panels /";
+
+@include test-module("#{$test-module-area} @mixin panel-indicator") {
+  @include test("should add panel indicator") {
     @include assert("sets default theme by default") {
       @include input() {
         @include panel-indicator();

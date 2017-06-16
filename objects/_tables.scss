@@ -2,10 +2,11 @@
    OBJECTS / #TABLES
    ========================================================================== */
 
-/* Borderless table
-  =========================================== */
-
-// Removes default border-bottom on TABLE rows.
+/**
+ * Borderless Table
+ *
+ * Removes default border-bottom on `<table>` rows.
+ */
 .o-table-borderless {
   tr {
     border: none;

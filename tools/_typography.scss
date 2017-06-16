@@ -1,9 +1,32 @@
 // =============================================================================
-// TOOLS / TYPOGRAPHY
+// TOOLS / #TYPOGRAPHY
 // =============================================================================
 
-// @mixin font()
-// ===========================================
+// Functions
+// ==============================================
+
+// font-size()
+// ------------------------------------
+
+// Function to get font-size from `$text` instead of using `map-get`.
+@function font-size($key, $variant:large) {
+  @return map-get-deep($text, $key, $variant, font-size);
+  // @return _text-map-get(font-size, $key, $variant);
+}
+
+// line-height()
+// ------------------------------------
+
+// Function to get line-height from `$text` instead of using `map-get`.
+@function line-height($key, $variant:large) {
+  @return map-get-deep($text, $key, $variant, line-height);
+}
+
+// Mixins
+// ==============================================
+
+// @include font()
+// ------------------------------------
 
 // Create a fully formed type style (sizing and line-height) by passing in a
 // single value, e.g:
@@ -28,8 +51,8 @@
   line-height: line-height($key, $variant);
 }
 
-// px to rem generator
-// ===========================================
+// @include rem()
+// ------------------------------------
 
 // Generates a rem-based font-size with its pixel fallback e.g:
 //
