@@ -2,32 +2,6 @@
 // TOOLS / GRADIENTS
 // =============================================================================
 
-// The direction map stores values for the direction for both prefixed and
-// standard linear-gradient
-$gradient-direction-map: (
-  vertical: (
-    legacy: "top",
-    standard: "to bottom",
-    type: linear
-  ),
-  vertical-invert: (
-    legacy: "bottom",
-    standard: "to top",
-    type: linear
-  ),
-  horizontal: (
-    legacy: "left",
-    standard: "to right",
-    type: linear
-  ),
-  radial: (
-    legacy: "center, ellipse cover",
-    standard: "ellipse at center",
-    type: radial,
-    reverse: true
-  )
-);
-
 // Functions
 // ==============================================
 
