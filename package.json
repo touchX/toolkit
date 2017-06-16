@@ -21,7 +21,15 @@
     "sky-toolkit-ui": "git+ssh://git@github.com/sky-uk/toolkit-ui.git#release/v2"
   },
   "devDependencies": {
+    "eyeglass": "^1.2.1",
+    "lerna": "^2.0.0-rc.5",
     "node-sass": "^4.5.0",
-    "pre-commit": "^1.2.2"
+    "mocha": "^3.2.0",
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }
