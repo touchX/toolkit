@@ -11,12 +11,10 @@
 // `@include gradient-background(sky-cinema, vertical, color(grey-40))` to set
 // a background gradient.
 //
-// `@include gradient-text(sky-arts, vertical, color(brand))` mixin to set a
+// `@include gradient-text(sky-arts, vertical, color(brand))` to set a
 // text gradient effect.
 //
-// For more information on available options see `/tools/_gradients.scss`
-
-// Gradient list containing Sky brand gradients
+// For more information on available options see `tools/gradients`
 $gradients: (
   default: (
     0%:   #f2f2f5,
@@ -89,8 +87,8 @@ $gradients: (
   )
 ) !default;
 
-// The direction map stores values for the direction for both prefixed and
-// standard linear-gradient. It is required for the gradient mixins.
+// Directional settings required for defining both prefixed and standard
+// gradients in our `tools/gradients` mixins.
 $gradient-directions: (
   vertical: (
     legacy: "top",

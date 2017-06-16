@@ -40,9 +40,9 @@ $global-animation-speed-slow: 2 * $global-animation-speed;
 
 $global-shadow-color: #000;
 $global-shadow-intensity: 0.2;
-$global-shadow-x: 1px;
+$global-shadow-x: 0;
 $global-shadow-y: 1px;
-$global-shadow-blur: 14px;
+$global-shadow-blur: 10px;
 $global-shadow-spread: 0;
 
 $global-shadow: unquote($global-shadow-x + " " + $global-shadow-y + " " + $global-shadow-blur + " " + $global-shadow-spread + " " + rgba($global-shadow-color, $global-shadow-intensity));

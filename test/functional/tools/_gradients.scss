@@ -4,34 +4,8 @@
 
 $test-module-area: "Tools / Gradients /";
 
-// Functions
-// ===========================================
-
-// $gradient-color()
-// ------------------------------------
-
-@include test-module("#{$test-module-area} @function gradient-color") {
-  @include test("should return a start hex value for given key.") {
-    $actual: gradient-color("sky-1", 0%);
-    $expected: #0082dc;
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return an end hex value for given key.") {
-    $actual: gradient-color("sky-1", 100%);
-    $expected: #1ea0f5;
-
-    @include assert-equal($actual, $expected);
-  }
-
-  @include test("should return an end hex if no variant is provided.") {
-    $actual: gradient-color("sky-1");
-    $expected: #1ea0f5;
-
-    @include assert-equal($actual, $expected);
-  }
-}
+// Functions (Private / Framework Only)
+// ==============================================
 
 // $_gradient-color-stops()
 // ------------------------------------
@@ -71,8 +45,40 @@ $test-module-area: "Tools / Gradients /";
   }
 }
 
+// Functions
+// ===========================================
+
+// $gradient-color()
+// ------------------------------------
+
+@include test-module("#{$test-module-area} @function gradient-color") {
+  @include test("should return a start hex value for given key.") {
+    $actual: gradient-color("sky-1", 0%);
+    $expected: #0082dc;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return an end hex value for given key.") {
+    $actual: gradient-color("sky-1", 100%);
+    $expected: #1ea0f5;
+
+    @include assert-equal($actual, $expected);
+  }
+
+  @include test("should return an end hex if no variant is provided.") {
+    $actual: gradient-color("sky-1");
+    $expected: #1ea0f5;
+
+    @include assert-equal($actual, $expected);
+  }
+}
+
 // Mixins
 // ===========================================
+
+// @include gradient-background()
+// ------------------------------------
 
 @include test-module("#{$test-module-area} @mixin gradient-background") {
   @include test("should return a vertical linear gradient for the given key when no direction is set") {
@@ -140,8 +146,8 @@ $test-module-area: "Tools / Gradients /";
   }
 }
 
-// Add Gradient Text to element
-// ===========================================
+// @include gradient-text()
+// ------------------------------------
 
 @include test-module("@mixin gradient-text") {
   @include test("with key and direction") {
