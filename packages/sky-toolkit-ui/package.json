@@ -11,10 +11,7 @@
   },
   "homepage": "http://sky.com/toolkit",
   "scripts": {
-    "clean": "rm -rf build && mkdir -p ./build",
-    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
-    "build:scss": "node-sass --include-path node_modules/ --precision 9 test/build/_all.scss > build/toolkit.css",
-    "build": "npm run clean && npm run build:scss -- --output-style expanded"
+    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js"
   },
   "dependencies": {
     "sky-toolkit-core": "2.0.0-alpha.0"
