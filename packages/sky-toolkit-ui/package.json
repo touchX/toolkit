@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "2.0.0-alpha.0",
+  "version": "2.0.0",
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "author": "Sky UK",
@@ -18,7 +18,7 @@
     "build": "npm run clean && npm run build:scss -- --output-style expanded"
   },
   "dependencies": {
-    "sky-toolkit-core": "2.0.0-alpha.0"
+    "sky-toolkit-core": "2.0.0"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",
