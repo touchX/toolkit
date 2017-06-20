@@ -1,15 +1,16 @@
 {
   "private": true,
   "scripts": {
-    "circle": "npm run lint && npm run test && npm run build",
+    "circle": "lerna bootstrap && npm run lint && npm run test && npm run build",
     "clean": "rm build/toolkit.css build/toolkit-core.css",
-    "test": "echo 'No tests to run'",
     "lint": "stylelint '**/*.scss' --syntax scss",
-    "build:toolkit": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --include-path packages/sky-toolkit-ui/node_modules/ --precision 9 build.scss > build/toolkit.css",
-    "build:toolkit-core": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --precision 9 packages/sky-toolkit-core/_all.scss > build/toolkit-core.css",
-    "dist:toolkit": "npm run build:toolkit -- --output-style compressed",
-    "dist:toolkit-core": "npm run build:toolkit-core -- --output-style compressed",
-    "dist": "npm run dist:toolkit-core && npm run dist:toolkit"
+    "build": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --include-path packages/sky-toolkit-ui/node_modules/ --precision 9 build.scss > build/toolkit.css",
+    "dist:toolkit": "npm run build -- --output-style compressed",
+    "dist:toolkit-core": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --precision 9 packages/sky-toolkit-core/_all.scss > build/toolkit-core.css --output-style compressed",
+    "dist": "npm run dist:toolkit-core && npm run dist:toolkit",
+    "test:toolkit-core": "cd packages/sky-toolkit-core && npm run test && cd -",
+    "test:toolkit-ui": "cd packages/sky-toolkit-ui && npm run test && cd -",
+    "test": "npm run test:toolkit-core && npm run test:toolkit-ui"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",
