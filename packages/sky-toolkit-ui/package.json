@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit-ui",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha.0",
   "description": "The UI layer of Sky's CSS Toolkit",
   "main": "index.js",
   "author": "Sky UK",
@@ -13,17 +13,15 @@
   "scripts": {
     "clean": "rm -rf build && mkdir -p ./build",
     "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js",
-    "circle": "npm run lint && npm run test && npm run build",
     "build:scss": "node-sass --include-path node_modules/ --precision 9 test/build/_all.scss > build/toolkit.css",
     "build": "npm run clean && npm run build:scss -- --output-style expanded"
   },
   "dependencies": {
-    "sky-toolkit-core": "2.0.0"
+    "sky-toolkit-core": "2.0.0-alpha.0"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",
     "mocha": "^3.2.0",
-    "node-sass": "^4.5.0",
     "sass-true": "2.0.3"
   }
 }
