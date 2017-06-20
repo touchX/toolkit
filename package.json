@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo 'No tests to run'",
     "lint": "stylelint '**/*.scss' --syntax scss",
+    "build:scss": "node-sass --include-path node_modules/ --precision 9 toolkit.scss > build/toolkit.css",
+    "dev": "npm run build:scss -- -w",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
   "repository": {
