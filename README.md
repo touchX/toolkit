@@ -2,7 +2,7 @@
 
 # Toolkit
 
-**Sky's CSS Toolkit**
+**Sky’s CSS Toolkit**
 
 For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
@@ -28,11 +28,15 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 The project consists of 3 packages:
 
 * [sky-toolkit]: provides the UI and Core layers.
-  * [sky-toolkit-core](https://github.com/sky-uk/toolkit/toolkit-core): Global styles and defaults for all projects.
-  * [sky-toolkit-ui](https://github.com/sky-uk/toolkit/toolkit-ui): Aesthetic components.
+  * [sky-toolkit-core](https://github.com/sky-uk/toolkit/toolkit-core): Global
+    styles and defaults for all projects.
+  * [sky-toolkit-ui](https://github.com/sky-uk/toolkit/toolkit-ui): Aesthetic
+    components.
 
 ### Libraries
-* [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI components built on Toolkit styles.
+
+* [toolkit-react](https://github.com/sky-uk/toolkit-react): React.js UI
+  components built on Toolkit styles.
 
 ## Installation
 
@@ -40,37 +44,83 @@ The project consists of 3 packages:
 $ npm install sky-toolkit --save
 ```
 
-:warning: **Note:** your Sass configuration **must** be set to access certain dependencies or installation will fail. Either:
- * Include [Eyeglass](https://github.com/sass-eyeglass/eyeglass) in your [build tools](https://github.com/sass-eyeglass/eyeglass#building-sass-files-with-eyeglass-support) **or**
- * Set `node_modules` in your `includedPaths`
+:warning: **Note:** your Sass configuration **must** be set to access certain
+dependencies or installation will fail. Either:
 
-See [sky.com/toolkit](http://sky.com/toolkit) for full individual component documentation.
+* include [Eyeglass](https://github.com/sass-eyeglass/eyeglass) in your [build
+  tools](https://github.com/sass-eyeglass/eyeglass#building-sass-files-with-eyeglass-support),
+  **or**;
+* set `node_modules` in your `includedPaths`.
 
-### Compiled
+See [sky.com/toolkit](http://sky.com/toolkit) for full individual component
+documentation.
 
-For rapid prototyping and static sites you can include our latest compiled CSS in the `<head>` of your page.
+### Compiled/Hosted Version
+
+For rapid prototyping and static sites you can include our latest compiled CSS
+in the `<head>` of your page.
 
 ```
 <link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v2.0.0/toolkit.css">
 ```
 
-**We strongly advise not to use this method in live projects**.
-Use `npm` installation to benefit from the Toolkit's modularity and extensibility.
+**We strongly advise not to use this method in live projects**. Use `npm`
+installation to benefit from the Toolkit’s modularity and extensibility.
+
+## Contributing
+
+We love to have people contributing, but please make sure you **[follow our
+guidelines](https://github.com/sky-uk/toolkit/blob/master/CONTRIBUTING.md)**.
+
+### Set-up
+
+To get set up with a working development version of Toolkit, follow the steps
+detailed below:
+
+```bash
+# Clone the repo to your machine.
+git clone git@github.com:sky-uk/toolkit.git
+# Install common dependencies.
+npm i
+# Toolkit comprises several sub-packages; Lerna links them together for us.
+# Learn more at lernajs.io
+lerna bootstrap
+```
+
+After running these commands, you should have all the relevant code and its
+dependencies installed and linked up ready to go…
+
+### Compiling CSS
+
+To compile changes across the packages into a single `build/toolkit.css` file,
+run the following command:
+
+```bash
+npm run build
+```
+
+### Assistance
+
+If you run into any trouble, reach out to [one of the
+maintainers](#maintainers).
 
 ## Requirements
 
-Because of how the Toolkit loads third party dependencies (such as [sass-mq](https://github.com/sass-mq/sass-mq)), your development environment needs:
+Because of how the Toolkit loads third party dependencies (such as
+[sass-mq](https://github.com/sass-mq/sass-mq)), your development environment
+needs:
 
 * [npm](https://www.npmjs.com/) (3.0 or greater)
 * [NodeJS](https://nodejs.org/en/) (5.0 or greater)
 
-If you're using [**webpack**](https://webpack.github.io/) you'll also need:
+If you’re using [**webpack**](https://webpack.github.io/) you’ll also need:
 
 * [sass-loader](https://github.com/jtangelder/sass-loader) (3.1 or greater)
 
 ### Supporting IE9+
 
-To support IE9+, you **must** include the following at the top of your `index.html` / default container view.
+To support IE9+, you **must** include the following at the top of your
+`index.html` / default container view.
 
 ```
 <!DOCTYPE html>
@@ -82,7 +132,8 @@ To support IE9+, you **must** include the following at the top of your `index.ht
 
 ## Usage
 
-Once installed, include `sky-toolkit-core` at the top of your global `.scss` file.
+Once installed, include `sky-toolkit-core` at the top of your global `.scss`
+file.
 
 This is required by all `sky-toolkit-ui` components.
 
@@ -90,7 +141,8 @@ This is required by all `sky-toolkit-ui` components.
 @import "sky-toolkit-core/all";
 ```
 
-Following that, you can import individual toolkit-ui components and your own project-specific styles, for example:
+Following that, you can import individual toolkit-ui components and your own
+project-specific styles, for example:
 
 ```css
 @import "sky-toolkit-core/all";
@@ -102,7 +154,8 @@ Following that, you can import individual toolkit-ui components and your own pro
 @import "your-component-here";
 ```
 
-There is the option to import all components, however, we strongly recommend only importing the individual components required in your project.
+There is the option to import all components, however, we strongly recommend
+only importing the individual components required in your project.
 
 ```css
 @import "sky-toolkit-ui/all";
@@ -110,18 +163,14 @@ There is the option to import all components, however, we strongly recommend onl
 
 ## Versioning
 
-Toolkit follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
+Toolkit follows [Semantic Versioning](http://semver.org) to help manage the
+impact of releasing new library versions.
 
 ## Maintainers
 
 | [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 
-## Contributing
-
-We appreciate **any** contribution to the Toolkit, please check out [CONTRIBUTING.md](CONTRIBUTING.md).
-
-We keep a list of features and bugs [in the issue tracker](https://github.com/sky-uk/toolkit/issues).
 
 ### Champions
 
