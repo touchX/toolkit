@@ -3,6 +3,13 @@
   "version": "2.0.0-alpha.0",
   "description": "Sky's CSS Toolkit",
   "main": "toolkit.scss",
+  "author": "Sky UK",
+  "repository": "sky-uk/toolkit",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
+  },
+  "homepage": "http://sky.com/toolkit",
   "scripts": {
     "test": "echo 'No tests to run'",
     "lint": "stylelint '**/*.scss' --syntax scss",
@@ -10,16 +17,10 @@
     "dev": "npm run build:scss -- -w",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sky-uk/toolkit-ui.git"
-  },
-  "author": "Sky UK",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/sky-uk/toolkit/issues"
-  },
-  "homepage": "https://github.com/sky-uk/toolkit#readme",
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "dependencies": {
     "sky-toolkit-ui": "2.0.0-alpha.0"
   },
