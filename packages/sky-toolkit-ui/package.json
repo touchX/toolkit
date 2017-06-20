@@ -11,7 +11,7 @@
   },
   "homepage": "http://sky.com/toolkit",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha ./test/functional/sass-true.js"
+    "test": "mocha ./test/functional/sass-true.js"
   },
   "dependencies": {
     "sky-toolkit-core": "2.0.0-alpha.0"
