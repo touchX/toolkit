@@ -17,10 +17,6 @@
     "dev": "npm run build:scss -- -w",
     "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
   },
-  "pre-commit": [
-    "lint",
-    "test"
-  ],
   "dependencies": {
     "sky-toolkit-ui": "2.0.0-alpha.0"
   },
