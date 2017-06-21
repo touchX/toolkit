@@ -2,6 +2,12 @@
 
 We greatly appreciate and encourage people contributing back into the Toolkit.
 
+## Coding Style
+
+Toolkit follows closely to the principles of Sky’s [CSS Style
+Guide](https://github.com/sky-uk/css), as well as extending its `stylelint`
+configuration.
+
 ## Quick Start
 
 Instantly grab a Toolkit-conformant [.scss template](https://git.io/template):
@@ -32,10 +38,13 @@ request](#pull-requests). We’d love to see your contributions.
    provided by default), and add the label `in progress` with any other
    appropriate label.
 3. Once any conflicts have been fixed and you’re ready for your code to be
-   reviewed, remove the `in progress` label and add `hunting for squirrels`.
-4. Get a code review. **Two of these must be [core maintainers of
-   Toolkit](https://github.com/sky-uk/toolkit#maintainers)**.
-   * You need two :shipit: :shipit: left as comments on the pull request.
+   reviewed, remove the `in progress` label and add `reviews needed`.
+4. Request a code review from two or more developers.
+   * You’ll need at least **two** approvals on the pull request before being
+     able to merge, and **one of these approvals must be from a [core
+     maintainer](https://github.com/sky-uk/toolkit#maintainers)**.
+     * **N.B.** For major/breaking changes, you require **two core maintainer
+       approvals**.
 5. One of the [core maintainers](https://github.com/sky-uk/toolkit#maintainers)
    will merge the changes and apply appropriate versioning to release (see
    below).
