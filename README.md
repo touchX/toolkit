@@ -182,7 +182,7 @@ To view a complete history of many of the files, you will need to pass the
 
 Without `--follow`:
 
-```bash
+```
 $ git log --oneline packages/sky-toolkit-core/objects/_media.scss
 
 8b6541a [refs #173] Move into packages to merge into Toolkit
@@ -190,8 +190,7 @@ $ git log --oneline packages/sky-toolkit-core/objects/_media.scss
 
 With `--follow`:
 
-```bash
-$ git log --oneline --follow packages/sky-toolkit-core/objects/_media.scss
+<pre><code>$ git log --oneline <b>--follow</b> packages/sky-toolkit-core/objects/_media.scss
 
 8b6541a [refs #173] Move into packages to merge into Toolkit
 3485ad7 [refs #204] Tidy up comments and file titles
@@ -201,8 +200,7 @@ ec9dee7 Add more functionality to the media object
 feba9a8 Use a clearfix mixin instead of @\extends
 7d8ad25 Rename base variables to global
 804f36c Revert media object margin to spacing unit
-5224fa5 Tidy up existing typographical rules into neater groups
-```
+5224fa5 Tidy up existing typographical rules into neater groups</code></pre>
 
 ## Maintainers
 
