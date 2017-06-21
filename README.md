@@ -8,14 +8,14 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
 ## Contents
 
-* [Goals](#goals)
-* [Structure](#structure)
-* [Installation](#installation)
-* [Requirements](#requirements)
-* [Usage](#usage)
-* [Versioning](#versioning)
-* [Maintainers](#maintainers)
-* [Contributing](#contributing)
+1. [Goals](#goals)
+2. [Structure](#structure)
+3. [Installation](#installation)
+4. [Requirements](#requirements)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [Versioning](#versioning)
+8. [Maintainers](#maintainers)
 
 ## Goals
 
@@ -55,56 +55,7 @@ dependencies or installation will fail. Either:
 See [sky.com/toolkit](http://sky.com/toolkit) for full individual component
 documentation.
 
-### Compiled/Hosted Version
-
-For rapid prototyping and static sites you can include our latest compiled CSS
-in the `<head>` of your page.
-
-```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v2.0.0/toolkit.css">
-```
-
-**We strongly advise not to use this method in live projects**. Use `npm`
-installation to benefit from the Toolkit’s modularity and extensibility.
-
-## Contributing
-
-We love to have people contributing, but please make sure you **[follow our
-guidelines](https://github.com/sky-uk/toolkit/blob/master/CONTRIBUTING.md)**.
-
-### Set-up
-
-To get set up with a working development version of Toolkit, follow the steps
-detailed below:
-
-```bash
-# Clone the repo to your machine.
-git clone git@github.com:sky-uk/toolkit.git
-# Install common dependencies.
-npm i
-# Toolkit comprises several sub-packages; Lerna links them together for us.
-# Learn more at lernajs.io
-lerna bootstrap
-```
-
-After running these commands, you should have all the relevant code and its
-dependencies installed and linked up ready to go…
-
-### Compiling CSS
-
-To compile changes across the packages into a single `build/toolkit.css` file,
-run the following command:
-
-```bash
-npm run build
-```
-
-### Assistance
-
-If you run into any trouble, reach out to [one of the
-maintainers](#maintainers).
-
-## Requirements
+### Requirements/Dependencies
 
 Because of how the Toolkit loads third party dependencies (such as
 [sass-mq](https://github.com/sass-mq/sass-mq)), your development environment
@@ -129,6 +80,18 @@ To support IE9+, you **must** include the following at the top of your
 <head>
   ...
 ```
+
+### Compiled/Hosted Version
+
+For rapid prototyping and static sites you can include our latest compiled CSS
+in the `<head>` of your page.
+
+```
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v2.0.0/toolkit.css">
+```
+
+**We strongly advise not to use this method in live projects**. Use `npm`
+installation to benefit from the Toolkit’s modularity and extensibility.
 
 ## Usage
 
@@ -161,6 +124,40 @@ only importing the individual components required in your project.
 @import "sky-toolkit-ui/all";
 ```
 
+## Contributing
+
+We love to have people contributing, but please make sure you **[follow our
+guidelines](https://github.com/sky-uk/toolkit/blob/master/CONTRIBUTING.md)**.
+
+### Set-up
+
+To get set up with a working development version of Toolkit, follow the steps
+detailed below:
+
+```bash
+# Clone the repo to your machine.
+git clone git@github.com:sky-uk/toolkit.git
+# Jump into your Toolkit folder.
+cd toolkit
+# Install common dependencies.
+npm i
+# Toolkit comprises several sub-packages; Lerna links them together for us.
+# Learn more at lernajs.io
+lerna bootstrap
+```
+
+After running these commands, you should have all the relevant code and its
+dependencies installed and linked up ready to go…
+
+### Compiling CSS
+
+To compile changes across the packages into a single `build/toolkit.css` file,
+run the following command:
+
+```bash
+npm run build
+```
+
 ## Versioning
 
 Toolkit follows [Semantic Versioning](http://semver.org) to help manage the
@@ -168,13 +165,15 @@ impact of releasing new library versions.
 
 ## Maintainers
 
+If you run into any trouble or need support getting to grips with Toolkit,
+reach out to one of the maintainers:
+
 | [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 
-
 ### Champions
 
-If you need any support getting to grips with the Toolkit, pop over to your tribe champion:
+You can also get support from your local tribe champion:
 
 | CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
