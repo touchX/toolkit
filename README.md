@@ -182,41 +182,25 @@ To view a complete history of many of the files, you will need to pass the
 
 Without `--follow`:
 
-```bash
-harryroberts in ~/Sites/clients/sky/toolkit on (tkt-00235)
-» git log packages/sky-toolkit-core/objects/_media.scss
-commit 8b6541ae83cca5fa1af36398225ce2b187a55496
-Author: joebell93 <joe@joebell.co.uk>
-Date:   Fri, 16 Jun 2017 15:27:18 +0100
+```
+$ git log --oneline packages/sky-toolkit-core/objects/_media.scss
 
-    [refs #173] Move into packages to merge into Toolkit
+8b6541a [refs #173] Move into packages to merge into Toolkit
 ```
 
 With `--follow`:
 
-```bash
-harryroberts in ~/Sites/clients/sky/toolkit on (tkt-00235)
-» git log --follow packages/sky-toolkit-core/objects/_media.scss
-commit 8b6541ae83cca5fa1af36398225ce2b187a55496
-Author: joebell93 <joe@joebell.co.uk>
-Date:   Fri, 16 Jun 2017 15:27:18 +0100
+<pre><code>$ git log --oneline <b>--follow</b> packages/sky-toolkit-core/objects/_media.scss
 
-    [refs #173] Move into packages to merge into Toolkit
-
-commit 3485ad7e35c0dc3188d68e03146c00116e2d73ef
-Author: joebell93 <joe@joebell.co.uk>
-Date:   Fri, 16 Jun 2017 11:55:07 +0100
-
-    [refs #204] Tidy up comments and file titles
-
-commit b12bfcd4b360eac7e1076c0755cf8232da7bf470
-Author: joebell93 <joe@joebell.co.uk>
-Date:   Thu, 15 Jun 2017 15:30:04 +0100
-
-    [refs #204] Modify spacing of list-inline and media to align with Supercell
-
-[...]
-```
+8b6541a [refs #173] Move into packages to merge into Toolkit
+3485ad7 [refs #204] Tidy up comments and file titles
+b12bfcd [refs #204] Modify spacing of list-inline and media to align with Supercell
+b496258 Various typos
+ec9dee7 Add more functionality to the media object
+feba9a8 Use a clearfix mixin instead of @\extends
+7d8ad25 Rename base variables to global
+804f36c Revert media object margin to spacing unit
+5224fa5 Tidy up existing typographical rules into neater groups</code></pre>
 
 ## Maintainers
 
