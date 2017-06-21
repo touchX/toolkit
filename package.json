@@ -1,27 +1,27 @@
 {
-  "name": "sky-toolkit",
-  "version": "2.0.0",
-  "description": "Sky's CSS Toolkit",
-  "main": "toolkit.scss",
+  "private": true,
   "scripts": {
-    "test": "echo 'No tests to run'",
-    "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sky-uk/toolkit-ui.git"
-  },
-  "author": "Sky UK",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/sky-uk/toolkit/issues"
-  },
-  "homepage": "https://github.com/sky-uk/toolkit#readme",
-  "dependencies": {
-    "sky-toolkit-ui": "git+ssh://git@github.com/sky-uk/toolkit-ui.git#release/v2"
+    "circle": "lerna bootstrap && npm run lint && npm run test && npm run build",
+    "clean": "rm build/toolkit.css build/toolkit-core.css",
+    "lint": "stylelint '**/*.scss' --syntax scss",
+    "build": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --include-path packages/sky-toolkit-ui/node_modules/ --precision 9 build.scss > build/toolkit.css",
+    "dist:toolkit": "npm run build -- --output-style compressed",
+    "dist:toolkit-core": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --precision 9 packages/sky-toolkit-core/_all.scss > build/toolkit-core.css --output-style compressed",
+    "dist": "npm run dist:toolkit-core && npm run dist:toolkit",
+    "test:toolkit-core": "cd packages/sky-toolkit-core && npm run test && cd -",
+    "test:toolkit-ui": "cd packages/sky-toolkit-ui && npm run test && cd -",
+    "test": "npm run test:toolkit-core && npm run test:toolkit-ui"
   },
   "devDependencies": {
+    "eyeglass": "^1.2.1",
+    "lerna": "^2.0.0-rc.5",
+    "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }

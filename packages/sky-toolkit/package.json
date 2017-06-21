@@ -1,0 +1,16 @@
+{
+  "name": "sky-toolkit",
+  "version": "2.0.0-alpha.1",
+  "description": "Sky's CSS Toolkit",
+  "main": "index.js",
+  "author": "Sky UK",
+  "repository": "sky-uk/toolkit",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/sky-uk/toolkit/issues"
+  },
+  "homepage": "http://sky.com/toolkit",
+  "dependencies": {
+    "sky-toolkit-ui": "^2.0.0-alpha.1"
+  }
+}

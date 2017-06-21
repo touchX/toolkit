@@ -1,0 +1,117 @@
+/* ==========================================================================
+   COMPONENTS / #PANEL
+   ========================================================================== */
+
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
+$panel-icon-size: 1.5em;
+$panel-shadow-size-top: inset 0 12px 12px -12px;
+$panel-shadow-size-bottom: inset 0 -12px 12px -12px;
+$panel-shadow-color: #9f9f9f;
+$panel-shadow-color-dark: color(black);
+$panel-shadow: $panel-shadow-size-top $panel-shadow-color, $panel-shadow-size-bottom $panel-shadow-color;
+$panel-shadow-dark: $panel-shadow-size-top $panel-shadow-color-dark, $panel-shadow-size-bottom $panel-shadow-color-dark;
+$panel-background-color: color(white) !default;
+$panel-background-color-dark: color(grey-50) !default;
+$panel-spacing: $global-spacing-unit * 3;
+
+/* Base
+  =========================================== */
+
+/**
+ * Panel
+ *
+ * Panels are used to convey extra information and minimise screen space.
+ *
+ * 1. Break the panel outside of current container (typically `o-container`).
+ */
+.c-panel {
+  position: relative; /* [1] */
+  left: 50%; /* [1] */
+  margin-left: -50vw; /* [1] */
+  max-height: 0;
+  overflow: hidden;
+  width: 100vw; /* [1] */
+  background: $panel-background-color;
+  box-shadow: $panel-shadow;
+  transition: $global-animation-speed linear;
+  transition-property: max-height, margin-bottom;
+}
+
+.c-panel__content {
+  padding-top: $panel-spacing;
+  padding-bottom: $panel-spacing;
+}
+
+/**
+ * Panel Toggle
+ *
+ * Used for closing the panel on completion of a journey.
+ *
+ * This should be applied as a BEM Mix alongside `.c-link-faux`.
+ * e.g. `<span class="c-link-faux c-panel__toggle">Select</span>`
+ *
+ * 1. Position the button in top right of panel
+ * 2. Provide spacing for cross icon
+ * 3. Inherit the font colour for light and dark panels.
+ * 4. Offset cross icon to align with text
+ */
+.c-panel__toggle {
+  font-size: font-size(text-body);
+  position: absolute; /* [1] */
+  top: $global-spacing-unit; /* [1] */
+  right: $global-spacing-unit; /* [1] */
+  padding-right: $panel-icon-size; /* [2] */
+  color: inherit; /* [3] */
+
+  &::after {
+    display: inline-block;
+    margin-left: $global-spacing-unit-tiny;
+    position: absolute;  /* [4] */
+    top: 50%; /* [4] */
+    transform: translateY(-50%); /* [4] */
+    content: "\2715"; // ×
+    font-size: 1.5em;
+  }
+}
+
+/* States
+  =========================================== */
+
+/**
+ * When a panel's state is toggled open
+ */
+.c-panel.is-open {
+  max-height: none;
+  margin-bottom: $global-spacing-unit;
+}
+
+/* Modifiers
+   =========================================== */
+
+/**
+ * Dark-themed panels
+ */
+.c-panel--dark {
+  background-color: $panel-background-color-dark;
+  box-shadow: $panel-shadow-dark;
+  color: color(white);
+
+  /**
+   * Utilise dark-themed focus-styles on pseudo-focus.
+   */
+  .c-panel__toggle:focus::before {
+    @include focus-styles(invert);
+  }
+}
+
+/**
+ * Constrain content to full viewport height when open
+ */
+.c-panel--constrain {
+  &.is-open {
+    max-height: 100vh;
+  }
+}

@@ -1,0 +1,117 @@
+// =============================================================================
+// SETTINGS / #GRADIENTS
+// =============================================================================
+
+// Our brand and project gradients are held in maps. To access them we have
+// a collection of functions and mixins including:
+//
+// `gradient-color(sky-1, 100%)` function returns a single color
+// value from a gradient.
+//
+// `@include gradient-background(sky-cinema, vertical, color(grey-40))` to set
+// a background gradient.
+//
+// `@include gradient-text(sky-arts, vertical, color(brand))` to set a
+// text gradient effect.
+//
+// For more information on available options see `tools/gradients`
+$gradients: (
+  default: (
+    0%:   #f2f2f5,
+    100%: #fff
+  ),
+  highlight: (
+    0%:   #cdccd4,
+    100%: #fff
+  ),
+  page: (
+    0%:   #c9c7d1,
+    6%:   #e5e5ea,
+    20%:  #fefefe,
+    80%:  #fefefe,
+    94%:  #e5e5ea,
+    100%: #c9c7d1
+  ),
+  page-small: (
+    0%:   #f2f2f5,
+    50%:  #fff,
+    100%: #f2f2f5
+  ),
+  sky-1: (
+    0%:   #0082dc,
+    100%: #1ea0f5
+  ),
+  sky-account: (
+    0%:   #135fa0,
+    100%: #197bc9
+  ),
+  sky-atlantic: (
+    0%:   #003c7d,
+    100%: #005aaf
+  ),
+  sky-arts: (
+    0%:   #fa0050,
+    100%: #fa5569
+  ),
+  sky-box-sets: (
+    0%:   #5b1139,
+    100%: #7f0c2d
+  ),
+  sky-cinema: (
+    0%:   #903,
+    100%: #cb0033
+  ),
+  sky-kids: (
+    0%:   #4b007e,
+    100%: #652d9f
+  ),
+  sky-living: (
+    0%:   #69879b,
+    100%: #69a0b4
+  ),
+  sky-news: (
+    0%:   #061b55,
+    100%: #153073
+  ),
+  sky-sports: (
+    0%:   #041456,
+    100%: #132774
+  ),
+  sky-store: (
+    0%:   #036,
+    100%: #0e429e
+  ),
+  tile: (
+    50%:  #fff,
+    100%: #e6e6ea,
+  )
+) !default;
+
+// Directional settings required for defining both prefixed and standard
+// gradients in our `tools/gradients` mixins.
+$gradient-directions: (
+  vertical: (
+    legacy: "top",
+    standard: "to bottom",
+    type: linear,
+    reverse: false
+  ),
+  vertical-invert: (
+    legacy: "bottom",
+    standard: "to top",
+    type: linear,
+    reverse: false
+  ),
+  horizontal: (
+    legacy: "left",
+    standard: "to right",
+    type: linear,
+    reverse: false
+  ),
+  radial: (
+    legacy: "center, ellipse cover",
+    standard: "ellipse at center",
+    type: radial,
+    reverse: true
+  )
+);
