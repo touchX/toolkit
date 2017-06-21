@@ -43,6 +43,7 @@
 * [Objects]
     * `.o-media--small` renamed to `.o-media--narrow`.
     * `.o-media--large` renamed to `.o-media--wide`.
+    * `$container-width` renamed to `$global-container-width`.
 * [Typography] Removal of `text-lead-small` and `text-body-small` from `$text`.
     * Please use `text-body` instead.
 
