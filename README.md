@@ -15,7 +15,8 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 5. [Usage](#usage)
 6. [Contributing](#contributing)
 7. [Versioning](#versioning)
-8. [Maintainers](#maintainers)
+8. [History](#history)
+9. [Maintainers](#maintainers)
 
 ## Goals
 
@@ -162,6 +163,60 @@ npm run build
 
 Toolkit follows [Semantic Versioning](http://semver.org) to help manage the
 impact of releasing new library versions.
+
+## History
+
+Before mid-June, 2017, Toolkit was split across two separate repositories:
+
+1. [Toolkit Core](https://github.com/sky-uk/toolkit-core), containing structural
+   and architectural styles.
+2. [Toolkit UI](https://github.com/sky-uk/toolkit-ui), containing specific,
+   styled UI components.
+
+After enough time, this strategy proved too cumbersome: managing the surface
+area and coordinating releases became a task in itself, even across only two
+repositories. To that end, we folded them into one—this one.
+
+To view a complete history of many of the files, you will need to pass the
+`--follow` flag into your `log`.
+
+Without `--follow`:
+
+```bash
+harryroberts in ~/Sites/clients/sky/toolkit on (tkt-00235)
+» git log packages/sky-toolkit-core/objects/_media.scss
+commit 8b6541ae83cca5fa1af36398225ce2b187a55496
+Author: joebell93 <joe@joebell.co.uk>
+Date:   Fri, 16 Jun 2017 15:27:18 +0100
+
+    [refs #173] Move into packages to merge into Toolkit
+```
+
+With `--follow`:
+
+```bash
+harryroberts in ~/Sites/clients/sky/toolkit on (tkt-00235)
+» git log --follow packages/sky-toolkit-core/objects/_media.scss
+commit 8b6541ae83cca5fa1af36398225ce2b187a55496
+Author: joebell93 <joe@joebell.co.uk>
+Date:   Fri, 16 Jun 2017 15:27:18 +0100
+
+    [refs #173] Move into packages to merge into Toolkit
+
+commit 3485ad7e35c0dc3188d68e03146c00116e2d73ef
+Author: joebell93 <joe@joebell.co.uk>
+Date:   Fri, 16 Jun 2017 11:55:07 +0100
+
+    [refs #204] Tidy up comments and file titles
+
+commit b12bfcd4b360eac7e1076c0755cf8232da7bf470
+Author: joebell93 <joe@joebell.co.uk>
+Date:   Thu, 15 Jun 2017 15:30:04 +0100
+
+    [refs #204] Modify spacing of list-inline and media to align with Supercell
+
+[...]
+```
 
 ## Maintainers
 
