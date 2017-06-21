@@ -28,11 +28,9 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
 The project consists of 3 packages:
 
-* [sky-toolkit]: provides the UI and Core layers.
-  * [sky-toolkit-core](https://github.com/sky-uk/toolkit/toolkit-core): Global
-    styles and defaults for all projects.
-  * [sky-toolkit-ui](https://github.com/sky-uk/toolkit/toolkit-ui): Aesthetic
-    components.
+* **sky-toolkit**: provides the UI and Core layers.
+  * **sky-toolkit-core**: Global styles and defaults for all projects.
+  * **sky-toolkit-ui**: Aesthetic components.
 
 ### Libraries
 
