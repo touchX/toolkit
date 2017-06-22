@@ -75,7 +75,7 @@ To support IE9+, you **must** include the following at the top of your
 ```
 <!DOCTYPE html>
 <!--[if IE 9 ]>               <html lang="en-GB" class="ie9"> <![endif]-->
-<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]—>
+<!--[if gt IE 9 | !IE ]><!--> <html lang="en-GB"> <!--<![endif]-->
 <head>
   ...
 ```
@@ -86,7 +86,7 @@ For rapid prototyping and static sites you can include our latest compiled CSS
 in the `<head>` of your page.
 
 ```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v2.0.0/toolkit.css">
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v<version_number>/toolkit.css">
 ```
 
 **We strongly advise not to use this method in live projects**. Use `npm`
@@ -216,7 +216,8 @@ You can also get support from your local tribe champion:
 |---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
 | [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
 | [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [Jag Sispal](https://github.com/jsispal)      | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
-|                                                   |                                                | [John Bower](https://github.com/beclamide)    | [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+|                                                   |                                                | [James Peiris](https://github.com/jamespeiris)| [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
+|                                                   |                                                | [John Bower](https://github.com/beclamide)    |                                                |                                                      |
 
 **Special thanks to the following contributors:**
 
