@@ -101,4 +101,6 @@ the core maintainers or [Tom Davidson](@tom-davidson).
 7. Run `npm run dist` to generate `toolkit.css` and `toolkit-core.css`.
    * Upload these to s3 `sky.com/assets/[toolkit|toolkit-core]/v[version]` as
      well as overriding `/latest` (see maintainers Slack channel).
+   * N.B. If your CSS doesn’t seem to be compiling with the expected changes,
+     run `npm run clean` and try again.
 8. Communicate changes out on Slack.

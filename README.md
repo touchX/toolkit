@@ -15,7 +15,8 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 5. [Usage](#usage)
 6. [Contributing](#contributing)
 7. [Versioning](#versioning)
-8. [Maintainers](#maintainers)
+8. [History](#history)
+9. [Maintainers](#maintainers)
 
 ## Goals
 
@@ -27,11 +28,9 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 
 The project consists of 3 packages:
 
-* [sky-toolkit]: provides the UI and Core layers.
-  * [sky-toolkit-core](https://github.com/sky-uk/toolkit/toolkit-core): Global
-    styles and defaults for all projects.
-  * [sky-toolkit-ui](https://github.com/sky-uk/toolkit/toolkit-ui): Aesthetic
-    components.
+* **sky-toolkit**: provides the UI and Core layers.
+  * **sky-toolkit-core**: Global styles and defaults for all projects.
+  * **sky-toolkit-ui**: Aesthetic components.
 
 ### Libraries
 
@@ -162,6 +161,44 @@ npm run build
 
 Toolkit follows [Semantic Versioning](http://semver.org) to help manage the
 impact of releasing new library versions.
+
+## History
+
+Before mid-June, 2017, Toolkit was split across two separate repositories:
+
+1. [Toolkit Core](https://github.com/sky-uk/toolkit-core), containing structural
+   and architectural styles.
+2. [Toolkit UI](https://github.com/sky-uk/toolkit-ui), containing specific,
+   styled UI components.
+
+After enough time, this strategy proved too cumbersome: managing the surface
+area and coordinating releases became a task in itself, even across only two
+repositories. To that end, we folded them into one—this one.
+
+To view a complete history of many of the files, you will need to pass the
+`--follow` flag into your `log`.
+
+Without `--follow`:
+
+```
+$ git log --oneline packages/sky-toolkit-core/objects/_media.scss
+
+8b6541a [refs #173] Move into packages to merge into Toolkit
+```
+
+With `--follow`:
+
+<pre><code>$ git log --oneline <b>--follow</b> packages/sky-toolkit-core/objects/_media.scss
+
+8b6541a [refs #173] Move into packages to merge into Toolkit
+3485ad7 [refs #204] Tidy up comments and file titles
+b12bfcd [refs #204] Modify spacing of list-inline and media to align with Supercell
+b496258 Various typos
+ec9dee7 Add more functionality to the media object
+feba9a8 Use a clearfix mixin instead of @\extends
+7d8ad25 Rename base variables to global
+804f36c Revert media object margin to spacing unit
+5224fa5 Tidy up existing typographical rules into neater groups</code></pre>
 
 ## Maintainers
 

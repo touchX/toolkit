@@ -1,16 +1,21 @@
 {
   "private": true,
+  "config": {
+    "paths": "--include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --include-path packages/sky-toolkit-ui/node_modules/",
+    "precision": "--precision 9"
+  },
   "scripts": {
-    "circle": "lerna bootstrap && npm run lint && npm run test && npm run build",
-    "clean": "rm build/toolkit.css build/toolkit-core.css",
+    "clean": "rm build/*.css",
+    "watch": "node-sass $npm_package_config_precision --output-style expanded -w $npm_package_config_paths build.scss build/toolkit.css",
     "lint": "stylelint '**/*.scss' --syntax scss",
-    "build": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --include-path packages/sky-toolkit-ui/node_modules/ --precision 9 build.scss > build/toolkit.css",
-    "dist:toolkit": "npm run build -- --output-style compressed",
-    "dist:toolkit-core": "node-sass --include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --precision 9 packages/sky-toolkit-core/_all.scss > build/toolkit-core.css --output-style compressed",
+    "build": "node-sass $npm_package_config_precision --output-style expanded $npm_package_config_paths build.scss build/toolkit.css",
+    "dist:toolkit": "node-sass $npm_package_config_precision --output-style compressed $npm_package_config_paths build.scss build/toolkit.min.css",
+    "dist:toolkit-core": "node-sass $npm_package_config_precision --output-style compressed $npm_package_config_paths --include-path packages/sky-toolkit-core/node_modules/ packages/sky-toolkit-core/_all.scss build/toolkit-core.min.css",
     "dist": "npm run dist:toolkit-core && npm run dist:toolkit",
     "test:toolkit-core": "cd packages/sky-toolkit-core && npm run test && cd -",
     "test:toolkit-ui": "cd packages/sky-toolkit-ui && npm run test && cd -",
-    "test": "npm run test:toolkit-core && npm run test:toolkit-ui"
+    "test": "npm run test:toolkit-core && npm run test:toolkit-ui",
+    "circle": "lerna bootstrap && npm run lint && npm run test && npm run build"
   },
   "devDependencies": {
     "eyeglass": "^1.2.1",
