@@ -15,6 +15,7 @@
  *
  * 1. c-link-external currently uses an inline Base64 png chevron icon.
  *    This will eventually be replaced by SVG.
+ * 2. Brand-specific override.
  */
 .c-link-external {
   &::after {
@@ -24,6 +25,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     vertical-align: text-bottom;
+    margin-bottom: 1px; /* [2] */
     margin-left: $global-spacing-unit-small;
     width: 1em;
     height: 1em;
