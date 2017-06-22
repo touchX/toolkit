@@ -125,10 +125,13 @@ $costing-spacing: 5px;
     @include rem(22px);
     font-weight: bold;
     line-height: 1.5; /* [1] */
-    margin-right: 1em; /* [1] */
 
     @include mq($from: medium) {
       @include rem(28px);
+    }
+
+    &.c-price--fractional {
+      margin-right: 1em; /* [1] */
     }
   }
 
