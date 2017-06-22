@@ -149,7 +149,7 @@ $test-module-area: "Tools / Gradients /";
 // @include gradient-text()
 // ------------------------------------
 
-@include test-module("@mixin gradient-text") {
+@include test-module("#{$test-module-area} @mixin gradient-text") {
   @include test("with key and direction") {
     @include assert("sets correct values") {
       @include input() {
