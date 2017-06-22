@@ -1,0 +1,141 @@
+/* ==========================================================================
+   COMPONENTS / #COSTING
+   ========================================================================== */
+
+// Imports
+@import "sky-toolkit-core/tools";
+
+// Settings
+$costing-spacing: 5px;
+
+// Dependencies (Optional)
+// =========================================== */
+
+// "Costing" builds upon "Price" for `.c-costing__price` and `c-costing__strike`.
+//
+// If you want to utilise this feature, you must import
+// `sky-toolkit-ui/components/price`
+//
+// If you are using `sky-toolkit-ui/all`, please ignore the above.
+
+/* Base
+  ============================================ */
+
+/**
+ * Costing
+ *
+ * 1. We need to use non-standard font sizing at different breakpoints in order to align various
+ *    blocks of text in this component
+ */
+.c-costing {
+  @include rem(14px); /* [1] */
+
+  @include mq($from: medium) {
+    @include rem(16px); /* [1] */
+  }
+}
+
+/**
+ * Costing Price
+ *
+ * 1. We'll be positioning children relative to this element
+ * 2. Non-standard line height to align various text nodes
+ * 3. Fractional values (pence) display smaller than main values (pounds)
+ * 4. Position fractional values to the top right of the price. Magic number for `top` value
+ *    is unfortunate but necessary to align with line-height of parent
+ */
+.c-costing__price {
+  @include rem(36px);
+  position: relative; /* [1] */
+  line-height: 1; /* [2] */
+
+  @include mq($from: medium) {
+    @include rem(48px);
+  }
+
+  .c-price__fractional {
+    @include rem(14px); /* [3] */
+    position: absolute; /* [4] */
+    top: 0.55em; /* [4] */
+    left: 100%; /* [4] */
+    margin-left: $costing-spacing; /* [4] */
+    @include mq($from: medium) {
+      @include rem(16px); /* [3] */
+    }
+  }
+}
+
+/**
+ * Costing Prefix & Suffix
+ *
+ * 1. Non-standard line height to reduce space between prefix and price
+ * 2. Position suffix beside the price
+ */
+.c-costing__prefix {
+  line-height: 1; /* [1] */
+}
+
+.c-costing__suffix {
+  display: inline-block; /* [2] */
+  vertical-align: baseline; /* [2] */
+  margin: 0 $costing-spacing; /* [2] */
+}
+
+/**
+ * Costing Striked Price
+ *
+ * 1. Keep separate from price and/or suffix
+ * 2. Non-standard line height to reduce space between prefix and price
+ */
+.c-costing__strike {
+  margin-left: $costing-spacing; /* [1] */
+  line-height: 1; /* [2] */
+}
+
+/* Modifiers
+  ============================================ */
+
+/**
+ * Offer Costing
+ *
+ * 1. Apply the offer colouring to the price
+ * 2. Striked prices on offers are displayed above the price, so need to be on a new line while
+ *    maintaining width for the strikethrough line.
+ */
+.c-costing--offer {
+  .c-costing__price {
+    color: color(offer); /* [1] */
+  }
+
+  .c-costing__strike {
+    margin-left: 0;
+    display: table; /* [2] */
+  }
+}
+
+/**
+ * Smaller Costing
+ *
+ * 1. On smaller costs, suffixes don't display beneath fractional values, so we realign line-height
+ *    and create additonal spacing
+ * 2. Fractional values don't need offsetting for smaller prices
+ */
+.c-costing--small {
+  .c-costing__price {
+    @include rem(22px);
+    font-weight: bold;
+    line-height: 1.5; /* [1] */
+
+    @include mq($from: medium) {
+      @include rem(28px);
+    }
+
+    &.c-price--fractional {
+      margin-right: 1em; /* [1] */
+    }
+  }
+
+  .c-price__fractional {
+    top: 0; /* [2] */
+  }
+}

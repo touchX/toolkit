@@ -1,27 +1,32 @@
 {
-  "name": "sky-toolkit",
-  "version": "1.20.0",
-  "description": "Sky's CSS Toolkit",
-  "main": "toolkit.scss",
+  "private": true,
+  "config": {
+    "paths": "--include-path node_modules/ --include-path packages/sky-toolkit-core/node_modules/ --include-path packages/sky-toolkit-ui/node_modules/",
+    "precision": "--precision 9"
+  },
   "scripts": {
-    "test": "echo 'No tests to run'",
-    "dist": "mkdir -p ./dist && cat ./toolkit.scss | node_modules/.bin/node-sass --include-path node_modules/ --output-style compressed > dist/toolkit.css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sky-uk/toolkit-ui.git"
-  },
-  "author": "Sky UK",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/sky-uk/toolkit/issues"
-  },
-  "homepage": "https://github.com/sky-uk/toolkit#readme",
-  "dependencies": {
-    "sky-toolkit-ui": "1.20.0"
+    "clean": "rm build/*.css",
+    "watch": "node-sass $npm_package_config_precision --output-style expanded -w $npm_package_config_paths build.scss build/toolkit.css",
+    "lint": "stylelint '**/*.scss' --syntax scss",
+    "build": "node-sass $npm_package_config_precision --output-style expanded $npm_package_config_paths build.scss build/toolkit.css",
+    "dist:toolkit": "node-sass $npm_package_config_precision --output-style compressed $npm_package_config_paths build.scss build/toolkit.min.css",
+    "dist:toolkit-core": "node-sass $npm_package_config_precision --output-style compressed $npm_package_config_paths --include-path packages/sky-toolkit-core/node_modules/ packages/sky-toolkit-core/_all.scss build/toolkit-core.min.css",
+    "dist": "npm run dist:toolkit-core && npm run dist:toolkit",
+    "test:toolkit-core": "cd packages/sky-toolkit-core && npm run test && cd -",
+    "test:toolkit-ui": "cd packages/sky-toolkit-ui && npm run test && cd -",
+    "test": "npm run test:toolkit-core && npm run test:toolkit-ui",
+    "circle": "lerna bootstrap && npm run lint && npm run test && npm run build"
   },
   "devDependencies": {
+    "eyeglass": "^1.2.1",
+    "lerna": "^2.0.0-rc.5",
+    "mocha": "^3.2.0",
     "node-sass": "^4.5.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "sass-true": "2.0.3",
+    "stylelint": "^7.9.0",
+    "stylelint-config-sky-uk": "3.0.0",
+    "stylelint-scss": "^1.4.3",
+    "stylelint-selector-bem-pattern": "^1.0.0"
   }
 }

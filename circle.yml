@@ -4,12 +4,12 @@ machine:
 
 general:
   artifacts:
-    - "dist/"
+    - "build/"
     - "package.json"
 
 test:
   override:
-    - npm run dist
+    - npm run circle
 
 experimental:
   notify:
