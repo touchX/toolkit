@@ -108,7 +108,7 @@ Nine times out of ten, you will be working in a `tkt-` branch.
 Now that branches are named after issue, it’s not as immediately clear what each
 branch is responsible for. [ghi](https://github.com/stephencelis/ghi) is a great
 little tool that allows you to query GitHub issues from the command line. Let’s
-imaging that `git branch` leaves you looking at this:
+imagine that `git branch` leaves you looking at this:
 
 ```bash
 $ git branch
