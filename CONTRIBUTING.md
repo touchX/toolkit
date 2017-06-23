@@ -102,7 +102,7 @@ Toolkit comprises three main branches:
 
 Work in `tkt-#####` is merged into `develop` via a pull request; work in
 `develop` is merged into `master` on the command line before rolling an official
-release (Core Maintainers only).
+release (**Core Maintainers only**).
 
 Nine times out of ten, you will be working in a `tkt-` branch.
 
