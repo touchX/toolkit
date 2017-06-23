@@ -139,9 +139,9 @@ _Tabs navigation width issue with many tabs_.
    All commits pertaining to this issue must happen within this branch.
 4. All commits in this branch should begin with `[refs #00224]`: pad the issue
    number with leading zeroes until you’re at five (5) digits.
-5. Instead of running `git commit -m "<message>"`, stage your files as you would
-   normally, and run `git commit`. This will fire open your text editor with the
-   prepopulated template ready for you to fill out.
+     * Instead of running `git commit -m "<message>"`, stage your files as you
+       would normally, and run `git commit`. This will fire open your text
+       editor with the prepopulated template ready for you to fill out.
 6. Now your commits—based on the template—should resemble this:
 
         commit 1dcf5d4bc18d5fd3321f4c60d879cfd5d5e2dd1f
