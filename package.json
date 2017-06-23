@@ -15,6 +15,7 @@
     "test:toolkit-core": "cd packages/sky-toolkit-core && npm run test && cd -",
     "test:toolkit-ui": "cd packages/sky-toolkit-ui && npm run test && cd -",
     "test": "npm run test:toolkit-core && npm run test:toolkit-ui",
+    "gzip": "gzip -6 build/toolkit{,-core}.min.css && mv build/toolkit-core.min.css.gz build/toolkit-core.min.css && mv build/toolkit.min.css.gz build/toolkit.min.css",
     "circle": "lerna bootstrap && npm run lint && npm run test && npm run build"
   },
   "devDependencies": {
