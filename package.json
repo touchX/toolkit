@@ -5,7 +5,7 @@
     "precision": "--precision 9"
   },
   "scripts": {
-    "clean": "rm build/*.css",
+    "clean": "touch build/tmp.css && rm build/*.css",
     "watch": "node-sass $npm_package_config_precision --output-style expanded -w $npm_package_config_paths build.scss build/toolkit.css",
     "lint": "stylelint '**/*.scss' --syntax scss",
     "build": "node-sass $npm_package_config_precision --output-style expanded $npm_package_config_paths build.scss build/toolkit.css",
