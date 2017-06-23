@@ -11,7 +11,7 @@ For full documentation, visit [sky.com/toolkit](http://sky.com/toolkit)
 1. [Goals](#goals)
 2. [Structure](#structure)
 3. [Installation](#installation)
-4. [Requirements](#requirements)
+4. [Requirements/Dependencies](#requirementsdependencies)
 5. [Usage](#usage)
 6. [Contributing](#contributing)
 7. [Versioning](#versioning)
@@ -86,7 +86,7 @@ For rapid prototyping and static sites you can include our latest compiled CSS
 in the `<head>` of your page.
 
 ```
-<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v<version_number>/toolkit.css">
+<link rel="stylesheet" href="https://www.sky.com/assets/toolkit/v<version_number>/toolkit.min.css">
 ```
 
 **We strongly advise not to use this method in live projects**. Use `npm`
