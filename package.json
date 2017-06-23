@@ -6,6 +6,7 @@
   },
   "scripts": {
     "clean": "touch build/tmp.css && rm build/*.css",
+    "nuke": "npm run clean && rm -rf node_modules/ && lerna clean && say 'Self Destruct Sequence Initiated: 5, 4, 3, 2… LOL, just kidding. Clean Successful. Top work!'",
     "watch": "node-sass $npm_package_config_precision --output-style expanded -w $npm_package_config_paths build.scss build/toolkit.css",
     "lint": "stylelint '**/*.scss' --syntax scss",
     "build": "node-sass $npm_package_config_precision --output-style expanded $npm_package_config_paths build.scss build/toolkit.css",
