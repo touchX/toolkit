@@ -35,6 +35,9 @@ With Toolkit being an open source project, we need to take greater care than
 ever with our Git workflow and strategy. Please follow the below instructions
 very closely.
 
+**N.B.** If you fail to adhere to the agreed workflow, there is a risk that your
+Pull Requests may not be accepted until any issues are rectified.
+
 ### Setting Up Git
 
 We want to set up Git to make our workflow as seamless and automated as
