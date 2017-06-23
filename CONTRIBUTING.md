@@ -45,9 +45,9 @@ your life a little easier.
 ```bash
 $ cd toolkit
 # Tell Git to use your preferred text editor (see below):
-toolkit $ git config core.editor <your editor here>
+$ git config core.editor <your editor here>
 # Tell Git to prepopulate commit messages with our template
-toolkit $ git config commit.template ./.github/.git-commit-template
+$ git config commit.template ./.github/.git-commit-template
 ```
 
 **N.B.** You need to be able to open your editor from the CLI. For Atom, replace
@@ -130,11 +130,11 @@ _Tabs navigation width issue with many tabs_.
 2. Check out `develop` and ensure you have the latest upstream changes:
 
         $ cd toolkit
-        toolkit $ git checkout develop
-        toolkit $ git pull
+        $ git checkout develop
+        $ git pull
 3. Create a new branch named after your issue:
 
-        toolkit $ git checkout -b tkt-00224
+        $ git checkout -b tkt-00224
 
    All commits pertaining to this issue must happen within this branch.
 4. All commits in this branch should begin with `[refs #00224]`: pad the issue
