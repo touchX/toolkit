@@ -12,7 +12,7 @@ configuration.
 
 Instantly grab a Toolkit-conformant [.scss template](https://git.io/template):
 
-```
+```bash
 curl -L git.io/template -o _<your-file-name>.scss
 ```
 
@@ -42,7 +42,7 @@ possible. We’re going to configure Git to utilise your preferred text editor
 _and_ to use a specific commit message template. Just a couple of things to make
 your life a little easier.
 
-```
+```bash
 $ cd toolkit
 # Tell Git to use your preferred text editor (see below):
 toolkit $ git config core.editor <your editor here>
@@ -110,7 +110,7 @@ branch is responsible for. [ghi](https://github.com/stephencelis/ghi) is a great
 little tool that allows you to query GitHub issues from the command line. Let’s
 imaging that `git branch` leaves you looking at this:
 
-```
+```bash
 $ git branch
   develop
   master
