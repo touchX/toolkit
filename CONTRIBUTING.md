@@ -95,9 +95,9 @@ Toolkit comprises three main branches:
 |            |        \   |
 ```
 
-`tkt-00224` is branched off `develop` is branched off `master`.
+`tkt-#####` is branched off `develop` is branched off `master`.
 
-Work in `tkt-00224` is merged into `develop` via a pull request; work in
+Work in `tkt-#####` is merged into `develop` via a pull request; work in
 `develop` is merged into `master` on the command line before rolling an official
 release (Core Maintainers only).
 
