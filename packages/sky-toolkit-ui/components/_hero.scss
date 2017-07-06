@@ -114,11 +114,11 @@ $hero-overlap: 10vh;
 }
 
 .c-hero__shine--top {
-  top: -($global-spacing-unit-small + $hero-border-width);
+  top: ($hero-border-width - $shine-size) / 2;
 }
 
 .c-hero__shine--bottom {
-  bottom: -($global-spacing-unit-small + $hero-border-width);
+  bottom: ($hero-border-width - $shine-size) / 2;
 }
 
 /**
