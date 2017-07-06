@@ -3,6 +3,13 @@
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.0.1
+
+### Fixes
+
+* [Hero] Fix alignment of `.c-hero__shine`.
+
+
 ## 2.0.0
 
 ### Features
