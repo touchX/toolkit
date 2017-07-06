@@ -1,4 +1,9 @@
 <!--
+                                 W A R N I N G
+
+   Please ensure you have followed our contributing guidelines before
+             attempting to merge any work into the project.
+
   TITLE:
     Provide a general summary of your changes in the Title above.
 
