@@ -82,7 +82,7 @@ To support IE9+, you **must** include the following at the top of your
 
 ### Compiled/Hosted Version
 
-For rapid prototyping and static sites you can include our latest compiled CSS
+For rapid prototyping and static sites, you can include our latest compiled CSS
 in the `<head>` of your page.
 
 ```
@@ -92,36 +92,124 @@ in the `<head>` of your page.
 **We strongly advise not to use this method in live projects**. Use `npm`
 installation to benefit from the Toolkit’s modularity and extensibility.
 
+Alternatively, in **Node.js**, use `sky-toolkit`'s entry point to grab an
+automatically version-controlled link which corresponds to your app's version of
+Toolkit in `package.json`
+
+For example:
+
+```javascript
+const skyToolkit = require('sky-toolkit');
+
+module.exports = `
+    <link rel="stylesheet" href="${skyToolkit}">
+    <!-- Your App's Stylesheets/Assets, for example: -->
+    <link rel="stylesheet" href="main.css">
+`;
+```
+
 ## Usage
 
-Once installed, include `sky-toolkit-core` at the top of your global `.scss`
-file.
+Once installed, there are 2 methods of Toolkit implementation:
 
-This is required by all `sky-toolkit-ui` components.
+1. [Hybrid](#hybrid) (Recommended)
+2. [Sass Imports](#sass-imports)
 
-```css
-@import "sky-toolkit-core/all";
-```
+### Hybrid
 
-Following that, you can import individual toolkit-ui components and your own
-project-specific styles, for example:
+A combination of compiled and Sass implementation:
 
-```css
-@import "sky-toolkit-core/all";
+  * Importing `sky-toolkit-core` via a CDN allows for caching across the estate,
+    allowing for performance benefits as well as greater code consistency.
+    If you're using Node.js, versioning is automatically taken care of via the
+    entry point.
+  * Importing `sky-toolkit-ui` modularly via Sass avoids unused CSS bloat.
 
-@import "sky-toolkit-ui/components/typography";
-@import "sky-toolkit-ui/components/tile";
-@import "sky-toolkit-ui/components/panel";
+#### Set-up
 
-@import "your-component-here";
-```
+1. Require `sky-toolkit-core`'s compiled module into your layout/template which
+   houses the `<head>` for your application.
 
-There is the option to import all components, however, we strongly recommend
-only importing the individual components required in your project.
+   It **must** be the **first** stylesheet defined:
 
-```css
-@import "sky-toolkit-ui/all";
-```
+   * **Node.js** - utilise the entry point to grab an automatically
+     version-controlled link which corresponds to your app's version of Toolkit
+     in `package.json`. For example, your template file could look like:
+
+      ```javascript
+      const skyToolkitCore = require('sky-toolkit-core');
+
+      module.exports = `
+          <link rel="stylesheet" href="${skyToolkitCore}">
+          <!-- Your App's Stylesheets/Assets, for example: -->
+          <link rel="stylesheet" href="main.css">
+      `;
+      ```
+
+    * **Other languages** - no such entry point exists, so you'll need to
+      manually version the compiled Toolkit/Toolkit Core that your project uses.
+
+      ```html
+      <link rel="stylesheet" href="https://www.sky.com/assets/toolkit-core/v<version_number>/toolkit-core.min.css">
+      <!-- Your App's Stylesheets/Assets, for example: -->
+      <link rel="stylesheet" href="main.css">
+      ```
+
+2. Follow the [Sass Imports](#sass-imports) steps defined below, making sure you 
+   import `sky-toolkit-core/tools`, **not** `/all`.
+
+### Sass Imports
+
+1. In your application's main `.scss` file, include `sky-toolkit-core` at the
+   very top:
+
+    * If you're following the **Hybrid** method above, you **must** use
+      **`/tools`** to utilise tools and settings and avoid outputting the core.
+
+      ```css
+      /* main.scss (compiles to main.css) */
+      @import "sky-toolkit-core/tools";
+      ```
+      
+      This is required if you're extending any Toolkit styles or creating
+      custom components.
+
+    * If you're **not** following the Hybrid method above and you're using 
+      Toolkit fully via Sass, you **must** use **`/all`** to output the core.
+
+      ```css
+      /* main.scss (compiles to main.css) */
+      @import "sky-toolkit-core/all";
+      ```
+
+      This is required by all `sky-toolkit-ui` components / custom styles that
+      extend Toolkit.
+
+      :warning: **Do not** import `/all` when using the Hybrid method, as it
+      will duplicate styles.
+2. Following that, you can import individual `sky-toolkit-ui` components and
+   your own project-specific styles, for example:
+
+    ```css
+    /* main.scss (compiles to main.css) */
+
+    /* Change to `/tools` or `/all` where appropriate */
+    @import "sky-toolkit-core/[tools|all]";
+
+    @import "sky-toolkit-ui/components/typography";
+    @import "sky-toolkit-ui/components/tile";
+    @import "sky-toolkit-ui/components/panel";
+
+    /* Project-specific styles */
+    @import "components/your-component";
+    ```
+
+    There is the option to import all components, however, we strongly recommend
+    only importing the individual components required in your project.
+
+    ```css
+    @import "sky-toolkit-ui/all";
+    ```
 
 ## Contributing
 
