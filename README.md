@@ -99,7 +99,7 @@ Toolkit in `package.json`
 For example:
 
 ```javascript
-const skyToolkit = require('sky-toolkit');
+const { cdnUrl: skyToolkit } = require('sky-toolkit');
 
 module.exports = `
     <link rel="stylesheet" href="${skyToolkit}">
@@ -137,7 +137,7 @@ A combination of compiled and Sass implementation:
      in `package.json`. For example, your template file could look like:
 
       ```javascript
-      const skyToolkitCore = require('sky-toolkit-core');
+      const { cdnUrl: skyToolkitCore } = require('sky-toolkit-core');
 
       module.exports = `
           <link rel="stylesheet" href="${skyToolkitCore}">
