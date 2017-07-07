@@ -226,27 +226,29 @@ the core maintainers or [Tom Davidson](@tom-davidson).
 
 ## Releases
 
-1. Merge fully-approved PR into `master`.
-2. Run `git checkout master && git pull`.
-3. Include all new functional changes in the appropriate `CHANGELOG.md`(s).
+1. Merge fully-approved PR into `develop`.
+2. Run `git checkout develop && git pull`.
+3. Run `git checkout master && git pull`.
+4. Merge `develop` into `master`.
+5. Include all new functional changes in the appropriate `CHANGELOG.md`(s).
    * Pro tip: use the following command to get a commit summary of changes.
 
       ```
       $ git log --oneline <last tag>.. -- packages/sky-toolkit-[core|ui]/
       ```
-4. Commit and push the `CHANGELOG.md` changes to `master`.
-5. Run `lerna publish`.
+6. Commit and push the `CHANGELOG.md` changes to `master`.
+7. Run `npm run dist` to generate `toolkit.min.css` and `toolkit-core.min.css`.
+   * Upload these to s3 `sky.com/assets/[toolkit|toolkit-core]/v[version]` as
+     well as overriding `/latest` (see maintainers Slack channel).
+   * N.B. If your CSS doesn’t seem to be compiling with the expected changes,
+     run `npm run clean` and try again.
+8. Run `lerna publish`.
    * Be sure to read and follow the wizard very carefully, making sure to use
      the correct and appropriate patch/minor/major semver tag(s).
-6. Go to [Toolkit/Releases](https://github.com/sky-uk/toolkit/releases), and
+9. Go to [Toolkit/Releases](https://github.com/sky-uk/toolkit/releases), and
    check the tag exists.
    * If the tag exists, congrats! Now create a [**new**
      release](https://github.com/sky-uk/toolkit/releases/new) that utilises that
      tag.
    * If the tag doesn't exist, something went wrong.
-7. Run `npm run dist` to generate `toolkit.css` and `toolkit-core.css`.
-   * Upload these to s3 `sky.com/assets/[toolkit|toolkit-core]/v[version]` as
-     well as overriding `/latest` (see maintainers Slack channel).
-   * N.B. If your CSS doesn’t seem to be compiling with the expected changes,
-     run `npm run clean` and try again.
-8. Communicate changes out on Slack.
+10. Communicate changes out on Slack.
