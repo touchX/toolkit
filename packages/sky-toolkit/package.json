@@ -11,6 +11,7 @@
   },
   "homepage": "http://sky.com/toolkit",
   "dependencies": {
+    "sky-toolkit-core": "^2.1.0",
     "sky-toolkit-ui": "^2.1.0"
   }
 }

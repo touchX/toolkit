@@ -137,10 +137,10 @@ A combination of compiled and Sass implementation:
      in `package.json`. For example, your template file could look like:
 
       ```javascript
-      const { cdnUrl: skyToolkitCore } = require('sky-toolkit-core');
+      const { skyToolkitCoreCdnUrl } = require('sky-toolkit');
 
       module.exports = `
-          <link rel="stylesheet" href="${skyToolkitCore}">
+          <link rel="stylesheet" href="${skyToolkitCoreCdnUrl}">
           <!-- Your App's Stylesheets/Assets, for example: -->
           <link rel="stylesheet" href="main.css">
       `;
