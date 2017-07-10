@@ -3,6 +3,18 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.1.1
+
+### Features
+
+* [Node.js] Entry points for `sky-toolkit-core` now also available passed up
+  to `sky-toolkit` via:
+    * `skyToolkitCoreCdnUrl`
+    * `skyToolkitCoreCdnTag`
+  
+  For usage information, see [Toolkit's `README.md`](https://github.com/sky-uk/toolkit/blob/master/README.md#hybrid).
+
+
 ## 2.1.0
 
 ### Features
