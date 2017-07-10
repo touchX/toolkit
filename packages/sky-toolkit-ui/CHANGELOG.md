@@ -3,6 +3,20 @@
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.1.0
+
+### Dependencies
+
+* [sky-toolkit-core](https://github.com/sky-uk/toolkit/blob/master/packages/sky-toolkit-core) updated to `2.1.0`.
+
+### Notes
+
+* [Node.js] If you're looking to access a compiled stylesheet for the UI 
+  (similar to `sky-toolkit-core`), use `sky-toolkit`'s entry point. 
+  
+  For usage information, see [Toolkit's `README.md`](https://github.com/sky-uk/toolkit/blob/master/README.md#hybrid).
+
+
 ## 2.0.1
 
 ### Fixes
