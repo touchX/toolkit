@@ -1,6 +1,6 @@
 {
   "name": "sky-toolkit",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Sky's CSS Toolkit",
   "main": "index.js",
   "author": "Sky UK",
@@ -11,6 +11,6 @@
   },
   "homepage": "http://sky.com/toolkit",
   "dependencies": {
-    "sky-toolkit-ui": "^2.0.1"
+    "sky-toolkit-ui": "^2.1.0"
   }
 }
