@@ -2,7 +2,6 @@
   "name": "sky-toolkit-ui",
   "version": "2.0.1",
   "description": "The UI layer of Sky's CSS Toolkit",
-  "main": "index.js",
   "author": "Sky UK",
   "repository": "sky-uk/toolkit",
   "license": "BSD-3-Clause",
