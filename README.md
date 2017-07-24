@@ -293,19 +293,19 @@ feba9a8 Use a clearfix mixin instead of @\extends
 If you run into any trouble or need support getting to grips with Toolkit,
 reach out to one of the maintainers:
 
-| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale) | [![Aaron Thomas](https://avatars.githubusercontent.com/aaronthomas?s=100)<br /><sub>Aaron Thomas</sub>](https://github.com/aaronthomas) | [![Luke Barratt](https://avatars.githubusercontent.com/lbarratt?s=100)<br /><sub>Luke Barratt</sub>](https://github.com/lbarratt) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson) |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+| [![Joe Bell](https://avatars.githubusercontent.com/joebell93?s=100)<br /><sub>Joe Bell</sub>](https://github.com/joebell93) | [![Joe Dinsdale](https://avatars.githubusercontent.com/mrdinsdale?s=100)<br /><sub>Joe Dinsdale</sub>](https://github.com/mrdinsdale) | [![Steve Duffin](https://avatars.githubusercontent.com/steveduffin?s=100)<br /><sub>Steve Duffin</sub>](https://github.com/steveduffin) | [![Sam Kitson](https://avatars.githubusercontent.com/skitson?s=100)<br /><sub>Sam Kitson</sub>](https://github.com/skitson) |
+| :---: | :---: | :---: | :---: |
 
 ### Champions
 
 You can also get support from your local tribe champion:
 
-| CF                                                | DC                                             | DE                                            | DS                                             | DT                                                   |
-|---------------------------------------------------|------------------------------------------------|-----------------------------------------------|------------------------------------------------|------------------------------------------------------|
-| [Josh Nesbitt](https://github.com/joshnesbitt)    | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [Clare Devine](https://github.com/claredevine) | [Alex Fenton](https://github.com/afenton90)          |
-| [Mahesh Jagadeesan](https://github.com/maheshjag) | [Djenan Kozic](https://github.com/djenan)      | [Jag Sispal](https://github.com/jsispal)      | [Greg Pratt](https://github.com/gregorypratt)  | [Stefan McCready](https://github.com/stefanmccready) |
-|                                                   |                                                | [James Peiris](https://github.com/jamespeiris)| [Rory King](https://github.com/geit)           | [Rich Gorman](https://github.com/coderas)            |
-|                                                   |                                                | [John Bower](https://github.com/beclamide)    |                                                |                                                      |
+| **CF**                                                | DC                                             | DE                                            | DS                                                 | DT                                                       |
+|-------------------------------------------------------|------------------------------------------------|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------------|
+| [**Luke Barratt**](https://github.com/lbarratt)       | [Chris Vernon](https://github.com/welikeideas) | [Callum Barratt](https://github.com/cbarratt) | [**Clare Devine**](https://github.com/claredevine) | [Aaron Thomas](https://github.com/aaronthomas)           |
+| [**Josh Nesbitt**](https://github.com/joshnesbitt)    | [Djenan Kozic](https://github.com/djenan)      | [Jag Sispal](https://github.com/jsispal)      | [Greg Pratt](https://github.com/gregorypratt)      | [Alex Fenton](https://github.com/afenton90)              |
+| [**Mahesh Jagadeesan**](https://github.com/maheshjag) |                                                | [James Peiris](https://github.com/jamespeiris)| [Rory King](https://github.com/geit)               | [**Stefan McCready**](https://github.com/stefanmccready) |
+|                                                       |                                                | [John Bower](https://github.com/beclamide)    |                                                    | [Rich Gorman](https://github.com/coderas)                |
 
 **Special thanks to the following contributors:**
 
