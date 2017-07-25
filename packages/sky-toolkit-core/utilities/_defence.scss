@@ -107,3 +107,12 @@ body a.skycom-focus {
     max-width: 1140px !important;
   }
 }
+
+/**
+ * Repair altercations to the mobile menu made by our hidden overflow-x.
+ */
+.skycom-mobile {
+  body.skycom-fixed {
+    overflow-x: visible !important;
+  }
+}
