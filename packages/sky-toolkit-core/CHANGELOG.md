@@ -3,6 +3,14 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.1.2
+
+### Fixes
+
+* [Defence] Add extra defence for the Masthead, to protect the mobile menu being
+  hidden by Toolkit's `body` overflow.
+
+
 ## 2.1.1
 
 ### Features
