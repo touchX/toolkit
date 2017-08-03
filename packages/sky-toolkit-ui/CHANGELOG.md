@@ -3,6 +3,39 @@
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.2.0
+ 
+### Features
+ 
+* [Roundel] a brand new component to select product variants, e.g. Phone Colour.
+
+#### Example Markup
+
+A color-filled roundel could look like:
+
+```
+<label class="c-roundel c-roundel--color" for="14372-colour-picker"
+title="Black"
+aria-label="Black">
+  <input type="radio" class="c-roundel__input" name="colour-picker" id="14372-colour-picker" value="14372" aria-checked="false" tabindex="0">
+  <div class="c-roundel__option">
+    <span class="c-roundel__label" style="background-color: rgb(58, 63, 67);"></span>
+  </div>
+</label>
+```
+
+A text-filled roundel could look like:
+
+```
+<label class="c-roundel" for="14370-capacity-picker" title="32" aria-label="32">
+  <input type="radio" class="c-roundel__input" name="capacity-picker" id="14370-capacity-picker" value="14370" aria-checked="false" tabindex="0">
+  <div class="c-roundel__option">
+    <span class="c-roundel__label">32</span>
+  </div>
+</label>
+```
+
+
 ## 2.1.2
 
 ### Dependencies
