@@ -7,25 +7,26 @@
 @import "components/bezel";
 @import "components/buttons";
 @import "components/calendar";
-@import "components/dropdown";
 @import "components/divider";
+@import "components/dropdown";
 @import "components/forms";
-@import "components/links";
-@import "components/link-faux";
 @import "components/keyline";
+@import "components/link-faux";
+@import "components/links";
 @import "components/panel";
-@import "components/tables";
-@import "components/tabs";
-@import "components/tooltip";
+@import "components/price";
+@import "components/roundel";
 @import "components/shine";
 @import "components/spinner";
 @import "components/switch";
-@import "components/price";
+@import "components/tables";
+@import "components/tabs";
+@import "components/tooltip";
 
 // Components with *optional* dependencies
+@import "components/costing";
 @import "components/hero";
 @import "components/tile";
-@import "components/costing";
 
 // Components with *required* dependencies
 @import "components/select";
