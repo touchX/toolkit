@@ -59,6 +59,7 @@ $costing-spacing: 5px;
     top: 0.55em; /* [4] */
     left: 100%; /* [4] */
     margin-left: $costing-spacing; /* [4] */
+
     @include mq($from: medium) {
       @include rem(16px); /* [3] */
     }
