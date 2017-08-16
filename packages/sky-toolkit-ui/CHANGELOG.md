@@ -3,6 +3,23 @@
 `sky-toolkit-ui` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.3.0
+ 
+### Features
+ 
+* [Card] a brand new component to display a selectable item or product based content, e.g. an Accessory Card or Handset Item.
+
+#### Example Markup
+
+A standard card would look like this:
+
+```
+<div class="c-card">
+  <p>Your content</p>
+</div>
+```
+
+
 ## 2.2.0
  
 ### Features

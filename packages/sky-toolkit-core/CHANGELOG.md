@@ -3,6 +3,13 @@
 `sky-toolkit-core` follows [Semantic Versioning](http://semver.org) to help manage the impact of releasing new library versions.
 
 
+## 2.1.3
+
+### Dependencies
+
+* [[stylelint-config-sky-uk](https://github.com/sky-uk/css)] disable comments modified to meet changes to rules.
+
+
 ## 2.1.2
 
 ### Fixes
