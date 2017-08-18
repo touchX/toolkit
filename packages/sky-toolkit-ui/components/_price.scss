@@ -14,11 +14,14 @@
  * 1. Removes the browser-default strikethrough decoration
  * 2. Renders a diagonal line through the text from bottom left to top right
  */
+
 .c-price--strike {
+  color: color(grey-30);
+}
+.c-price__strike {
   position: relative;
   text-decoration: none;  /* [1] */
-  color: color(grey-30);
-
+  
   &::after {  /* [2] */
 
     /*! autoprefixer: off */
@@ -32,4 +35,8 @@
     -ms-transform: rotate(-10deg);
     transform: rotate(-10deg);
   }
+}
+
+.c-price__footnote-symbol {
+  margin-left: $global-spacing-unit-tiny;
 }
