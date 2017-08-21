@@ -53,7 +53,7 @@ $costing-spacing: 5px;
     @include rem(48px);
   }
 
-  .c-price__fractional {
+  .c-price__fraction {
     @include rem(14px); /* [3] */
     position: absolute; /* [4] */
     top: 0.55em; /* [4] */

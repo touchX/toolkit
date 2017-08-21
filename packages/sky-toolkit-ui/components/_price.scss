@@ -15,13 +15,15 @@
  * 2. Renders a diagonal line through the text from bottom left to top right
  */
 
-.c-price--strike {
-  color: color(grey-30);
+.c-price {
+  &.has-strike {
+    color: color(grey-30);
+  }
 }
 .c-price__strike {
   position: relative;
   text-decoration: none;  /* [1] */
-  
+
   &::after {  /* [2] */
 
     /*! autoprefixer: off */
@@ -37,6 +39,6 @@
   }
 }
 
-.c-price__footnote-symbol {
+.c-price__symbol {
   margin-left: $global-spacing-unit-tiny;
 }
