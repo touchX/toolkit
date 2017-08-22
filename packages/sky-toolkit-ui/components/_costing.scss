@@ -52,16 +52,36 @@ $costing-spacing: 5px;
   @include mq($from: medium) {
     @include rem(48px);
   }
+}
 
-  .c-price__fraction {
+.c-costing--standard {
+
+  .c-price__fractional {
     @include rem(14px); /* [3] */
-    position: absolute; /* [4] */
-    top: 0.55em; /* [4] */
-    left: 100%; /* [4] */
-    margin-left: $costing-spacing; /* [4] */
 
     @include mq($from: medium) {
       @include rem(16px); /* [3] */
+    }
+  }
+
+  .c-price:not(.has-strike) {
+    .c-price__fractional {
+      position: absolute; /* [4] */
+      top: 0.55em; /* [4] */
+      left: 100%; /* [4] */
+      margin-left: $costing-spacing; /* [4] */
+    }
+  }
+
+  .c-price__symbol {
+    position: absolute;
+    top: 0.55em;
+    left: 100%;
+  }
+
+  .has-fraction {
+    .c-price__symbol {
+      left: 130%;
     }
   }
 }
@@ -122,6 +142,7 @@ $costing-spacing: 5px;
  * 2. Fractional values don't need offsetting for smaller prices
  */
 .c-costing--small {
+
   .c-costing__price {
     @include rem(22px);
     font-weight: bold;
@@ -130,13 +151,27 @@ $costing-spacing: 5px;
     @include mq($from: medium) {
       @include rem(28px);
     }
-
-    &.c-price--fractional {
-      margin-right: 1em; /* [1] */
-    }
   }
 
   .c-price__fractional {
-    top: 0; /* [2] */
+    top: -0.35em;
+    //left:0;
+    //position: relative;
+  }
+
+  .has-strike {
+    .c-price__fractional {
+      //top: 0;
+    }
+  }
+
+  .has-fraction .c-price__symbol,
+  .c-price__symbol {
+    //top:0;
+    //left:0;
+    //position:relative;
+    font-weight: normal;
   }
 }
+
+
