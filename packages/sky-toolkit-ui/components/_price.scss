@@ -41,7 +41,11 @@
 
 .c-price__symbol {
   margin-left: $global-spacing-unit-tiny;
-  @include rem(16px);
-  vertical-align: super;
+  @include rem(18px);
   top:0;
+  font-weight: normal;
+
+  .has-fraction & {
+    vertical-align: super;
+  }
 }
