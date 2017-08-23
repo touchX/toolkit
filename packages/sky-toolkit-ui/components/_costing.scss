@@ -40,10 +40,10 @@ $costing-spacing: 5px;
  *
  * 1. We'll be positioning children relative to this element
  * 2. Non-standard line height to align various text nodes
- * 3. Fractional values (pence) display smaller than main values (pounds)
+ * 3. By default, the tail end of price contains fractional values (pence) and footnote symbols, which display smaller than main values (pounds)
  * 4. Position fractional values to the top right of the price. Magic number for `top` value
  *    is unfortunate but necessary to align with line-height of parent
- * 5. Reset suffix positioning when the price is wrapped in a strike element 
+ * 5. Reset tail positioning when the price is wrapped in a strike element.
  */
 .c-costing__price {
   @include rem(36px);
@@ -54,7 +54,7 @@ $costing-spacing: 5px;
     @include rem(48px);
   }
 
-  .c-price__suffix {
+  .c-price__tail {
     @include rem(14px); /* [3] */
     position: absolute; /* [4] */
     top: 0.55em; /* [4] */
@@ -67,7 +67,7 @@ $costing-spacing: 5px;
   }
 
   .has-strike {
-    .c-price__suffix {
+    .c-price__tail {
       position: relative; /* [5] */
       top:0;
       left: 0;
@@ -130,7 +130,7 @@ $costing-spacing: 5px;
  * 1. On smaller costs, suffixes don't display beneath fractional values, so we realign line-height
  *    and create additonal spacing
  * 2. Fractional values don't need offsetting for smaller prices
- * 3. Reset positioning on suffix
+ * 3. Reset positioning on tail
  * 4. Align fractional (pence) as super script to the main figure (pounds)
  * 5. When presented as a strike through, reset alignment 
  */
@@ -146,7 +146,7 @@ $costing-spacing: 5px;
     }
   }
 
-  .c-price__suffix {
+  .c-price__tail {
     position: relative; /* [3] */
     top:0;
     left: 0;
