@@ -5,6 +5,14 @@
 // Imports
 @import "sky-toolkit-core/tools";
 
+.c-price__symbol {
+  margin-left: $global-spacing-unit-tiny;
+  @include rem(18px);
+  top:0;
+  font-weight: normal;
+}
+
+
 /* Modifiers
   ============================================ */
 
@@ -15,14 +23,10 @@
  * 2. Renders a diagonal line through the text from bottom left to top right
  */
 
-.c-price {
-  &.has-strike {
-    color: color(grey-30);
-  }
-}
-.c-price__strike {
+.c-price--strike {
   position: relative;
   text-decoration: none;  /* [1] */
+  color: color(grey-30);
 
   &::after {  /* [2] */
 
@@ -39,13 +43,8 @@
   }
 }
 
-.c-price__symbol {
-  margin-left: $global-spacing-unit-tiny;
-  @include rem(18px);
-  top:0;
-  font-weight: normal;
-
-  .has-fraction & {
+.c-price--fraction {
+  .c-price__symbol {
     vertical-align: super;
   }
 }

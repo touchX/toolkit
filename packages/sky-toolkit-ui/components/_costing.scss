@@ -54,7 +54,7 @@ $costing-spacing: 5px;
     @include rem(48px);
   }
 
-  .c-price__tail {
+  .c-price__fractional {
     @include rem(14px); /* [3] */
     position: absolute; /* [4] */
     top: 0.55em; /* [4] */
@@ -66,8 +66,8 @@ $costing-spacing: 5px;
     }
   }
 
-  .has-strike {
-    .c-price__tail {
+  .c-price--strike {
+    .c-price__fractional {
       position: relative; /* [5] */
       top:0;
       left: 0;
@@ -146,19 +146,19 @@ $costing-spacing: 5px;
     }
   }
 
-  .c-price__tail {
+  .c-price__fractional {
     position: relative; /* [3] */
     top:0;
     left: 0;
     margin: 0;
   }
 
-  .c-price__fractional {
+  .c-price__fractional-number {
     vertical-align: super; /* [4] */
   }
 
-  .has-strike {
-    .c-price__fractional {
+  .c-price--strike {
+    .c-price__fractional-number {
       vertical-align: inherit; /* [5] */
     }
   }
