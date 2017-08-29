@@ -177,7 +177,7 @@ $costing-spacing: 5px;
 .c-costing--small {
 
   .c-price--footnote {
-    .c-price--footnote {
+    &.c-price--footnote {
       &::before {
         right: -8px;
         top: -8px;
