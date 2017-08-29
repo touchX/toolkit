@@ -5,14 +5,6 @@
 // Imports
 @import "sky-toolkit-core/tools";
 
-.c-price__symbol {
-  margin-left: $global-spacing-unit-tiny;
-  @include rem(18px);
-  top:0;
-  font-weight: normal;
-}
-
-
 /* Modifiers
   ============================================ */
 
@@ -43,8 +35,16 @@
   }
 }
 
-.c-price--fraction {
-  .c-price__symbol {
-    vertical-align: super;
+
+.c-price--footnote {
+  position: relative; 
+  
+  &::before {
+
+    content:"*";
+    position: absolute;
+    right: -10px;
+    top:-10px;
+    @include rem(20px);
   }
 }

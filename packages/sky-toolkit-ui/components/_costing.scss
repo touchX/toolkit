@@ -148,24 +148,41 @@ $costing-spacing: 5px;
 
   .c-price__fractional {
     position: relative; /* [3] */
-    top:0;
+    top: 0;
     left: 0;
     margin: 0;
   }
 
-  .c-price__fractional-number {
-    vertical-align: super; /* [4] */
-  }
+}
 
-  .c-price--strike {
-    .c-price__fractional-number {
-      vertical-align: inherit; /* [5] */
+.c-costing__price {
+
+  &.c-price--footnote {
+    &::before {
+      font-weight: normal;
+      top: 5px;
+      font-size: 22px;
     }
   }
 
-  .c-price__symbol {
-    vertical-align: super;
+  &.c-price--footnote {
+    &.c-price--fraction {
+      &::before {
+        right: calc(-3ch + 5px);
+      }
+    }
   }
 }
 
+.c-costing--small {
 
+  .c-price--footnote {
+    .c-price--footnote {
+      &::before {
+        right: -8px;
+        top: -8px;
+      }
+    }
+  }
+
+}
