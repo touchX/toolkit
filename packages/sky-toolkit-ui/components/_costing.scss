@@ -129,7 +129,6 @@ $costing-spacing: 5px;
  * 1. On smaller costs, suffixes don't display beneath fractional values, so we realign line-height
  *    and create additonal spacing
  * 2. Fractional values don't need offsetting for smaller prices
- * 3. Reset positioning on tail
  */
 .c-costing--small {
   .c-costing__price {
@@ -143,7 +142,7 @@ $costing-spacing: 5px;
   }
 
   .c-price__fractional {
-    position: relative; /* [3] */
+    position: relative; /* [2] */
     top: 0;
     left: 0;
     margin: 0;
