@@ -40,10 +40,9 @@ $costing-spacing: 5px;
  *
  * 1. We'll be positioning children relative to this element
  * 2. Non-standard line height to align various text nodes
- * 3. By default, the tail end of price contains fractional values (pence) and footnote symbols, which display smaller than main values (pounds)
+ * 3. Fractional values (pence) display smaller than main values (pounds)
  * 4. Position fractional values to the top right of the price. Magic number for `top` value
  *    is unfortunate but necessary to align with line-height of parent
- * 5. Reset tail positioning when the price is wrapped in a strike element.
  */
 .c-costing__price {
   @include rem(36px);
@@ -63,15 +62,6 @@ $costing-spacing: 5px;
 
     @include mq($from: medium) {
       @include rem(16px); /* [3] */
-    }
-  }
-
-  .c-price--strike {
-    .c-price__fractional {
-      position: relative; /* [5] */
-      top:0;
-      left: 0;
-      margin: 0;
     }
   }
 }
@@ -112,6 +102,7 @@ $costing-spacing: 5px;
  * 1. Apply the offer colouring to the price
  * 2. Striked prices on offers are displayed above the price, so need to be on a new line while
  *    maintaining width for the strikethrough line.
+ * 3. Offers should be placed on own line
  */
 .c-costing--offer {
   .c-costing__price {
@@ -129,7 +120,7 @@ $costing-spacing: 5px;
 }
 
 .c-costing__offer-amount {
-  display: block;
+  display: block; /* [3] */
 }
 
 /**
@@ -139,11 +130,8 @@ $costing-spacing: 5px;
  *    and create additonal spacing
  * 2. Fractional values don't need offsetting for smaller prices
  * 3. Reset positioning on tail
- * 4. Align fractional (pence) as super script to the main figure (pounds)
- * 5. When presented as a strike through, reset alignment 
  */
 .c-costing--small {
-
   .c-costing__price {
     @include rem(22px);
     font-weight: bold;
@@ -169,14 +157,13 @@ $costing-spacing: 5px;
  * 1. Potential use of prefix text limits space above values
  * 2. Unset bolding applied to parent item
  * 3. Account for absolutely positoned franctional value (two decimal places)
- * 4. Limited space means we need to adjust for a smaller text size especially 
- *    for tall symbols like "†". 
+ * 4. Limited space means we need to adjust for a smaller text size especially
+ *    for tall symbols like "†".
  * 5. Reset back to flush left as no absolutely positioned characters with this small modifer
  */
 
 .c-costing__price--footnote {
-  
-  + .c-price__symbol  {
+  + .c-price__symbol {
     top: -0.25em; /* [1] */
     font-weight: normal; /* [2] */
   }
@@ -188,13 +175,16 @@ $costing-spacing: 5px;
   }
 
   &.c-costing__price--small {
-    + .c-price__symbol  {
-      left: calc(100%); /* [5] */
+    + .c-price__symbol {
       @include font(text-body);  /* [4] */
+      left: calc(100%); /* [5] */
 
+      /* Nesting for MQ adjustment more readable given context */
+      /* stylelint-disable max-nesting-depth */
       @include mq($from:large) {
         top: 0; /* [4] */
       }
+      /* stylelint-enable */
     }
   }
 }
