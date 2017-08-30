@@ -8,6 +8,24 @@
 // Settings
 $price-footnote-spacing: 5px;
 
+/* Base
+  ============================================ */
+
+/*
+ *  Price Wrapper
+ * 
+ * Encapsulate the price when using adjoining items such as footnote
+ * 
+ * 1. Context for absolutely positioned child items (footnote)
+ * 2. Element needs to calculate line-height based on children
+ *
+ */
+
+.c-price-wrapper {
+  position: relative;  /* [1] */
+  display: inline-block; /* [2] */
+}
+
 /* Modifiers
   ============================================ */
 
@@ -41,23 +59,21 @@ $price-footnote-spacing: 5px;
 /**
  * With Footnote Marker
  *
- * The footnote symbol is set as a pseudo element for tight positional control.
+ * The footnote symbol is set as a sibling <sup> element.
  * 
- * 1. Apps should override this default charecter as necessary.
- * 2. Create the impression of a superscript element by raising up by a half
- * 3. Start to the right of the parent and allow mutiple character symbols to 
- *    continue to build out in this direction
+ * 1. Start to the right of the parent and allow mutiple character symbols to 
+ *    continue to build out in this direction.
+ * 2. Modifer on sibling should effect the style of the sub 
  */
 
-.c-price--footnote {
-  position: relative; 
-  
-  &::before {
+.c-price__symbol {
+  position: absolute;
+  left: 100%;  /* [1] */
+  margin-left: $price-footnote-spacing;
+}
 
-    content:"*"; /* [1] */
-    position: absolute;
-    top:-0.5em; /* [2] */
-    left: 100%; /* [3] */
-    margin-left: $price-footnote-spacing;
+.c-price--strike {
+  + .c-price__symbol {
+    color: color(grey-30);  /* [2] */
   }
 }
