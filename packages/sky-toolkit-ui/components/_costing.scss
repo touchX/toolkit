@@ -169,9 +169,9 @@ $costing-spacing: 5px;
  * 1. Potential use of prefix text limits space above values
  * 2. Unset bolding applied to parent item
  * 3. Account for absolutely positoned franctional value (two decimal places)
- * 4. Reset back to flush left as no absolutely positioned characters with this small modifer
- * 5. Limited space means we need to adjust for a smaller text size especially 
+ * 4. Limited space means we need to adjust for a smaller text size especially 
  *    for tall symbols like "†". 
+ * 5. Reset back to flush left as no absolutely positioned characters with this small modifer
  */
 
 .c-costing__price--footnote {
@@ -189,8 +189,12 @@ $costing-spacing: 5px;
 
   &.c-costing__price--small {
     + .c-price__symbol  {
-      left: calc(100%); /* [4] */
-      @include font(text-body)  /* [5] */
+      left: calc(100%); /* [5] */
+      @include font(text-body);  /* [4] */
+
+      @include mq($from:large) {
+        top: 0; /* [4] */
+      }
     }
   }
 }
