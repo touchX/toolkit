@@ -5,6 +5,9 @@
 // Imports
 @import "sky-toolkit-core/tools";
 
+// Settings
+$price-footnote-spacing: 5px;
+
 /* Modifiers
   ============================================ */
 
@@ -35,16 +38,26 @@
   }
 }
 
+/**
+ * With Footnote Marker
+ *
+ * The footnote symbol is set as a pseudo element for tight positional control.
+ * 
+ * 1. Apps should override this default charecter as necessary.
+ * 2. Create the impression of a superscript element by raising up by a half
+ * 3. Start to the right of the parent and allow mutiple character symbols to 
+ *    continue to build out in this direction
+ */
 
 .c-price--footnote {
   position: relative; 
   
   &::before {
 
-    content:"*";
+    content:"*"; /* [1] */
     position: absolute;
-    right: -10px;
-    top:-10px;
-    @include rem(20px);
+    top:-0.5em; /* [2] */
+    left: 100%; /* [3] */
+    margin-left: $price-footnote-spacing;
   }
 }

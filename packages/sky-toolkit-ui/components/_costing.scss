@@ -155,34 +155,37 @@ $costing-spacing: 5px;
 
 }
 
-.c-costing__price {
+/**
+ * With Footnote Marker
+ *
+ * 1. Potential use of prefix text limits space above values
+ * 2. Prevent symbol from scaling with font size of parent for tighter control
+ * 4. Account for absolutely positoned franctional value (two decimal places)
+ * 3. Unset bolding applied to parent item
+ * 5. Limited space means we need a symbol half the size of the parent font and
+ *    raised only by a third, especially for tall symbols like "†". 
+ * 6. Reset back to flush left as no absolutely posiotned characters with this small modifer
+ */
 
-  &.c-price--footnote {
+.c-costing__price--footnote {
+
+  &::before {
+    top: 0; /* [1] */
+    @include font(text-lead); /* [2] */
+    font-weight: normal; /* [3] */
+  }
+
+  &.c-costing__price--fraction {
     &::before {
-      font-weight: normal;
-      top: 5px;
-      font-size: 22px;
+      left: calc(100% + 2ch); /* [4] */
     }
   }
 
-  &.c-price--footnote {
-    &.c-price--fraction {
-      &::before {
-        right: calc(-3ch + 5px);
-      }
+  &.c-costing__price--small {
+    &::before {
+      top: -0.33em; /* [5] */
+      left: calc(100%); /* [6] */
+      font-size: 0.5em; /* [5] */
     }
   }
-}
-
-.c-costing--small {
-
-  .c-price--footnote {
-    &.c-price--footnote {
-      &::before {
-        right: -8px;
-        top: -8px;
-      }
-    }
-  }
-
 }
