@@ -142,7 +142,7 @@ $costing-spacing: 5px;
   }
 
   .c-price__fractional {
-    position: relative; /* [2] */
+    position: relative; /* [3] */
     top: 0;
     left: 0;
     margin: 0;
@@ -162,28 +162,22 @@ $costing-spacing: 5px;
  */
 
 .c-costing__price--footnote {
-  + .c-price__symbol {
-    top: -0.25em; /* [1] */
+  .c-price__symbol {
+    top: 0; /* [1] */
     font-weight: normal; /* [2] */
   }
 
   &.c-costing__price--fraction {
-    + .c-price__symbol {
+    .c-price__symbol {
       left: calc(100% + 2ch); /* [3] */
     }
   }
 
   &.c-costing__price--small {
-    + .c-price__symbol {
+    .c-price__symbol {
       @include font(text-body);  /* [4] */
+      top: -0.33em; /* [5] */
       left: calc(100%); /* [5] */
-
-      /* Nesting for MQ adjustment more readable given context */
-      /* stylelint-disable max-nesting-depth */
-      @include mq($from:large) {
-        top: 0; /* [4] */
-      }
-      /* stylelint-enable */
     }
   }
 }

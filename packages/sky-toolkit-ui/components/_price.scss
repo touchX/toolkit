@@ -21,10 +21,10 @@ $price-footnote-spacing: 5px;
  *
  */
 
-.c-price-wrapper {
-  position: relative;  /* [1] */
-  display: inline-block; /* [2] */
-}
+// .c-price-wrapper {
+//   position: relative;  /* [1] */
+//   display: inline-block; /* [2] */
+// }
 
 /* Modifiers
   ============================================ */
@@ -73,7 +73,7 @@ $price-footnote-spacing: 5px;
 }
 
 .c-price--strike {
-  + .c-price__symbol {
+  .c-price__symbol {
     color: color(grey-30);  /* [2] */
   }
 }
