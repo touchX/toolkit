@@ -11,20 +11,25 @@ $price-footnote-spacing: 5px;
 /* Base
   ============================================ */
 
-/*
- *  Price Wrapper
+.c-price {
+  position: relative;
+}
+
+/**
+ * Symbol
  *
- * Encapsulate the price when using adjoining items such as footnote
+ * The footnote symbol should be set as a sibling <sup> element.
  *
- * 1. Context for absolutely positioned child items (footnote)
- * 2. Element needs to calculate line-height based on children
- *
+ * 1. Remove from flow so that modifers such as strike don't effect the symbol
+ * 2. Start to the right of the parent and allow mutiple character symbols to
+ *    continue to build out in this direction.
  */
 
-// .c-price-wrapper {
-//   position: relative;  /* [1] */
-//   display: inline-block; /* [2] */
-// }
+.c-price__symbol {
+  position: absolute; /* [1] */
+  left: 100%;  /* [2] */
+  margin-left: $price-footnote-spacing;
+}
 
 /* Modifiers
   ============================================ */
@@ -37,7 +42,6 @@ $price-footnote-spacing: 5px;
  */
 
 .c-price--strike {
-  position: relative;
   text-decoration: none;  /* [1] */
   color: color(grey-30);
 
@@ -53,27 +57,5 @@ $price-footnote-spacing: 5px;
     border-top: 1px solid color(grey-30);
     -ms-transform: rotate(-10deg);
     transform: rotate(-10deg);
-  }
-}
-
-/**
- * With Footnote Marker
- *
- * The footnote symbol is set as a sibling <sup> element.
- *
- * 1. Start to the right of the parent and allow mutiple character symbols to
- *    continue to build out in this direction.
- * 2. Modifer on sibling should effect the style of the sub
- */
-
-.c-price__symbol {
-  position: absolute;
-  left: 100%;  /* [1] */
-  margin-left: $price-footnote-spacing;
-}
-
-.c-price--strike {
-  .c-price__symbol {
-    color: color(grey-30);  /* [2] */
   }
 }
