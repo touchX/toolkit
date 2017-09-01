@@ -158,8 +158,9 @@ $costing-spacing: $global-spacing-unit-tiny;
 /**
  * Footnote Marker
  *
- * Various accommodations to the footnote symbol based on the price modifers
+ * Various accommodations to the footnote symbol based on the costing modifers
  */
+
 .c-costing__price--footnote {
   /**
    * The symbol itself is adjacent to the element with modifers, hence the use of '+'
@@ -184,7 +185,7 @@ $costing-spacing: $global-spacing-unit-tiny;
      * Fractionals consists of an absolutely positioned number set to two decimal
      * places - we account for their spacing by adjusting our left value by 2 characters
      */
-    @at-root .c-price--fraction#{&} {
+    @at-root .c-costing__price--fraction#{&} {
       left: calc(100% + 2ch); /* [1] */
     }
 
@@ -192,7 +193,7 @@ $costing-spacing: $global-spacing-unit-tiny;
      * Small display
      * No additional absolutely positioned elements so symbol can go back to the left
      */
-    @at-root .c-price--small#{&} {
+    @at-root .c-costing__price--small#{&} {
       left: calc(100%);
 
       /* As font size increases, symbol needs adjustment to realign with text */
