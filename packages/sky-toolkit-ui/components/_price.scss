@@ -6,28 +6,27 @@
 @import "sky-toolkit-core/tools";
 
 // Settings
-$price-footnote-spacing: 5px;
+$price-footnote-spacing: $global-spacing-unit-tiny;
 
 /* Base
   ============================================ */
 
-.c-price {
-  position: relative;
-}
-
 /**
- * Symbol
+ *  Price Wrapper
  *
- * The footnote symbol should be set as a sibling <sup> element.
+ * Encapsulate the price when using adjoining items such as footnote
  *
- * 1. Remove from flow so that modifers such as strike don't effect the symbol
- * 2. Start to the right of the parent and allow mutiple character symbols to
- *    continue to build out in this direction.
+ * 1. Context for absolutely positioned child items (footnote)
+ * 2. Element needs to calculate line-height based on children
+ *
  */
 
+.c-price-container {
+  position: relative;  /* [1] */
+  display: inline-block; /* [2] */
+}
+
 .c-price__symbol {
-  position: absolute; /* [1] */
-  left: 100%;  /* [2] */
   margin-left: $price-footnote-spacing;
 }
 
@@ -42,6 +41,7 @@ $price-footnote-spacing: 5px;
  */
 
 .c-price--strike {
+  position: relative;
   text-decoration: none;  /* [1] */
   color: color(grey-30);
 
@@ -58,4 +58,18 @@ $price-footnote-spacing: 5px;
     -ms-transform: rotate(-10deg);
     transform: rotate(-10deg);
   }
+
+  + .c-price__symbol {
+    color: color(grey-30);  /* [2] */
+  }
 }
+
+/**
+ * With Footnote Marker
+ *
+ * The footnote symbol is set as a sibling <sup> element.
+ *
+ * 1. Start to the right of the parent and allow mutiple character symbols to
+ *    continue to build out in this direction.
+ * 2. Modifer on sibling should effect the style of the sub
+ */

@@ -6,7 +6,7 @@
 @import "sky-toolkit-core/tools";
 
 // Settings
-$costing-spacing: 5px;
+$costing-spacing: $global-spacing-unit-tiny;
 
 // Dependencies (Optional)
 // =========================================== */
@@ -97,36 +97,42 @@ $costing-spacing: 5px;
   ============================================ */
 
 /**
- * Offer Costing
- *
- * 1. Apply the offer colouring to the price
- * 2. Striked prices on offers are displayed above the price, so need to be on a new line while
- *    maintaining width for the strikethrough line.
- * 3. Offers should be placed on own line
- */
+  * If cost is displaying as an offer
+  */
 .c-costing--offer {
-  .c-costing__price {
-    color: color(offer); /* [1] */
+  /**
+   * Appply offer colors to relevent elements
+   */
+  .c-costing__price,
+  .c-price__symbol {
+    color: color(offer);
   }
 
+  /**
+   *  Striked prices on offers are displayed above the price, so need to be on a new line while
+   *  maintaining width for the strikethrough line.
+   */
   .c-costing__strike {
     margin-left: 0;
-    display: table; /* [2] */
+    display: table;
   }
 
-  .c-price__symbol {
-    color: color(offer); /* [1] */
+  /**
+   * Offer amounts should be placed on own line
+   */
+  .c-costing__offer-amount {
+    display: block;
   }
 }
 
 /**
  * Smaller Costing
- *
- * 1. On smaller costs, suffixes don't display beneath fractional values, so we realign line-height
- *    and create additonal spacing
- * 2. Fractional values don't need offsetting for smaller prices
  */
 .c-costing--small {
+  /**
+   *  1. On smaller costs, suffixes don't display beneath fractional values, so we realign line-height
+   *  and create additonal spacing
+   */
   .c-costing__price {
     @include rem(22px);
     font-weight: bold;
@@ -137,8 +143,11 @@ $costing-spacing: 5px;
     }
   }
 
+  /**
+   * Fractional values don't need offsetting for smaller prices
+   */
   .c-price__fractional {
-    position: relative; /* [3] */
+    position: relative;
     top: 0;
     left: 0;
     margin: 0;
@@ -147,33 +156,51 @@ $costing-spacing: 5px;
 }
 
 /**
- * With Footnote Marker
+ * Footnote Marker
  *
- * 1. Potential use of prefix text limits space above values
- * 2. Unset bolding applied to parent item
- * 3. Account for absolutely positoned franctional value (two decimal places)
- * 4. Limited space means we need to adjust for a smaller text size especially
- *    for tall symbols like "†".
- * 5. Reset back to flush left as no absolutely positioned characters with this small modifer
+ * Various accommodations to the footnote symbol based on the costing modifers
  */
 
 .c-costing__price--footnote {
-  .c-price__symbol {
-    top: 0; /* [1] */
+  /**
+   * The symbol itself is adjacent to the element with modifers, hence the use of '+'
+   * 1. Potential use of prefix text limits space above values
+   * 2. Unset any bolding applied to parent item
+   */
+
+  + .c-price__symbol {
+    top: -0.25em; /* [1] */
     font-weight: normal; /* [2] */
-  }
+    position: absolute;
+    left: 100%;  /* [1] */
 
-  &.c-costing__price--fraction {
-    .c-price__symbol {
-      left: calc(100% + 2ch); /* [3] */
+    /**
+     * Condtional modifers
+     * @at-root and #{&} allow us to combine modifer selectors with
+     * 'c-costing__price--footnote' and apply to 'c-price__symbol'
+     */
+
+    /**
+     * Price has fraction
+     * Fractionals consists of an absolutely positioned number set to two decimal
+     * places - we account for their spacing by adjusting our left value by 2 characters
+     */
+    @at-root .c-costing__price--fraction#{&} {
+      left: calc(100% + 2ch); /* [1] */
     }
-  }
 
-  &.c-costing__price--small {
-    .c-price__symbol {
-      @include font(text-body);  /* [4] */
-      top: -0.33em; /* [5] */
-      left: calc(100%); /* [5] */
+    /**
+     * Small display
+     * No additional absolutely positioned elements so symbol can go back to the left
+     */
+    @at-root .c-costing__price--small#{&} {
+      left: calc(100%);
+
+      /* As font size increases, symbol needs adjustment to realign with text */
+      /* stylelint-disable max-nesting-depth */
+      @include mq($from:large) {
+        top: 0; /* [4] */
+      }
     }
   }
 }
