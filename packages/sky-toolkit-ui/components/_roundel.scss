@@ -86,6 +86,10 @@ $roundel-label-size: 14px;
  *    via the :before selector. This means we can deliver a smoother experience with
  *    transition of the highlight. By default opacity is always 0, this changes to 1
  *    when the user checks the roundel.
+ *
+ * 3. The ::after selector is required here as an alternative to a previous
+ *    implementation of the border property against the base of the
+ *    .c-roundel__option  component. This style handles the inner white border.
  */
 .c-roundel__option {
   /*! autoprefixer: off */
@@ -123,12 +127,13 @@ $roundel-label-size: 14px;
   /* [2] */
   &::before {
     border: 3px solid color(brand);
-    z-index: 10;
+    z-index: z-index(2);
   }
 
+  /* [3] */
   &::after {
     border: 6px solid color(white);
-    z-index: 5;
+    z-index: z-index(1);
   }
 }
 
