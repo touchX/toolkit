@@ -180,7 +180,7 @@ $costing-spacing: $global-spacing-unit-tiny;
 
     /**
      * Price has fraction
-     * Fractionals consists of an absolutely positioned number set to two decimal
+     * Fractionals take the form of an absolutely positioned number set to two decimal
      * places - we account for their spacing by adjusting our left value by 2 characters
      *
      * Compiles to:
@@ -192,7 +192,8 @@ $costing-spacing: $global-spacing-unit-tiny;
 
     /**
      * Small display
-     * No additional absolutely positioned elements so symbol can go back to the left
+     * No additional absolutely positioned elements when small so we reset
+     * symbol back to the left
      *
      * Compiles to:
      * .c-costing__price--small.c-costing__price--footnote + .c-price__symbol
