@@ -54,7 +54,8 @@ $roundel-label-size: 14px;
 .c-roundel__input {
   @include hide-visually(); /* [1] */
 
-  &:checked + .c-roundel__option::before {
+  &:checked + .c-roundel__option::before,
+  &:checked + .c-roundel__option::after {
     opacity: 1; /* [2] */
   }
 
@@ -64,7 +65,6 @@ $roundel-label-size: 14px;
 
     /* [3] */
     .c-roundel__label {
-      border: 4px solid color(white);
       font-weight: bold;
     }
   }
@@ -79,13 +79,13 @@ $roundel-label-size: 14px;
  *
  * The component that the user interacts with
  *
- * 1. As briefly covered earlier in the file we achieve the blue highlight with styles
+ * 1. In order to offset the border we need to apply top and left properties.
+ *    This is why we have -1px values for both.
+ *
+ * 2. As briefly covered earlier in the file we achieve the blue highlight with styles
  *    via the :before selector. This means we can deliver a smoother experience with
  *    transition of the highlight. By default opacity is always 0, this changes to 1
  *    when the user checks the roundel.
-
- * 2. In order to offset the border we need to apply top and left properties.
- *    This is why we have -1px values for both.
  */
 .c-roundel__option {
   /*! autoprefixer: off */
@@ -99,27 +99,36 @@ $roundel-label-size: 14px;
   transition: all 0.25s linear;
 
   @include mq($from: small) {
-    height: $roundel-size;
-    width: $roundel-size;
+    height: $roundel-size - 1;
+    width: $roundel-size - 1;
   }
 
   &:hover {
     transform: scale(1);
   }
 
-  /* [1] */
-  &::before {
+  &::before,
+  &::after {
     content: "";
-    border: 3px solid color(brand);
     border-radius: 50%;
     height: $roundel-size;
-    left: -1px; /* [2] */
+    left: -1px; /* [1] */
     top: -1px;
     opacity: 0;
     position: absolute;
     width: $roundel-size;
-    z-index: 10;
     transition: opacity 0.25s linear;
+  }
+
+  /* [2] */
+  &::before {
+    border: 3px solid color(brand);
+    z-index: 10;
+  }
+
+  &::after {
+    border: 6px solid color(white);
+    z-index: 5;
   }
 }
 
@@ -142,6 +151,9 @@ $roundel-label-size: 14px;
  *
  * 1. By default the background colour for .c-roundel__label is white. But if we are rendering a
  *    colour-picker, toolkit-react will set an inline style which equates to the provided colour.
+ *
+ * 2. Roundel Colour Selectors need to have their label styled differently to accomodate a quirk
+ *    within Safari. We get around this issue by using absolute positioning rather than relative.
  */
 .c-roundel__label {
   @include font(text-smallprint);
@@ -157,6 +169,17 @@ $roundel-label-size: 14px;
 
   @include mq($from: small) {
     @include rem($roundel-label-size);
+  }
+}
+
+/* [2] */
+.c-roundel--color {
+  .c-roundel__label {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
   }
 }
 
