@@ -12,7 +12,7 @@ $price-footnote-spacing: $global-spacing-unit-tiny;
   ============================================ */
 
 /**
- *  Price Wrapper
+ *  Price Container
  *
  * Encapsulate the price when using adjoining items such as footnote
  *
@@ -20,12 +20,16 @@ $price-footnote-spacing: $global-spacing-unit-tiny;
  * 2. Element needs to calculate line-height based on children
  *
  */
-
 .c-price-container {
   position: relative;  /* [1] */
   display: inline-block; /* [2] */
 }
 
+/**
+ * With Footnote Marker Symbol
+ *
+ * The symbol is set as a sibling <sup> element.
+ */
 .c-price__symbol {
   margin-left: $price-footnote-spacing;
 }
@@ -38,8 +42,8 @@ $price-footnote-spacing: $global-spacing-unit-tiny;
  *
  * 1. Removes the browser-default strikethrough decoration
  * 2. Renders a diagonal line through the text from bottom left to top right
+ * 3. Apply offer color to sibling footnote marker symbol
  */
-
 .c-price--strike {
   position: relative;
   text-decoration: none;  /* [1] */
@@ -60,16 +64,6 @@ $price-footnote-spacing: $global-spacing-unit-tiny;
   }
 
   + .c-price__symbol {
-    color: color(grey-30);  /* [2] */
+    color: color(grey-30);  /* [3] */
   }
 }
-
-/**
- * With Footnote Marker
- *
- * The footnote symbol is set as a sibling <sup> element.
- *
- * 1. Start to the right of the parent and allow mutiple character symbols to
- *    continue to build out in this direction.
- * 2. Modifer on sibling should effect the style of the sub
- */

@@ -160,14 +160,12 @@ $costing-spacing: $global-spacing-unit-tiny;
  *
  * Various accommodations to the footnote symbol based on the costing modifers
  */
-
 .c-costing__price--footnote {
   /**
    * The symbol itself is adjacent to the element with modifers, hence the use of '+'
    * 1. Potential use of prefix text limits space above values
    * 2. Unset any bolding applied to parent item
    */
-
   + .c-price__symbol {
     top: -0.25em; /* [1] */
     font-weight: normal; /* [2] */
@@ -184,6 +182,9 @@ $costing-spacing: $global-spacing-unit-tiny;
      * Price has fraction
      * Fractionals consists of an absolutely positioned number set to two decimal
      * places - we account for their spacing by adjusting our left value by 2 characters
+     *
+     * Compiles to:
+     * .c-costing__price--fraction.c-costing__price--footnote + .c-price__symbol
      */
     @at-root .c-costing__price--fraction#{&} {
       left: calc(100% + 2ch); /* [1] */
@@ -192,13 +193,16 @@ $costing-spacing: $global-spacing-unit-tiny;
     /**
      * Small display
      * No additional absolutely positioned elements so symbol can go back to the left
+     *
+     * Compiles to:
+     * .c-costing__price--small.c-costing__price--footnote + .c-price__symbol
      */
     @at-root .c-costing__price--small#{&} {
-      left: calc(100%);
+      left: 100%;
 
       /* As font size increases, symbol needs adjustment to realign with text */
       /* stylelint-disable max-nesting-depth */
-      @include mq($from:large) {
+      @include mq($from: large) {
         top: 0; /* [4] */
       }
     }
